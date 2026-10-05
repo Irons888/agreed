@@ -1,0 +1,132 @@
+{
+  "startedAt": "2026-10-05T21:01:44.654Z",
+  "base": "http://localhost:5173",
+  "runs": 1,
+  "reasoning": "low",
+  "model": "gpt-oss-120b",
+  "asr": "nova-3",
+  "cases": [
+    {
+      "case": "T7-seven-voices",
+      "outcome": "decline",
+      "runs": [
+        {
+          "run": 1,
+          "error": null,
+          "recovered": false,
+          "pass": false,
+          "included": "n/a",
+          "exclusionErrors": 0,
+          "failed": [
+            {
+              "item": "(outcome)",
+              "check": "decline reason",
+              "ok": false,
+              "detail": "got one_voice, 1 voice heard of 7"
+            }
+          ],
+          "checks": 3,
+          "clientMs": 2127,
+          "transcriptMs": 2124,
+          "asr": "@cf/deepgram/nova-3",
+          "voicesHeard": 1,
+          "serverMs": {
+            "asrMs": 2130,
+            "extractMs": 0,
+            "verifyMs": 0,
+            "totalMs": 2130
+          },
+          "usage": {
+            "audioMinutes": 0.701,
+            "asrAttempts": 1,
+            "asrNeurons": 331.59,
+            "llmCalls": 0,
+            "llmPromptTokens": 0,
+            "llmCompletionTokens": 0,
+            "llmNeurons": 0,
+            "retries": 0
+          },
+          "cost": {
+            "asrUsd": 0.003647,
+            "llmUsd": 0,
+            "totalUsd": 0.003647,
+            "perAudioMinuteUsd": 0.0052,
+            "pricesCheckedOn": "2026-10-05"
+          },
+          "items": [],
+          "dropped": []
+        }
+      ]
+    },
+    {
+      "case": "T5-three-voices",
+      "outcome": "decline",
+      "runs": [
+        {
+          "run": 1,
+          "error": null,
+          "recovered": false,
+          "pass": true,
+          "included": "n/a",
+          "exclusionErrors": 0,
+          "failed": [],
+          "checks": 3,
+          "clientMs": 1444,
+          "transcriptMs": 1443,
+          "asr": "@cf/deepgram/nova-3",
+          "voicesHeard": 3,
+          "serverMs": {
+            "asrMs": 1446,
+            "extractMs": 0,
+            "verifyMs": 0,
+            "totalMs": 1446
+          },
+          "usage": {
+            "audioMinutes": 0.266,
+            "asrAttempts": 1,
+            "asrNeurons": 125.61,
+            "llmCalls": 0,
+            "llmPromptTokens": 0,
+            "llmCompletionTokens": 0,
+            "llmNeurons": 0,
+            "retries": 0
+          },
+          "cost": {
+            "asrUsd": 0.001382,
+            "llmUsd": 0,
+            "totalUsd": 0.001382,
+            "perAudioMinuteUsd": 0.0052,
+            "pricesCheckedOn": "2026-10-05"
+          },
+          "items": [],
+          "dropped": []
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "runs": 2,
+    "errors": 0,
+    "passed": 1,
+    "inclusion": "n/a",
+    "exclusionErrors": 0,
+    "stability": {
+      "T7-seven-voices": "0/1",
+      "T5-three-voices": "1/1"
+    },
+    "timeToResultMs": {
+      "p50": 1444,
+      "p90": 2127
+    },
+    "timeToTranscriptMs": {
+      "p50": 1443
+    },
+    "retries": 0,
+    "recoveredAfterDroppedConnection": 0,
+    "costPerRunUsd": 0.002515,
+    "costPerAudioMinuteUsd": 0.005201,
+    "asrUsed": [
+      "@cf/deepgram/nova-3"
+    ]
+  }
+}

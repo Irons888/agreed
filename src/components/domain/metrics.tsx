@@ -16,8 +16,13 @@ export function MetricTile({ label, value, sub, lead = false }: { label: string;
 /** Variable cost of one run at list prices, by the categories the brief asks for. */
 export function CostBreakdown({ metrics }: { metrics: Metrics }) {
   const { usage, cost, timings, models } = metrics;
+  const providers = models.asr.startsWith('elevenlabs/') ? 'ElevenLabs and Workers AI' : 'Workers AI';
   const rows: [string, string, string][] = [
-    ['Recognition', `${models.asr} · ${usage.audioMinutes.toFixed(2)} min${usage.asrAttempts > 1 ? ` × ${usage.asrAttempts} attempts` : ''}`, usd(cost.asrUsd)],
+    [
+      'Recognition',
+      `${models.asr}${models.asrFallback ? ' (fallback: Scribe v2 failed)' : ''} · ${usage.audioMinutes.toFixed(2)} min${usage.asrAttempts > 1 ? ` · ${usage.asrAttempts} attempts` : ''}`,
+      usd(cost.asrUsd),
+    ],
     [
       'Reasoning',
       `${models.llm} · ${usage.llmPromptTokens.toLocaleString('en-US')} in / ${usage.llmCompletionTokens.toLocaleString('en-US')} out tokens · ${usage.llmCalls} call${usage.llmCalls === 1 ? '' : 's'}`,
@@ -25,7 +30,7 @@ export function CostBreakdown({ metrics }: { metrics: Metrics }) {
     ],
     ['Retries', usage.retries ? `${usage.retries} (included above)` : 'none', '—'],
     ['Speech synthesis', 'not used', '—'],
-    ['Paid intermediaries', 'none: Workers AI is called directly', '—'],
+    ['Paid intermediaries', `none: ${providers} ${providers.includes(' and ') ? 'are' : 'is'} called directly`, '—'],
   ];
   return (
     <div>
@@ -50,7 +55,7 @@ export function CostBreakdown({ metrics }: { metrics: Metrics }) {
         </tbody>
       </table>
       <p className="mt-4 text-caption text-subtle">
-        Workers AI list prices checked {cost.pricesCheckedOn}; the free daily allowance is ignored. Hosting is separate (Workers Paid, $5 a month).
+        {providers} list prices checked {cost.pricesCheckedOn}; free allowances are ignored. Hosting is separate (Workers Paid, $5 a month).
         Server time {seconds(timings.totalMs)}: recognition {seconds(timings.asrMs)}, reasoning {seconds(timings.extractMs)}, checks {seconds(timings.verifyMs)}.
       </p>
     </div>

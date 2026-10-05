@@ -1,0 +1,829 @@
+{
+  "version": 1,
+  "id": "03ff16a8-ce2b-4d43-acda-41bcdd53296d",
+  "createdAt": "2026-10-05T21:01:38.371Z",
+  "fileName": "T7-seven-voices.wav",
+  "durationSec": 42.09,
+  "outcome": "decline",
+  "decline": {
+    "reason": "too_many_voices",
+    "message": "More than two voices were detected. This prototype supports conversations between two people."
+  },
+  "speakers": [
+    {
+      "id": "S1",
+      "name": null,
+      "label": "Speaker 1",
+      "words": 36,
+      "intro": null
+    },
+    {
+      "id": "S2",
+      "name": null,
+      "label": "Speaker 2",
+      "words": 14,
+      "intro": null
+    },
+    {
+      "id": "S3",
+      "name": null,
+      "label": "Speaker 3",
+      "words": 13,
+      "intro": null
+    },
+    {
+      "id": "S4",
+      "name": null,
+      "label": "Speaker 4",
+      "words": 10,
+      "intro": null
+    },
+    {
+      "id": "S5",
+      "name": null,
+      "label": "Speaker 5",
+      "words": 15,
+      "intro": null
+    },
+    {
+      "id": "S6",
+      "name": null,
+      "label": "Speaker 6",
+      "words": 14,
+      "intro": null
+    },
+    {
+      "id": "S7",
+      "name": null,
+      "label": "Speaker 7",
+      "words": 15,
+      "intro": null
+    }
+  ],
+  "recordingDate": null,
+  "turns": [
+    {
+      "id": "u1",
+      "speaker": "S1",
+      "start": 0.52,
+      "end": 5.64,
+      "text": "Morning, everyone. I'm Anna, the project manager. Quick round of names for the new client team.",
+      "words": [
+        {
+          "text": "Morning,",
+          "start": 0.52,
+          "end": 0.76
+        },
+        {
+          "text": "everyone.",
+          "start": 0.84,
+          "end": 1.3
+        },
+        {
+          "text": "I'm",
+          "start": 1.58,
+          "end": 1.74
+        },
+        {
+          "text": "Anna,",
+          "start": 1.82,
+          "end": 2.08
+        },
+        {
+          "text": "the",
+          "start": 2.16,
+          "end": 2.24
+        },
+        {
+          "text": "project",
+          "start": 2.28,
+          "end": 2.62
+        },
+        {
+          "text": "manager.",
+          "start": 2.7,
+          "end": 3.12
+        },
+        {
+          "text": "Quick",
+          "start": 3.48,
+          "end": 3.64
+        },
+        {
+          "text": "round",
+          "start": 3.7,
+          "end": 3.88
+        },
+        {
+          "text": "of",
+          "start": 3.92,
+          "end": 4
+        },
+        {
+          "text": "names",
+          "start": 4.04,
+          "end": 4.38
+        },
+        {
+          "text": "for",
+          "start": 4.42,
+          "end": 4.52
+        },
+        {
+          "text": "the",
+          "start": 4.56,
+          "end": 4.64
+        },
+        {
+          "text": "new",
+          "start": 4.68,
+          "end": 4.78
+        },
+        {
+          "text": "client",
+          "start": 4.88,
+          "end": 5.26
+        },
+        {
+          "text": "team.",
+          "start": 5.32,
+          "end": 5.64
+        }
+      ]
+    },
+    {
+      "id": "u2",
+      "speaker": "S2",
+      "start": 6.28,
+      "end": 7.9,
+      "text": "I'm Mark. I handle the back end.",
+      "words": [
+        {
+          "text": "I'm",
+          "start": 6.28,
+          "end": 6.36
+        },
+        {
+          "text": "Mark.",
+          "start": 6.4,
+          "end": 6.64
+        },
+        {
+          "text": "I",
+          "start": 7.04,
+          "end": 7.06
+        },
+        {
+          "text": "handle",
+          "start": 7.1,
+          "end": 7.3
+        },
+        {
+          "text": "the",
+          "start": 7.34,
+          "end": 7.42
+        },
+        {
+          "text": "back",
+          "start": 7.46,
+          "end": 7.68
+        },
+        {
+          "text": "end.",
+          "start": 7.72,
+          "end": 7.9
+        }
+      ]
+    },
+    {
+      "id": "u3",
+      "speaker": "S3",
+      "start": 8.54,
+      "end": 9.86,
+      "text": "Lena here. I do the design.",
+      "words": [
+        {
+          "text": "Lena",
+          "start": 8.54,
+          "end": 8.76
+        },
+        {
+          "text": "here.",
+          "start": 8.8,
+          "end": 8.98
+        },
+        {
+          "text": "I",
+          "start": 9.1,
+          "end": 9.16
+        },
+        {
+          "text": "do",
+          "start": 9.18,
+          "end": 9.28
+        },
+        {
+          "text": "the",
+          "start": 9.3,
+          "end": 9.38
+        },
+        {
+          "text": "design.",
+          "start": 9.4,
+          "end": 9.86
+        }
+      ]
+    },
+    {
+      "id": "u4",
+      "speaker": "S4",
+      "start": 10.44,
+      "end": 11.98,
+      "text": "I'm George, quality assurance.",
+      "words": [
+        {
+          "text": "I'm",
+          "start": 10.44,
+          "end": 10.58
+        },
+        {
+          "text": "George,",
+          "start": 10.62,
+          "end": 10.92
+        },
+        {
+          "text": "quality",
+          "start": 11.1,
+          "end": 11.4
+        },
+        {
+          "text": "assurance.",
+          "start": 11.46,
+          "end": 11.98
+        }
+      ]
+    },
+    {
+      "id": "u5",
+      "speaker": "S5",
+      "start": 12.58,
+      "end": 13.76,
+      "text": "Hi, I'm Priya, front end.",
+      "words": [
+        {
+          "text": "Hi,",
+          "start": 12.58,
+          "end": 12.78
+        },
+        {
+          "text": "I'm",
+          "start": 12.86,
+          "end": 12.96
+        },
+        {
+          "text": "Priya,",
+          "start": 13,
+          "end": 13.18
+        },
+        {
+          "text": "front",
+          "start": 13.28,
+          "end": 13.46
+        },
+        {
+          "text": "end.",
+          "start": 13.56,
+          "end": 13.76
+        }
+      ]
+    },
+    {
+      "id": "u6",
+      "speaker": "S6",
+      "start": 14.32,
+      "end": 15.78,
+      "text": "Daniel, data and analytics.",
+      "words": [
+        {
+          "text": "Daniel,",
+          "start": 14.32,
+          "end": 14.6
+        },
+        {
+          "text": "data",
+          "start": 14.72,
+          "end": 15
+        },
+        {
+          "text": "and",
+          "start": 15.02,
+          "end": 15.12
+        },
+        {
+          "text": "analytics.",
+          "start": 15.18,
+          "end": 15.78
+        }
+      ]
+    },
+    {
+      "id": "u7",
+      "speaker": "S7",
+      "start": 16.4,
+      "end": 18.7,
+      "text": "And I'm Charlie. I look after the infrastructure.",
+      "words": [
+        {
+          "text": "And",
+          "start": 16.4,
+          "end": 16.48
+        },
+        {
+          "text": "I'm",
+          "start": 16.54,
+          "end": 16.64
+        },
+        {
+          "text": "Charlie.",
+          "start": 16.68,
+          "end": 17
+        },
+        {
+          "text": "I",
+          "start": 17.48,
+          "end": 17.52
+        },
+        {
+          "text": "look",
+          "start": 17.54,
+          "end": 17.66
+        },
+        {
+          "text": "after",
+          "start": 17.76,
+          "end": 17.94
+        },
+        {
+          "text": "the",
+          "start": 17.98,
+          "end": 18.04
+        },
+        {
+          "text": "infrastructure.",
+          "start": 18.08,
+          "end": 18.7
+        }
+      ]
+    },
+    {
+      "id": "u8",
+      "speaker": "S1",
+      "start": 19.28,
+      "end": 22.04,
+      "text": "Great. Mark, can you finish the payment API by Friday?",
+      "words": [
+        {
+          "text": "Great.",
+          "start": 19.28,
+          "end": 19.54
+        },
+        {
+          "text": "Mark,",
+          "start": 19.82,
+          "end": 20
+        },
+        {
+          "text": "can",
+          "start": 20.04,
+          "end": 20.16
+        },
+        {
+          "text": "you",
+          "start": 20.18,
+          "end": 20.28
+        },
+        {
+          "text": "finish",
+          "start": 20.32,
+          "end": 20.56
+        },
+        {
+          "text": "the",
+          "start": 20.58,
+          "end": 20.66
+        },
+        {
+          "text": "payment",
+          "start": 20.72,
+          "end": 20.96
+        },
+        {
+          "text": "API",
+          "start": 21.08,
+          "end": 21.44
+        },
+        {
+          "text": "by",
+          "start": 21.5,
+          "end": 21.66
+        },
+        {
+          "text": "Friday?",
+          "start": 21.68,
+          "end": 22.04
+        }
+      ]
+    },
+    {
+      "id": "u9",
+      "speaker": "S2",
+      "start": 22.68,
+      "end": 24.02,
+      "text": "Yes, I'll have it done by Friday.",
+      "words": [
+        {
+          "text": "Yes,",
+          "start": 22.68,
+          "end": 22.86
+        },
+        {
+          "text": "I'll",
+          "start": 22.92,
+          "end": 23.02
+        },
+        {
+          "text": "have",
+          "start": 23.06,
+          "end": 23.16
+        },
+        {
+          "text": "it",
+          "start": 23.18,
+          "end": 23.28
+        },
+        {
+          "text": "done",
+          "start": 23.3,
+          "end": 23.44
+        },
+        {
+          "text": "by",
+          "start": 23.48,
+          "end": 23.62
+        },
+        {
+          "text": "Friday.",
+          "start": 23.66,
+          "end": 24.02
+        }
+      ]
+    },
+    {
+      "id": "u10",
+      "speaker": "S4",
+      "start": 24.62,
+      "end": 25.82,
+      "text": "Then I'll test it on Monday.",
+      "words": [
+        {
+          "text": "Then",
+          "start": 24.62,
+          "end": 24.74
+        },
+        {
+          "text": "I'll",
+          "start": 24.76,
+          "end": 24.88
+        },
+        {
+          "text": "test",
+          "start": 24.92,
+          "end": 25.12
+        },
+        {
+          "text": "it",
+          "start": 25.16,
+          "end": 25.22
+        },
+        {
+          "text": "on",
+          "start": 25.26,
+          "end": 25.36
+        },
+        {
+          "text": "Monday.",
+          "start": 25.4,
+          "end": 25.82
+        }
+      ]
+    },
+    {
+      "id": "u11",
+      "speaker": "S5",
+      "start": 26.38,
+      "end": 29.14,
+      "text": "We could also redo the checkout page if there's time.",
+      "words": [
+        {
+          "text": "We",
+          "start": 26.38,
+          "end": 26.44
+        },
+        {
+          "text": "could",
+          "start": 26.48,
+          "end": 26.6
+        },
+        {
+          "text": "also",
+          "start": 26.68,
+          "end": 26.96
+        },
+        {
+          "text": "redo",
+          "start": 27,
+          "end": 27.26
+        },
+        {
+          "text": "the",
+          "start": 27.3,
+          "end": 27.38
+        },
+        {
+          "text": "checkout",
+          "start": 27.42,
+          "end": 27.76
+        },
+        {
+          "text": "page",
+          "start": 27.82,
+          "end": 28.12
+        },
+        {
+          "text": "if",
+          "start": 28.42,
+          "end": 28.52
+        },
+        {
+          "text": "there's",
+          "start": 28.56,
+          "end": 28.76
+        },
+        {
+          "text": "time.",
+          "start": 28.8,
+          "end": 29.14
+        }
+      ]
+    },
+    {
+      "id": "u12",
+      "speaker": "S1",
+      "start": 29.84,
+      "end": 31.34,
+      "text": "Let's leave that for the next release.",
+      "words": [
+        {
+          "text": "Let's",
+          "start": 29.84,
+          "end": 30.02
+        },
+        {
+          "text": "leave",
+          "start": 30.06,
+          "end": 30.2
+        },
+        {
+          "text": "that",
+          "start": 30.26,
+          "end": 30.38
+        },
+        {
+          "text": "for",
+          "start": 30.42,
+          "end": 30.5
+        },
+        {
+          "text": "the",
+          "start": 30.52,
+          "end": 30.6
+        },
+        {
+          "text": "next",
+          "start": 30.64,
+          "end": 30.86
+        },
+        {
+          "text": "release.",
+          "start": 30.9,
+          "end": 31.34
+        }
+      ]
+    },
+    {
+      "id": "u13",
+      "speaker": "S7",
+      "start": 31.94,
+      "end": 33.44,
+      "text": "I'll set up the staging server tomorrow.",
+      "words": [
+        {
+          "text": "I'll",
+          "start": 31.94,
+          "end": 32.04
+        },
+        {
+          "text": "set",
+          "start": 32.06,
+          "end": 32.18
+        },
+        {
+          "text": "up",
+          "start": 32.22,
+          "end": 32.28
+        },
+        {
+          "text": "the",
+          "start": 32.32,
+          "end": 32.38
+        },
+        {
+          "text": "staging",
+          "start": 32.46,
+          "end": 32.759
+        },
+        {
+          "text": "server",
+          "start": 32.86,
+          "end": 33.08
+        },
+        {
+          "text": "tomorrow.",
+          "start": 33.12,
+          "end": 33.44
+        }
+      ]
+    },
+    {
+      "id": "u14",
+      "speaker": "S6",
+      "start": 33.98,
+      "end": 37.12,
+      "text": "Does anyone know when the client wants the first report?",
+      "words": [
+        {
+          "text": "Does",
+          "start": 33.98,
+          "end": 34.12
+        },
+        {
+          "text": "anyone",
+          "start": 34.2,
+          "end": 34.54
+        },
+        {
+          "text": "know",
+          "start": 34.6,
+          "end": 34.84
+        },
+        {
+          "text": "when",
+          "start": 35.22,
+          "end": 35.32
+        },
+        {
+          "text": "the",
+          "start": 35.36,
+          "end": 35.44
+        },
+        {
+          "text": "client",
+          "start": 35.5,
+          "end": 35.88
+        },
+        {
+          "text": "wants",
+          "start": 35.94,
+          "end": 36.16
+        },
+        {
+          "text": "the",
+          "start": 36.2,
+          "end": 36.32
+        },
+        {
+          "text": "first",
+          "start": 36.36,
+          "end": 36.62
+        },
+        {
+          "text": "report?",
+          "start": 36.68,
+          "end": 37.12
+        }
+      ]
+    },
+    {
+      "id": "u15",
+      "speaker": "S3",
+      "start": 37.76,
+      "end": 39.84,
+      "text": "No idea. Nobody has asked them yet.",
+      "words": [
+        {
+          "text": "No",
+          "start": 37.76,
+          "end": 37.88
+        },
+        {
+          "text": "idea.",
+          "start": 37.96,
+          "end": 38.38
+        },
+        {
+          "text": "Nobody",
+          "start": 38.68,
+          "end": 38.96
+        },
+        {
+          "text": "has",
+          "start": 38.98,
+          "end": 39.08
+        },
+        {
+          "text": "asked",
+          "start": 39.16,
+          "end": 39.38
+        },
+        {
+          "text": "them",
+          "start": 39.42,
+          "end": 39.54
+        },
+        {
+          "text": "yet.",
+          "start": 39.6,
+          "end": 39.84
+        }
+      ]
+    },
+    {
+      "id": "u16",
+      "speaker": "S1",
+      "start": 40.44,
+      "end": 41.42,
+      "text": "Okay, thanks everyone.",
+      "words": [
+        {
+          "text": "Okay,",
+          "start": 40.44,
+          "end": 40.66
+        },
+        {
+          "text": "thanks",
+          "start": 40.78,
+          "end": 41
+        },
+        {
+          "text": "everyone.",
+          "start": 41.06,
+          "end": 41.42
+        }
+      ]
+    }
+  ],
+  "items": [],
+  "dropped": [],
+  "clarifications": [],
+  "metrics": {
+    "models": {
+      "asr": "elevenlabs/scribe_v2",
+      "asrFallback": false,
+      "llm": "@cf/openai/gpt-oss-120b",
+      "reasoning": "low"
+    },
+    "timings": {
+      "asrMs": 2900,
+      "extractMs": 0,
+      "verifyMs": 0,
+      "totalMs": 2901
+    },
+    "usage": {
+      "audioMinutes": 0.701,
+      "asrAttempts": 1,
+      "asrNeurons": 0,
+      "llmCalls": 0,
+      "llmPromptTokens": 0,
+      "llmCompletionTokens": 0,
+      "llmNeurons": 0,
+      "retries": 0
+    },
+    "cost": {
+      "asrUsd": 0.002572,
+      "llmUsd": 0,
+      "totalUsd": 0.002572,
+      "perAudioMinuteUsd": 0.003667,
+      "pricesCheckedOn": "2026-10-05"
+    }
+  }
+}

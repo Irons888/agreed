@@ -70,7 +70,8 @@ export type Clarification =
 export type DeclineReason = 'not_wav' | 'too_long' | 'too_short' | 'no_speech' | 'one_voice' | 'too_many_voices';
 
 export type Metrics = {
-  models: { asr: string; llm: string; reasoning: string };
+  /** `asrFallback`: the preferred recognition failed and Nova-3 produced the transcript. */
+  models: { asr: string; asrFallback?: boolean; llm: string; reasoning: string };
   timings: { asrMs: number; extractMs: number; verifyMs: number; totalMs: number };
   usage: {
     audioMinutes: number;

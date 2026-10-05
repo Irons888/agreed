@@ -8,7 +8,7 @@ export type StepState = { status: 'pending' | 'active' | 'done' | 'error'; ms?: 
 
 export const STEPS: { key: StepKey; label: string; detail: string }[] = [
   { key: 'prepare', label: 'Read and upload the audio', detail: 'Converted in your browser to 16 kHz mono' },
-  { key: 'transcribe', label: 'Transcribe and tell the speakers apart', detail: 'Deepgram Nova-3 on Workers AI' },
+  { key: 'transcribe', label: 'Transcribe and tell the speakers apart', detail: 'ElevenLabs Scribe v2' },
   { key: 'extract', label: 'Find commitments and their final state', detail: 'gpt-oss-120b on Workers AI' },
   { key: 'verify', label: 'Check every quote against the transcript', detail: 'Plain code, no model' },
 ];

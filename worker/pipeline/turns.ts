@@ -3,8 +3,8 @@ import type { Turn, Word } from '../types';
 const MAX_PAUSE_IN_TURN = 1.5;
 
 /**
- * Builds speaker turns from word-level diarization. Deepgram's own utterances sometimes glue
- * two people together, while its per-word speakers are reliable, so turns are rebuilt here.
+ * Builds speaker turns from word-level diarization. Recognition's own utterances can glue two people
+ * together (Deepgram's did), while per-word speakers are reliable, so turns are rebuilt here.
  * Tiny clusters (a few stray words) are treated as noise, not as an extra person.
  */
 export function buildTurns(words: Word[]): { turns: Turn[]; voices: { id: string; words: number }[] } {

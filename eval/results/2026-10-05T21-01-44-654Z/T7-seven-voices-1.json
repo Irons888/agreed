@@ -1,0 +1,652 @@
+{
+  "version": 1,
+  "id": "5a844966-83d7-4a6f-9440-db8ae0e7f334",
+  "createdAt": "2026-10-05T21:01:46.835Z",
+  "fileName": "T7-seven-voices.wav",
+  "durationSec": 42.09,
+  "outcome": "decline",
+  "decline": {
+    "reason": "one_voice",
+    "message": "Only one voice was detected. This prototype is built for conversations between two people."
+  },
+  "speakers": [
+    {
+      "id": "S1",
+      "name": null,
+      "label": "Speaker 1",
+      "words": 117,
+      "intro": null
+    }
+  ],
+  "recordingDate": null,
+  "turns": [
+    {
+      "id": "u1",
+      "speaker": "S1",
+      "start": 0.24,
+      "end": 41.44075,
+      "text": "Morning, everyone. I'm Anna, the project manager. Quick round of names for the new client team. I'm Mark. I handle the back end. Lina here. I do the design. I'm George. Quality assurance. Hi. I'm Priya front end. Daniel Data and Analytics. And I'm Charlie. I look after the infrastructure. Great. Mark, can you finish the payment API by Friday? Yes. I'll have it done by Friday. Then I'll test it on Monday. We could also redo the checkout page if there's time. Let's leave that for the next release. I'll set up the staging server tomorrow. Does anyone know when the client wants the first report? No idea. Nobody has asked them yet. Okay. Thanks, everyone.",
+      "words": [
+        {
+          "text": "Morning,",
+          "start": 0.24,
+          "end": 0.96
+        },
+        {
+          "text": "everyone.",
+          "start": 0.96,
+          "end": 1.4399999
+        },
+        {
+          "text": "I'm",
+          "start": 1.4399999,
+          "end": 1.76
+        },
+        {
+          "text": "Anna,",
+          "start": 1.76,
+          "end": 2.24
+        },
+        {
+          "text": "the",
+          "start": 2.24,
+          "end": 2.32
+        },
+        {
+          "text": "project",
+          "start": 2.32,
+          "end": 2.6399999
+        },
+        {
+          "text": "manager.",
+          "start": 2.6399999,
+          "end": 3.4399998
+        },
+        {
+          "text": "Quick",
+          "start": 3.4399998,
+          "end": 3.6799998
+        },
+        {
+          "text": "round",
+          "start": 3.6799998,
+          "end": 3.9199998
+        },
+        {
+          "text": "of",
+          "start": 3.9199998,
+          "end": 4.08
+        },
+        {
+          "text": "names",
+          "start": 4.08,
+          "end": 4.3199997
+        },
+        {
+          "text": "for",
+          "start": 4.3199997,
+          "end": 4.56
+        },
+        {
+          "text": "the",
+          "start": 4.56,
+          "end": 4.72
+        },
+        {
+          "text": "new",
+          "start": 4.72,
+          "end": 4.88
+        },
+        {
+          "text": "client",
+          "start": 4.88,
+          "end": 5.2799997
+        },
+        {
+          "text": "team.",
+          "start": 5.2799997,
+          "end": 5.92
+        },
+        {
+          "text": "I'm",
+          "start": 6.16,
+          "end": 6.48
+        },
+        {
+          "text": "Mark.",
+          "start": 6.48,
+          "end": 6.8799996
+        },
+        {
+          "text": "I",
+          "start": 6.8799996,
+          "end": 7.04
+        },
+        {
+          "text": "handle",
+          "start": 7.04,
+          "end": 7.3599997
+        },
+        {
+          "text": "the",
+          "start": 7.3599997,
+          "end": 7.52
+        },
+        {
+          "text": "back",
+          "start": 7.52,
+          "end": 7.68
+        },
+        {
+          "text": "end.",
+          "start": 7.68,
+          "end": 8.24
+        },
+        {
+          "text": "Lina",
+          "start": 8.4,
+          "end": 8.8
+        },
+        {
+          "text": "here.",
+          "start": 8.8,
+          "end": 9.12
+        },
+        {
+          "text": "I",
+          "start": 9.12,
+          "end": 9.2
+        },
+        {
+          "text": "do",
+          "start": 9.2,
+          "end": 9.36
+        },
+        {
+          "text": "the",
+          "start": 9.36,
+          "end": 9.5199995
+        },
+        {
+          "text": "design.",
+          "start": 9.5199995,
+          "end": 10.16
+        },
+        {
+          "text": "I'm",
+          "start": 10.24,
+          "end": 10.639999
+        },
+        {
+          "text": "George.",
+          "start": 10.639999,
+          "end": 11.12
+        },
+        {
+          "text": "Quality",
+          "start": 11.12,
+          "end": 11.44
+        },
+        {
+          "text": "assurance.",
+          "start": 11.44,
+          "end": 11.92
+        },
+        {
+          "text": "Hi.",
+          "start": 12.385,
+          "end": 12.865001
+        },
+        {
+          "text": "I'm",
+          "start": 12.865001,
+          "end": 13.025001
+        },
+        {
+          "text": "Priya",
+          "start": 13.025001,
+          "end": 13.265
+        },
+        {
+          "text": "front",
+          "start": 13.265,
+          "end": 13.505
+        },
+        {
+          "text": "end.",
+          "start": 13.505,
+          "end": 14.065001
+        },
+        {
+          "text": "Daniel",
+          "start": 14.225,
+          "end": 14.625
+        },
+        {
+          "text": "Data",
+          "start": 14.625,
+          "end": 15.025001
+        },
+        {
+          "text": "and",
+          "start": 15.025001,
+          "end": 15.185
+        },
+        {
+          "text": "Analytics.",
+          "start": 15.185,
+          "end": 16.065
+        },
+        {
+          "text": "And",
+          "start": 16.305,
+          "end": 16.465
+        },
+        {
+          "text": "I'm",
+          "start": 16.465,
+          "end": 16.705
+        },
+        {
+          "text": "Charlie.",
+          "start": 16.705,
+          "end": 17.345
+        },
+        {
+          "text": "I",
+          "start": 17.345001,
+          "end": 17.505001
+        },
+        {
+          "text": "look",
+          "start": 17.505001,
+          "end": 17.665
+        },
+        {
+          "text": "after",
+          "start": 17.665,
+          "end": 17.985
+        },
+        {
+          "text": "the",
+          "start": 17.985,
+          "end": 18.145
+        },
+        {
+          "text": "infrastructure.",
+          "start": 18.145,
+          "end": 18.945
+        },
+        {
+          "text": "Great.",
+          "start": 19.185001,
+          "end": 19.745
+        },
+        {
+          "text": "Mark,",
+          "start": 19.745,
+          "end": 20.065
+        },
+        {
+          "text": "can",
+          "start": 20.065,
+          "end": 20.225
+        },
+        {
+          "text": "you",
+          "start": 20.225,
+          "end": 20.305
+        },
+        {
+          "text": "finish",
+          "start": 20.305,
+          "end": 20.545
+        },
+        {
+          "text": "the",
+          "start": 20.545,
+          "end": 20.705
+        },
+        {
+          "text": "payment",
+          "start": 20.705,
+          "end": 21.025002
+        },
+        {
+          "text": "API",
+          "start": 21.025002,
+          "end": 21.505001
+        },
+        {
+          "text": "by",
+          "start": 21.505001,
+          "end": 21.744999
+        },
+        {
+          "text": "Friday?",
+          "start": 21.744999,
+          "end": 22.305
+        },
+        {
+          "text": "Yes.",
+          "start": 22.545,
+          "end": 22.945
+        },
+        {
+          "text": "I'll",
+          "start": 22.945,
+          "end": 23.105
+        },
+        {
+          "text": "have",
+          "start": 23.105,
+          "end": 23.185001
+        },
+        {
+          "text": "it",
+          "start": 23.185001,
+          "end": 23.345001
+        },
+        {
+          "text": "done",
+          "start": 23.345001,
+          "end": 23.505001
+        },
+        {
+          "text": "by",
+          "start": 23.505001,
+          "end": 23.744999
+        },
+        {
+          "text": "Friday.",
+          "start": 23.744999,
+          "end": 23.985
+        },
+        {
+          "text": "Then",
+          "start": 24.48,
+          "end": 24.72
+        },
+        {
+          "text": "I'll",
+          "start": 24.72,
+          "end": 24.96
+        },
+        {
+          "text": "test",
+          "start": 24.96,
+          "end": 25.119999
+        },
+        {
+          "text": "it",
+          "start": 25.119999,
+          "end": 25.279999
+        },
+        {
+          "text": "on",
+          "start": 25.279999,
+          "end": 25.44
+        },
+        {
+          "text": "Monday.",
+          "start": 25.44,
+          "end": 26.08
+        },
+        {
+          "text": "We",
+          "start": 26.32,
+          "end": 26.48
+        },
+        {
+          "text": "could",
+          "start": 26.48,
+          "end": 26.72
+        },
+        {
+          "text": "also",
+          "start": 26.72,
+          "end": 26.96
+        },
+        {
+          "text": "redo",
+          "start": 26.96,
+          "end": 27.279999
+        },
+        {
+          "text": "the",
+          "start": 27.279999,
+          "end": 27.439999
+        },
+        {
+          "text": "checkout",
+          "start": 27.439999,
+          "end": 27.76
+        },
+        {
+          "text": "page",
+          "start": 27.76,
+          "end": 28.24
+        },
+        {
+          "text": "if",
+          "start": 28.24,
+          "end": 28.56
+        },
+        {
+          "text": "there's",
+          "start": 28.56,
+          "end": 28.8
+        },
+        {
+          "text": "time.",
+          "start": 28.8,
+          "end": 29.359999
+        },
+        {
+          "text": "Let's",
+          "start": 29.599998,
+          "end": 30.08
+        },
+        {
+          "text": "leave",
+          "start": 30.08,
+          "end": 30.24
+        },
+        {
+          "text": "that",
+          "start": 30.24,
+          "end": 30.4
+        },
+        {
+          "text": "for",
+          "start": 30.4,
+          "end": 30.56
+        },
+        {
+          "text": "the",
+          "start": 30.56,
+          "end": 30.72
+        },
+        {
+          "text": "next",
+          "start": 30.72,
+          "end": 30.96
+        },
+        {
+          "text": "release.",
+          "start": 30.96,
+          "end": 31.2
+        },
+        {
+          "text": "I'll",
+          "start": 31.76075,
+          "end": 32.08075
+        },
+        {
+          "text": "set",
+          "start": 32.08075,
+          "end": 32.24075
+        },
+        {
+          "text": "up",
+          "start": 32.24075,
+          "end": 32.32075
+        },
+        {
+          "text": "the",
+          "start": 32.32075,
+          "end": 32.48075
+        },
+        {
+          "text": "staging",
+          "start": 32.48075,
+          "end": 32.80075
+        },
+        {
+          "text": "server",
+          "start": 32.80075,
+          "end": 33.12075
+        },
+        {
+          "text": "tomorrow.",
+          "start": 33.12075,
+          "end": 33.76075
+        },
+        {
+          "text": "Does",
+          "start": 33.92075,
+          "end": 34.24075
+        },
+        {
+          "text": "anyone",
+          "start": 34.24075,
+          "end": 34.56075
+        },
+        {
+          "text": "know",
+          "start": 34.56075,
+          "end": 35.04075
+        },
+        {
+          "text": "when",
+          "start": 35.04075,
+          "end": 35.36075
+        },
+        {
+          "text": "the",
+          "start": 35.36075,
+          "end": 35.52075
+        },
+        {
+          "text": "client",
+          "start": 35.52075,
+          "end": 35.84075
+        },
+        {
+          "text": "wants",
+          "start": 35.84075,
+          "end": 36.16075
+        },
+        {
+          "text": "the",
+          "start": 36.16075,
+          "end": 36.40075
+        },
+        {
+          "text": "first",
+          "start": 36.40075,
+          "end": 36.64075
+        },
+        {
+          "text": "report?",
+          "start": 36.64075,
+          "end": 37.36075
+        },
+        {
+          "text": "No",
+          "start": 37.680748,
+          "end": 38.000748
+        },
+        {
+          "text": "idea.",
+          "start": 38.000748,
+          "end": 38.56075
+        },
+        {
+          "text": "Nobody",
+          "start": 38.56075,
+          "end": 38.96075
+        },
+        {
+          "text": "has",
+          "start": 38.96075,
+          "end": 39.20075
+        },
+        {
+          "text": "asked",
+          "start": 39.20075,
+          "end": 39.36075
+        },
+        {
+          "text": "them",
+          "start": 39.36075,
+          "end": 39.60075
+        },
+        {
+          "text": "yet.",
+          "start": 39.60075,
+          "end": 40.16075
+        },
+        {
+          "text": "Okay.",
+          "start": 40.32075,
+          "end": 40.72075
+        },
+        {
+          "text": "Thanks,",
+          "start": 40.72075,
+          "end": 41.20075
+        },
+        {
+          "text": "everyone.",
+          "start": 41.20075,
+          "end": 41.44075
+        }
+      ]
+    }
+  ],
+  "items": [],
+  "dropped": [],
+  "clarifications": [],
+  "metrics": {
+    "models": {
+      "asr": "@cf/deepgram/nova-3",
+      "asrFallback": false,
+      "llm": "@cf/openai/gpt-oss-120b",
+      "reasoning": "low"
+    },
+    "timings": {
+      "asrMs": 2130,
+      "extractMs": 0,
+      "verifyMs": 0,
+      "totalMs": 2130
+    },
+    "usage": {
+      "audioMinutes": 0.701,
+      "asrAttempts": 1,
+      "asrNeurons": 331.59,
+      "llmCalls": 0,
+      "llmPromptTokens": 0,
+      "llmCompletionTokens": 0,
+      "llmNeurons": 0,
+      "retries": 0
+    },
+    "cost": {
+      "asrUsd": 0.003647,
+      "llmUsd": 0,
+      "totalUsd": 0.003647,
+      "perAudioMinuteUsd": 0.0052,
+      "pricesCheckedOn": "2026-10-05"
+    }
+  }
+}

@@ -1,0 +1,345 @@
+{
+  "version": 1,
+  "id": "6b19269a-5928-417a-ae1c-e74d475a60ac",
+  "createdAt": "2026-10-05T21:09:45.880Z",
+  "fileName": "T5-three-voices.wav",
+  "durationSec": 15.94,
+  "outcome": "decline",
+  "decline": {
+    "reason": "too_many_voices",
+    "message": "More than two voices were detected. This prototype supports conversations between two people."
+  },
+  "speakers": [
+    {
+      "id": "S1",
+      "name": null,
+      "label": "Speaker 1",
+      "words": 19,
+      "intro": null
+    },
+    {
+      "id": "S2",
+      "name": null,
+      "label": "Speaker 2",
+      "words": 10,
+      "intro": null
+    },
+    {
+      "id": "S3",
+      "name": null,
+      "label": "Speaker 3",
+      "words": 13,
+      "intro": null
+    }
+  ],
+  "recordingDate": null,
+  "turns": [
+    {
+      "id": "u1",
+      "speaker": "S1",
+      "start": 0.46,
+      "end": 2.34,
+      "text": "Hi everyone, I'm Anna, the project manager.",
+      "words": [
+        {
+          "text": "Hi",
+          "start": 0.46,
+          "end": 0.58
+        },
+        {
+          "text": "everyone,",
+          "start": 0.62,
+          "end": 0.96
+        },
+        {
+          "text": "I'm",
+          "start": 1.04,
+          "end": 1.2
+        },
+        {
+          "text": "Anna,",
+          "start": 1.28,
+          "end": 1.44
+        },
+        {
+          "text": "the",
+          "start": 1.52,
+          "end": 1.6
+        },
+        {
+          "text": "project",
+          "start": 1.62,
+          "end": 1.9
+        },
+        {
+          "text": "manager.",
+          "start": 1.98,
+          "end": 2.34
+        }
+      ]
+    },
+    {
+      "id": "u2",
+      "speaker": "S2",
+      "start": 3.18,
+      "end": 3.84,
+      "text": "I'm Mark, backend.",
+      "words": [
+        {
+          "text": "I'm",
+          "start": 3.18,
+          "end": 3.26
+        },
+        {
+          "text": "Mark,",
+          "start": 3.3,
+          "end": 3.46
+        },
+        {
+          "text": "backend.",
+          "start": 3.54,
+          "end": 3.84
+        }
+      ]
+    },
+    {
+      "id": "u3",
+      "speaker": "S3",
+      "start": 4.44,
+      "end": 5.98,
+      "text": "And I'm Lena. I do the design.",
+      "words": [
+        {
+          "text": "And",
+          "start": 4.44,
+          "end": 4.54
+        },
+        {
+          "text": "I'm",
+          "start": 4.6,
+          "end": 4.74
+        },
+        {
+          "text": "Lena.",
+          "start": 4.78,
+          "end": 5.06
+        },
+        {
+          "text": "I",
+          "start": 5.16,
+          "end": 5.22
+        },
+        {
+          "text": "do",
+          "start": 5.26,
+          "end": 5.36
+        },
+        {
+          "text": "the",
+          "start": 5.4,
+          "end": 5.48
+        },
+        {
+          "text": "design.",
+          "start": 5.5,
+          "end": 5.98
+        }
+      ]
+    },
+    {
+      "id": "u4",
+      "speaker": "S1",
+      "start": 6.8,
+      "end": 9.04,
+      "text": "Lena, can you send the new mock-ups by Thursday?",
+      "words": [
+        {
+          "text": "Lena,",
+          "start": 6.8,
+          "end": 7.08
+        },
+        {
+          "text": "can",
+          "start": 7.2,
+          "end": 7.3
+        },
+        {
+          "text": "you",
+          "start": 7.34,
+          "end": 7.44
+        },
+        {
+          "text": "send",
+          "start": 7.48,
+          "end": 7.62
+        },
+        {
+          "text": "the",
+          "start": 7.64,
+          "end": 7.72
+        },
+        {
+          "text": "new",
+          "start": 7.76,
+          "end": 7.88
+        },
+        {
+          "text": "mock-ups",
+          "start": 7.94,
+          "end": 8.34
+        },
+        {
+          "text": "by",
+          "start": 8.38,
+          "end": 8.52
+        },
+        {
+          "text": "Thursday?",
+          "start": 8.54,
+          "end": 9.04
+        }
+      ]
+    },
+    {
+      "id": "u5",
+      "speaker": "S3",
+      "start": 9.66,
+      "end": 11.34,
+      "text": "Sure, I'll send them by Thursday.",
+      "words": [
+        {
+          "text": "Sure,",
+          "start": 9.66,
+          "end": 9.9
+        },
+        {
+          "text": "I'll",
+          "start": 9.98,
+          "end": 10.12
+        },
+        {
+          "text": "send",
+          "start": 10.18,
+          "end": 10.34
+        },
+        {
+          "text": "them",
+          "start": 10.38,
+          "end": 10.5
+        },
+        {
+          "text": "by",
+          "start": 10.54,
+          "end": 10.72
+        },
+        {
+          "text": "Thursday.",
+          "start": 10.74,
+          "end": 11.34
+        }
+      ]
+    },
+    {
+      "id": "u6",
+      "speaker": "S2",
+      "start": 11.92,
+      "end": 13.74,
+      "text": "And I'll review the API changes tomorrow.",
+      "words": [
+        {
+          "text": "And",
+          "start": 11.92,
+          "end": 12.02
+        },
+        {
+          "text": "I'll",
+          "start": 12.08,
+          "end": 12.2
+        },
+        {
+          "text": "review",
+          "start": 12.24,
+          "end": 12.5
+        },
+        {
+          "text": "the",
+          "start": 12.54,
+          "end": 12.6
+        },
+        {
+          "text": "API",
+          "start": 12.66,
+          "end": 13.04
+        },
+        {
+          "text": "changes",
+          "start": 13.08,
+          "end": 13.4
+        },
+        {
+          "text": "tomorrow.",
+          "start": 13.44,
+          "end": 13.74
+        }
+      ]
+    },
+    {
+      "id": "u7",
+      "speaker": "S1",
+      "start": 14.3,
+      "end": 15.2,
+      "text": "Great. Thanks both.",
+      "words": [
+        {
+          "text": "Great.",
+          "start": 14.3,
+          "end": 14.5
+        },
+        {
+          "text": "Thanks",
+          "start": 14.66,
+          "end": 14.84
+        },
+        {
+          "text": "both.",
+          "start": 14.92,
+          "end": 15.2
+        }
+      ]
+    }
+  ],
+  "items": [],
+  "dropped": [],
+  "clarifications": [],
+  "metrics": {
+    "models": {
+      "asr": "elevenlabs/scribe_v2",
+      "asrFallback": false,
+      "llm": "@cf/openai/gpt-oss-120b",
+      "reasoning": "low"
+    },
+    "timings": {
+      "asrMs": 1530,
+      "extractMs": 0,
+      "verifyMs": 0,
+      "totalMs": 1530
+    },
+    "usage": {
+      "audioMinutes": 0.266,
+      "asrAttempts": 1,
+      "asrNeurons": 0,
+      "llmCalls": 0,
+      "llmPromptTokens": 0,
+      "llmCompletionTokens": 0,
+      "llmNeurons": 0,
+      "retries": 0
+    },
+    "cost": {
+      "asrUsd": 0.000974,
+      "llmUsd": 0,
+      "totalUsd": 0.000974,
+      "perAudioMinuteUsd": 0.003667,
+      "pricesCheckedOn": "2026-10-05"
+    }
+  }
+}

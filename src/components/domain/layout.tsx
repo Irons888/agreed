@@ -76,7 +76,7 @@ export function Footer() {
           <a href="/storybook/" className="font-semibold hover:text-text">
             Design system
           </a>
-          <span>Deepgram Nova-3 · gpt-oss-120b · Workers AI</span>
+          <span>ElevenLabs Scribe v2 · gpt-oss-120b on Workers AI</span>
         </span>
       </div>
     </footer>

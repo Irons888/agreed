@@ -1,0 +1,125 @@
+{
+  "startedAt": "2026-10-05T21:01:35.395Z",
+  "base": "http://localhost:5173",
+  "runs": 1,
+  "reasoning": "low",
+  "model": "gpt-oss-120b",
+  "asr": "server default",
+  "cases": [
+    {
+      "case": "T7-seven-voices",
+      "outcome": "decline",
+      "runs": [
+        {
+          "run": 1,
+          "error": null,
+          "recovered": false,
+          "pass": true,
+          "included": "n/a",
+          "exclusionErrors": 0,
+          "failed": [],
+          "checks": 3,
+          "clientMs": 2899,
+          "transcriptMs": 2896,
+          "asr": "elevenlabs/scribe_v2",
+          "voicesHeard": 7,
+          "serverMs": {
+            "asrMs": 2900,
+            "extractMs": 0,
+            "verifyMs": 0,
+            "totalMs": 2901
+          },
+          "usage": {
+            "audioMinutes": 0.701,
+            "asrAttempts": 1,
+            "asrNeurons": 0,
+            "llmCalls": 0,
+            "llmPromptTokens": 0,
+            "llmCompletionTokens": 0,
+            "llmNeurons": 0,
+            "retries": 0
+          },
+          "cost": {
+            "asrUsd": 0.002572,
+            "llmUsd": 0,
+            "totalUsd": 0.002572,
+            "perAudioMinuteUsd": 0.003667,
+            "pricesCheckedOn": "2026-10-05"
+          },
+          "items": [],
+          "dropped": []
+        }
+      ]
+    },
+    {
+      "case": "T5-three-voices",
+      "outcome": "decline",
+      "runs": [
+        {
+          "run": 1,
+          "error": null,
+          "recovered": false,
+          "pass": true,
+          "included": "n/a",
+          "exclusionErrors": 0,
+          "failed": [],
+          "checks": 3,
+          "clientMs": 1764,
+          "transcriptMs": 1761,
+          "asr": "elevenlabs/scribe_v2",
+          "voicesHeard": 3,
+          "serverMs": {
+            "asrMs": 1763,
+            "extractMs": 0,
+            "verifyMs": 0,
+            "totalMs": 1763
+          },
+          "usage": {
+            "audioMinutes": 0.266,
+            "asrAttempts": 1,
+            "asrNeurons": 0,
+            "llmCalls": 0,
+            "llmPromptTokens": 0,
+            "llmCompletionTokens": 0,
+            "llmNeurons": 0,
+            "retries": 0
+          },
+          "cost": {
+            "asrUsd": 0.000974,
+            "llmUsd": 0,
+            "totalUsd": 0.000974,
+            "perAudioMinuteUsd": 0.003667,
+            "pricesCheckedOn": "2026-10-05"
+          },
+          "items": [],
+          "dropped": []
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "runs": 2,
+    "errors": 0,
+    "passed": 2,
+    "inclusion": "n/a",
+    "exclusionErrors": 0,
+    "stability": {
+      "T7-seven-voices": "1/1",
+      "T5-three-voices": "1/1"
+    },
+    "timeToResultMs": {
+      "p50": 1764,
+      "p90": 2899
+    },
+    "timeToTranscriptMs": {
+      "p50": 1761
+    },
+    "retries": 0,
+    "recoveredAfterDroppedConnection": 0,
+    "costPerRunUsd": 0.001773,
+    "costPerAudioMinuteUsd": 0.003667,
+    "asrUsed": [
+      "elevenlabs/scribe_v2"
+    ]
+  }
+}

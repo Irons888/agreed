@@ -6,6 +6,7 @@
 //   node eval/run.mjs --runs 5 --base https://…    5 runs per case against a deployed instance
 //   node eval/run.mjs --reasoning medium T1-main   one case with another reasoning level
 //   node eval/run.mjs --model gpt-oss-20b          compare another extraction model
+//   node eval/run.mjs --asr nova-3                 compare another speech recognition (default: the server's, Scribe v2)
 //
 // Writes eval/reports/<timestamp>.json and .md, eval/reports/latest.json, and every full result to eval/results/<timestamp>/.
 
@@ -28,6 +29,7 @@ const base = option('base', 'http://127.0.0.1:8787').replace(/\/$/, '');
 const runs = Number(option('runs', '1'));
 const reasoning = option('reasoning', 'low');
 const model = option('model', 'gpt-oss-120b');
+const asr = option('asr', '');
 const allCases = (await readdir(TESTSET, { withFileTypes: true }))
   .filter((d) => d.isDirectory() && /^T\d/.test(d.name))
   .map((d) => d.name)
@@ -53,7 +55,7 @@ async function runOnce({ name, audio }) {
   // The public API allows a few runs a minute per visitor; the eval waits instead of failing.
   for (let attempt = 0; ; attempt++) {
     try {
-      res = await fetch(`${base}/api/runs?reasoning=${reasoning}&model=${model}`, {
+      res = await fetch(`${base}/api/runs?reasoning=${reasoning}&model=${model}${asr ? `&asr=${asr}` : ''}`, {
         method: 'POST',
         body: audio,
         headers: { 'content-type': 'audio/wav', 'x-file-name': `${name}.wav` },
@@ -110,9 +112,6 @@ async function runOnce({ name, audio }) {
 
 // ---- scoring --------------------------------------------------------------
 
-// expected.json names the reason in plain terms; the API is more specific.
-const DECLINE_REASONS = { speaker_count: ['too_many_voices', 'one_voice'] };
-
 function score(expected, timeline, result) {
   const checks = [];
   const add = (item, check, ok, detail = '') => checks.push({ item, check, ok, detail });
@@ -120,8 +119,12 @@ function score(expected, timeline, result) {
 
   add('(outcome)', 'outcome', result.outcome === expected.outcome, `expected ${expected.outcome}, got ${result.outcome}`);
   if (expected.outcome === 'decline') {
-    const reasons = DECLINE_REASONS[expected.decline_reason] ?? [expected.decline_reason];
-    add('(outcome)', 'decline reason', reasons.includes(result.decline?.reason), `got ${result.decline?.reason}`);
+    // expected.json names the reason in plain terms. With more than two people in the timeline, only
+    // "too many voices" is the right reason: hearing one voice is a recognition failure, not a correct decline.
+    const people = new Set(timeline.lines.map((l) => l.speaker)).size;
+    const reasons = expected.decline_reason === 'speaker_count' ? [people > 2 ? 'too_many_voices' : 'one_voice'] : [expected.decline_reason];
+    const voices = result.speakers.length;
+    add('(outcome)', 'decline reason', reasons.includes(result.decline?.reason), `got ${result.decline?.reason}, ${voices} voice${voices === 1 ? '' : 's'} heard of ${people}`);
     add('(outcome)', 'no list', result.items.length === 0, `${result.items.length} items`);
     return checks;
   }
@@ -199,7 +202,7 @@ const percentile = (values, p) => {
 
 // ---- main -----------------------------------------------------------------
 
-const report = { startedAt: new Date().toISOString(), base, runs, reasoning, model, cases: [] };
+const report = { startedAt: new Date().toISOString(), base, runs, reasoning, model, asr: asr || 'server default', cases: [] };
 // Full results are kept next to the report: evidence for the notes and real fixtures for Storybook.
 const resultsDir = path.join(ROOT, 'eval', 'results', report.startedAt.replace(/[:.]/g, '-'));
 await mkdir(resultsDir, { recursive: true });
@@ -230,6 +233,8 @@ for (const name of cases) {
       checks: checks.length,
       clientMs: run.clientMs ?? null,
       transcriptMs: run.transcriptMs ?? null,
+      asr: m ? `${m.models.asr}${m.models.asrFallback ? ' (fallback)' : ''}` : null,
+      voicesHeard: run.result?.speakers.length ?? null,
       serverMs: m?.timings ?? null,
       usage: m?.usage ?? null,
       cost: m?.cost ?? null,
@@ -246,7 +251,8 @@ for (const name of cases) {
     const last = caseReport.runs.at(-1);
     console.log(
       `${name} #${i}: ${last.pass ? 'PASS' : 'FAIL'}  included ${last.included}  exclusion errors ${last.exclusionErrors ?? '-'}  ` +
-        `${last.clientMs ?? '-'} ms  $${last.cost?.totalUsd ?? '-'}${last.recovered ? '  (recovered after a dropped connection)' : ''}${last.error ? `  error: ${last.error}` : ''}`,
+        `${last.clientMs ?? '-'} ms  $${last.cost?.totalUsd ?? '-'}  ${last.voicesHeard ?? '-'} voices  ${last.asr ?? ''}` +
+        `${last.recovered ? '  (recovered after a dropped connection)' : ''}${last.error ? `  error: ${last.error}` : ''}`,
     );
     for (const f of last.failed) console.log(`    ✗ ${f.item} — ${f.check}: ${f.detail}`);
   }
@@ -276,6 +282,7 @@ report.summary = {
   recoveredAfterDroppedConnection: ok.filter((r) => r.recovered).length,
   costPerRunUsd: ok.length ? Math.round((totalUsd / ok.length) * 1e6) / 1e6 : null,
   costPerAudioMinuteUsd: audioMinutes ? Math.round((totalUsd / audioMinutes) * 1e6) / 1e6 : null,
+  asrUsed: [...new Set(ok.map((r) => r.asr).filter(Boolean))],
 };
 
 console.log('\nSummary:', JSON.stringify(report.summary, null, 2));
@@ -288,13 +295,14 @@ await writeFile(path.join(REPORTS, 'latest.json'), `${JSON.stringify(report, nul
 const md = [
   `# Eval ${report.startedAt}`,
   '',
-  `Base: ${base} · runs per case: ${runs} · model: ${model} · reasoning: ${reasoning}`,
+  `Base: ${base} · runs per case: ${runs} · recognition: ${report.summary.asrUsed.join(', ') || report.asr} · model: ${model} · reasoning: ${reasoning}`,
   '',
-  '| Case | Expected outcome | Passed runs | Included (last run) | Exclusion errors (all runs) | Time p50 |',
-  '|---|---|---|---|---|---|',
+  '| Case | Expected outcome | Passed runs | Included (last run) | Exclusion errors (all runs) | Voices heard | Time p50 |',
+  '|---|---|---|---|---|---|---|',
   ...report.cases.map((c) => {
     const ms = c.runs.map((r) => r.clientMs).filter(Boolean);
-    return `| ${c.case} | ${c.outcome} | ${c.runs.filter((r) => r.pass).length}/${c.runs.length} | ${c.runs.at(-1).included} | ${c.runs.reduce((s, r) => s + (r.exclusionErrors ?? 0), 0)} | ${percentile(ms, 50) ?? '-'} ms |`;
+    const voices = [...new Set(c.runs.map((r) => r.voicesHeard).filter((v) => v !== null))].join(', ') || '-';
+    return `| ${c.case} | ${c.outcome} | ${c.runs.filter((r) => r.pass).length}/${c.runs.length} | ${c.runs.at(-1).included} | ${c.runs.reduce((s, r) => s + (r.exclusionErrors ?? 0), 0)} | ${voices} | ${percentile(ms, 50) ?? '-'} ms |`;
   }),
   '',
   '## Summary',

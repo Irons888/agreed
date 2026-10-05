@@ -1,6 +1,6 @@
 import type { Clarification, DeclineReason, Metrics, Result, RunEvent, Speaker, Turn } from '../types';
 import { readWav } from '../lib/wav';
-import { ASR_MODEL, transcribe } from './asr';
+import { ASR_MODELS, transcribe, type AsrName } from './asr';
 import { buildTurns } from './turns';
 import { LLM_MODELS, extract, type LlmModelName, type LlmUsage } from './extract';
 import { verifyItems, verifyRecordingDate, verifySpeakers } from './verify';
@@ -8,15 +8,14 @@ import { costOf } from './cost';
 
 export const MAX_SECONDS = 180;
 
-export type RunInput = { id: string; wav: Uint8Array; fileName: string | null; reasoning: string; model: LlmModelName };
+export type RunInput = { id: string; wav: Uint8Array; fileName: string | null; reasoning: string; model: LlmModelName; asr: AsrName };
 
 const DECLINE_MESSAGES: Record<DeclineReason, string> = {
   not_wav: 'The upload is not a readable WAV recording.',
   too_long: 'The recording is longer than 3 minutes, the limit of this prototype.',
   too_short: 'The recording is too short to contain a discussion.',
   no_speech: 'No speech was detected in the recording.',
-  one_voice:
-    'Only one voice was detected. Telling two people apart needs about 30 seconds of back-and-forth, and this prototype is built for two-person conversations.',
+  one_voice: 'Only one voice was detected. This prototype is built for conversations between two people.',
   too_many_voices: 'More than two voices were detected. This prototype supports conversations between two people.',
 };
 
@@ -24,14 +23,17 @@ export async function runPipeline(env: Env, input: RunInput, emit: (event: RunEv
   const started = Date.now();
   const llmUsage: LlmUsage = { calls: 0, promptTokens: 0, completionTokens: 0, neurons: 0 };
   const timings = { asrMs: 0, extractMs: 0, verifyMs: 0, totalMs: 0 };
+  let asr: AsrName = input.asr;
+  let asrFallback = false;
   let asrAttempts = 0;
+  let asrCalls = 0;
   let retries = 0;
   let audioMinutes = 0;
 
   const metrics = (): Metrics => {
-    const cost = costOf(audioMinutes, asrAttempts, llmUsage, input.model);
+    const cost = costOf(audioMinutes, asr, asrCalls, llmUsage, input.model);
     return {
-      models: { asr: ASR_MODEL, llm: LLM_MODELS[input.model], reasoning: input.reasoning },
+      models: { asr: ASR_MODELS[asr], asrFallback, llm: LLM_MODELS[input.model], reasoning: input.reasoning },
       timings: { ...timings, totalMs: Date.now() - started },
       usage: {
         audioMinutes: Math.round(audioMinutes * 1000) / 1000,
@@ -84,13 +86,13 @@ export async function runPipeline(env: Env, input: RunInput, emit: (event: RunEv
   // 1. Speech to text with a speaker on every word
   emit({ type: 'stage', stage: 'transcribe', status: 'start' });
   let t = Date.now();
-  const asr = await transcribe(env.AI, input.wav);
-  asrAttempts = asr.attempts;
-  retries += asr.attempts - 1;
+  const transcription = await transcribe(env, input.wav, input.asr);
+  ({ asr, attempts: asrAttempts, billedCalls: asrCalls, fallback: asrFallback } = transcription);
+  retries += asrAttempts - 1;
   timings.asrMs = Date.now() - t;
   emit({ type: 'stage', stage: 'transcribe', status: 'done', ms: timings.asrMs });
 
-  const { turns, voices } = buildTurns(asr.words);
+  const { turns, voices } = buildTurns(transcription.words);
   const unnamed = voices.map((v) => ({ id: v.id, name: null, label: `Speaker ${v.id.slice(1)}`, words: v.words, intro: null }));
   emit({ type: 'transcript', speakers: unnamed, turns });
   if (!turns.length) return decline('no_speech', wav.duration);

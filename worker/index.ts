@@ -1,6 +1,7 @@
 import type { RunEvent } from './types';
 import { MAX_SECONDS, runPipeline } from './pipeline/run';
 import { DEFAULT_LLM, LLM_MODELS, type LlmModelName } from './pipeline/extract';
+import { ASR_MODELS, defaultAsr, type AsrName } from './pipeline/asr';
 import { RETENTION_DAYS, deleteRun, isRunId, readAudio, readResult, saveAudio, saveResult, withinDailyCap } from './storage';
 
 const MAX_UPLOAD_BYTES = 8 * 1024 * 1024; // 3 minutes of 16 kHz mono WAV is about 5.8 MB
@@ -25,7 +26,10 @@ async function createRun(request: Request, env: Env, ctx: ExecutionContext): Pro
   const asked = url.searchParams.get('reasoning') ?? '';
   const reasoning = REASONING.has(asked) ? asked : 'low';
   const requested = url.searchParams.get('model') ?? '';
-  const model: LlmModelName = requested in LLM_MODELS ? (requested as LlmModelName) : DEFAULT_LLM;
+  // Object.hasOwn, not `in`: "?model=toString" must not pass as a model name.
+  const model: LlmModelName = Object.hasOwn(LLM_MODELS, requested) ? (requested as LlmModelName) : DEFAULT_LLM;
+  const askedAsr = url.searchParams.get('asr') ?? '';
+  const asr: AsrName = Object.hasOwn(ASR_MODELS, askedAsr) ? (askedAsr as AsrName) : defaultAsr(env);
   const rawName = request.headers.get('x-file-name');
   const fileName = rawName ? decodeURIComponent(rawName).slice(0, 200) : null;
   const id = crypto.randomUUID();
@@ -42,7 +46,7 @@ async function createRun(request: Request, env: Env, ctx: ExecutionContext): Pro
     (async () => {
       try {
         const stored = saveAudio(env.RUNS, id, wav);
-        const result = await runPipeline(env, { id, wav, fileName, reasoning, model }, emit);
+        const result = await runPipeline(env, { id, wav, fileName, reasoning, model, asr }, emit);
         await Promise.all([stored, saveResult(env.RUNS, result)]);
         emit({ type: 'result', result });
       } catch (err) {

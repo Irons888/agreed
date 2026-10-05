@@ -112,3 +112,45 @@ Times are local (EEST).
   - **Tasks**: everything agreed across those recordings, grouped by person (“who promised what”), then items to check and open questions. A line opens the result at that item and marks it.
 - No accounts, so the history is kept in the browser: a short summary of each result plus the answers to clarifications, which are re-applied when the result is opened again. This also fixes answers being lost on reload.
 - A live T1 run showed a weak main quote: the model had tagged Anna's “Perfect. Thanks.” as an acceptance, and it became the quote on the card. The main quote of a task is now the latest agreement that says the final deadline, then the owner's own words.
+
+### T7: seven voices, and a better speech recognition
+
+- Asked for a test far outside the scope: T7, a stand-up with seven people, 42 s, 16 lines of 2–5 s each. The expected result was committed before the first run: decline, no tasks.
+- First run, Nova-3: no tasks, as expected, but the wrong reason. Nova-3 put all 117 words on one speaker, so the product said “Only one voice was detected” and gave a hint about 30 seconds of conversation.
+- Cuts of the same recording, sent straight to Nova-3:
+
+  | Cut | Length | Voices heard |
+  |---|---|---|
+  | Anna and Mark | 18 s | 1 |
+  | Anna, Mark and Lena | 23 s | 1 |
+  | All seven (T7) | 42 s | 1 |
+  | All seven, every line said three times | 2:10 | 7 |
+
+  The problem is how long each person speaks, not how many people there are. The same weakness is why T3 and T4 were lengthened to 40 s at the start.
+- Is Nova-3 the best choice? Published diarization comparisons put it behind. On AssemblyAI's mixed real-world set (run by a vendor; cpWER, lower is better): AssemblyAI 30.2, ElevenLabs Scribe v2 35.3, Gladia 36.9, Nova-3 37.9.
+- Scribe v2 on the same files, called directly:
+  - T7: seven voices, and all 16 lines on the right person;
+  - the 18 s cut: two voices; the 23 s cut: three;
+  - T1: two voices, and 0 of 210 words on the wrong person against `timeline.json`; T5: three voices, 0 of 42.
+  - About 2–3 s per file.
+- Price: $0.22 per audio hour ($0.0037 a minute), against $0.0052 a minute for Nova-3 on Workers AI. Better and cheaper, so recognition switched:
+  - Scribe v2 with `language_code: en`, `diarize`, word timestamps and no sound tags, so “(laughs)” cannot end up inside a quote;
+  - if Scribe fails, Nova-3 on Workers AI takes over and the result records which one ran;
+  - without an ElevenLabs key the app uses Nova-3, so the repository still runs with only a Cloudflare account;
+  - `?asr=nova-3` on the API and `--asr nova-3` in the eval keep the old path for comparison.
+- The eval now checks the decline reason strictly. With more than two people in the timeline, only “more than two voices” passes. Before, any speaker-count decline passed, which is how Nova-3's wrong reason got through. Under the new rule Nova-3 fails T7 and still passes T5 (`eval/reports/2026-10-05T21-01-44-654Z.md`).
+- Eval with Scribe v2, 5 runs per case, the Worker running locally against the same hosted models:
+  - **35/35 runs passed**, T7 included; 130/130 items with the right status, 0 unsupported items, 0 retries;
+  - time to result p50 19.8 s, p90 33.2 s; transcript after 2.8 s instead of 1.2 s;
+  - $0.0053 per audio minute instead of $0.0071.
+- The fallback was tested with mocked responses: a rejected key goes straight to Nova-3; a server error, a rate limit or a timeout gets one more try first.
+- Small fix found on the way: `?model=` and `?asr=` were checked with `in`, so `?model=toString` passed as a model name. Now `Object.hasOwn`.
+- How long Scribe v2 takes, called directly, 3 calls each:
+  - T1 (1:11) sent from this machine: 2.9–3.3 s; fetched by ElevenLabs from the Cloudflare demo: 2.4–3.1 s. The upload is a small part, so the deployment will not be noticeably faster;
+  - a 3-minute recording, the limit: 5.1–6.9 s;
+  - Nova-3 took 1.8 s for T1.
+- How much speech a voice needs, on clips cut from T1 and T7:
+  - Mark's single “Okay.” (0.4 s) next to Anna was a separate voice, even in a 4-second clip; so were every other Mark line from 0.6 to 3.1 s;
+  - voices of the same gender, one line of 1.3–1.8 s each: two men, two women, and four men in a 10-second clip were all told apart;
+  - for comparison, Nova-3 heard 18 s of Anna and Mark as one voice.
+  - The voices are synthetic and clean. Real calls with similar voices, noise or crosstalk may need more.

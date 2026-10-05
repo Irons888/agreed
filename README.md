@@ -23,7 +23,7 @@ Scope: English, two clearly distinguishable speakers, up to 3 minutes, no overla
 - **It asks or declines instead of guessing.**
   - Speakers who never say their names: it asks who is who.
   - Hedged agreements (“I'll try, no promises”): listed under *Needs your check*, not counted until you confirm.
-  - Three voices or a single voice: it declines and says why.
+  - Three or more voices, or a single voice: it declines and says why.
 
 ## Pages
 
@@ -37,20 +37,22 @@ Scope: English, two clearly distinguishable speakers, up to 3 minutes, no overla
 
 - Each item shows its title, owner, deadline and the one quote that decides it, with ▶. Every other quote, what it does (request, acceptance…) and the code checks are under *Details*.
 - Items that need your decision come right after the agreed tasks. Dropped proposals and cancelled tasks are folded under *Not counted*.
-- Time, cost, removed items and the raw JSON are folded at the bottom under *How this was checked*. The six test recordings, the eval and the brief's rules are on the Quality page.
+- Time, cost, removed items and the raw JSON are folded at the bottom under *How this was checked*. The test recordings, the eval and the brief's rules are on the Quality page.
 
 ## Measured
 
-Final eval: 5 runs per test recording on the live deployment.
+Latest eval: 5 runs per test recording with Scribe v2, the Worker running locally against the same hosted models.
 
 | | |
 |---|---|
-| Runs passed | **30 / 30** |
+| Runs passed | **35 / 35** |
 | Real items found with the right status | **130 / 130** |
 | Unsupported items added | **0** |
-| Time to the full verified result, p50 / p90 | **23.2 s / 31.5 s** |
-| Time to the transcript | **1.2 s** |
-| Variable cost | **$0.0071 per audio minute** at Workers AI list prices |
+| Time to the full verified result, p50 / p90 | **19.8 s / 33.2 s** |
+| Time to the transcript | **2.8 s** |
+| Variable cost | **$0.0053 per audio minute** at ElevenLabs and Workers AI list prices |
+
+With Nova-3 the same pipeline passed T1–T6 (30/30 on the live deployment, $0.0071 per audio minute) but heard T7's seven people as one voice.
 
 Hosting is separate: Workers Paid, $5 a month.
 
@@ -61,12 +63,13 @@ The weak spot is the time to the full result: nearly all of it is the extraction
 ## How it works
 
 ```
-Browser                                   Cloudflare Worker                         Workers AI
+Browser                                   Cloudflare Worker                         Models
 any audio/video → 16 kHz mono WAV ──────▶ store in R2 (30-day lifecycle)
-length checked before upload              1. speech → words with speakers ───────▶ Deepgram Nova-3 (diarize)
+length checked before upload              1. speech → words with speakers ───────▶ ElevenLabs Scribe v2 (diarize)
+                                                                                    fallback: Deepgram Nova-3 on Workers AI
                                           2. turns rebuilt from word-level speakers
                                           3. scope checks: 2 voices? speech?
-                                          4. items, final states, quotes ────────▶ gpt-oss-120b (strict JSON schema)
+                                          4. items, final states, quotes ────────▶ gpt-oss-120b on Workers AI (strict JSON schema)
                                           5. verification in code (quotes, times, owners, deadlines)
                                           6. dates resolved only from a stated or confirmed recording date
 ◀── progress streamed as NDJSON ───────── 7. time and cost of every step → result stored in R2
@@ -79,9 +82,12 @@ Answers to clarifications (speaker names, recording date, confirming a hedged it
 
 You need Node 22+ and a Cloudflare account (Workers AI is called remotely even in development). ffmpeg is needed only to rebuild the test audio.
 
+Speech recognition uses ElevenLabs Scribe v2 when `ELEVENLABS_API_KEY` is set, and Deepgram Nova-3 on Workers AI when it is not, so the app runs without an ElevenLabs account. Nova-3 hears short turns as one voice (see the delivery notes), so set the key to reproduce the eval.
+
 ```bash
 npm install
 npx wrangler login
+echo "ELEVENLABS_API_KEY=your-key" > .dev.vars  # optional, see above; .dev.vars is git-ignored
 npm run dev                                   # app and API on http://localhost:5173
 npm run storybook                             # design system on http://localhost:6006
 npm run eval -- --base http://localhost:5173 --runs 5    # score the test set against the local API
@@ -93,12 +99,13 @@ To deploy your own copy:
 ```bash
 npx wrangler r2 bucket create agreed-runs
 npx wrangler r2 bucket lifecycle add agreed-runs expire-30-days --expire-days 30
+npx wrangler secret put ELEVENLABS_API_KEY    # optional, as in development
 npm run deploy                                # builds the app and Storybook, deploys to Workers
 ```
 
 ## Test set and eval
 
-`testset/` holds six recordings with scripts and expected results. The expected results were committed **before any product code existed**, as the git history shows. See [testset/README.md](testset/README.md).
+`testset/` holds seven recordings with scripts and expected results. The expected results were committed **before any product code existed**, as the git history shows. See [testset/README.md](testset/README.md).
 
 | Case | What it checks |
 |---|---|
@@ -108,6 +115,7 @@ npm run deploy                                # builds the app and Storybook, de
 | T4 | Relative dates with a stated recording date |
 | T5 | Three voices; should decline |
 | T6 | T1 over a noisy phone line |
+| T7 | Seven people, 2–5 s of speech each; should decline as more than two voices. Added later, expected result committed before its first run |
 
 `npm run eval` uploads each recording to the live pipeline, scores the result against `expected.json` and writes `eval/reports/` and the full results to `eval/results/`. Nothing is cached.
 
@@ -128,12 +136,12 @@ docs/              DEVLOG.md (what was tried, what failed, how outputs were chec
 
 **Reused:**
 - Cloudflare Workers, Workers AI and R2;
-- the models Deepgram Nova-3 and gpt-oss-120b (via Workers AI);
+- the models ElevenLabs Scribe v2 (speech), gpt-oss-120b and, as a fallback, Deepgram Nova-3 (both via Workers AI);
 - React, Vite and Tailwind CSS;
 - Radix UI primitives, and the shadcn/ui pattern (class-variance-authority, tailwind-merge);
 - Lucide icons, the Onest, Geist and Geist Mono fonts;
 - zod and Storybook;
-- ElevenLabs voices, used only to produce the test recordings.
+- ElevenLabs voices for the test recordings.
 
 **Own work:**
 - the pipeline: turn building, prompt and worked example, verification rules, date resolution, cost accounting;
@@ -146,6 +154,7 @@ docs/              DEVLOG.md (what was tried, what failed, how outputs were chec
 ## Privacy and limits
 
 - **Storage.** The recording and its result are kept in R2 for 30 days, so quotes stay playable and the result link keeps working. **Delete now** removes both immediately. Anyone with the link can open a result.
+- **Processors.** The audio is sent to ElevenLabs for transcription, under their API terms; the transcript is sent to Workers AI for extraction. Nothing else leaves Cloudflare.
 - **Logs.** Only timings, token counts and costs are logged, never the conversation.
 - **Usage limits.** A few analyses per minute per visitor and a daily ceiling for the demo.
-- **Scope.** English only, two speakers, up to 3 minutes. Recordings shorter than about 30 seconds may be heard as one voice. In that case it declines rather than guessing.
+- **Scope.** English only, two speakers, up to 3 minutes. If recognition hears one voice, or more than two, it declines rather than guessing.

@@ -28,8 +28,12 @@ type Report = {
     retries: number;
     costPerRunUsd: number | null;
     costPerAudioMinuteUsd: number | null;
+    /** Model ids of the recognition that ran; older reports don't have it. */
+    asrUsed?: string[];
   };
 };
+
+const ASR_NAMES: Record<string, string> = { 'elevenlabs/scribe_v2': 'ElevenLabs Scribe v2', '@cf/deepgram/nova-3': 'Deepgram Nova-3' };
 
 const median = (values: number[]) => {
   const sorted = [...values].sort((a, b) => a - b);
@@ -71,7 +75,9 @@ export function QualityPage({ onStart }: { onStart: (audio: PreparedAudio, prepa
         {report && (
           <p className="mt-2 text-caption text-subtle">
             Last run {new Date(report.startedAt).toLocaleString('en-GB', { dateStyle: 'medium', timeStyle: 'short' })} · {report.runs} run
-            {report.runs === 1 ? '' : 's'} per recording · reasoning {report.reasoning}
+            {report.runs === 1 ? '' : 's'} per recording
+            {report.summary.asrUsed?.length ? ` · recognition ${report.summary.asrUsed.map((id) => ASR_NAMES[id] ?? id).join(', ')}` : ''} · reasoning{' '}
+            {report.reasoning}
           </p>
         )}
       </header>
@@ -98,7 +104,7 @@ export function QualityPage({ onStart }: { onStart: (audio: PreparedAudio, prepa
         </section>
       )}
 
-      <Section title="Test recordings" text="Six short calls made for this test. Each one runs live on the same pipeline as an upload; nothing is cached.">
+      <Section title="Test recordings" text="Short calls made for this test. Each one runs live on the same pipeline as an upload; nothing is cached.">
         {samples === undefined ? (
           <Skeleton className="h-48" />
         ) : samples.length ? (
