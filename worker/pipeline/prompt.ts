@@ -28,12 +28,12 @@ speakers: one entry per voice. name is the name that voice gives for ITSELF ("I'
 recording_date: only if someone states today's date in the recording ("It's Monday, October 5th"). Give it as YYYY-MM-DD with the turn and the quote. Otherwise date, turn and quote are null. Never use any other date.
 
 items: one item per distinct task, proposal or question. Merge every mention of the same thing into one item that shows its FINAL state:
-- agreed: someone committed ("I'll do it"), or accepted a request addressed to them ("Can you…?" "Yes"), or both clearly agreed that it must be done.
-- not_accepted: proposed or suggested ("we could", "what if", "maybe we should") and never accepted by the end: declined, deferred or ignored.
+- agreed: someone committed ("I'll do it"), or accepted a request addressed to them ("Can you…?" "Yes"), or both clearly agreed that it must be done even if nobody takes it ("It has to be updated before launch." "Yes, definitely." is agreed, with no owner).
+- not_accepted: proposed or suggested ("we could", "what if", "maybe we should") and never accepted by the end: declined, deferred or ignored. Not knowing who will do it never makes an item not_accepted.
 - cancelled: agreed first, then explicitly called off later. Never report it as agreed.
 - needs_review: the acceptance is hedged or conditional ("I'll try", "might", "maybe", "no promises", "if I have time"), or you cannot tell whether it was agreed.
 - open_question: a question about the work that is still unanswered at the end. Do not turn it into a task unless someone commits to finding out.
-Greetings, introductions and small talk are not items.
+Greetings, introductions, small talk and running the meeting itself ("let's go through what's left", "next topic", "anything else?") are not items.
 
 owner_speaker: the voice that committed, or that accepted a request addressed to it (S1, S2…). For needs_review, the voice that hedged.
 owner_name: a named person who is not in the call and was given the task ("Lisa will send it"); otherwise null.
@@ -41,7 +41,7 @@ If nobody took the task ("we need to", "someone should", "let's", "it has to be 
 
 deadline: the final agreed deadline, word for word as spoken ("by Wednesday", "Monday", "before launch"), or null if none was agreed. Never convert it to a date. If an earlier deadline was replaced, put the earlier wording in previous_deadlines.
 
-evidence: the turns that prove the final state, in time order. quote is a contiguous span copied word for word from that turn, usually one sentence. role is one of: ${ROLES.join(', ')}. Always include the turn that decides the final state: the acceptance or commitment for agreed, the cancellation for cancelled, the rejection or the unanswered proposal for not_accepted, the hedge for needs_review, the question for open_question.
+evidence: the turns that prove the final state, in time order. quote is a contiguous span copied word for word from that turn, usually one sentence. role is one of: ${ROLES.join(', ')}. Use hedge only for uncertain wording ("I'll try", "maybe", "might"); a plain "Yes" or "Agreed" is an acceptance. Always include the turn that decides the final state: the acceptance or commitment for agreed, the cancellation for cancelled, the rejection or the unanswered proposal for not_accepted, the hedge for needs_review, the question for open_question.
 
 why: one short sentence explaining the final state, citing turn ids.
 

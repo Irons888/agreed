@@ -50,3 +50,14 @@ Times are local (EEST).
   - Clarifications are answered in place, with no reprocessing: speaker names, recording date (the same date module as the server), confirming hedged items.
 - Storybook 10: Foundations read from the tokens (colours, type, spacing, icons, content rules); every component and screen has stories with every state, and they render a real T1 result from the eval. The accessibility addon reports 0 violations on the checked stories. No horizontal overflow at 375 px.
 - Latency is the weak point: the same T1 extraction took 15 s on one run and 44 s on another, with similar token counts. Workers AI throughput for gpt-oss-120b varies. The stability eval will measure p50 and p90; a faster model or provider is the obvious lever.
+
+### Deploy and the first stability run
+
+- Deployed to https://agreed.rhanaev7-138.workers.dev (Workers, R2 with a 30-day lifecycle rule, rate limit and daily cap).
+- Stability run v1, 5 runs per case on the live deployment, stopped after 9 runs because two failure patterns were already clear. Log: `eval/results/2026-10-05T16-40-19-770Z/eval-v1-partial.log`.
+  1. T1 run 5: an extra item, “General review of remaining items”, made from the facilitator's “Let's go through what's left”. Meeting navigation is now listed as not an item.
+  2. T2 runs 1, 3 and 4: “privacy policy” was marked not_accepted or needs_review. The model wrote “no one committed to do it”, mixing up *no owner* with *not agreed*, and labelled the reply “Yes. That definitely needs to happen.” as a hedge. Fixes:
+     - the prompt now says that an agreed task can have no owner;
+     - a role is corrected by its words: an affirmative reply with no hedge words is an acceptance;
+     - not_accepted with a plain “yes” reply and no rejection becomes needs_review instead of silently dropping the task.
+- 19:46: deployed the fixes; started the final 5-run eval for gpt-oss-120b and, for comparison, gpt-oss-20b.

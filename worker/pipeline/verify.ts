@@ -1,5 +1,5 @@
 import type { Check, Deadline, Evidence, EvidenceRole, Item, Owner, Speaker, Status, Turn } from '../types';
-import { ADDRESSED, COMMITMENT, FIRST_PERSON, HEDGE, containsPhrase, normalize, tokens } from '../lib/text';
+import { ADDRESSED, AFFIRMATIVE, COMMITMENT, FIRST_PERSON, HEDGE, containsPhrase, normalize, tokens } from '../lib/text';
 import type { LlmItem, LlmOutput } from './extract';
 import { checkAnchor, resolveDeadline } from './dates';
 
@@ -142,6 +142,11 @@ function verifyItem(raw: LlmItem, n: number, ctx: ItemContext): { item: Item } |
   }
   evidence.sort((a, b) => a.start - b.start);
   if (!evidence.length) return { dropped: { title: raw.title, reason: 'None of its quotes were found in the transcript.' } };
+  // A role is the model's claim; the words decide. "Yes, that definitely needs to happen" is not a hedge.
+  for (const e of evidence) {
+    const words = normalize(e.quote);
+    if (e.role === 'hedge' && !HEDGE.test(words) && AFFIRMATIVE.test(words)) e.role = 'acceptance';
+  }
 
   const checks: Check[] = [];
   checks.push({
@@ -165,6 +170,11 @@ function verifyItem(raw: LlmItem, n: number, ctx: ItemContext): { item: Item } |
     statusNote = 'No question was found in the quotes.';
   } else if (status === 'not_accepted' && !has('proposal', 'request', 'rejection')) {
     statusNote = 'No proposal was found in the quotes.';
+  } else if (status === 'not_accepted' && !has('rejection')) {
+    // The model says nobody accepted it, but the other person answered with a plain "yes": ask, don't decide.
+    const proposal = evidence.find((e) => e.role === 'proposal' || e.role === 'request');
+    const yes = proposal && evidence.find((e) => e.speaker !== proposal.speaker && e.start >= proposal.end && AFFIRMATIVE.test(normalize(e.quote)));
+    if (yes) statusNote = `Marked as not accepted, but the reply was “${yes.quote}”.`;
   }
   if (statusNote) status = 'needs_review';
   checks.push({ name: 'status', ok: !statusNote, note: statusNote });

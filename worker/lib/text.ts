@@ -37,3 +37,6 @@ export const FIRST_PERSON = /\b(i|i'll|i'm|i've|i'd|me|my)\b/;
 
 /** A request addressed to the listener: "can you", "could you", "please". */
 export const ADDRESSED = /\b(can you|could you|would you|will you|you'll|you will|you can|please)\b/;
+
+/** A reply that opens with agreement: "Yes", "Sure", "Agreed", "Definitely", "Sounds good". */
+export const AFFIRMATIVE = /^(yes|yeah|yep|sure|agreed|definitely|absolutely|of course|okay|ok|sounds good|makes sense|right|good idea)\b/;

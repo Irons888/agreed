@@ -1,0 +1,15 @@
+T1-main #1: PASS  included 6/6  exclusion errors 0  33569 ms  $0.008141
+T1-main #2: PASS  included 6/6  exclusion errors 0  36242 ms  $0.008124
+T1-main #3: PASS  included 6/6  exclusion errors 0  23853 ms  $0.008176
+T1-main #4: PASS  included 6/6  exclusion errors 0  11034 ms  $0.008169
+T1-main #5: FAIL  included 6/6  exclusion errors 1  30407 ms  $0.008431
+    ✗ extra: General review of remaining items — unsupported extra: needs_review
+T2-changed #1: FAIL  included 5/6  exclusion errors 0  36338 ms  $0.008319
+    ✗ privacy-policy — status: expected agreed, got not_accepted
+    ✗ privacy-policy — deadline wording: got ""
+T2-changed #2: PASS  included 6/6  exclusion errors 0  37607 ms  $0.008517
+T2-changed #3: FAIL  included 5/6  exclusion errors 0  48032 ms  $0.00846
+    ✗ privacy-policy — status: expected agreed, got needs_review
+T2-changed #4: FAIL  included 5/6  exclusion errors 0  29691 ms  $0.008452
+    ✗ privacy-policy — status: expected agreed, got needs_review
+T2-changed #5: PASS  included 6/6  exclusion errors 0  25495 ms  $0.008331
