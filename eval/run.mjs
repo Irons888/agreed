@@ -6,7 +6,7 @@
 //   node eval/run.mjs --runs 5 --base https://…    5 runs per case against a deployed instance
 //   node eval/run.mjs --reasoning medium T1-main   one case with another reasoning level
 //
-// Writes eval/reports/<timestamp>.json and .md, and eval/reports/latest.json.
+// Writes eval/reports/<timestamp>.json and .md, eval/reports/latest.json, and every full result to eval/results/<timestamp>/.
 
 import { readFile, writeFile, mkdir, readdir } from 'node:fs/promises';
 import path from 'node:path';
@@ -165,6 +165,9 @@ const percentile = (values, p) => {
 // ---- main -----------------------------------------------------------------
 
 const report = { startedAt: new Date().toISOString(), base, runs, reasoning, cases: [] };
+// Full results are kept next to the report: evidence for the notes and real fixtures for Storybook.
+const resultsDir = path.join(ROOT, 'eval', 'results', report.startedAt.replace(/[:.]/g, '-'));
+await mkdir(resultsDir, { recursive: true });
 for (const name of cases) {
   const testCase = await loadCase(name);
   const caseReport = { case: name, outcome: testCase.expected.outcome, runs: [] };
@@ -175,6 +178,7 @@ for (const name of cases) {
     } catch (err) {
       run = { error: err.message };
     }
+    if (run.result) await writeFile(path.join(resultsDir, `${name}-${i}.json`), `${JSON.stringify(run.result, null, 2)}\n`);
     const checks = run.result ? score(testCase.expected, testCase.timeline, run.result) : [];
     const failed = checks.filter((c) => !c.ok);
     const required = testCase.expected.items.filter((e) => !e.optional);

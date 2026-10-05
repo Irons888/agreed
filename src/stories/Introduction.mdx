@@ -1,0 +1,26 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Introduction" />
+
+# Agreed design system
+
+Agreed turns a recorded two-person discussion into its final commitments, each backed by a quote you can play.
+This Storybook holds every piece of its interface: tokens, icons, components and full pages. It renders them with real results from the test recordings, so what you see here is what the product shows.
+
+## Principles
+
+1. **Evidence first.** Every claim can be checked: a word-for-word quote, its time in the recording and a ▶ button.
+2. **Final state, visible history.** The card shows how things ended. How they got there is one click away.
+3. **Unknown is a state.** “No owner named” and “date context missing” have their own look. They are answers, not errors.
+4. **Colour means something.** Colour is reserved for statuses and speakers, and never carries meaning alone: there is always an icon or a word.
+5. **One main action per screen.**
+6. **Nothing sticky over content.** Panels scroll on their own; nothing floats over the text.
+
+## Rules for building screens
+
+- Screens are composed only from these components. A new element appears here first, then on a screen.
+- Colours, sizes, spacing and radii come only from tokens (`src/styles/tokens.css`). No raw hex values or arbitrary Tailwind values.
+- Icons only through `<Icon name="…">` and its map. **No emoji in the interface.**
+- A component is done when it has a story for every state, passes the accessibility check, works at 390 px and in the dark theme.
+
+Use the toolbar to switch the theme and the viewport (390, 768, 1024, 1440).

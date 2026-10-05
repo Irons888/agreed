@@ -40,3 +40,13 @@ Times are local (EEST).
   - Transcript ready after about 1–2 s.
   - Cost at list prices: about $0.007 per audio minute (T1: $0.0082 for 71 s).
 - Next: stability over 5 runs per case. This needs Workers Paid: the free allocation is 10,000 neurons a day, and a T1 run uses about 745.
+
+### Interface and design system
+
+- 19:31: Web app works end to end in the browser.
+  - Any audio or video is decoded in the browser and turned into 16 kHz mono WAV; length is checked before upload.
+  - Progress streams step by step; the transcript appears after about 2 s.
+  - Result: cards by final status; owner and deadline chips that show "No owner named" and "date context missing"; the deadline-change trail; ▶ on every quote, which plays exactly those words; quotes highlighted in the transcript; waveform with speaker colours and item markers.
+  - Clarifications are answered in place, with no reprocessing: speaker names, recording date (the same date module as the server), confirming hedged items.
+- Storybook 10: Foundations read from the tokens (colours, type, spacing, icons, content rules); every component and screen has stories with every state, and they render a real T1 result from the eval. The accessibility addon reports 0 violations on the checked stories. No horizontal overflow at 375 px.
+- Latency is the weak point: the same T1 extraction took 15 s on one run and 44 s on another, with similar token counts. Workers AI throughput for gpt-oss-120b varies. The stability eval will measure p50 and p90; a faster model or provider is the obvious lever.

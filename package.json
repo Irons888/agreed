@@ -3,21 +3,46 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev:api": "wrangler dev --port 8787 --ip 127.0.0.1",
-    "typecheck": "tsc --noEmit",
+    "dev": "node scripts/prepare-public.mjs && vite",
+    "build": "npm run build-storybook && vite build",
+    "preview": "vite preview",
+    "deploy": "npm run build && wrangler deploy",
+    "typecheck": "tsc -p tsconfig.app.json && tsc -p tsconfig.worker.json",
     "cf-types": "wrangler types",
     "eval": "node eval/run.mjs",
     "testset:build": "node testset/build.mjs",
-    "testset:voices": "node testset/build.mjs --list-voices"
+    "testset:voices": "node testset/build.mjs --list-voices",
+    "storybook": "node scripts/prepare-public.mjs && storybook dev -p 6006 --no-open",
+    "build-storybook": "node scripts/prepare-public.mjs && storybook build -o public/storybook --quiet"
   },
   "engines": {
     "node": ">=22"
   },
   "dependencies": {
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource-variable/jetbrains-mono": "^5.3.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.52.0",
+    "radix-ui": "^1.6.7",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "tailwind-merge": "^3.7.0",
     "zod": "^4.6.5"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.62.5",
+    "@storybook/addon-a11y": "^10.6.1",
+    "@storybook/addon-docs": "^10.6.1",
+    "@storybook/react-vite": "^10.6.1",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "storybook": "^10.6.1",
+    "tailwindcss": "^4.3.3",
     "typescript": "^7.0.2",
+    "vite": "^8.3.2",
     "wrangler": "^4.147.0"
   }
 }

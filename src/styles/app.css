@@ -1,0 +1,117 @@
+@import 'tailwindcss';
+@import './tokens.css';
+
+/* Tokens exposed as Tailwind utilities: bg-surface, text-muted, border-agreed-border, rounded-card … */
+@theme inline {
+  --color-*: initial;
+  --color-transparent: transparent;
+  --color-current: currentColor;
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-text: var(--text);
+  --color-muted: var(--text-muted);
+  --color-subtle: var(--text-subtle);
+  --color-ink: var(--ink);
+  --color-ink-contrast: var(--ink-contrast);
+  --color-focus: var(--focus);
+  --color-brand: var(--brand);
+  --color-danger: var(--danger);
+  --color-danger-bg: var(--danger-bg);
+  --color-agreed: var(--agreed);
+  --color-agreed-bg: var(--agreed-bg);
+  --color-agreed-border: var(--agreed-border);
+  --color-question: var(--question);
+  --color-question-bg: var(--question-bg);
+  --color-question-border: var(--question-border);
+  --color-review: var(--review);
+  --color-review-bg: var(--review-bg);
+  --color-review-border: var(--review-border);
+  --color-muted-status: var(--muted-status);
+  --color-muted-status-bg: var(--muted-status-bg);
+  --color-muted-status-border: var(--muted-status-border);
+  --color-missing: var(--missing);
+  --color-missing-border: var(--missing-border);
+  --color-speaker-1: var(--speaker-1);
+  --color-speaker-1-bg: var(--speaker-1-bg);
+  --color-speaker-2: var(--speaker-2);
+  --color-speaker-2-bg: var(--speaker-2-bg);
+
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, 'SFMono-Regular', monospace;
+
+  --text-*: initial;
+  --text-display: 2.5rem;
+  --text-display--line-height: 2.75rem;
+  --text-display--letter-spacing: -0.02em;
+  --text-display-sm: 2rem;
+  --text-display-sm--line-height: 2.25rem;
+  --text-display-sm--letter-spacing: -0.02em;
+  --text-title-1: 1.5rem;
+  --text-title-1--line-height: 2rem;
+  --text-title-1--letter-spacing: -0.01em;
+  --text-title-2: 1.125rem;
+  --text-title-2--line-height: 1.625rem;
+  --text-title-3: 1rem;
+  --text-title-3--line-height: 1.5rem;
+  --text-body-lg: 1rem;
+  --text-body-lg--line-height: 1.625rem;
+  --text-quote: 0.9375rem;
+  --text-quote--line-height: 1.5rem;
+  --text-body: 0.875rem;
+  --text-body--line-height: 1.375rem;
+  --text-label: 0.8125rem;
+  --text-label--line-height: 1.125rem;
+  --text-caption: 0.75rem;
+  --text-caption--line-height: 1rem;
+  --text-micro: 0.625rem;
+  --text-micro--line-height: 0.75rem;
+
+  --radius-*: initial;
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-card: 10px;
+  --radius-panel: 14px;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+  --shadow-xs: var(--elevation-xs);
+  --shadow-md: var(--elevation-md);
+  --shadow-lg: var(--elevation-lg);
+
+  --ease-standard: var(--ease);
+  --default-transition-duration: var(--duration-fast);
+  --default-transition-timing-function: var(--ease);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-bg font-sans text-body text-text antialiased;
+  }
+  :focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+  }
+  ::selection {
+    background: var(--speaker-1-bg);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@utility tabular {
+  font-variant-numeric: tabular-nums;
+}

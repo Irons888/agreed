@@ -5,3 +5,7 @@ dist/
 storybook-static/
 testset/.cache/
 .DS_Store
+public/samples/
+public/quality/
+.claude/
+public/storybook/

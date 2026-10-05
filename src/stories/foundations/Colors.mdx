@@ -1,0 +1,57 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { SwatchGrid } from './blocks';
+
+<Meta title="Foundations/Colors" />
+
+# Colors
+
+Values are read live from `tokens.css`; switch the theme in the toolbar to see the dark palette.
+
+## Neutrals
+
+<SwatchGrid tokens={[
+  ['--bg', 'Page background'],
+  ['--surface', 'Cards and panels'],
+  ['--surface-muted', 'Subtle fills, hover'],
+  ['--border', 'Borders'],
+  ['--border-strong', 'Inputs, dashed outlines'],
+  ['--text', 'Main text'],
+  ['--text-muted', 'Secondary text'],
+  ['--text-subtle', 'Captions, times'],
+  ['--ink', 'Primary button'],
+  ['--focus', 'Focus ring, progress'],
+  ['--brand', 'Logo mark only'],
+  ['--danger', 'Delete, errors'],
+]} />
+
+## Statuses
+
+Each status is a text colour, a background and a border, always shown with an icon and a word.
+
+<SwatchGrid tokens={[
+  ['--agreed', 'Agreed: text'],
+  ['--agreed-bg', 'Agreed: background, highlighted quotes'],
+  ['--agreed-border', 'Agreed: border'],
+  ['--question', 'Open question: text'],
+  ['--question-bg', 'Open question: background'],
+  ['--question-border', 'Open question: border'],
+  ['--review', 'Needs review: text'],
+  ['--review-bg', 'Needs review: background'],
+  ['--review-border', 'Needs review: border'],
+  ['--muted-status', 'Not accepted, cancelled: text'],
+  ['--muted-status-bg', 'Cancelled: background'],
+  ['--muted-status-border', 'Not accepted, cancelled: border'],
+  ['--missing', 'No owner named, date context missing'],
+  ['--missing-border', 'Dashed border of missing information'],
+]} />
+
+## Speakers
+
+A colour-blind-safe pair. Speaker colours appear only on avatars, the left rule of quotes and the waveform, and always next to a name or initial.
+
+<SwatchGrid tokens={[
+  ['--speaker-1', 'First voice'],
+  ['--speaker-1-bg', 'First voice: avatar fill'],
+  ['--speaker-2', 'Second voice'],
+  ['--speaker-2-bg', 'Second voice: avatar fill'],
+]} />

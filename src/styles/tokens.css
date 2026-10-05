@@ -1,0 +1,131 @@
+/*
+  Design tokens: the only place where colors, type, spacing, radii, shadows and motion are defined.
+  Components use them through Tailwind utilities (see app.css). Raw hex values elsewhere are a bug.
+*/
+
+:root {
+  color-scheme: light;
+
+  /* Neutrals: warm stone */
+  --bg: #fafaf9;
+  --surface: #ffffff;
+  --surface-muted: #f5f5f4;
+  --border: #e7e5e4;
+  --border-strong: #d6d3d1;
+  --text: #1c1917;
+  --text-muted: #57534e;
+  --text-subtle: #78716c;
+  --ink: #1c1917;
+  --ink-contrast: #ffffff;
+  --focus: #2e90fa;
+  --brand: #12b76a;
+  --danger: #d92d20;
+  --danger-bg: #fef3f2;
+
+  /* Statuses: text / background / border */
+  --agreed: #067647;
+  --agreed-bg: #ecfdf3;
+  --agreed-border: #abefc6;
+  --question: #5925dc;
+  --question-bg: #f4f3ff;
+  --question-border: #d9d6fe;
+  --review: #b54708;
+  --review-bg: #fffaeb;
+  --review-border: #fedf89;
+  --muted-status: #475467;
+  --muted-status-bg: #f2f4f7;
+  --muted-status-border: #d0d5dd;
+  --missing: #b54708;
+  --missing-border: #fec84b;
+
+  /* Speakers: a colour-blind-safe pair, always shown with a name or initials */
+  --speaker-1: #2e90fa;
+  --speaker-1-bg: #eff8ff;
+  --speaker-2: #f79009;
+  --speaker-2-bg: #fffaeb;
+
+  /* Elevation */
+  --elevation-xs: 0 1px 2px rgb(16 24 40 / 0.05);
+  --elevation-md: 0 4px 8px -2px rgb(16 24 40 / 0.1), 0 2px 4px -2px rgb(16 24 40 / 0.06);
+  --elevation-lg: 0 12px 16px -4px rgb(16 24 40 / 0.08), 0 4px 6px -2px rgb(16 24 40 / 0.03);
+
+  /* Motion */
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --duration-slow: 320ms;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --bg: #0c0a09;
+    --surface: #1c1917;
+    --surface-muted: #292524;
+    --border: #292524;
+    --border-strong: #44403c;
+    --text: #fafaf9;
+    --text-muted: #a8a29e;
+    --text-subtle: #8a837e;
+    --ink: #fafaf9;
+    --ink-contrast: #1c1917;
+    --focus: #53b1fd;
+    --brand: #32d583;
+    --danger: #f97066;
+    --danger-bg: #3b1513;
+    --agreed: #47cd89;
+    --agreed-bg: #0c2a1d;
+    --agreed-border: #085d3a;
+    --question: #bdb4fe;
+    --question-bg: #22174a;
+    --question-border: #4a1fb8;
+    --review: #fdb022;
+    --review-bg: #2f1d05;
+    --review-border: #93370d;
+    --muted-status: #cecfd2;
+    --muted-status-bg: #22262f;
+    --muted-status-border: #3b404b;
+    --missing: #fdb022;
+    --missing-border: #93370d;
+    --speaker-1: #53b1fd;
+    --speaker-1-bg: #102a43;
+    --speaker-2: #fdb022;
+    --speaker-2-bg: #2f1d05;
+  }
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #0c0a09;
+  --surface: #1c1917;
+  --surface-muted: #292524;
+  --border: #292524;
+  --border-strong: #44403c;
+  --text: #fafaf9;
+  --text-muted: #a8a29e;
+  --text-subtle: #8a837e;
+  --ink: #fafaf9;
+  --ink-contrast: #1c1917;
+  --focus: #53b1fd;
+  --brand: #32d583;
+  --danger: #f97066;
+  --danger-bg: #3b1513;
+  --agreed: #47cd89;
+  --agreed-bg: #0c2a1d;
+  --agreed-border: #085d3a;
+  --question: #bdb4fe;
+  --question-bg: #22174a;
+  --question-border: #4a1fb8;
+  --review: #fdb022;
+  --review-bg: #2f1d05;
+  --review-border: #93370d;
+  --muted-status: #cecfd2;
+  --muted-status-bg: #22262f;
+  --muted-status-border: #3b404b;
+  --missing: #fdb022;
+  --missing-border: #93370d;
+  --speaker-1: #53b1fd;
+  --speaker-1-bg: #102a43;
+  --speaker-2: #fdb022;
+  --speaker-2-bg: #2f1d05;
+}

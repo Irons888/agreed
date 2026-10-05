@@ -9,7 +9,8 @@
 //   node testset/build.mjs T1-main T6-noisy   build selected cases
 //   node testset/build.mjs --list-voices      show the voices your API key can use
 //
-// Needs ELEVENLABS_API_KEY in .env (see .env.example) and ffmpeg for T6.
+// Needs ELEVENLABS_API_KEY in testset/.env (see testset/.env.example) and ffmpeg for T6.
+// The key lives here, not in the project root, so the Worker's local dev never loads it.
 
 import { readFile, writeFile, mkdir, readdir } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
@@ -26,7 +27,7 @@ const GAP_MS = 450;
 const MAX_SECONDS = 180;
 
 try {
-  process.loadEnvFile(path.join(TESTSET, '..', '.env'));
+  process.loadEnvFile(path.join(TESTSET, '.env'));
 } catch {
   // No .env file: the key may come from the environment.
 }
@@ -36,7 +37,7 @@ let charactersSent = 0;
 
 async function eleven(pathname, init = {}) {
   const key = process.env.ELEVENLABS_API_KEY;
-  if (!key) throw new Error('ELEVENLABS_API_KEY is missing. Copy .env.example to .env and add your key.');
+  if (!key) throw new Error('ELEVENLABS_API_KEY is missing. Copy testset/.env.example to testset/.env and add your key.');
   const res = await fetch(`https://api.elevenlabs.io${pathname}`, {
     ...init,
     headers: { 'xi-api-key': key, ...init.headers },

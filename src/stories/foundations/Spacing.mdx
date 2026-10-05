@@ -1,0 +1,26 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { RadiiAndShadows, SpacingScale } from './blocks';
+
+<Meta title="Foundations/Spacing, radii, elevation" />
+
+# Spacing, radii, elevation
+
+A 4 px step. Borders are the default separation; shadows are for hover and floating layers only.
+
+<SpacingScale />
+
+## Radii and shadows
+
+<RadiiAndShadows />
+
+## Layout
+
+- Breakpoints: 390 (phone), 768, 1024, 1440. Content is at most 1152 px wide.
+- Side padding: 16 px on phones, 24 on tablets, 32 on desktops.
+- Results: two columns from 1024 px (items 7 : transcript 5), one column below.
+- Controls are 32, 36 or 44 px high. On phones anything tappable is at least 44 px.
+
+## Motion
+
+120 ms for hover, 200 ms for expanding, 320 ms for screen changes, all on `cubic-bezier(.2, 0, 0, 1)`.
+With `prefers-reduced-motion` animations are switched off.
