@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { DeadlineChange, DeadlineChip } from '@/components/domain/deadline';
 import { OwnerChip } from '@/components/domain/owner';
-import { ChangedBadge, StatusBadge } from '@/components/domain/status';
+import { StatusBadge } from '@/components/domain/status';
 
 const meta = { title: 'Commitments/Status, owner, deadline', component: StatusBadge, args: { status: 'agreed' } } satisfies Meta<typeof StatusBadge>;
 export default meta;
@@ -15,7 +15,6 @@ export const Statuses: Story = {
       <StatusBadge status="needs_review" />
       <StatusBadge status="not_accepted" />
       <StatusBadge status="cancelled" />
-      <ChangedBadge from={['by Thursday']} to="Monday" />
       <StatusBadge status="agreed" size="sm" />
     </div>
   ),
@@ -43,7 +42,7 @@ export const Deadlines: Story = {
         <DeadlineChip deadline={{ kind: 'vague', raw: 'before launch', date: null, ambiguous: false, previous: [] }} />
         <DeadlineChip deadline={{ kind: 'none', raw: null, date: null, ambiguous: false, previous: [] }} />
       </div>
-      <DeadlineChange previous={['by Thursday']} current="Monday" />
+      <DeadlineChange previous={['by Thursday']} />
     </div>
   ),
 };

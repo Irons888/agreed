@@ -53,3 +53,16 @@ export function decideReview(result: Result, itemId: string, agreed: boolean): R
     }),
   };
 }
+
+/** Re-applies answers saved in the history when a result is opened again. Same functions, same order of effect. */
+export function applyEdits(result: Result, edits: { names?: Record<string, string>; date?: string; reviews?: Record<string, boolean> }): Result {
+  let next = result;
+  for (const [speakerId, name] of Object.entries(edits.names ?? {})) {
+    if (next.speakers.some((s) => s.id === speakerId && !s.name)) next = nameSpeaker(next, speakerId, name);
+  }
+  if (edits.date && next.clarifications.some((c) => c.kind === 'recording_date')) next = setRecordingDate(next, edits.date);
+  for (const [itemId, agreed] of Object.entries(edits.reviews ?? {})) {
+    if (next.items.some((i) => i.id === itemId && i.status === 'needs_review')) next = decideReview(next, itemId, agreed);
+  }
+  return next;
+}

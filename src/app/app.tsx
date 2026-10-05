@@ -2,11 +2,14 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { Footer, TopNav } from '@/components/domain/layout';
 import type { StepKey, StepState } from '@/components/domain/progress';
 import { analyze } from '@/lib/api';
+import { forgetRun } from '@/lib/history';
 import type { PreparedAudio } from '@/lib/audio/prepare';
+import { HistoryPage } from '@/pages/history';
 import { HomePage } from '@/pages/home';
 import { QualityPage } from '@/pages/quality';
 import { RunPage, type RunState } from '@/pages/run';
 import { SavedRunPage } from '@/pages/saved-run';
+import { TasksPage } from '@/pages/tasks';
 
 const freshSteps = (prepareMs: number): Record<StepKey, StepState> => ({
   prepare: { status: 'done', ms: prepareMs },
@@ -15,7 +18,7 @@ const freshSteps = (prepareMs: number): Record<StepKey, StepState> => ({
   verify: { status: 'pending' },
 });
 
-/** Four screens do not need a router library: the path is state, history keeps the back button working. */
+/** A few screens do not need a router library: the path is state, history keeps the back button working. */
 function usePath() {
   const [path, setPath] = useState(() => window.location.pathname);
   useEffect(() => {
@@ -23,9 +26,13 @@ function usePath() {
     window.addEventListener('popstate', onPop);
     return () => window.removeEventListener('popstate', onPop);
   }, []);
+  // A hash (/r/:id#item) is kept in the address; the result page scrolls to that item.
   const navigate = useCallback((to: string, replace = false) => {
-    if (to !== window.location.pathname) window.history[replace ? 'replaceState' : 'pushState'](null, '', to);
-    setPath(to);
+    const url = new URL(to, window.location.origin);
+    if (url.pathname + url.hash !== window.location.pathname + window.location.hash) {
+      window.history[replace ? 'replaceState' : 'pushState'](null, '', url.pathname + url.hash);
+    }
+    setPath(url.pathname);
     window.scrollTo({ top: 0 });
   }, []);
   return { path, navigate, setPath };
@@ -93,6 +100,7 @@ export function App() {
     async (id: string) => {
       const res = await fetch(`/api/runs/${id}`, { method: 'DELETE' });
       if (!res.ok && res.status !== 404) throw new Error('Delete failed.');
+      forgetRun(id);
       setRun((current) => (current?.result?.id === id ? null : current));
       navigate('/');
     },
@@ -109,10 +117,14 @@ export function App() {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <TopNav onNavigate={navigate} current={path === '/run' || savedId ? '/' : path} />
+      <TopNav onNavigate={navigate} current={path === '/run' ? '/' : savedId ? '/history' : path} />
       <div className="flex-1">
         {path === '/quality' ? (
-          <QualityPage />
+          <QualityPage onStart={start} />
+        ) : path === '/history' ? (
+          <HistoryPage onNavigate={navigate} />
+        ) : path === '/tasks' ? (
+          <TasksPage onNavigate={navigate} />
         ) : savedId && run?.result?.id !== savedId ? (
           <SavedRunPage key={savedId} id={savedId} onNew={goHome} onDelete={removeRun} />
         ) : (path === '/run' || savedId) && run ? (

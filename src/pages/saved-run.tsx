@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Icon } from '@/components/ui/icon';
 import { Skeleton } from '@/components/ui/skeleton';
 import { prepareSample } from '@/lib/audio/prepare';
+import { forgetRun } from '@/lib/history';
 import { RunPage, type RunState } from './run';
 
 /** Opens a stored result from its link: the result JSON plus the recording, decoded for the waveform. */
@@ -16,7 +17,11 @@ export function SavedRunPage({ id, onNew, onDelete }: { id: string; onNew: () =>
     let cancelled = false;
     (async () => {
       const res = await fetch(`/api/runs/${id}`);
-      if (!res.ok) throw new Error((await res.json().catch(() => null))?.error ?? 'This result could not be loaded.');
+      if (!res.ok) {
+        // Deleted or expired: it no longer belongs in this browser's history.
+        if (res.status === 404) forgetRun(id);
+        throw new Error((await res.json().catch(() => null))?.error ?? 'This result could not be loaded.');
+      }
       const result = (await res.json()) as Result;
       const audio = await prepareSample(`/api/runs/${id}/audio`, result.fileName ?? 'recording.wav');
       if (cancelled) return;
@@ -42,7 +47,7 @@ export function SavedRunPage({ id, onNew, onDelete }: { id: string; onNew: () =>
           <span className="inline-flex size-11 items-center justify-center border-2 border-border-strong text-text">
             <Icon name="noDate" size={20} />
           </span>
-          <h1 className="headline mt-6 text-title-2">{missing}</h1>
+          <h1 className="heading mt-6 text-title-2 text-text">{missing}</h1>
           <p className="mt-3 text-body text-muted">Results are kept for 30 days, or until someone deletes them.</p>
           <Button variant="primary" icon="upload" className="mt-6" onClick={onNew}>
             Analyze a recording

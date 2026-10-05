@@ -39,9 +39,9 @@ export function PipelineProgress({ steps }: { steps: Record<StepKey, StepState> 
               step.status === 'error' && 'bg-danger-bg',
             )}
           >
-            <span className={cn('tag-label w-6 shrink-0', step.status === 'pending' ? 'text-subtle' : 'text-current')}>{String(i + 1).padStart(2, '0')}</span>
+            <span className={cn('w-5 shrink-0 text-caption', step.status === 'pending' ? 'text-subtle' : 'text-current')}>{i + 1}</span>
             <div className="min-w-0 flex-1">
-              <p className={cn('font-display text-label font-bold', step.status === 'pending' && 'text-subtle')}>{label}</p>
+              <p className={cn('text-label font-semibold', step.status === 'pending' && 'text-subtle')}>{label}</p>
               <p className={cn('text-caption', step.status === 'active' ? 'text-current opacity-70' : 'text-subtle')}>{detail}</p>
             </div>
             {elapsed !== undefined && <span className="font-mono text-caption tabular">{seconds(elapsed)}</span>}

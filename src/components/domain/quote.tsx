@@ -1,8 +1,6 @@
 import type { Evidence, EvidenceRole, Speaker } from '../../../worker/types';
 import { spoken } from '@/lib/format';
 import { cn } from '@/lib/cn';
-import { Icon } from '../ui/icon';
-import { Tooltip } from '../ui/tooltip';
 import { SpeakerName, speakerTone } from './speaker';
 import { TimestampButton } from './timestamp';
 
@@ -20,25 +18,39 @@ export const ROLE_LABEL: Record<EvidenceRole, string> = {
 };
 
 const MATCH_NOTE: Record<Evidence['match'], string> = {
-  exact: 'Found word for word in the transcript.',
-  repaired: 'The model paraphrased slightly; this is the exact transcript wording.',
-  moved: 'Found in a different turn than the model cited.',
+  exact: 'found word for word',
+  repaired: 'model paraphrased slightly, transcript wording shown',
+  moved: 'found in a different turn than the model cited',
 };
 
-export function QuoteBlock({ evidence, speakers, id, className }: { evidence: Evidence; speakers: Speaker[]; id: string; className?: string }) {
+/**
+ * The words an item rests on, with ▶ to hear them. The card shows one quote plainly;
+ * "detailed" adds what the quote does (request, acceptance…) and how it was matched, for the Details view.
+ */
+export function QuoteBlock({
+  evidence,
+  speakers,
+  id,
+  detailed = false,
+  className,
+}: {
+  evidence: Evidence;
+  speakers: Speaker[];
+  id: string;
+  detailed?: boolean;
+  className?: string;
+}) {
   return (
     <figure className={cn('border-l-4 pl-4', speakerTone(evidence.speaker).rule, className)}>
-      <blockquote className="text-quote font-medium text-text">{spoken(evidence.quote)}</blockquote>
-      <figcaption className="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-2 text-caption">
-        <SpeakerName id={evidence.speaker} speakers={speakers} size="xs" />
-        <span className="tag-label text-subtle">{ROLE_LABEL[evidence.role]}</span>
+      <blockquote className="text-quote text-text">{spoken(evidence.quote)}</blockquote>
+      <figcaption className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-2 text-caption text-muted">
         <TimestampButton id={id} start={evidence.start} end={evidence.end} className="h-7" />
-        <Tooltip content={MATCH_NOTE[evidence.match]}>
-          <span className="tag-label inline-flex items-center gap-1 text-text">
-            <Icon name="verified" size={14} />
-            Verified
+        <SpeakerName id={evidence.speaker} speakers={speakers} size="xs" />
+        {detailed && (
+          <span>
+            {ROLE_LABEL[evidence.role]} · {MATCH_NOTE[evidence.match]}
           </span>
-        </Tooltip>
+        )}
       </figcaption>
     </figure>
   );

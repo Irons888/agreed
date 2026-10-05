@@ -1,97 +1,112 @@
-import { useEffect, useState } from 'react';
-import { HowItWorks, Hero, MeasuredBand, NonGoals, SectionHead, type Measured } from '@/components/domain/landing';
-import { SampleList, type Sample } from '@/components/domain/samples';
+import type { ReactNode } from 'react';
+import { RecordingRow, TaskRow } from '@/components/domain/history';
+import { Hero } from '@/components/domain/landing';
+import { ExampleButtons, type Sample } from '@/components/domain/samples';
 import { UploadDropzone } from '@/components/domain/upload';
-import { Skeleton } from '@/components/ui/skeleton';
-import { AudioProblem, prepareAudio, prepareSample, type PreparedAudio } from '@/lib/audio/prepare';
-import { seconds, usd } from '@/lib/format';
+import { Button } from '@/components/ui/button';
+import type { PreparedAudio } from '@/lib/audio/prepare';
+import { isExpired, useHistory, type TaskSummary } from '@/lib/history';
+import { useSamples, useStart } from './use-start';
 
 const container = 'mx-auto max-w-6xl px-4 sm:px-6 lg:px-8';
 
-type Report = { summary: { passed: number; runs: number; exclusionErrors: number; timeToResultMs: { p50: number | null }; costPerAudioMinuteUsd: number | null } };
+// Two of the six test recordings: the main case and the one whose dates resolve. The rest are on the Quality page.
+const EXAMPLES = ['T1-main', 'T4-dated'];
+
+// What T1 gives, written out, for people who haven't run anything yet. It illustrates the output; runs are always live.
+const EXAMPLE_RESULT: TaskSummary[] = [
+  { id: 'x1', title: 'Send API documentation', status: 'agreed', owner: 'Mark', deadline: '“by Wednesday”', at: 16 },
+  { id: 'x2', title: 'Prepare staging demo', status: 'agreed', owner: 'Mark', deadline: '“Monday”, moved from “Thursday”', at: 57 },
+  { id: 'x3', title: 'Update privacy policy page', status: 'agreed', owner: null, deadline: '“before launch”', at: 41 },
+  { id: 'x4', title: 'Does the client need single sign-on?', status: 'open_question', owner: null, deadline: null, at: 44 },
+  { id: 'x5', title: 'Add dark mode', status: 'not_accepted', owner: null, deadline: null, at: 24 },
+  { id: 'x6', title: 'Book meeting room for the client workshop', status: 'cancelled', owner: 'Anna', deadline: null, at: 61 },
+];
+
+function Block({ title, link, onLink, children }: { title: string; link?: string; onLink?: () => void; children: ReactNode }) {
+  return (
+    <div className="min-w-0">
+      <div className="flex items-end justify-between gap-4">
+        <h2 className="heading text-title-2 text-text">{title}</h2>
+        {link && (
+          <button type="button" onClick={onLink} className="text-label font-semibold text-text underline decoration-2 underline-offset-4 hover:bg-accent hover:text-on-accent">
+            {link}
+          </button>
+        )}
+      </div>
+      <ul className="mt-3 border-2 border-border-strong bg-surface px-4">{children}</ul>
+    </div>
+  );
+}
 
 export function HomePage({ onStart, onNavigate }: { onStart: (audio: PreparedAudio, prepareMs: number) => void; onNavigate: (path: string) => void }) {
-  // undefined while loading, [] if the list could not be loaded
-  const [samples, setSamples] = useState<Sample[] | undefined>(undefined);
-  const [measured, setMeasured] = useState<Measured | null>(null);
-  const [busy, setBusy] = useState<string | null>(null);
-  const [error, setError] = useState<string | null>(null);
+  const samples = useSamples();
+  const { busy, error, startFile, startSample } = useStart(onStart);
+  const examples = (samples ?? []).filter((s) => EXAMPLES.includes(s.case));
+  const main: Sample | undefined = examples.find((s) => s.case === 'T1-main');
 
-  useEffect(() => {
-    fetch('/samples/index.json')
-      .then((r) => (r.ok ? r.json() : []))
-      .then(setSamples)
-      .catch(() => setSamples([]));
-    fetch('/quality/latest.json')
-      .then((r) => (r.ok ? (r.json() as Promise<Report>) : null))
-      .then((report) => {
-        if (!report) return;
-        const s = report.summary;
-        setMeasured({
-          passed: `${s.passed}/${s.runs}`,
-          unsupported: String(s.exclusionErrors),
-          time: s.timeToResultMs.p50 != null ? seconds(s.timeToResultMs.p50).replace('.0 s', ' s') : '—',
-          cost: s.costPerAudioMinuteUsd != null ? usd(s.costPerAudioMinuteUsd) : '—',
-        });
-      })
-      .catch(() => setMeasured(null));
-  }, []);
-
-  const start = async (key: string, prepare: () => Promise<PreparedAudio>) => {
-    setBusy(key);
-    setError(null);
-    const t = performance.now();
-    try {
-      onStart(await prepare(), performance.now() - t);
-    } catch (err) {
-      setError(err instanceof AudioProblem ? err.message : 'The recording could not be read.');
-      setBusy(null);
-    }
-  };
-  const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const history = useHistory().filter((e) => !isExpired(e));
+  const latestTasks = history
+    .filter((e) => e.outcome !== 'decline')
+    .flatMap((entry) => entry.items.filter((t) => t.status === 'agreed' || t.status === 'needs_review').map((task) => ({ task, entry })))
+    .slice(0, 5);
 
   return (
     <main>
-      <Hero onUpload={() => scrollTo('upload')} onSamples={() => scrollTo('samples')} />
-
-      <section id="upload" className={`${container} scroll-mt-8 py-20`}>
-        <SectionHead
-          eyebrow="Upload"
-          title="Analyze your call"
-          text="Any audio or video the browser can play: a call export, a voice memo, a screen recording. It is converted to 16 kHz mono before it leaves your computer."
-        />
-        <div className="mt-10">
-          <UploadDropzone busy={busy === 'upload'} error={error} onFile={(file) => start('upload', () => prepareAudio(file, file.name))} />
+      <Hero>
+        <div className="surface-light">
+          <UploadDropzone busy={busy === 'upload'} error={error} onFile={startFile} />
         </div>
-        <p className="tag-label mt-4 text-subtle">Kept 30 days so quotes stay playable · delete any time · no account needed</p>
-      </section>
-
-      <section id="samples" className="surface-dark scroll-mt-8">
-        <div className={`${container} py-20`}>
-          <SectionHead
-            eyebrow="Six test recordings"
-            title="Or run one of ours"
-            text="Each one runs live, nothing is cached. Their expected results were written before the product existed."
-          />
-          <div className="mt-10">
-            {samples === undefined ? (
-              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" aria-label="Loading test recordings">
-                {[0, 1, 2].map((i) => (
-                  <Skeleton key={i} className="h-72" />
-                ))}
-              </div>
-            ) : samples.length ? (
-              <SampleList samples={samples} busyCase={busy} onRun={(s) => start(s.case, () => prepareSample(s.url, `${s.case}.wav`))} />
-            ) : (
-              <p className="border-2 border-dashed border-border-strong p-5 text-body text-muted">Test recordings are not available.</p>
-            )}
+        {examples.length > 0 && (
+          <div className="mt-6 flex flex-wrap items-center gap-3">
+            <span className="text-body text-muted">No recording at hand? Try one of ours:</span>
+            <ExampleButtons samples={examples} busyCase={busy} onRun={startSample} />
           </div>
-        </div>
-      </section>
+        )}
+        <p className="mt-8 text-caption text-subtle">Kept 30 days so the quotes stay playable · delete any time · no account needed</p>
+      </Hero>
 
-      <HowItWorks />
-      <NonGoals />
-      {measured && <MeasuredBand measured={measured} onQuality={() => onNavigate('/quality')} />}
+      <section className={`${container} py-14`}>
+        {history.length ? (
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
+            <Block title="Recent recordings" link="All history" onLink={() => onNavigate('/history')}>
+              {history.slice(0, 3).map((entry) => (
+                <RecordingRow key={entry.id} entry={entry} onOpen={() => onNavigate(`/r/${entry.id}`)} />
+              ))}
+            </Block>
+            <Block title="Latest tasks" link="All tasks" onLink={() => onNavigate('/tasks')}>
+              {latestTasks.length ? (
+                latestTasks.map(({ task, entry }) => (
+                  <TaskRow key={`${entry.id}:${task.id}`} task={task} from={entry.fileName} onOpen={() => onNavigate(`/r/${entry.id}#${task.id}`)} />
+                ))
+              ) : (
+                <li className="py-4 text-body text-muted">No agreed tasks yet.</li>
+              )}
+            </Block>
+          </div>
+        ) : (
+          <div className="grid gap-8 lg:grid-cols-2 lg:items-start">
+            <div>
+              <p className="text-caption font-medium text-muted">Example</p>
+              <h2 className="heading mt-1 text-title-2 text-text">What you get from a 70-second call</h2>
+              <p className="mt-2 max-w-md text-body text-muted">
+                The tasks, written out with who and by when. A proposal nobody accepted and a task that was called off are listed apart, so nothing
+                dropped passes for a task. Every line keeps the quote it comes from; run the call to hear them.
+              </p>
+              {main && (
+                <Button className="mt-5" icon="play" loading={busy === main.case} disabled={busy !== null && busy !== main.case} onClick={() => startSample(main)}>
+                  Run this call live
+                </Button>
+              )}
+            </div>
+            <ul className="border-2 border-border-strong bg-surface px-4">
+              {EXAMPLE_RESULT.map((task) => (
+                <TaskRow key={task.id} task={task} from="example call" />
+              ))}
+            </ul>
+          </div>
+        )}
+      </section>
     </main>
   );
 }

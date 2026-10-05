@@ -61,7 +61,7 @@ export function TranscriptView({
             <SpeakerAvatar id={turn.speaker} name={speaker?.name} />
             <div>
               <div className="flex items-center gap-2">
-                <span className="tag-label text-text">{speakerLabel(turn.speaker, speakers)}</span>
+                <span className="text-label font-semibold text-text">{speakerLabel(turn.speaker, speakers)}</span>
                 <TimestampButton id={`turn:${turn.id}`} start={turn.start} end={turn.end} label="this turn" className="h-6 border px-1.5" />
               </div>
               <p className="mt-1.5 text-body text-muted">

@@ -39,17 +39,16 @@ export function SwatchGrid({ tokens }: { tokens: [string, string][] }) {
 }
 
 const TYPE_SCALE: [string, string, string, string][] = [
-  ['text-display', '84 / 0.92 · Onest 850, uppercase', 'Home headline', 'headline'],
-  ['text-display-sm', '44 / 0.95 · Onest 850, uppercase', 'Headlines on phones, big numbers', 'headline'],
-  ['text-title-1', '48 / 0.98 · Onest 850, uppercase', 'Page and section titles', 'headline'],
-  ['text-title-2', '32 / 1.02 · Onest 850, uppercase', 'Result sections, dialogs', 'headline'],
-  ['text-title-3', '20 / 26 · Onest 700', 'Card titles, sentence case', 'font-display font-bold'],
-  ['text-body-lg', '18 / 28 · Geist 400', 'Intro text', ''],
+  ['text-display', '84 / 0.92 · Onest 850, uppercase', 'The home headline only', 'headline'],
+  ['text-display-sm', '44 / 0.95 · Onest 850, uppercase', 'The home headline on phones', 'headline'],
+  ['text-title-1', '36 / 1.1 · Onest 750', 'Page titles, big numbers', 'heading'],
+  ['text-title-2', '24 / 1.2 · Onest 750', 'Sections, dialogs', 'heading'],
+  ['text-title-3', '20 / 26 · Onest 750', 'Card titles', 'heading'],
+  ['text-body-lg', '18 / 28 · Geist 400', 'Intro text, the result summary', ''],
   ['text-quote', '17 / 26 · Geist 400', 'Quotes', ''],
   ['text-body', '15 / 24 · Geist 400', 'Default text', ''],
-  ['text-label', '14 / 20 · Geist 600', 'Buttons, names', 'font-semibold'],
-  ['text-caption', '13 / 18 · Geist 400', 'Captions, metadata', ''],
-  ['tag-label', '11 / 16 · Geist Mono, uppercase, +0.12em', 'Labels: “01 · Agreed”, “Verified”', ''],
+  ['text-label', '14 / 20 · Geist 600', 'Buttons, names, small headings', 'font-semibold'],
+  ['text-caption', '13 / 18 · Geist 400', 'Labels like “Owner”, captions, metadata', ''],
   ['text-micro', '10 / 12', 'Initials in the smallest avatar only', ''],
 ];
 

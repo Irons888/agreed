@@ -30,8 +30,8 @@ export function UploadDropzone({ onFile, busy = false, error = null }: { onFile:
             <Icon name="upload" size={20} />
           </span>
           <div>
-            <p className="headline text-title-2">{over ? 'Drop it' : 'Drop a recording here'}</p>
-            <p className="tag-label mt-2 text-subtle">Audio or video · English · two people · up to 3:00</p>
+            <p className="heading text-title-2">{over ? 'Drop it' : 'Drop a recording here'}</p>
+            <p className="mt-1 text-caption text-muted">Audio or video · English · two people · up to 3 minutes</p>
           </div>
         </div>
         <Button variant="primary" size="lg" icon="file" loading={busy} onClick={() => input.current?.click()} className="shrink-0">

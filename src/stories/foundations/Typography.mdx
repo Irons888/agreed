@@ -7,11 +7,11 @@ import { TypeScale } from './blocks';
 
 Three faces, all self-hosted, so no requests go to a font CDN:
 
-- **Onest** for headlines and big numbers: heavy (850) and uppercase for page and section titles, bold sentence case for card titles.
-- **Geist** for text, buttons and quotes.
-- **Geist Mono** for labels (`tag-label`: 11 px, uppercase, wide tracking), times and money.
+- **Onest** for headings and big numbers.
+- **Geist** for text, buttons, labels and quotes.
+- **Geist Mono** only for timestamps, money and counts in tables, with `tabular-nums` so digits don't jump while a timer runs.
 
-Uppercase is only for headlines and labels. Card titles, quotes and running text stay in sentence case, so they read like what was said.
-Big numbers use `numeral`: the display face without uppercase, so “23.2 s” keeps its lowercase unit. Times and money in text use `tabular-nums`, so digits don't jump while a timer runs.
+One loud thing per screen: the home headline is the only uppercase text (`headline`). Every other heading is bold sentence case (`heading`),
+labels like “Owner” or “Deadline” are plain captions, and big numbers use `numeral`, so “23.2 s” keeps its lowercase unit.
 
 <TypeScale />

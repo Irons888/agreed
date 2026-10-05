@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { RecordingDateCard, ReviewActions, SpeakerNamesCard } from '@/components/domain/clarify';
+import { CallDateForm, ReviewActions, SpeakerNamesCard } from '@/components/domain/clarify';
 import { PipelineProgress } from '@/components/domain/progress';
+import { RunDetails } from '@/components/domain/run-details';
 import { RunHeader } from '@/components/domain/run-header';
 import { DeclineState, EmptyResult, ErrorState } from '@/components/domain/states';
 import { Button } from '@/components/ui/button';
@@ -45,7 +46,7 @@ export const ProgressFailed: Story = {
 };
 
 export const AskWhoIsSpeaking: Story = { render: () => wrap(<SpeakerNamesCard result={unnamedResult} onName={() => {}} />) };
-export const AskRecordingDate: Story = { render: () => wrap(<RecordingDateCard onDate={() => {}} onDismiss={() => {}} />) };
+export const AskCallDate: Story = { render: () => wrap(<CallDateForm onDate={() => {}} onCancel={() => {}} />) };
 export const ReviewDecision: Story = { render: () => wrap(<ReviewActions onAgree={() => {}} onKeep={() => {}} />) };
 
 export const Declined: Story = { render: () => wrap(<DeclineState result={declinedResult} onNew={() => {}} />) };
@@ -60,11 +61,9 @@ export const Header: Story = {
       fileName="T1-main.wav"
       durationSec={t1Result.durationSec}
       speakers={t1Result.speakers}
-      result={t1Result}
-      clientMs={16300}
       actions={
         <>
-          <Button icon="copy">Copy as Markdown</Button>
+          <Button icon="copy">Copy the list</Button>
           <Button variant="primary" icon="upload">
             New recording
           </Button>
@@ -73,3 +72,6 @@ export const Header: Story = {
     />
   ),
 };
+
+/** Folded at the bottom of a result: checks, removed items, time, cost, JSON. */
+export const HowThisWasChecked: Story = { render: () => wrap(<RunDetails result={t1Result} clientMs={16300} onDownload={() => {}} />) };

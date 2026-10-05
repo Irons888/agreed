@@ -1,29 +1,13 @@
-import type { Item, Turn } from '../../../worker/types';
+import type { Turn } from '../../../worker/types';
 import { usePlayer } from '@/lib/audio/player';
 import { clock } from '@/lib/format';
 import { cn } from '@/lib/cn';
-import { decidingEvidence } from './commitment-card';
 import { speakerTone } from './speaker';
-import { STATUS_META } from './status';
 
 const HEIGHT = 56;
 
-/** The whole recording: who speaks when, where each item was decided, and the playhead. */
-export function WaveformTimeline({
-  peaks,
-  duration,
-  turns,
-  items = [],
-  highlighted = null,
-  onHighlight,
-}: {
-  peaks: number[];
-  duration: number;
-  turns: Turn[];
-  items?: Item[];
-  highlighted?: string | null;
-  onHighlight?: (id: string | null) => void;
-}) {
+/** The whole recording: who speaks when, the quote that is playing, and the playhead. Click to move it. */
+export function WaveformTimeline({ peaks, duration, turns }: { peaks: number[]; duration: number; turns: Turn[] }) {
   const player = usePlayer();
   const width = peaks.length;
   const speakerAt = (t: number) => turns.find((turn) => t >= turn.start - 0.1 && t <= turn.end + 0.1)?.speaker;
@@ -63,32 +47,6 @@ export function WaveformTimeline({
         })}
         <rect x={x(player.time)} width={Math.max(1.5, width / 300)} y={0} height={HEIGHT} className="fill-ink" />
       </svg>
-      {/* Markers: where each item was decided. */}
-      <div className="relative mt-1 h-4">
-        {items.map((item) => {
-          const e = decidingEvidence(item);
-          return (
-            <button
-              key={item.id}
-              type="button"
-              aria-label={`${item.title} at ${clock(e.start)}`}
-              title={`${item.title} · ${clock(e.start)}`}
-              onMouseEnter={() => onHighlight?.(item.id)}
-              onMouseLeave={() => onHighlight?.(null)}
-              onClick={() => {
-                document.getElementById(item.id)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                player.playSegment(`${item.id}:deciding`, e.start, e.end);
-              }}
-              className={cn(
-                'absolute top-0 size-3 -translate-x-1/2 transition-transform',
-                STATUS_META[item.status].dot,
-                highlighted === item.id && 'scale-150',
-              )}
-              style={{ left: `${(e.start / Math.max(duration, 0.001)) * 100}%` }}
-            />
-          );
-        })}
-      </div>
     </div>
   );
 }

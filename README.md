@@ -12,18 +12,32 @@ Scope: English, two clearly distinguishable speakers, up to 3 minutes, no overla
 ## What it guarantees
 
 - **“We could” never becomes “we will”.** A proposal nobody accepted is listed as *Not accepted*.
-- **Final state wins.** A cancelled task is *Cancelled*, not active. A moved deadline shows the final date and the trail: “Thursday → Monday”.
+- **Final state wins.** A cancelled task is *Cancelled*, not active. A moved deadline shows the final one and what it replaced: “Monday”, moved from “Thursday”.
 - **Nothing is guessed.**
   - If nobody took a task, it shows *No owner named*.
-  - A weekday such as “by Wednesday” stays as spoken, marked *date context missing*, unless the recording states its own date or you confirm it.
+  - A weekday such as “by Wednesday” stays as spoken, marked *date unknown*, unless the recording states its own date or you set the call date (one click next to the deadline).
 - **Every claim is checked in code.**
   - Quotes are replaced by the transcript's own words.
   - Times come from speech recognition, not from the model.
   - Statuses, owners and deadlines the quotes don't support are downgraded or removed, with a note saying why.
 - **It asks or declines instead of guessing.**
   - Speakers who never say their names: it asks who is who.
-  - Hedged agreements (“I'll try, no promises”): marked *Needs review*.
+  - Hedged agreements (“I'll try, no promises”): listed under *Needs your check*, not counted until you confirm.
   - Three voices or a single voice: it declines and says why.
+
+## Pages
+
+- **New**: upload a recording or run an example call. Until you have results, it shows what you get, written out.
+- **Result** (`/r/:id`): the items with ▶ quotes, the recording and the transcript. The link works for 30 days.
+- **History**: every recording analysed in this browser, with its counts. No accounts: it is kept in the browser.
+- **Tasks**: everything agreed across those recordings, by person, plus open questions and items to check. Each line opens the result at that item.
+- **Quality report** and **Design system**: for reviewers.
+
+## Simple by default
+
+- Each item shows its title, owner, deadline and the one quote that decides it, with ▶. Every other quote, what it does (request, acceptance…) and the code checks are under *Details*.
+- Items that need your decision come right after the agreed tasks. Dropped proposals and cancelled tasks are folded under *Not counted*.
+- Time, cost, removed items and the raw JSON are folded at the bottom under *How this was checked*. The six test recordings, the eval and the brief's rules are on the Quality page.
 
 ## Measured
 

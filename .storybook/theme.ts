@@ -31,7 +31,7 @@ export const agreedTheme = create({
   buttonBg: '#fbfaf6',
   buttonBorder: '#0f2b24',
   booleanBg: '#eee9da',
-  booleanSelectedBg: '#d9f61a',
+  booleanSelectedBg: '#d8ee4e',
 
   inputBg: '#fbfaf6',
   inputBorder: '#0f2b24',

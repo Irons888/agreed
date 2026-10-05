@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import type { Result } from '../../../worker/types';
 import { clock, plural } from '@/lib/format';
-import { Badge } from '../ui/badge';
+import { cn } from '@/lib/cn';
 import { Button } from '../ui/button';
 import { Icon, type IconName } from '../ui/icon';
 
@@ -15,23 +15,15 @@ function StatePanel({ icon, tone, eyebrow, title, children, facts, action }: {
   action?: ReactNode;
 }) {
   return (
-    <div className="border-2 border-border-strong bg-surface">
-      <div className={tone === 'danger' ? 'flex items-center gap-2 bg-danger px-5 py-2 text-surface' : 'surface-dark flex items-center gap-2 px-5 py-2'}>
-        <Icon name={icon} size={14} />
-        <span className="tag-label">{eyebrow}</span>
-      </div>
-      <div className="p-6 sm:p-8">
-        <h2 className="headline max-w-3xl text-title-1 text-text">{title}</h2>
-        <div className="mt-4 max-w-2xl text-body-lg text-muted">{children}</div>
-        {facts && (
-          <div className="mt-5 flex flex-wrap gap-2">
-            {facts.map((f) => (
-              <Badge key={f}>{f}</Badge>
-            ))}
-          </div>
-        )}
-        {action && <div className="mt-8 flex flex-wrap gap-2">{action}</div>}
-      </div>
+    <div className={cn('border-2 bg-surface p-6 sm:p-8', tone === 'danger' ? 'border-danger' : 'border-border-strong')}>
+      <p className={cn('flex items-center gap-2 text-caption font-semibold', tone === 'danger' ? 'text-danger' : 'text-muted')}>
+        <Icon name={icon} size={16} />
+        {eyebrow}
+      </p>
+      <h2 className="heading mt-3 max-w-3xl text-title-1 text-text">{title}</h2>
+      <div className="mt-3 max-w-2xl text-body-lg text-muted">{children}</div>
+      {facts && <p className="mt-3 text-caption text-subtle">{facts.join(' · ')}</p>}
+      {action && <div className="mt-6 flex flex-wrap gap-2">{action}</div>}
     </div>
   );
 }
@@ -42,7 +34,7 @@ export function DeclineState({ result, onNew }: { result: Result; onNew: () => v
     <StatePanel
       icon="close"
       tone="neutral"
-      eyebrow="Outside the scope · declined"
+      eyebrow="Declined: outside what this prototype handles"
       title="Can't build a reliable list from this recording"
       facts={[plural(result.speakers.length, 'voice'), clock(result.durationSec), plural(result.turns.length, 'turn')]}
       action={
@@ -58,7 +50,7 @@ export function DeclineState({ result, onNew }: { result: Result; onNew: () => v
 
 export function EmptyResult() {
   return (
-    <StatePanel icon="checks" tone="neutral" eyebrow="Checked · nothing to list" title="No firm commitments found">
+    <StatePanel icon="checks" tone="neutral" eyebrow="Nothing to list" title="No firm commitments found">
       Nobody committed to anything, asked an open question or proposed a task. The transcript is shown so you can check.
     </StatePanel>
   );
@@ -69,7 +61,7 @@ export function ErrorState({ message, onRetry, onNew }: { message: string; onRet
     <StatePanel
       icon="review"
       tone="danger"
-      eyebrow="Error"
+      eyebrow="Something went wrong"
       title="Processing failed"
       action={
         <>

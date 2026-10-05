@@ -1,48 +1,26 @@
-import { useState, type ReactNode } from 'react';
+import { useState } from 'react';
 import type { Result } from '../../../worker/types';
 import { Button } from '../ui/button';
-import { Icon, type IconName } from '../ui/icon';
+import { Icon } from '../ui/icon';
 import { SpeakerAvatar } from './speaker';
 import { TimestampButton } from './timestamp';
 
-function ClarifyShell({ icon, title, text, children, onDismiss }: { icon: IconName; title: string; text: string; children: ReactNode; onDismiss?: () => void }) {
-  return (
-    <section className="border-2 border-border-strong bg-surface" aria-label={title}>
-      <div className="flex items-center justify-between gap-3 bg-review-bg px-4 py-2 text-review">
-        <span className="tag-label inline-flex items-center gap-1.5">
-          <Icon name={icon} size={14} />
-          Needs your input
-        </span>
-        {onDismiss && (
-          <button type="button" onClick={onDismiss} className="inline-flex size-7 items-center justify-center hover:bg-review-border" aria-label="Dismiss">
-            <Icon name="close" size={16} />
-          </button>
-        )}
-      </div>
-      <div className="p-5">
-        <h2 className="headline text-title-2 text-text">{title}</h2>
-        <p className="mt-2 max-w-2xl text-body text-muted">{text}</p>
-        <div className="mt-5">{children}</div>
-      </div>
-    </section>
-  );
-}
-
 const inputStyle =
-  'h-11 min-w-0 border-2 border-border-strong bg-surface px-3 text-body text-text placeholder:text-subtle focus-visible:border-focus';
+  'h-9 min-w-0 border-2 border-border-strong bg-surface px-2.5 text-body text-text placeholder:text-subtle focus-visible:border-focus';
 
-/** Speakers never said their names: ask, play a sample of each voice, nothing is reprocessed. */
+/** Speakers never said their names: ask once, with a sample of each voice. Nothing is processed again. */
 export function SpeakerNamesCard({ result, onName }: { result: Result; onName: (speakerId: string, name: string) => void }) {
   const unnamed = result.speakers.filter((s) => !s.name);
   const [drafts, setDrafts] = useState<Record<string, string>>({});
   if (!unnamed.length) return null;
   return (
-    <ClarifyShell
-      icon="owner"
-      title="Who is speaking?"
-      text="Nobody said their name, so owners show as Speaker 1 and Speaker 2. Name them if you know who they are; the recording is not processed again."
-    >
-      <div className="space-y-2">
+    <section aria-label="Name the speakers" className="border-2 border-review-border bg-surface p-4">
+      <p className="flex items-center gap-2 text-label font-semibold text-text">
+        <Icon name="owner" size={16} className="text-missing" />
+        Nobody said their name
+      </p>
+      <p className="mt-1 text-caption text-muted">Owners show as Speaker 1 and Speaker 2. Name them if you know who is who.</p>
+      <div className="mt-3 space-y-2">
         {unnamed.map((speaker) => {
           const firstTurn = result.turns.find((t) => t.speaker === speaker.id);
           return (
@@ -56,7 +34,7 @@ export function SpeakerNamesCard({ result, onName }: { result: Result; onName: (
               }}
             >
               <SpeakerAvatar id={speaker.id} />
-              <span className="tag-label w-24 text-text">{speaker.label}</span>
+              <span className="w-20 text-label font-semibold text-text">{speaker.label}</span>
               {firstTurn && (
                 <TimestampButton id={`voice:${speaker.id}`} start={firstTurn.start} end={Math.min(firstTurn.end, firstTurn.start + 5)} label={`${speaker.label}'s voice`} />
               )}
@@ -67,52 +45,56 @@ export function SpeakerNamesCard({ result, onName }: { result: Result; onName: (
                 value={drafts[speaker.id] ?? ''}
                 onChange={(e) => setDrafts((d) => ({ ...d, [speaker.id]: e.target.value }))}
               />
-              <Button type="submit" size="md" variant="ink">
+              <Button type="submit" size="sm" variant="ink">
                 Save
               </Button>
             </form>
           );
         })}
       </div>
-    </ClarifyShell>
+    </section>
   );
 }
 
-/** Relative deadlines can become dates once the user confirms when the recording was made. */
-export function RecordingDateCard({ onDate, onDismiss }: { onDate: (iso: string) => void; onDismiss: () => void }) {
+/**
+ * Shown under a deadline like “by Wednesday” when the recording doesn't say what day it was.
+ * The date applies to every deadline at once; the recording is not processed again.
+ */
+export function CallDateForm({ onDate, onCancel }: { onDate: (iso: string) => void; onCancel: () => void }) {
   const today = new Date().toISOString().slice(0, 10);
   const [value, setValue] = useState(today);
   return (
-    <ClarifyShell
-      icon="noDate"
-      title="When was this recorded?"
-      text="Deadlines like “by Wednesday” stay as spoken because the recording doesn't say what day it was. Give the date and they become calendar dates; the recording is not processed again."
-      onDismiss={onDismiss}
+    <form
+      className="mt-2 flex flex-wrap items-center gap-2"
+      onSubmit={(e) => {
+        e.preventDefault();
+        if (value) onDate(value);
+      }}
     >
-      <div className="flex flex-wrap items-center gap-2">
-        <Button onClick={() => onDate(today)}>Today</Button>
-        <input type="date" className={inputStyle} value={value} max={today} onChange={(e) => setValue(e.target.value)} aria-label="Recording date" />
-        <Button variant="primary" onClick={() => value && onDate(value)}>
-          Use this date
-        </Button>
-        <Button variant="ghost" onClick={onDismiss}>
-          Keep as spoken
-        </Button>
-      </div>
-    </ClarifyShell>
+      <label className="text-caption text-muted">
+        The call was on{' '}
+        <input type="date" className={inputStyle} value={value} max={today} onChange={(e) => setValue(e.target.value)} />
+      </label>
+      <Button type="submit" size="sm" variant="ink">
+        Apply
+      </Button>
+      <Button type="button" size="sm" variant="ghost" onClick={onCancel}>
+        Cancel
+      </Button>
+    </form>
   );
 }
 
-/** Buttons shown on a "Needs review" card. */
+/** Buttons on an item that needs your check. */
 export function ReviewActions({ onAgree, onKeep }: { onAgree: () => void; onKeep: () => void }) {
   return (
-    <div className="mt-4 flex flex-wrap items-center gap-2 border-t-2 border-border-strong pt-4">
-      <span className="tag-label mr-1 text-text">Was this agreed?</span>
+    <div className="mt-4 flex flex-wrap items-center gap-2">
+      <span className="mr-1 text-label font-semibold text-text">Was this agreed?</span>
       <Button size="sm" variant="primary" icon="agreed" onClick={onAgree}>
         Count as agreed
       </Button>
       <Button size="sm" variant="ghost" onClick={onKeep}>
-        Keep for review
+        Not sure yet
       </Button>
     </div>
   );

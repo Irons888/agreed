@@ -6,8 +6,8 @@ import { cn } from '@/lib/cn';
 export function MetricTile({ label, value, sub, lead = false }: { label: string; value: string; sub?: string; lead?: boolean }) {
   return (
     <div className={cn('p-5', lead ? 'bg-accent text-on-accent' : 'bg-surface text-text')}>
-      <p className="tag-label">{label}</p>
-      <p className="numeral mt-8 text-title-1">{value}</p>
+      <p className="text-caption font-medium">{label}</p>
+      <p className="numeral mt-6 text-title-1">{value}</p>
       {sub && <p className={cn('mt-2 text-caption', lead ? 'text-on-accent' : 'text-muted')}>{sub}</p>}
     </div>
   );
@@ -34,7 +34,7 @@ export function CostBreakdown({ metrics }: { metrics: Metrics }) {
           {rows.map(([label, detail, value]) => (
             <tr key={label} className="border-b-2 border-border">
               <th scope="row" className="py-3 pr-4 align-top font-normal">
-                <span className="tag-label block text-text">{label}</span>
+                <span className="block text-label font-semibold text-text">{label}</span>
                 <span className="mt-1 block text-muted">{detail}</span>
               </th>
               <td className="py-3 text-right align-top font-mono text-text tabular">{value}</td>
@@ -42,7 +42,7 @@ export function CostBreakdown({ metrics }: { metrics: Metrics }) {
           ))}
           <tr>
             <th scope="row" className="py-3 pr-4 align-top font-normal">
-              <span className="tag-label block text-text">Total</span>
+              <span className="block text-label font-semibold text-text">Total</span>
               <span className="mt-1 block text-muted">{usd(cost.perAudioMinuteUsd)} per audio minute</span>
             </th>
             <td className="numeral py-3 text-right align-top text-title-3">{usd(cost.totalUsd)}</td>

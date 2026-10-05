@@ -81,7 +81,7 @@ Times are local (EEST).
 ### Redesign
 
 - The first visual pass looked dated and too busy. Wrote a screen-by-screen design spec, then picked an editorial style together:
-  - forest green, cream and one acid-lime accent; violet for open questions, orange for what needs a person;
+  - forest green, cream and one lime accent (softened a little after the first review); violet for open questions, orange for what needs a person;
   - square corners, 2 px lines, no shadows; dark forest bands for the header, the transcript and parts of the home page;
   - Onest for heavy uppercase headlines, Geist for text, Geist Mono for labels.
 - Only tokens, primitives and components changed. The pipeline, the data and the screens' structure did not, so every screen is still built from the Storybook components.
@@ -90,3 +90,25 @@ Times are local (EEST).
   - dark theme: lime on a cream fill was unreadable in three places, so there is now a separate `--ink-accent` token (lime on forest, forest on cream);
   - Storybook docs styles were overriding the type scale, so the blocks opt out with `sb-unstyled`; the Storybook UI uses the product's colours, and its onboarding widgets are hidden.
 - 22:10: deployed. One live T1 run on production gave the expected result (3 agreed, 1 open question, 2 not counted) in 33.5 s.
+
+### Simpler by default
+
+- Looked at the redesign as a regular user would: it worked for a demo but showed the machinery. Every card had a status tag, two ▶ buttons, the role of each quote, “Verified” marks and a checks footer; four big counters repeated the section titles; the header showed the run's cost; the home page had six test cases, a marquee, rules and numbers. The brief scores usability inside the 80% and says there is no need to sell the product, so all of that moved behind a click.
+- Now:
+  - a card shows the title, owner, deadline and the one quote that decides it, with ▶; every other quote, its role and the code checks are under “Details”;
+  - one summary line (“3 agreed tasks · 1 open question · 2 not counted”) replaces the counters; items that need a decision come right after the agreed tasks; “Not counted” is folded;
+  - the call-date question is a link next to the deadline instead of a big card above the results;
+  - time, cost, removed items and JSON are folded under “How this was checked” at the bottom; the privacy note is one line;
+  - the home page is one screen: headline, upload, two example calls. The six test recordings, the eval and the brief's rules are on the Quality page;
+  - uppercase only for the home headline; labels are plain text; monospace only for times and money.
+- Checked on localhost with live runs of T1 (desktop and phone) and T3 (asks for names, the hedged fix waits for a decision).
+
+### Structure: History and Tasks
+
+- Feedback on the one-screen home: good first block, but no structure, no history, nothing written out. A results tool people come back to needs somewhere to come back to.
+- Added three places in the top menu:
+  - **New**: the upload. Until you have results, an example of what T1 gives, written out line by line; afterwards, your recent recordings and latest tasks.
+  - **History**: every recording analysed in this browser.
+  - **Tasks**: everything agreed across those recordings, grouped by person (“who promised what”), then items to check and open questions. A line opens the result at that item and marks it.
+- No accounts, so the history is kept in the browser: a short summary of each result plus the answers to clarifications, which are re-applied when the result is opened again. This also fixes answers being lost on reload.
+- A live T1 run showed a weak main quote: the model had tagged Anna's “Perfect. Thanks.” as an acceptance, and it became the quote on the card. The main quote of a task is now the latest agreement that says the final deadline, then the owner's own words.

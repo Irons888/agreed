@@ -1,6 +1,6 @@
 /*
   Design tokens: the only place where colours, type and motion are defined.
-  Style: editorial and blunt. Forest green, cream and one acid-lime accent; square corners,
+  Style: editorial and blunt. Forest green, cream and one lime accent; square corners,
   2 px lines, no shadows; huge uppercase display type with monospace labels.
   Components use the tokens through Tailwind utilities (see app.css). Raw hex values elsewhere are a bug.
 */
@@ -19,18 +19,18 @@
   --text-subtle: #75756a;
   --ink: #0f2b24;
   --ink-contrast: #f7f4e9;
-  --accent: #d9f61a;
-  --accent-strong: #c9e60c;
+  --accent: #d8ee4e;
+  --accent-strong: #cde340;
   --on-accent: #0f2b24;
   /* The accent to use on an ink fill: lime on forest, forest on cream. */
-  --ink-accent: #d9f61a;
+  --ink-accent: #d8ee4e;
   --focus: #6f5cff;
   --danger: #b63d32;
   --danger-bg: #f6e1dc;
 
   /* Statuses: text / fill / line. Solid tags, always with an icon and a word. */
   --agreed: #0f2b24;
-  --agreed-bg: #d9f61a;
+  --agreed-bg: #d8ee4e;
   --agreed-border: #0f2b24;
   --question: #ffffff;
   --question-bg: #6f5cff;
@@ -46,8 +46,8 @@
   --missing-border: #e8782a;
 
   /* Speakers. Lime and forest on light surfaces; lime and cream on dark ones (see .surface-dark). */
-  --speaker-1: #d9f61a;
-  --speaker-1-bg: #d9f61a;
+  --speaker-1: #d8ee4e;
+  --speaker-1-bg: #d8ee4e;
   --speaker-1-ink: #0f2b24;
   --speaker-2: #0f2b24;
   --speaker-2-bg: #0f2b24;
@@ -130,7 +130,7 @@
   --text-subtle: #75756a;
   --ink: #0f2b24;
   --ink-contrast: #f7f4e9;
-  --ink-accent: #d9f61a;
+  --ink-accent: #d8ee4e;
   --speaker-2: #0f2b24;
   --speaker-2-bg: #0f2b24;
   --speaker-2-ink: #f7f4e9;

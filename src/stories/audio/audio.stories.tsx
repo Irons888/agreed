@@ -20,7 +20,7 @@ function Panel({ audio }: { audio: PreparedAudio }) {
   return (
     <div className="surface-dark max-w-xl space-y-3 p-4">
       <PlayerBar duration={audio.duration} />
-      <WaveformTimeline peaks={audio.peaks} duration={audio.duration} turns={t1Result.turns} items={t1Result.items} highlighted={highlighted} onHighlight={setHighlighted} />
+      <WaveformTimeline peaks={audio.peaks} duration={audio.duration} turns={t1Result.turns} />
       <div className="max-h-96 overflow-y-auto border-t-2 border-border pt-4">
         <TranscriptView turns={t1Result.turns} speakers={t1Result.speakers} items={t1Result.items} highlighted={highlighted} onHighlight={setHighlighted} />
       </div>
@@ -39,7 +39,7 @@ export const WaveformOnly: Story = {
     const audio = loaded.audio as PreparedAudio;
     return (
       <div className="max-w-xl">
-        <WaveformTimeline peaks={audio.peaks} duration={audio.duration} turns={t1Result.turns} items={t1Result.items} />
+        <WaveformTimeline peaks={audio.peaks} duration={audio.duration} turns={t1Result.turns} />
       </div>
     );
   },

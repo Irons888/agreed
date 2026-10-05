@@ -56,12 +56,12 @@
   --text-display-sm: 2.75rem;
   --text-display-sm--line-height: 0.95;
   --text-display-sm--letter-spacing: -0.035em;
-  --text-title-1: 3rem;
-  --text-title-1--line-height: 0.98;
-  --text-title-1--letter-spacing: -0.035em;
-  --text-title-2: 2rem;
-  --text-title-2--line-height: 1.02;
-  --text-title-2--letter-spacing: -0.03em;
+  --text-title-1: 2.25rem;
+  --text-title-1--line-height: 1.1;
+  --text-title-1--letter-spacing: -0.025em;
+  --text-title-2: 1.5rem;
+  --text-title-2--line-height: 1.2;
+  --text-title-2--letter-spacing: -0.02em;
   --text-title-3: 1.25rem;
   --text-title-3--line-height: 1.6rem;
   --text-title-3--letter-spacing: -0.01em;
@@ -144,21 +144,20 @@
   font-variant-numeric: tabular-nums;
 }
 
-/* Big editorial headings: display face, heavy, uppercase. */
+/* The one shouting headline per page: display face, heavy, uppercase. */
 @utility headline {
   font-family: var(--font-display);
   font-weight: 850;
   text-transform: uppercase;
 }
 
-/* Monospace label: "01 · AGREED", "PROCESSED LIVE IN 20.9 S". */
-@utility tag-label {
-  font-family: var(--font-mono);
-  font-size: var(--text-tag);
-  line-height: var(--text-tag--line-height);
-  letter-spacing: var(--text-tag--letter-spacing);
-  text-transform: uppercase;
+/* Every other heading: display face, bold, sentence case. */
+@utility heading {
+  font-family: var(--font-display);
+  font-weight: 750;
+  letter-spacing: -0.015em;
 }
+
 
 /* Big numbers: display face, heavy, never uppercased ("23.2 s", "$0.0071"). Proportional figures, so "130/130" keeps its rhythm. */
 @utility numeral {

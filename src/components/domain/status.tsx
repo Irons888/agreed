@@ -21,7 +21,7 @@ export const STATUS_META: Record<Status, { label: string; icon: IconName; classN
     hint: 'Asked, but still unanswered at the end of the recording.',
   },
   needs_review: {
-    label: 'Needs review',
+    label: 'Needs your check',
     icon: 'review',
     className: 'border-review-border bg-review-bg text-review',
     dot: 'bg-review-bg',
@@ -55,16 +55,6 @@ export function StatusBadge({ status, size = 'md' }: { status: Status; size?: 's
         <Badge icon={meta.icon} size={size} className={meta.className}>
           {meta.label}
         </Badge>
-      </span>
-    </Tooltip>
-  );
-}
-
-export function ChangedBadge({ from, to }: { from: string[]; to: string | null }) {
-  return (
-    <Tooltip content={`Deadline changed: ${[...from, to ?? '—'].join(' → ')}`}>
-      <span className="inline-flex">
-        <Badge icon="changed">Moved</Badge>
       </span>
     </Tooltip>
   );

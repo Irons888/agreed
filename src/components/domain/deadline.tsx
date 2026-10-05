@@ -47,19 +47,19 @@ export function DeadlineChip({ deadline }: { deadline: Deadline }) {
   );
 }
 
-/** "MOVED Thursday → Monday", when an earlier deadline was replaced. */
-export function DeadlineChange({ previous, current }: { previous: string[]; current: string | null }) {
+/** "Moved from “by Thursday”", when an earlier deadline was replaced. */
+export function DeadlineChange({ previous }: { previous: string[] }) {
   if (!previous.length) return null;
   return (
-    <span className="mt-1.5 flex flex-wrap items-center gap-1.5 text-caption text-muted">
-      <span className="tag-label text-subtle">Moved</span>
-      {previous.map((p) => (
+    <span className="mt-1 flex flex-wrap items-center gap-x-1.5 text-caption text-muted">
+      <Icon name="changed" size={14} />
+      Moved from
+      {previous.map((p, i) => (
         <span key={p} className="line-through">
           {spoken(p)}
+          {i < previous.length - 1 ? ',' : ''}
         </span>
       ))}
-      <Icon name="next" size={14} />
-      <span className="font-semibold text-text">{current ? spoken(current) : '—'}</span>
     </span>
   );
 }

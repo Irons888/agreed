@@ -10,7 +10,7 @@ export const buttonStyles = cva(
   {
     variants: {
       variant: {
-        /** The one main action: acid lime. */
+        /** The one main action: lime. */
         primary: 'bg-accent text-on-accent hover:bg-accent-strong',
         /** Outlined in the current ink; inverts on hover. */
         secondary: 'border-2 border-border-strong text-text hover:bg-ink hover:text-ink-contrast',

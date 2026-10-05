@@ -49,7 +49,7 @@ const preview: Preview = {
     },
     options: {
       storySort: {
-        order: ['Introduction', 'Foundations', ['Colors', 'Typography', 'Spacing, lines, surfaces', 'Icons', 'Content'], 'Primitives', 'Commitments', 'Audio', 'Flow', 'Metrics', 'Pages'],
+        order: ['Introduction', 'Foundations', ['Colors', 'Typography', 'Spacing, lines, surfaces', 'Icons', 'Content'], 'Primitives', 'Commitments', 'History', 'Audio', 'Flow', 'Metrics', 'Pages'],
       },
     },
   },

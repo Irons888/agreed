@@ -25,7 +25,7 @@ export function ConfirmDialog({
       <D.Portal>
         <D.Overlay className="fixed inset-0 z-50 bg-ink/50" />
         <D.Content className="fixed inset-x-4 top-1/2 z-50 mx-auto max-w-md -translate-y-1/2 border-2 border-border-strong bg-surface p-6">
-          <D.Title className="headline text-title-2 text-text">{title}</D.Title>
+          <D.Title className="heading text-title-2 text-text">{title}</D.Title>
           <D.Description asChild>
             <div className="mt-2 text-body text-muted">{children}</div>
           </D.Description>

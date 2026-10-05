@@ -14,7 +14,7 @@ All test recordings, scripts, timelines and expected results are in [`testset/`]
 |---|---|---|---|
 | T1 | Anna (PM) and Mark (backend), 1:11. Proposal never accepted, accepted task, corrected deadline, cancelled task, task with no owner, open question | 3 agreed (one with no owner, one moved from Thursday to Monday), 1 open question, dark mode not accepted, meeting room cancelled. Weekdays stay as spoken, marked “date context missing” | **5/5 pass.** All 6 items with the right status, owner and deadline every run; 0 extras. Median 31.5 s |
 | T2 | T1 with one agreement changed: dark mode accepted | As T1, but dark mode agreed (Mark, “by Friday”) | **5/5 pass.** Dark mode agreed (Mark, “by Friday”); everything else as T1. Median 26.6 s |
-| T3 | No introductions, every statement hedged | Asks who is speaking. No agreed tasks, no owners, no dates | **5/5 pass.** Asks who is speaking; 0 agreed tasks; the hedged fix is “Needs review”; no owners or dates. Median 23.2 s |
+| T3 | No introductions, every statement hedged | Asks who is speaking. No agreed tasks, no owners, no dates | **5/5 pass.** Asks who is speaking; 0 agreed tasks; the hedged fix is under “Needs your check”; no owners or dates. Median 23.2 s |
 | T4 | States its date (“Monday, October 5th, 2026”) | tomorrow → Oct 6, Friday → Oct 9, today → Oct 5, Wednesday next week → Oct 14 | **5/5 pass.** Oct 6, Oct 9, Oct 5, Oct 14 every run; “let's do a review” has no owner. Median 21.4 s |
 | T5 | Three voices | Declines: more than two voices | **5/5 pass.** Declined after recognition, no list. 0.8 s |
 | T6 | T1 over a noisy phone line | Same as T1 | **5/5 pass.** Same result as T1. Median 27.3 s |
@@ -47,7 +47,7 @@ Final eval: [`eval/reports/2026-10-05T17-21-03-651Z.md`](../eval/reports/2026-10
 - **Time to the full result.** Median 23 s, p90 31.5 s, up to 50 s on T1. Nearly all of it is the extraction model on Workers AI, and the same input can take 21 s or 50 s. A smaller model (gpt-oss-20b) was no faster and lost owners. The transcript shows after about 1.2 s, so the page is not empty while you wait.
 - **Short recordings.** Under about 30 seconds, two voices can be heard as one. The product declines such input rather than guessing.
 - **Synthetic test audio.** All recordings are text-to-speech; T6 adds phone-line noise, but there is no real human recording in the set.
-- **Clarification answers are not saved.** Speaker names, the recording date and review decisions apply on the page, but a shared link shows the original result.
+- **History lives in the browser.** There are no accounts, so History, Tasks and the answers to clarifications (speaker names, the call date, review decisions) are kept in this browser and re-applied when a result is opened again. Another device, or a shared link, shows the original result.
 
 **Not built:**
 - a side-by-side T1/T2 comparison view;
@@ -134,7 +134,7 @@ _filled by the author_
    - Show items as they are found instead of waiting for the whole answer.
    - Measure a faster host for the same model (for example Groq) against the eval.
    - Split long conversations into overlapping windows.
-2. **Save clarification answers** with the result, with a small edit history, so a shared link shows the confirmed version.
+2. **Save clarification answers on the server** with the result, with a small edit history, so a shared link and another device show the confirmed version. Accounts would also make History and Tasks follow the user.
 3. **A bigger test set:**
    - real human recordings;
    - interruptions, sarcasm, paraphrased acceptances;
