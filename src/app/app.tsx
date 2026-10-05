@@ -6,6 +6,7 @@ import type { PreparedAudio } from '@/lib/audio/prepare';
 import { HomePage } from '@/pages/home';
 import { QualityPage } from '@/pages/quality';
 import { RunPage, type RunState } from '@/pages/run';
+import { SavedRunPage } from '@/pages/saved-run';
 
 const freshSteps = (prepareMs: number): Record<StepKey, StepState> => ({
   prepare: { status: 'done', ms: prepareMs },
@@ -27,11 +28,11 @@ function usePath() {
     setPath(to);
     window.scrollTo({ top: 0 });
   }, []);
-  return { path, navigate };
+  return { path, navigate, setPath };
 }
 
 export function App() {
-  const { path, navigate } = usePath();
+  const { path, navigate, setPath } = usePath();
   const [run, setRun] = useState<RunState | null>(null);
   const counter = useRef(0);
   const abort = useRef<AbortController | null>(null);
@@ -68,6 +69,11 @@ export function App() {
           // In development the last result is kept on window, to save real fixtures for Storybook.
           if (import.meta.env.DEV) Object.assign(window, { __agreedLastResult: result });
           update((r) => ({ ...r, result, clientMs: Math.round(performance.now() - startedAt) }));
+          // The finished result gets its own link; the page keeps what is already on screen.
+          if (counter.current === key && window.location.pathname === '/run') {
+            window.history.replaceState(null, '', `/r/${result.id}`);
+            setPath(`/r/${result.id}`);
+          }
         })
         .catch((err: unknown) => {
           if (controller.signal.aborted) return;
@@ -80,6 +86,16 @@ export function App() {
           }));
         });
     },
+    [navigate, setPath],
+  );
+
+  const removeRun = useCallback(
+    async (id: string) => {
+      const res = await fetch(`/api/runs/${id}`, { method: 'DELETE' });
+      if (!res.ok && res.status !== 404) throw new Error('Delete failed.');
+      setRun((current) => (current?.result?.id === id ? null : current));
+      navigate('/');
+    },
     [navigate],
   );
 
@@ -89,15 +105,18 @@ export function App() {
   }, [path, run, navigate]);
 
   const goHome = () => navigate('/');
+  const savedId = path.match(/^\/r\/([0-9a-f-]{36})$/)?.[1] ?? null;
 
   return (
     <div className="flex min-h-screen flex-col">
-      <TopNav onNavigate={navigate} current={path === '/run' ? '/' : path} />
+      <TopNav onNavigate={navigate} current={path === '/run' || savedId ? '/' : path} />
       <div className="flex-1">
         {path === '/quality' ? (
           <QualityPage />
-        ) : path === '/run' && run ? (
-          <RunPage key={run.key} run={run} onNew={goHome} onRetry={() => start(run.audio, run.steps.prepare.ms ?? 0)} />
+        ) : savedId && run?.result?.id !== savedId ? (
+          <SavedRunPage key={savedId} id={savedId} onNew={goHome} onDelete={removeRun} />
+        ) : (path === '/run' || savedId) && run ? (
+          <RunPage key={run.key} run={run} onNew={goHome} onRetry={() => start(run.audio, run.steps.prepare.ms ?? 0)} onDelete={removeRun} />
         ) : (
           <HomePage onStart={start} />
         )}

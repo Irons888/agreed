@@ -3,7 +3,13 @@ import type { Turn } from '../types';
 import { clock } from '../lib/text';
 import { EXAMPLE_OUTPUT, EXAMPLE_TRANSCRIPT, ROLES, STATUSES, systemPrompt } from './prompt';
 
-export const LLM_MODEL = '@cf/openai/gpt-oss-120b';
+/** Models the extraction can run on. The default is the one the eval was tuned on. */
+export const LLM_MODELS = {
+  'gpt-oss-120b': '@cf/openai/gpt-oss-120b',
+  'gpt-oss-20b': '@cf/openai/gpt-oss-20b',
+} as const;
+export type LlmModelName = keyof typeof LLM_MODELS;
+export const DEFAULT_LLM: LlmModelName = 'gpt-oss-120b';
 const MAX_ATTEMPTS = 2;
 
 export const LlmOutput = z.object({
@@ -97,7 +103,7 @@ type ChatResponse = {
 };
 
 /** One model call; if the output doesn't match the schema, one retry that quotes the error back. */
-export async function extract(ai: Ai, turns: Turn[], reasoning: string) {
+export async function extract(ai: Ai, turns: Turn[], reasoning: string, model: LlmModelName = DEFAULT_LLM) {
   const messages: ChatMessage[] = [
     { role: 'system', content: systemPrompt(reasoning) },
     { role: 'user', content: EXAMPLE_TRANSCRIPT },
@@ -110,7 +116,7 @@ export async function extract(ai: Ai, turns: Turn[], reasoning: string) {
   for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
     let raw = '';
     try {
-      const out = (await ai.run(LLM_MODEL as never, {
+      const out = (await ai.run(LLM_MODELS[model] as never, {
         messages,
         response_format: { type: 'json_schema', json_schema: { name: 'commitments', schema: RESPONSE_SCHEMA, strict: true } },
         max_tokens: 6000,

@@ -2,13 +2,13 @@ import type { Clarification, DeclineReason, Metrics, Result, RunEvent, Speaker, 
 import { readWav } from '../lib/wav';
 import { ASR_MODEL, transcribe } from './asr';
 import { buildTurns } from './turns';
-import { LLM_MODEL, extract, type LlmUsage } from './extract';
+import { LLM_MODELS, extract, type LlmModelName, type LlmUsage } from './extract';
 import { verifyItems, verifyRecordingDate, verifySpeakers } from './verify';
 import { costOf } from './cost';
 
 export const MAX_SECONDS = 180;
 
-export type RunInput = { id: string; wav: Uint8Array; fileName: string | null; reasoning: string };
+export type RunInput = { id: string; wav: Uint8Array; fileName: string | null; reasoning: string; model: LlmModelName };
 
 const DECLINE_MESSAGES: Record<DeclineReason, string> = {
   not_wav: 'The upload is not a readable WAV recording.',
@@ -29,9 +29,9 @@ export async function runPipeline(env: Env, input: RunInput, emit: (event: RunEv
   let audioMinutes = 0;
 
   const metrics = (): Metrics => {
-    const cost = costOf(audioMinutes, asrAttempts, llmUsage);
+    const cost = costOf(audioMinutes, asrAttempts, llmUsage, input.model);
     return {
-      models: { asr: ASR_MODEL, llm: LLM_MODEL, reasoning: input.reasoning },
+      models: { asr: ASR_MODEL, llm: LLM_MODELS[input.model], reasoning: input.reasoning },
       timings: { ...timings, totalMs: Date.now() - started },
       usage: {
         audioMinutes: Math.round(audioMinutes * 1000) / 1000,
@@ -100,7 +100,7 @@ export async function runPipeline(env: Env, input: RunInput, emit: (event: RunEv
   // 2. The model proposes items with quotes
   emit({ type: 'stage', stage: 'extract', status: 'start' });
   t = Date.now();
-  const extraction = await extract(env.AI, turns, input.reasoning);
+  const extraction = await extract(env.AI, turns, input.reasoning, input.model);
   Object.assign(llmUsage, extraction.usage);
   retries += extraction.retries;
   timings.extractMs = Date.now() - t;

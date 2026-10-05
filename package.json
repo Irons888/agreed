@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "node scripts/prepare-public.mjs && vite",
-    "build": "npm run build-storybook && vite build",
+    "build": "node scripts/prepare-public.mjs && npm run build-storybook && vite build && node scripts/copy-storybook.mjs",
     "preview": "vite preview",
     "deploy": "npm run build && wrangler deploy",
     "typecheck": "tsc -p tsconfig.app.json && tsc -p tsconfig.worker.json",
@@ -13,7 +13,7 @@
     "testset:build": "node testset/build.mjs",
     "testset:voices": "node testset/build.mjs --list-voices",
     "storybook": "node scripts/prepare-public.mjs && storybook dev -p 6006 --no-open",
-    "build-storybook": "node scripts/prepare-public.mjs && storybook build -o public/storybook --quiet"
+    "build-storybook": "STORYBOOK_FOR_DEPLOY=1 storybook build -o storybook-static --quiet"
   },
   "engines": {
     "node": ">=22"

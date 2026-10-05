@@ -4,10 +4,12 @@ import { Page } from '@/components/domain/layout';
 import { SampleList, type Sample } from '@/components/domain/samples';
 import { UploadDropzone } from '@/components/domain/upload';
 import { Icon } from '@/components/ui/icon';
+import { Skeleton } from '@/components/ui/skeleton';
 import { AudioProblem, prepareAudio, prepareSample, type PreparedAudio } from '@/lib/audio/prepare';
 
 export function HomePage({ onStart }: { onStart: (audio: PreparedAudio, prepareMs: number) => void }) {
-  const [samples, setSamples] = useState<Sample[]>([]);
+  // undefined while loading, [] if the list could not be loaded
+  const [samples, setSamples] = useState<Sample[] | undefined>(undefined);
   const [busy, setBusy] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -43,14 +45,20 @@ export function HomePage({ onStart }: { onStart: (audio: PreparedAudio, prepareM
           </div>
           <p className="mt-4 flex items-start gap-2 text-caption text-subtle">
             <Icon name="info" size={14} className="mt-px" />
-            The audio is converted in your browser and processed on Cloudflare Workers AI. This prototype does not store recordings yet.
+            The audio is converted in your browser and processed on Cloudflare Workers AI. The recording and its result are kept for 30 days, and you can delete them at any time.
           </p>
         </div>
         <div>
           <h2 className="text-title-3 font-semibold text-text">Or try a test recording</h2>
           <p className="mt-1 text-body text-muted">Each one is processed live, nothing is cached. Expected results were written before the product existed.</p>
           <div className="mt-4">
-            {samples.length ? (
+            {samples === undefined ? (
+              <div className="space-y-2" aria-label="Loading test recordings">
+                {[0, 1, 2].map((i) => (
+                  <Skeleton key={i} className="h-20 rounded-card" />
+                ))}
+              </div>
+            ) : samples.length ? (
               <SampleList samples={samples} busyCase={busy} onRun={(s) => start(s.case, () => prepareSample(s.url, `${s.case}.wav`))} />
             ) : (
               <p className="rounded-panel border border-dashed border-border-strong p-4 text-body text-muted">Test recordings are not available.</p>

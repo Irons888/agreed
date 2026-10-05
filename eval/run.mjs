@@ -5,6 +5,7 @@
 //   node eval/run.mjs                              all cases, 1 run each, against http://127.0.0.1:8787
 //   node eval/run.mjs --runs 5 --base https://…    5 runs per case against a deployed instance
 //   node eval/run.mjs --reasoning medium T1-main   one case with another reasoning level
+//   node eval/run.mjs --model gpt-oss-20b          compare another extraction model
 //
 // Writes eval/reports/<timestamp>.json and .md, eval/reports/latest.json, and every full result to eval/results/<timestamp>/.
 
@@ -26,6 +27,7 @@ const option = (name, fallback) => {
 const base = option('base', 'http://127.0.0.1:8787').replace(/\/$/, '');
 const runs = Number(option('runs', '1'));
 const reasoning = option('reasoning', 'low');
+const model = option('model', 'gpt-oss-120b');
 const allCases = (await readdir(TESTSET, { withFileTypes: true }))
   .filter((d) => d.isDirectory() && /^T\d/.test(d.name))
   .map((d) => d.name)
@@ -44,13 +46,22 @@ async function loadCase(name) {
   return { name, expected, timeline, audio };
 }
 
+const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
 async function runOnce({ name, audio }) {
+  let res;
+  // The public API allows a few runs a minute per visitor; the eval waits instead of failing.
+  for (let attempt = 0; ; attempt++) {
+    res = await fetch(`${base}/api/runs?reasoning=${reasoning}&model=${model}`, {
+      method: 'POST',
+      body: audio,
+      headers: { 'content-type': 'audio/wav', 'x-file-name': `${name}.wav` },
+    });
+    if (res.status !== 429 || attempt >= 8) break;
+    await res.text();
+    await wait(15000);
+  }
   const started = performance.now();
-  const res = await fetch(`${base}/api/runs?reasoning=${reasoning}`, {
-    method: 'POST',
-    body: audio,
-    headers: { 'content-type': 'audio/wav', 'x-file-name': `${name}.wav` },
-  });
   if (!res.ok) throw new Error(`HTTP ${res.status}: ${(await res.text()).slice(0, 200)}`);
   const decoder = new TextDecoder();
   let buffer = '';
@@ -164,7 +175,7 @@ const percentile = (values, p) => {
 
 // ---- main -----------------------------------------------------------------
 
-const report = { startedAt: new Date().toISOString(), base, runs, reasoning, cases: [] };
+const report = { startedAt: new Date().toISOString(), base, runs, reasoning, model, cases: [] };
 // Full results are kept next to the report: evidence for the notes and real fixtures for Storybook.
 const resultsDir = path.join(ROOT, 'eval', 'results', report.startedAt.replace(/[:.]/g, '-'));
 await mkdir(resultsDir, { recursive: true });
@@ -251,7 +262,7 @@ await writeFile(path.join(REPORTS, 'latest.json'), `${JSON.stringify(report, nul
 const md = [
   `# Eval ${report.startedAt}`,
   '',
-  `Base: ${base} · runs per case: ${runs} · reasoning: ${reasoning}`,
+  `Base: ${base} · runs per case: ${runs} · model: ${model} · reasoning: ${reasoning}`,
   '',
   '| Case | Expected outcome | Passed runs | Included (last run) | Exclusion errors (all runs) | Time p50 |',
   '|---|---|---|---|---|---|',

@@ -4,6 +4,7 @@ import { RecordingDateCard, ReviewActions, SpeakerNamesCard } from '@/components
 import { Page } from '@/components/domain/layout';
 import { CostBreakdown } from '@/components/domain/metrics';
 import { PlayerBar } from '@/components/domain/player-bar';
+import { PrivacyNote } from '@/components/domain/privacy';
 import { PipelineProgress, type StepKey, type StepState } from '@/components/domain/progress';
 import { RunHeader } from '@/components/domain/run-header';
 import { CountersBar, ItemSections } from '@/components/domain/sections';
@@ -59,7 +60,7 @@ function TranscriptPanel({ run, result, highlighted, onHighlight }: { run: RunSt
   );
 }
 
-export function RunPage({ run, onNew, onRetry }: { run: RunState; onNew: () => void; onRetry: () => void }) {
+export function RunPage({ run, onNew, onRetry, onDelete }: { run: RunState; onNew: () => void; onRetry: () => void; onDelete?: (id: string) => Promise<void> }) {
   const [result, setResult] = useState<Result | null>(run.result);
   const [highlighted, setHighlighted] = useState<string | null>(null);
   const [dateDismissed, setDateDismissed] = useState(false);
@@ -99,6 +100,12 @@ export function RunPage({ run, onNew, onRetry }: { run: RunState; onNew: () => v
     <PlayerProvider url={run.audio.url} duration={run.audio.duration}>
       <Page>
         <RunHeader fileName={run.audio.name} durationSec={run.audio.duration} speakers={speakers} result={result} clientMs={run.clientMs} actions={actions} />
+
+        {result && onDelete && (
+          <div className="mt-6">
+            <PrivacyNote onDelete={() => onDelete(result.id)} />
+          </div>
+        )}
 
         {run.error && (
           <div className="mt-8">

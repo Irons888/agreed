@@ -4,6 +4,11 @@
   "main": "worker/index.ts",
   "compatibility_date": "2026-10-01",
   "ai": { "binding": "AI" },
+  // Recordings and results; a lifecycle rule on the bucket deletes everything after 30 days.
+  "r2_buckets": [{ "binding": "RUNS", "bucket_name": "agreed-runs" }],
+  // Abuse guard for the public demo: a few analyses per minute per visitor.
+  "ratelimits": [{ "name": "RUN_LIMITER", "namespace_id": "1001", "simple": { "limit": 6, "period": 60 } }],
+  "vars": { "DAILY_RUN_CAP": "400" },
   "assets": {
     "not_found_handling": "single-page-application",
     "run_worker_first": ["/api/*"]
