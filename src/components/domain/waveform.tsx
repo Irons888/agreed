@@ -53,15 +53,15 @@ export function WaveformTimeline({
           return (
             <rect
               key={i}
-              x={i + 0.15}
-              width={0.7}
+              x={i + 0.2}
+              width={0.6}
               y={(HEIGHT - h) / 2}
               height={h}
-              className={cn(speaker ? speakerTone(speaker).fill : 'fill-border-strong', player.time > t ? 'opacity-100' : 'opacity-60')}
+              className={cn(speaker ? speakerTone(speaker).fill : 'fill-border', player.time > t ? 'opacity-100' : 'opacity-70')}
             />
           );
         })}
-        <rect x={x(player.time)} width={Math.max(1, width / 400)} y={0} height={HEIGHT} className="fill-ink" />
+        <rect x={x(player.time)} width={Math.max(1.5, width / 300)} y={0} height={HEIGHT} className="fill-ink" />
       </svg>
       {/* Markers: where each item was decided. */}
       <div className="relative mt-1 h-4">
@@ -80,7 +80,7 @@ export function WaveformTimeline({
                 player.playSegment(`${item.id}:deciding`, e.start, e.end);
               }}
               className={cn(
-                'absolute top-0 size-3 -translate-x-1/2 rounded-full ring-2 ring-surface transition-transform',
+                'absolute top-0 size-3 -translate-x-1/2 transition-transform',
                 STATUS_META[item.status].dot,
                 highlighted === item.id && 'scale-150',
               )}

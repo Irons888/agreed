@@ -29,7 +29,7 @@ const run = (audio: PreparedAudio, result: RunResult | null, extra: Partial<RunS
   ...extra,
 });
 
-export const Home: Story = { render: () => <HomePage onStart={() => {}} /> };
+export const Home: Story = { render: () => <HomePage onStart={() => {}} onNavigate={() => {}} /> };
 
 export const Processing: Story = {
   loaders: [loadT1],

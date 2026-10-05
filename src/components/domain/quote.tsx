@@ -27,14 +27,14 @@ const MATCH_NOTE: Record<Evidence['match'], string> = {
 
 export function QuoteBlock({ evidence, speakers, id, className }: { evidence: Evidence; speakers: Speaker[]; id: string; className?: string }) {
   return (
-    <figure className={cn('border-l-2 pl-3', speakerTone(evidence.speaker).rule, className)}>
-      <blockquote className="text-quote text-text">{spoken(evidence.quote)}</blockquote>
-      <figcaption className="mt-2 flex flex-wrap items-center gap-x-2.5 gap-y-1.5 text-caption text-subtle">
+    <figure className={cn('border-l-4 pl-4', speakerTone(evidence.speaker).rule, className)}>
+      <blockquote className="text-quote font-medium text-text">{spoken(evidence.quote)}</blockquote>
+      <figcaption className="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-2 text-caption">
         <SpeakerName id={evidence.speaker} speakers={speakers} size="xs" />
-        <span>{ROLE_LABEL[evidence.role]}</span>
-        <TimestampButton id={id} start={evidence.start} end={evidence.end} />
+        <span className="tag-label text-subtle">{ROLE_LABEL[evidence.role]}</span>
+        <TimestampButton id={id} start={evidence.start} end={evidence.end} className="h-7" />
         <Tooltip content={MATCH_NOTE[evidence.match]}>
-          <span className="inline-flex items-center gap-1 text-agreed">
+          <span className="tag-label inline-flex items-center gap-1 text-text">
             <Icon name="verified" size={14} />
             Verified
           </span>

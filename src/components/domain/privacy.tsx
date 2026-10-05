@@ -8,10 +8,10 @@ export function PrivacyNote({ retentionDays = 30, onDelete }: { retentionDays?: 
   const [open, setOpen] = useState(false);
   const [busy, setBusy] = useState(false);
   return (
-    <div className="flex flex-wrap items-center justify-between gap-3 rounded-card border border-border bg-surface px-4 py-3">
+    <div className="flex flex-wrap items-center justify-between gap-3 border-y-2 border-border-strong py-3">
       <p className="flex items-start gap-2 text-caption text-muted">
-        <Icon name="info" size={14} className="mt-px" />
-        The recording and this result are kept for {retentionDays} days so the quotes stay playable. Anyone with this link can open them.
+        <Icon name="info" size={14} className="mt-px shrink-0" />
+        Kept for {retentionDays} days so the quotes stay playable. Anyone with this link can open it.
       </p>
       <Button size="sm" variant="destructive" icon="delete" onClick={() => setOpen(true)}>
         Delete now

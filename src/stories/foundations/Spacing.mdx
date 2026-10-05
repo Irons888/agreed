@@ -1,26 +1,30 @@
 import { Meta } from '@storybook/addon-docs/blocks';
-import { RadiiAndShadows, SpacingScale } from './blocks';
+import { LinesAndSurfaces, SpacingScale } from './blocks';
 
-<Meta title="Foundations/Spacing, radii, elevation" />
+<Meta title="Foundations/Spacing, lines, surfaces" />
 
-# Spacing, radii, elevation
+# Spacing, lines, surfaces
 
-A 4 px step. Borders are the default separation; shadows are for hover and floating layers only.
+A 4 px step.
 
 <SpacingScale />
 
-## Radii and shadows
+## Lines and surfaces
 
-<RadiiAndShadows />
+No rounded corners and no shadows. Edges are square, separation is a 2 px line, and depth comes from switching surfaces:
+cream page, paper cards, forest bands (`surface-dark`), a lime accent. Dashed lines mean “not counted”; a 4 px lime ring marks the item you are pointing at in the transcript.
+
+<LinesAndSurfaces />
 
 ## Layout
 
 - Breakpoints: 390 (phone), 768, 1024, 1440. Content is at most 1152 px wide.
 - Side padding: 16 px on phones, 24 on tablets, 32 on desktops.
-- Results: two columns from 1024 px (items 7 : transcript 5), one column below.
-- Controls are 32, 36 or 44 px high. On phones anything tappable is at least 44 px.
+- Results: two columns from 1024 px (items 7 : transcript 5, `grid-split`), one column below.
+- Named grids instead of arbitrary values: `grid-split`, `grid-hero`, `grid-facts`, `grid-turn`.
+- Controls are 36, 44 or 56 px high. On phones anything tappable is at least 44 px.
 
 ## Motion
 
 120 ms for hover, 200 ms for expanding, 320 ms for screen changes, all on `cubic-bezier(.2, 0, 0, 1)`.
-With `prefers-reduced-motion` animations are switched off.
+Two loops: the marquee on the home page and the bars on a playing timestamp. With `prefers-reduced-motion` both stop.

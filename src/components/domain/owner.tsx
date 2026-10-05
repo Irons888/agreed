@@ -1,5 +1,5 @@
 import type { Owner } from '../../../worker/types';
-import { Badge } from '../ui/badge';
+import { Icon } from '../ui/icon';
 import { Tooltip } from '../ui/tooltip';
 import { SpeakerAvatar } from './speaker';
 
@@ -9,14 +9,14 @@ const HOW: Record<string, string> = {
   tentative: 'Only offered tentatively, so it needs confirmation.',
 };
 
+/** Who owns the task, as a plain fact. "No owner named" is an answer, shown in the warning colour. */
 export function OwnerChip({ owner }: { owner: Owner }) {
   if (owner.kind === 'none') {
     return (
       <Tooltip content="Nobody in the recording took this task. The owner is not guessed.">
-        <span className="inline-flex">
-          <Badge icon="noOwner" className="border-dashed border-missing-border bg-transparent text-missing">
-            No owner named
-          </Badge>
+        <span className="inline-flex items-center gap-1.5 text-label font-semibold text-missing">
+          <Icon name="noOwner" size={16} />
+          No owner named
         </span>
       </Tooltip>
     );
@@ -24,20 +24,20 @@ export function OwnerChip({ owner }: { owner: Owner }) {
   if (owner.kind === 'named') {
     return (
       <Tooltip content="Named in the conversation, but not one of the two speakers.">
-        <span className="inline-flex">
-          <Badge icon="owner" className="text-text">
-            {owner.name}
-          </Badge>
+        <span className="inline-flex items-center gap-1.5 text-label font-semibold text-text">
+          <Icon name="owner" size={16} />
+          {owner.name}
+          <span className="font-normal text-subtle">· not on the call</span>
         </span>
       </Tooltip>
     );
   }
   return (
     <Tooltip content={HOW[owner.how]}>
-      <span className="inline-flex h-6 max-w-full items-center gap-1.5 rounded-full border border-border bg-surface pr-2 pl-0.5 text-label font-medium text-text">
+      <span className="inline-flex min-w-0 items-center gap-1.5 text-label font-semibold text-text">
         <SpeakerAvatar id={owner.speaker} name={owner.name} size="sm" />
         <span className="truncate">{owner.name}</span>
-        {owner.how === 'tentative' && <span className="font-normal text-subtle">· tentative</span>}
+        {owner.how === 'tentative' && <span className="font-normal text-missing">· tentative</span>}
       </span>
     </Tooltip>
   );

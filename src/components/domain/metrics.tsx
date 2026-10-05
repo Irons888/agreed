@@ -1,16 +1,14 @@
 import type { Metrics } from '../../../worker/types';
 import { seconds, usd } from '@/lib/format';
-import { Icon, type IconName } from '../ui/icon';
+import { cn } from '@/lib/cn';
 
-export function MetricTile({ icon, label, value, sub }: { icon: IconName; label: string; value: string; sub?: string }) {
+/** A big number with a monospace label, like a price tag. */
+export function MetricTile({ label, value, sub, lead = false }: { label: string; value: string; sub?: string; lead?: boolean }) {
   return (
-    <div className="rounded-card border border-border bg-surface p-4">
-      <p className="flex items-center gap-1.5 text-caption text-muted">
-        <Icon name={icon} size={14} />
-        {label}
-      </p>
-      <p className="mt-1 font-mono text-title-2 font-semibold text-text tabular">{value}</p>
-      {sub && <p className="mt-0.5 text-caption text-subtle">{sub}</p>}
+    <div className={cn('p-5', lead ? 'bg-accent text-on-accent' : 'bg-surface text-text')}>
+      <p className="tag-label">{label}</p>
+      <p className="numeral mt-8 text-title-1">{value}</p>
+      {sub && <p className={cn('mt-2 text-caption', lead ? 'text-on-accent' : 'text-muted')}>{sub}</p>}
     </div>
   );
 }
@@ -32,26 +30,26 @@ export function CostBreakdown({ metrics }: { metrics: Metrics }) {
   return (
     <div>
       <table className="w-full text-left text-caption">
-        <tbody className="divide-y divide-border">
+        <tbody>
           {rows.map(([label, detail, value]) => (
-            <tr key={label}>
-              <th scope="row" className="py-2 pr-3 font-medium text-text">
-                {label}
+            <tr key={label} className="border-b-2 border-border">
+              <th scope="row" className="py-3 pr-4 align-top font-normal">
+                <span className="tag-label block text-text">{label}</span>
+                <span className="mt-1 block text-muted">{detail}</span>
               </th>
-              <td className="py-2 pr-3 text-muted">{detail}</td>
-              <td className="py-2 text-right font-mono text-text tabular">{value}</td>
+              <td className="py-3 text-right align-top font-mono text-text tabular">{value}</td>
             </tr>
           ))}
           <tr>
-            <th scope="row" className="py-2 pr-3 font-semibold text-text">
-              Total
+            <th scope="row" className="py-3 pr-4 align-top font-normal">
+              <span className="tag-label block text-text">Total</span>
+              <span className="mt-1 block text-muted">{usd(cost.perAudioMinuteUsd)} per audio minute</span>
             </th>
-            <td className="py-2 pr-3 text-muted">{usd(cost.perAudioMinuteUsd)} per audio minute</td>
-            <td className="py-2 text-right font-mono font-semibold text-text tabular">{usd(cost.totalUsd)}</td>
+            <td className="numeral py-3 text-right align-top text-title-3">{usd(cost.totalUsd)}</td>
           </tr>
         </tbody>
       </table>
-      <p className="mt-3 text-caption text-subtle">
+      <p className="mt-4 text-caption text-subtle">
         Workers AI list prices checked {cost.pricesCheckedOn}; the free daily allowance is ignored. Hosting is separate (Workers Paid, $5 a month).
         Server time {seconds(timings.totalMs)}: recognition {seconds(timings.asrMs)}, reasoning {seconds(timings.extractMs)}, checks {seconds(timings.verifyMs)}.
       </p>

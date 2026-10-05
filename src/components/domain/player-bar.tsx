@@ -16,13 +16,13 @@ export function PlayerBar({ duration }: { duration: number }) {
         disabled={!player.ready}
       />
       <IconButton icon="forward" label="Forward 5 seconds" size="sm" onClick={() => player.skip(5)} disabled={!player.ready} />
-      <span className="ml-2 font-mono text-caption tabular text-muted">
+      <span className="ml-3 font-mono text-caption tabular text-muted">
         {clock(player.time)} / {clock(duration)}
       </span>
       <Button
         size="sm"
         variant="ghost"
-        className="ml-auto font-mono tabular"
+        className="ml-auto font-mono tabular no-underline"
         onClick={() => player.setRate(player.rate === 1 ? 1.5 : 1)}
         aria-label={`Playback speed ${player.rate}×. Click to change.`}
       >

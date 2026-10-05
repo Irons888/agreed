@@ -102,7 +102,7 @@ npm run deploy                                # builds the app and Storybook, de
 ```
 worker/            Cloudflare Worker: API, pipeline (asr, turns, extract, verify, dates, cost), R2 storage
 src/               React app: pages, design-system components, audio helpers
-src/styles/        tokens.css — the only place colours, type, radii, shadows and motion are defined
+src/styles/        tokens.css and app.css — the only place colours, type, lines and motion are defined
 src/stories/       Storybook: Foundations (tokens, icons, content rules), components, screens
 testset/           scripts, expected results, audio, timelines, and the ElevenLabs build script
 eval/              eval runner, reports and full results
@@ -117,7 +117,7 @@ docs/              DEVLOG.md (what was tried, what failed, how outputs were chec
 - the models Deepgram Nova-3 and gpt-oss-120b (via Workers AI);
 - React, Vite and Tailwind CSS;
 - Radix UI primitives, and the shadcn/ui pattern (class-variance-authority, tailwind-merge);
-- Lucide icons, the Inter and JetBrains Mono fonts;
+- Lucide icons, the Onest, Geist and Geist Mono fonts;
 - zod and Storybook;
 - ElevenLabs voices, used only to produce the test recordings.
 

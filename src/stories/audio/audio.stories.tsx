@@ -18,10 +18,10 @@ const loadT1 = async () => ({ audio: await prepareSample('/samples/T1-main.wav',
 function Panel({ audio }: { audio: PreparedAudio }) {
   const [highlighted, setHighlighted] = useState<string | null>(null);
   return (
-    <div className="max-w-xl space-y-3 rounded-panel border border-border bg-surface p-4">
+    <div className="surface-dark max-w-xl space-y-3 p-4">
       <PlayerBar duration={audio.duration} />
       <WaveformTimeline peaks={audio.peaks} duration={audio.duration} turns={t1Result.turns} items={t1Result.items} highlighted={highlighted} onHighlight={setHighlighted} />
-      <div className="max-h-96 overflow-y-auto border-t border-border pt-4">
+      <div className="max-h-96 overflow-y-auto border-t-2 border-border pt-4">
         <TranscriptView turns={t1Result.turns} speakers={t1Result.speakers} items={t1Result.items} highlighted={highlighted} onHighlight={setHighlighted} />
       </div>
     </div>

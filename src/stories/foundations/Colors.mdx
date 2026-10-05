@@ -5,28 +5,32 @@ import { SwatchGrid } from './blocks';
 
 # Colors
 
-Values are read live from `tokens.css`; switch the theme in the toolbar to see the dark palette.
+Forest green and cream carry the page; acid lime is the one accent. Values are read live from `tokens.css`.
+Dark bands (`surface-dark`) and the dark theme in the toolbar redefine the same tokens, so components never check which surface they are on.
 
-## Neutrals
+## Base
 
 <SwatchGrid tokens={[
-  ['--bg', 'Page background'],
-  ['--surface', 'Cards and panels'],
-  ['--surface-muted', 'Subtle fills, hover'],
-  ['--border', 'Borders'],
-  ['--border-strong', 'Inputs, dashed outlines'],
+  ['--bg', 'Page: cream'],
+  ['--surface', 'Cards: paper'],
+  ['--surface-muted', 'Cancelled cards, subtle fills'],
+  ['--border', 'Inner lines'],
+  ['--border-strong', 'Card edges, inputs, dashed outlines'],
   ['--text', 'Main text'],
   ['--text-muted', 'Secondary text'],
   ['--text-subtle', 'Captions, times'],
-  ['--ink', 'Primary button'],
-  ['--focus', 'Focus ring, progress'],
-  ['--brand', 'Logo mark only'],
+  ['--ink', 'Ink fills: active step, avatar of the second voice'],
+  ['--ink-contrast', 'Text on ink'],
+  ['--ink-accent', 'Accent on ink: lime on forest, forest on cream'],
+  ['--accent', 'The accent: primary action, lead tiles, logo'],
+  ['--on-accent', 'Text on the accent'],
+  ['--focus', 'Focus ring'],
   ['--danger', 'Delete, errors'],
 ]} />
 
 ## Statuses
 
-Each status is a text colour, a background and a border, always shown with an icon and a word.
+Each status is a solid tag: text, fill and line, always with an icon and a word. Lime for agreed, violet for open questions, orange for what needs a person, grey for what is not counted.
 
 <SwatchGrid tokens={[
   ['--agreed', 'Agreed: text'],
@@ -47,11 +51,14 @@ Each status is a text colour, a background and a border, always shown with an ic
 
 ## Speakers
 
-A colour-blind-safe pair. Speaker colours appear only on avatars, the left rule of quotes and the waveform, and always next to a name or initial.
+Lime and forest on light surfaces, lime and cream on dark ones: they differ in lightness, not only in hue, so they stay apart for colour-blind readers.
+Speaker colours appear only on avatars, the left rule of quotes and the waveform, and always next to a name or initial.
 
 <SwatchGrid tokens={[
-  ['--speaker-1', 'First voice'],
+  ['--speaker-1', 'First voice: quote rule, waveform'],
   ['--speaker-1-bg', 'First voice: avatar fill'],
-  ['--speaker-2', 'Second voice'],
+  ['--speaker-1-ink', 'First voice: avatar initial'],
+  ['--speaker-2', 'Second voice: quote rule, waveform'],
   ['--speaker-2-bg', 'Second voice: avatar fill'],
+  ['--speaker-2-ink', 'Second voice: avatar initial'],
 ]} />

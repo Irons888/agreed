@@ -26,28 +26,36 @@ function useNow(active: boolean) {
 export function PipelineProgress({ steps }: { steps: Record<StepKey, StepState> }) {
   const now = useNow(Object.values(steps).some((s) => s.status === 'active'));
   return (
-    <ol className="space-y-3">
-      {STEPS.map(({ key, label, detail }) => {
+    <ol className="border-t-2 border-border-strong">
+      {STEPS.map(({ key, label, detail }, i) => {
         const step = steps[key];
         const elapsed = step.status === 'active' && step.startedAt ? now - step.startedAt : step.ms;
         return (
-          <li key={key} className="flex items-start gap-3">
+          <li
+            key={key}
+            className={cn(
+              'flex items-center gap-4 border-b-2 border-border-strong px-3 py-4 transition-colors',
+              step.status === 'active' && 'bg-ink text-ink-contrast',
+              step.status === 'error' && 'bg-danger-bg',
+            )}
+          >
+            <span className={cn('tag-label w-6 shrink-0', step.status === 'pending' ? 'text-subtle' : 'text-current')}>{String(i + 1).padStart(2, '0')}</span>
+            <div className="min-w-0 flex-1">
+              <p className={cn('font-display text-label font-bold', step.status === 'pending' && 'text-subtle')}>{label}</p>
+              <p className={cn('text-caption', step.status === 'active' ? 'text-current opacity-70' : 'text-subtle')}>{detail}</p>
+            </div>
+            {elapsed !== undefined && <span className="font-mono text-caption tabular">{seconds(elapsed)}</span>}
             <span
               className={cn(
-                'mt-0.5 inline-flex size-6 shrink-0 items-center justify-center rounded-full border',
-                step.status === 'done' && 'border-agreed-border bg-agreed-bg text-agreed',
-                step.status === 'active' && 'border-ink text-text',
-                step.status === 'pending' && 'border-border text-subtle',
-                step.status === 'error' && 'border-danger bg-danger-bg text-danger',
+                'inline-flex size-7 shrink-0 items-center justify-center',
+                step.status === 'done' && 'bg-accent text-on-accent',
+                step.status === 'active' && 'text-ink-accent',
+                step.status === 'pending' && 'border-2 border-border text-subtle',
+                step.status === 'error' && 'bg-danger text-surface',
               )}
             >
               <Icon name={step.status === 'done' ? 'check' : step.status === 'active' ? 'spinner' : step.status === 'error' ? 'close' : 'open'} size={14} />
             </span>
-            <div className="min-w-0 flex-1">
-              <p className={cn('text-body font-medium', step.status === 'pending' ? 'text-subtle' : 'text-text')}>{label}</p>
-              <p className="text-caption text-subtle">{detail}</p>
-            </div>
-            {elapsed !== undefined && <span className="font-mono text-caption text-muted tabular">{seconds(elapsed)}</span>}
           </li>
         );
       })}

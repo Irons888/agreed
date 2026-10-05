@@ -53,35 +53,38 @@ export function TranscriptView({
   }, [activeTurn, player.segment]);
 
   return (
-    <ol ref={list} className="space-y-4">
+    <ol ref={list} className="space-y-5">
       {turns.map((turn) => {
         const speaker = speakers.find((s) => s.id === turn.speaker);
         return (
-          <li key={turn.id} data-turn={turn.id} className="grid grid-cols-[auto_minmax(0,1fr)] gap-x-3">
+          <li key={turn.id} data-turn={turn.id} className="grid grid-turn gap-x-3">
             <SpeakerAvatar id={turn.speaker} name={speaker?.name} />
             <div>
-              <div className="flex items-center gap-2 text-caption">
-                <span className="font-medium text-text">{speakerLabel(turn.speaker, speakers)}</span>
-                <TimestampButton id={`turn:${turn.id}`} start={turn.start} end={turn.end} label="this turn" className="h-6" />
+              <div className="flex items-center gap-2">
+                <span className="tag-label text-text">{speakerLabel(turn.speaker, speakers)}</span>
+                <TimestampButton id={`turn:${turn.id}`} start={turn.start} end={turn.end} label="this turn" className="h-6 border px-1.5" />
               </div>
-              <p className="mt-1 text-body text-text">
+              <p className="mt-1.5 text-body text-muted">
                 {turn.words.map((word, i) => {
                   const mark = marks.get(`${turn.id}:${i}`);
                   const current = player.playing && player.time >= word.start && player.time < word.end + 0.05;
+                  // The space stays inside the highlight while the same quote continues, so a quote reads as one block.
+                  const joined = mark && marks.get(`${turn.id}:${i + 1}`)?.itemId === mark.itemId;
                   return (
                     <span key={i}>
                       <span
                         onMouseEnter={mark ? () => onHighlight?.(mark.itemId) : undefined}
                         onMouseLeave={mark ? () => onHighlight?.(null) : undefined}
                         className={cn(
-                          'rounded-xs transition-colors',
+                          'transition-colors',
                           mark && STATUS_META[mark.status].highlight,
-                          mark && highlighted === mark.itemId && 'underline decoration-focus decoration-2 underline-offset-4',
+                          mark && highlighted === mark.itemId && 'underline decoration-2 underline-offset-4',
                           current && 'bg-ink text-ink-contrast',
                         )}
                       >
-                        {word.text}
-                      </span>{' '}
+                        {joined ? `${word.text} ` : word.text}
+                      </span>
+                      {!joined && ' '}
                     </span>
                   );
                 })}

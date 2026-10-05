@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import { cn } from '@/lib/cn';
 import { Icon, type IconName } from './icon';
 
-/** Base pill. Domain badges (status, owner, deadline) are built on top of it. */
+/** Base tag: a square monospace label. Domain tags (status, outcome) are built on top of it. */
 export function Badge({
   children,
   icon,
@@ -17,9 +17,9 @@ export function Badge({
   return (
     <span
       className={cn(
-        'inline-flex max-w-full items-center gap-1 rounded-full border font-medium whitespace-nowrap',
-        size === 'sm' ? 'h-5 px-1.5 text-caption' : 'h-6 px-2 text-label',
-        'border-border bg-surface text-muted',
+        'tag-label inline-flex max-w-full items-center gap-1.5 border whitespace-nowrap',
+        size === 'sm' ? 'h-5 px-1.5' : 'h-6 px-2',
+        'border-border-strong text-text',
         className,
       )}
     >

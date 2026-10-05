@@ -77,3 +77,16 @@ Times are local (EEST).
   - time to result p50 23.2 s, p90 31.5 s; transcript after 1.2 s;
   - $0.0071 per audio minute, about 74% of it recognition.
 - Storybook now renders real T1, T3, T4 and T5 results from this eval. README and delivery notes carry the final numbers.
+
+### Redesign
+
+- The first visual pass looked dated and too busy. Wrote a screen-by-screen design spec, then picked an editorial style together:
+  - forest green, cream and one acid-lime accent; violet for open questions, orange for what needs a person;
+  - square corners, 2 px lines, no shadows; dark forest bands for the header, the transcript and parts of the home page;
+  - Onest for heavy uppercase headlines, Geist for text, Geist Mono for labels.
+- Only tokens, primitives and components changed. The pipeline, the data and the screens' structure did not, so every screen is still built from the Storybook components.
+- Checked before deploying:
+  - typecheck; every screen at 1440 and 390 px, with no horizontal overflow;
+  - dark theme: lime on a cream fill was unreadable in three places, so there is now a separate `--ink-accent` token (lime on forest, forest on cream);
+  - Storybook docs styles were overriding the type scale, so the blocks opt out with `sb-unstyled`; the Storybook UI uses the product's colours, and its onboarding widgets are hidden.
+- 22:10: deployed. One live T1 run on production gave the expected result (3 agreed, 1 open question, 2 not counted) in 33.5 s.

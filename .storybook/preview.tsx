@@ -1,10 +1,12 @@
-import '@fontsource-variable/inter';
-import '@fontsource-variable/jetbrains-mono';
+import '@fontsource-variable/onest';
+import '@fontsource-variable/geist';
+import '@fontsource-variable/geist-mono';
 import '../src/styles/app.css';
 import type { Decorator, Preview } from '@storybook/react-vite';
 import { useEffect } from 'react';
 import { TooltipProvider } from '../src/components/ui/tooltip';
 import { PlayerProvider } from '../src/lib/audio/player';
+import { agreedTheme } from './theme';
 
 const withTheme: Decorator = (Story, context) => {
   const theme = context.globals.theme as 'light' | 'dark';
@@ -34,6 +36,7 @@ const preview: Preview = {
   decorators: [withPlayer, withTheme],
   parameters: {
     layout: 'padded',
+    docs: { theme: agreedTheme },
     a11y: { test: 'error' },
     backgrounds: { disable: true },
     viewport: {
@@ -46,7 +49,7 @@ const preview: Preview = {
     },
     options: {
       storySort: {
-        order: ['Introduction', 'Foundations', ['Colors', 'Typography', 'Spacing, radii, elevation', 'Icons', 'Content'], 'Primitives', 'Commitments', 'Audio', 'Flow', 'Metrics', 'Pages'],
+        order: ['Introduction', 'Foundations', ['Colors', 'Typography', 'Spacing, lines, surfaces', 'Icons', 'Content'], 'Primitives', 'Commitments', 'Audio', 'Flow', 'Metrics', 'Pages'],
       },
     },
   },

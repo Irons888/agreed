@@ -17,8 +17,8 @@ function useToken(name: string) {
 export function Swatch({ token, use }: { token: string; use: string }) {
   const value = useToken(token);
   return (
-    <div className="flex items-center gap-3 rounded-card border border-border bg-surface p-2.5">
-      <span className="size-10 shrink-0 rounded-sm border border-border" style={{ background: `var(${token})` }} />
+    <div className="flex items-center gap-3 border-2 border-border-strong bg-surface p-2.5">
+      <span className="size-10 shrink-0 border-2 border-border-strong" style={{ background: `var(${token})` }} />
       <div className="min-w-0">
         <div className="font-mono text-caption text-text">{token}</div>
         <div className="font-mono text-caption text-subtle">{value}</div>
@@ -30,7 +30,7 @@ export function Swatch({ token, use }: { token: string; use: string }) {
 
 export function SwatchGrid({ tokens }: { tokens: [string, string][] }) {
   return (
-    <div className="not-prose grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="sb-unstyled font-sans text-text grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
       {tokens.map(([token, use]) => (
         <Swatch key={token} token={token} use={use} />
       ))}
@@ -38,36 +38,45 @@ export function SwatchGrid({ tokens }: { tokens: [string, string][] }) {
   );
 }
 
-const TYPE_SCALE: [string, string, string][] = [
-  ['text-display', '40 / 44 · 600', 'Home headline'],
-  ['text-title-1', '24 / 32 · 600', 'Page title'],
-  ['text-title-2', '18 / 26 · 600', 'Section'],
-  ['text-title-3', '16 / 24 · 600', 'Card title'],
-  ['text-body-lg', '16 / 26 · 400', 'Text on the home page'],
-  ['text-quote', '15 / 24 · 400', 'Quotes'],
-  ['text-body', '14 / 22 · 400', 'Default text'],
-  ['text-label', '13 / 18 · 500', 'Buttons, chips'],
-  ['text-caption', '12 / 16 · 500', 'Captions, metadata'],
-  ['text-micro', '10 / 12', 'Initials in the smallest avatar only'],
+const TYPE_SCALE: [string, string, string, string][] = [
+  ['text-display', '84 / 0.92 · Onest 850, uppercase', 'Home headline', 'headline'],
+  ['text-display-sm', '44 / 0.95 · Onest 850, uppercase', 'Headlines on phones, big numbers', 'headline'],
+  ['text-title-1', '48 / 0.98 · Onest 850, uppercase', 'Page and section titles', 'headline'],
+  ['text-title-2', '32 / 1.02 · Onest 850, uppercase', 'Result sections, dialogs', 'headline'],
+  ['text-title-3', '20 / 26 · Onest 700', 'Card titles, sentence case', 'font-display font-bold'],
+  ['text-body-lg', '18 / 28 · Geist 400', 'Intro text', ''],
+  ['text-quote', '17 / 26 · Geist 400', 'Quotes', ''],
+  ['text-body', '15 / 24 · Geist 400', 'Default text', ''],
+  ['text-label', '14 / 20 · Geist 600', 'Buttons, names', 'font-semibold'],
+  ['text-caption', '13 / 18 · Geist 400', 'Captions, metadata', ''],
+  ['tag-label', '11 / 16 · Geist Mono, uppercase, +0.12em', 'Labels: “01 · Agreed”, “Verified”', ''],
+  ['text-micro', '10 / 12', 'Initials in the smallest avatar only', ''],
 ];
 
 export function TypeScale() {
   return (
-    <div className="not-prose divide-y divide-border rounded-card border border-border bg-surface">
-      {TYPE_SCALE.map(([cls, spec, use]) => (
-        <div key={cls} className="grid gap-1 p-4 sm:grid-cols-[180px_1fr]">
+    <div className="sb-unstyled font-sans text-text divide-y-2 divide-border border-2 border-border-strong bg-surface">
+      {TYPE_SCALE.map(([cls, spec, use, style]) => (
+        <div key={cls} className="grid gap-1 p-4 sm:grid-spec">
           <div>
             <div className="font-mono text-caption text-text">{cls}</div>
             <div className="font-mono text-caption text-subtle">{spec}</div>
             <div className="text-caption text-muted">{use}</div>
           </div>
-          <div className={`${cls} ${cls === 'text-display' || cls.startsWith('text-title') ? 'font-semibold' : ''} text-text`}>Send the API docs by Wednesday</div>
+          <div className={`${cls} ${style} min-w-0 break-words text-text`}>Send the API docs by Wednesday</div>
         </div>
       ))}
-      <div className="grid gap-1 p-4 sm:grid-cols-[180px_1fr]">
+      <div className="grid gap-1 p-4 sm:grid-spec">
+        <div>
+          <div className="font-mono text-caption text-text">numeral</div>
+          <div className="text-caption text-muted">Big numbers in tiles and counters</div>
+        </div>
+        <div className="numeral text-title-1 text-text">30/30 · 23.2 s · $0.0071</div>
+      </div>
+      <div className="grid gap-1 p-4 sm:grid-spec">
         <div>
           <div className="font-mono text-caption text-text">font-mono tabular</div>
-          <div className="text-caption text-muted">Times, money, counts</div>
+          <div className="text-caption text-muted">Times, money, counts in text</div>
         </div>
         <div className="font-mono text-body text-text tabular">0:41 · 2:03 · $0.0071/min · 16.3 s</div>
       </div>
@@ -118,10 +127,10 @@ const MEANING: Record<IconName, string> = {
 
 export function IconGrid() {
   return (
-    <div className="not-prose grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="sb-unstyled font-sans text-text grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
       {(Object.keys(ICONS) as IconName[]).map((name) => (
-        <div key={name} className="flex items-center gap-3 rounded-card border border-border bg-surface p-3">
-          <span className="inline-flex size-9 items-center justify-center rounded-sm bg-surface-muted text-text">
+        <div key={name} className="flex items-center gap-3 border-2 border-border-strong bg-surface p-3">
+          <span className="inline-flex size-9 items-center justify-center bg-ink text-ink-accent">
             <Icon name={name} size={20} />
           </span>
           <div>
@@ -138,45 +147,45 @@ const SPACE = [4, 8, 12, 16, 20, 24, 32, 40, 48, 64];
 
 export function SpacingScale() {
   return (
-    <div className="not-prose space-y-2">
+    <div className="sb-unstyled font-sans text-text space-y-2">
       {SPACE.map((px) => (
         <div key={px} className="flex items-center gap-3">
           <span className="w-12 font-mono text-caption text-subtle tabular">{px}px</span>
-          <span className="h-3 rounded-xs bg-speaker-1" style={{ width: px * 3 }} />
+          <span className="h-3 bg-accent" style={{ width: px * 3 }} />
         </div>
       ))}
     </div>
   );
 }
 
-export function RadiiAndShadows() {
-  const radii: [string, string][] = [
-    ['rounded-xs', '4 · highlights'],
-    ['rounded-sm', '6 · buttons, inputs'],
-    ['rounded-card', '10 · cards'],
-    ['rounded-panel', '14 · panels'],
-    ['rounded-full', 'pills, avatars'],
+/** Lines and surfaces replace radii and shadows: every edge is square, every separation a 2 px line. */
+export function LinesAndSurfaces() {
+  const lines: [string, string, string][] = [
+    ['border-2 border-border-strong', 'Cards, inputs, tables', ''],
+    ['border-2 border-dashed border-border-strong', 'Not accepted; the drop zone', ''],
+    ['border-2 border-border-strong ring-4 ring-accent', 'Item highlighted from the transcript', ''],
+    ['border-l-4 border-speaker-1', 'Quote rule in the speaker colour', 'pl-3'],
   ];
-  const shadows: [string, string][] = [
-    ['shadow-xs', 'cards at rest'],
-    ['shadow-md', 'card hover, popovers'],
-    ['shadow-lg', 'dialogs'],
+  const surfaces: [string, string][] = [
+    ['bg-bg', 'Page: cream'],
+    ['bg-surface', 'Cards: paper'],
+    ['surface-dark', 'Header, transcript, dark bands: forest'],
+    ['bg-accent', 'Primary action, agreed, lead tiles: lime'],
   ];
   return (
-    <div className="not-prose grid gap-6 sm:grid-cols-2">
-      <div className="space-y-2">
-        {radii.map(([cls, use]) => (
+    <div className="sb-unstyled font-sans text-text grid gap-6 sm:grid-cols-2">
+      <div className="space-y-3">
+        {lines.map(([cls, use, extra]) => (
           <div key={cls} className="flex items-center gap-3">
-            <span className={`size-10 border border-border-strong bg-surface-muted ${cls}`} />
-            <span className="font-mono text-caption text-text">{cls}</span>
+            <span className={`h-10 w-16 shrink-0 bg-surface ${cls} ${extra}`} />
             <span className="text-caption text-muted">{use}</span>
           </div>
         ))}
       </div>
       <div className="space-y-3">
-        {shadows.map(([cls, use]) => (
+        {surfaces.map(([cls, use]) => (
           <div key={cls} className="flex items-center gap-3">
-            <span className={`h-10 w-16 rounded-card border border-border bg-surface ${cls}`} />
+            <span className={`h-10 w-16 shrink-0 border-2 border-ink ${cls}`} />
             <span className="font-mono text-caption text-text">{cls}</span>
             <span className="text-caption text-muted">{use}</span>
           </div>

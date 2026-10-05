@@ -1,53 +1,57 @@
 /*
-  Design tokens: the only place where colors, type, spacing, radii, shadows and motion are defined.
-  Components use them through Tailwind utilities (see app.css). Raw hex values elsewhere are a bug.
+  Design tokens: the only place where colours, type and motion are defined.
+  Style: editorial and blunt. Forest green, cream and one acid-lime accent; square corners,
+  2 px lines, no shadows; huge uppercase display type with monospace labels.
+  Components use the tokens through Tailwind utilities (see app.css). Raw hex values elsewhere are a bug.
 */
 
 :root {
   color-scheme: light;
 
-  /* Neutrals: warm stone */
-  --bg: #fafaf9;
-  --surface: #ffffff;
-  --surface-muted: #f5f5f4;
-  --border: #e7e5e4;
-  --border-strong: #d6d3d1;
-  --text: #1c1917;
-  --text-muted: #57534e;
-  --text-subtle: #78716c;
-  --ink: #1c1917;
-  --ink-contrast: #ffffff;
-  --focus: #2e90fa;
-  --brand: #12b76a;
-  --danger: #d92d20;
-  --danger-bg: #fef3f2;
+  /* Base: cream page, forest ink */
+  --bg: #f7f4e9;
+  --surface: #fbfaf6;
+  --surface-muted: #eee9da;
+  --border: #d8d0bf;
+  --border-strong: #0f2b24;
+  --text: #0f2b24;
+  --text-muted: #57584c;
+  --text-subtle: #75756a;
+  --ink: #0f2b24;
+  --ink-contrast: #f7f4e9;
+  --accent: #d9f61a;
+  --accent-strong: #c9e60c;
+  --on-accent: #0f2b24;
+  /* The accent to use on an ink fill: lime on forest, forest on cream. */
+  --ink-accent: #d9f61a;
+  --focus: #6f5cff;
+  --danger: #b63d32;
+  --danger-bg: #f6e1dc;
 
-  /* Statuses: text / background / border */
-  --agreed: #067647;
-  --agreed-bg: #ecfdf3;
-  --agreed-border: #abefc6;
-  --question: #5925dc;
-  --question-bg: #f4f3ff;
-  --question-border: #d9d6fe;
-  --review: #b54708;
-  --review-bg: #fffaeb;
-  --review-border: #fedf89;
-  --muted-status: #475467;
-  --muted-status-bg: #f2f4f7;
-  --muted-status-border: #d0d5dd;
-  --missing: #b54708;
-  --missing-border: #fec84b;
+  /* Statuses: text / fill / line. Solid tags, always with an icon and a word. */
+  --agreed: #0f2b24;
+  --agreed-bg: #d9f61a;
+  --agreed-border: #0f2b24;
+  --question: #ffffff;
+  --question-bg: #6f5cff;
+  --question-border: #6f5cff;
+  --review: #0f2b24;
+  --review-bg: #f5a15c;
+  --review-border: #e8782a;
+  --muted-status: #4b4c42;
+  --muted-status-bg: #e6e0cf;
+  --muted-status-border: #0f2b24;
+  /* Missing information: no owner named, date unknown */
+  --missing: #b4520f;
+  --missing-border: #e8782a;
 
-  /* Speakers: a colour-blind-safe pair, always shown with a name or initials */
-  --speaker-1: #2e90fa;
-  --speaker-1-bg: #eff8ff;
-  --speaker-2: #f79009;
-  --speaker-2-bg: #fffaeb;
-
-  /* Elevation */
-  --elevation-xs: 0 1px 2px rgb(16 24 40 / 0.05);
-  --elevation-md: 0 4px 8px -2px rgb(16 24 40 / 0.1), 0 2px 4px -2px rgb(16 24 40 / 0.06);
-  --elevation-lg: 0 12px 16px -4px rgb(16 24 40 / 0.08), 0 4px 6px -2px rgb(16 24 40 / 0.03);
+  /* Speakers. Lime and forest on light surfaces; lime and cream on dark ones (see .surface-dark). */
+  --speaker-1: #d9f61a;
+  --speaker-1-bg: #d9f61a;
+  --speaker-1-ink: #0f2b24;
+  --speaker-2: #0f2b24;
+  --speaker-2-bg: #0f2b24;
+  --speaker-2-ink: #f7f4e9;
 
   /* Motion */
   --ease: cubic-bezier(0.2, 0, 0, 1);
@@ -56,76 +60,78 @@
   --duration-slow: 320ms;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme='light']) {
-    color-scheme: dark;
-    --bg: #0c0a09;
-    --surface: #1c1917;
-    --surface-muted: #292524;
-    --border: #292524;
-    --border-strong: #44403c;
-    --text: #fafaf9;
-    --text-muted: #a8a29e;
-    --text-subtle: #8a837e;
-    --ink: #fafaf9;
-    --ink-contrast: #1c1917;
-    --focus: #53b1fd;
-    --brand: #32d583;
-    --danger: #f97066;
-    --danger-bg: #3b1513;
-    --agreed: #47cd89;
-    --agreed-bg: #0c2a1d;
-    --agreed-border: #085d3a;
-    --question: #bdb4fe;
-    --question-bg: #22174a;
-    --question-border: #4a1fb8;
-    --review: #fdb022;
-    --review-bg: #2f1d05;
-    --review-border: #93370d;
-    --muted-status: #cecfd2;
-    --muted-status-bg: #22262f;
-    --muted-status-border: #3b404b;
-    --missing: #fdb022;
-    --missing-border: #93370d;
-    --speaker-1: #53b1fd;
-    --speaker-1-bg: #102a43;
-    --speaker-2: #fdb022;
-    --speaker-2-bg: #2f1d05;
-  }
+/* Dark surfaces inside a light page: header, transcript panel, dark landing sections. */
+.surface-dark,
+:root[data-theme='dark'] {
+  --bg: #0f2b24;
+  --surface: #12332b;
+  --surface-muted: #183d34;
+  --border: #2b5045;
+  --border-strong: #f7f4e9;
+  --text: #f7f4e9;
+  --text-muted: #c4cbbb;
+  --text-subtle: #93a197;
+  --ink: #f7f4e9;
+  --ink-contrast: #0f2b24;
+  --ink-accent: #0f2b24;
+  --danger: #ff8a7a;
+  --danger-bg: #3a1d19;
+  --muted-status: #d9dccf;
+  --muted-status-bg: #24473d;
+  --muted-status-border: #f7f4e9;
+  --missing: #f5a15c;
+  --missing-border: #f5a15c;
+  --speaker-2: #f7f4e9;
+  --speaker-2-bg: #f7f4e9;
+  --speaker-2-ink: #0f2b24;
 }
 
 :root[data-theme='dark'] {
   color-scheme: dark;
-  --bg: #0c0a09;
-  --surface: #1c1917;
-  --surface-muted: #292524;
-  --border: #292524;
-  --border-strong: #44403c;
-  --text: #fafaf9;
-  --text-muted: #a8a29e;
-  --text-subtle: #8a837e;
-  --ink: #fafaf9;
-  --ink-contrast: #1c1917;
-  --focus: #53b1fd;
-  --brand: #32d583;
-  --danger: #f97066;
-  --danger-bg: #3b1513;
-  --agreed: #47cd89;
-  --agreed-bg: #0c2a1d;
-  --agreed-border: #085d3a;
-  --question: #bdb4fe;
-  --question-bg: #22174a;
-  --question-border: #4a1fb8;
-  --review: #fdb022;
-  --review-bg: #2f1d05;
-  --review-border: #93370d;
-  --muted-status: #cecfd2;
-  --muted-status-bg: #22262f;
-  --muted-status-border: #3b404b;
-  --missing: #fdb022;
-  --missing-border: #93370d;
-  --speaker-1: #53b1fd;
-  --speaker-1-bg: #102a43;
-  --speaker-2: #fdb022;
-  --speaker-2-bg: #2f1d05;
+  --bg: #0b201b;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --bg: #0b201b;
+    --surface: #12332b;
+    --surface-muted: #183d34;
+    --border: #2b5045;
+    --border-strong: #f7f4e9;
+    --text: #f7f4e9;
+    --text-muted: #c4cbbb;
+    --text-subtle: #93a197;
+    --ink: #f7f4e9;
+    --ink-contrast: #0f2b24;
+  --ink-accent: #0f2b24;
+    --danger: #ff8a7a;
+    --danger-bg: #3a1d19;
+    --muted-status: #d9dccf;
+    --muted-status-bg: #24473d;
+    --muted-status-border: #f7f4e9;
+    --missing: #f5a15c;
+    --missing-border: #f5a15c;
+    --speaker-2: #f7f4e9;
+    --speaker-2-bg: #f7f4e9;
+    --speaker-2-ink: #0f2b24;
+  }
+}
+
+/* Light surface inside a dark section, e.g. the caption of a card on the dark landing band. */
+.surface-light {
+  --bg: #f7f4e9;
+  --surface: #fbfaf6;
+  --surface-muted: #eee9da;
+  --border: #d8d0bf;
+  --border-strong: #0f2b24;
+  --text: #0f2b24;
+  --text-muted: #57584c;
+  --text-subtle: #75756a;
+  --ink: #0f2b24;
+  --ink-contrast: #f7f4e9;
+  --ink-accent: #d9f61a;
+  --speaker-2: #0f2b24;
+  --speaker-2-bg: #0f2b24;
+  --speaker-2-ink: #f7f4e9;
 }

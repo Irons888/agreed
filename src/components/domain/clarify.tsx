@@ -7,28 +7,29 @@ import { TimestampButton } from './timestamp';
 
 function ClarifyShell({ icon, title, text, children, onDismiss }: { icon: IconName; title: string; text: string; children: ReactNode; onDismiss?: () => void }) {
   return (
-    <section className="rounded-card border border-review-border bg-surface p-4" aria-label={title}>
-      <div className="flex items-start gap-3">
-        <span className="inline-flex size-8 shrink-0 items-center justify-center rounded-full bg-review-bg text-review">
-          <Icon name={icon} size={16} />
+    <section className="border-2 border-border-strong bg-surface" aria-label={title}>
+      <div className="flex items-center justify-between gap-3 bg-review-bg px-4 py-2 text-review">
+        <span className="tag-label inline-flex items-center gap-1.5">
+          <Icon name={icon} size={14} />
+          Needs your input
         </span>
-        <div className="min-w-0 flex-1">
-          <h2 className="text-title-3 font-semibold text-text">{title}</h2>
-          <p className="mt-0.5 text-body text-muted">{text}</p>
-          <div className="mt-3">{children}</div>
-        </div>
         {onDismiss && (
-          <button type="button" onClick={onDismiss} className="rounded-sm p-1 text-subtle hover:bg-surface-muted hover:text-text" aria-label="Dismiss">
+          <button type="button" onClick={onDismiss} className="inline-flex size-7 items-center justify-center hover:bg-review-border" aria-label="Dismiss">
             <Icon name="close" size={16} />
           </button>
         )}
+      </div>
+      <div className="p-5">
+        <h2 className="headline text-title-2 text-text">{title}</h2>
+        <p className="mt-2 max-w-2xl text-body text-muted">{text}</p>
+        <div className="mt-5">{children}</div>
       </div>
     </section>
   );
 }
 
 const inputStyle =
-  'h-9 min-w-0 rounded-sm border border-border-strong bg-surface px-3 text-body text-text placeholder:text-subtle focus-visible:border-focus';
+  'h-11 min-w-0 border-2 border-border-strong bg-surface px-3 text-body text-text placeholder:text-subtle focus-visible:border-focus';
 
 /** Speakers never said their names: ask, play a sample of each voice, nothing is reprocessed. */
 export function SpeakerNamesCard({ result, onName }: { result: Result; onName: (speakerId: string, name: string) => void }) {
@@ -55,7 +56,7 @@ export function SpeakerNamesCard({ result, onName }: { result: Result; onName: (
               }}
             >
               <SpeakerAvatar id={speaker.id} />
-              <span className="w-20 text-body font-medium text-text">{speaker.label}</span>
+              <span className="tag-label w-24 text-text">{speaker.label}</span>
               {firstTurn && (
                 <TimestampButton id={`voice:${speaker.id}`} start={firstTurn.start} end={Math.min(firstTurn.end, firstTurn.start + 5)} label={`${speaker.label}'s voice`} />
               )}
@@ -66,7 +67,7 @@ export function SpeakerNamesCard({ result, onName }: { result: Result; onName: (
                 value={drafts[speaker.id] ?? ''}
                 onChange={(e) => setDrafts((d) => ({ ...d, [speaker.id]: e.target.value }))}
               />
-              <Button type="submit" size="md">
+              <Button type="submit" size="md" variant="ink">
                 Save
               </Button>
             </form>
@@ -105,9 +106,9 @@ export function RecordingDateCard({ onDate, onDismiss }: { onDate: (iso: string)
 /** Buttons shown on a "Needs review" card. */
 export function ReviewActions({ onAgree, onKeep }: { onAgree: () => void; onKeep: () => void }) {
   return (
-    <div className="mt-3 flex flex-wrap items-center gap-2 border-t border-border pt-3">
-      <span className="text-caption text-muted">Was this agreed?</span>
-      <Button size="sm" icon="agreed" onClick={onAgree}>
+    <div className="mt-4 flex flex-wrap items-center gap-2 border-t-2 border-border-strong pt-4">
+      <span className="tag-label mr-1 text-text">Was this agreed?</span>
+      <Button size="sm" variant="primary" icon="agreed" onClick={onAgree}>
         Count as agreed
       </Button>
       <Button size="sm" variant="ghost" onClick={onKeep}>

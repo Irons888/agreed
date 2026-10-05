@@ -33,8 +33,12 @@ function TranscriptPanel({ run, result, highlighted, onHighlight }: { run: RunSt
   const speakers = result?.speakers ?? run.transcript?.speakers ?? [];
   const turns = result?.turns ?? run.transcript?.turns ?? [];
   return (
-    <aside aria-label="Recording and transcript" className="rounded-panel border border-border bg-surface">
-      <div className="space-y-3 border-b border-border p-4">
+    <aside aria-label="Recording and transcript" className="surface-dark">
+      <div className="flex items-center justify-between gap-3 border-b-2 border-border px-4 py-3">
+        <span className="tag-label">Recording and transcript</span>
+        {turns.length > 0 && <span className="tag-label text-muted">{turns.length} turns</span>}
+      </div>
+      <div className="space-y-3 border-b-2 border-border p-4">
         <PlayerBar duration={run.audio.duration} />
         <WaveformTimeline
           peaks={run.audio.peaks}
@@ -102,7 +106,7 @@ export function RunPage({ run, onNew, onRetry, onDelete }: { run: RunState; onNe
         <RunHeader fileName={run.audio.name} durationSec={run.audio.duration} speakers={speakers} result={result} clientMs={run.clientMs} actions={actions} />
 
         {result && onDelete && (
-          <div className="mt-6">
+          <div className="mt-8">
             <PrivacyNote onDelete={() => onDelete(result.id)} />
           </div>
         )}
@@ -114,11 +118,12 @@ export function RunPage({ run, onNew, onRetry, onDelete }: { run: RunState; onNe
         )}
 
         {!run.error && !result && (
-          <div className="mt-8 grid gap-6 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:items-start">
-            <section className="rounded-panel border border-border bg-surface p-5" aria-live="polite">
-              <h2 className="text-title-2 font-semibold text-text">Working on it</h2>
-              <p className="mt-1 text-body text-muted">Every step runs live on this recording. The transcript appears first.</p>
-              <div className="mt-5">
+          <div className="mt-10 grid gap-6 lg:grid-split lg:items-start">
+            <section className="border-2 border-border-strong bg-surface p-5" aria-live="polite">
+              <p className="tag-label text-subtle">Live run · nothing cached</p>
+              <h2 className="headline mt-2 text-title-2">Working on it</h2>
+              <p className="mt-2 text-body text-muted">Every step runs on this recording now. The transcript appears first.</p>
+              <div className="mt-6">
                 <PipelineProgress steps={run.steps} />
               </div>
             </section>
@@ -134,7 +139,7 @@ export function RunPage({ run, onNew, onRetry, onDelete }: { run: RunState; onNe
         )}
 
         {result && !declined && (
-          <div className="mt-8 grid gap-8 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:items-start">
+          <div className="mt-10 grid gap-8 lg:grid-split lg:items-start">
             <div className="min-w-0 space-y-6">
               {result.clarifications.some((c) => c.kind === 'speaker_names') && (
                 <SpeakerNamesCard result={result} onName={(id, name) => setResult(nameSpeaker(result, id, name))} />
@@ -164,9 +169,12 @@ export function RunPage({ run, onNew, onRetry, onDelete }: { run: RunState; onNe
                   Removed by verification: {result.dropped.map((d) => `“${d.title}” (${d.reason.toLowerCase()})`).join('; ')}
                 </p>
               )}
-              <details className="rounded-card border border-border bg-surface p-4">
-                <summary className="cursor-pointer text-label font-medium text-text">Time and cost of this run</summary>
-                <div className="mt-3">
+              <details className="group border-2 border-border-strong bg-surface">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-4 py-3">
+                  <span className="tag-label text-text">Time and cost of this run</span>
+                  <Icon name="expand" className="transition-transform group-open:rotate-180" />
+                </summary>
+                <div className="border-t-2 border-border px-4 pb-2">
                   <CostBreakdown metrics={result.metrics} />
                 </div>
               </details>

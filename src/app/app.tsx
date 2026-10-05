@@ -118,7 +118,7 @@ export function App() {
         ) : (path === '/run' || savedId) && run ? (
           <RunPage key={run.key} run={run} onNew={goHome} onRetry={() => start(run.audio, run.steps.prepare.ms ?? 0)} onDelete={removeRun} />
         ) : (
-          <HomePage onStart={start} />
+          <HomePage onStart={start} onNavigate={navigate} />
         )}
       </div>
       <Footer />

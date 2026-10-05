@@ -38,13 +38,13 @@ export function SavedRunPage({ id, onNew, onDelete }: { id: string; onNew: () =>
   if (missing) {
     return (
       <Page>
-        <div className="rounded-panel border border-border bg-surface p-6 text-center">
-          <span className="mx-auto inline-flex size-11 items-center justify-center rounded-full bg-surface-muted text-muted">
+        <div className="border-2 border-border-strong bg-surface p-6 sm:p-10">
+          <span className="inline-flex size-11 items-center justify-center border-2 border-border-strong text-text">
             <Icon name="noDate" size={20} />
           </span>
-          <h1 className="mt-4 text-title-2 font-semibold text-text">{missing}</h1>
-          <p className="mt-2 text-body text-muted">Results are kept for 30 days, or until someone deletes them.</p>
-          <Button variant="primary" icon="upload" className="mt-5" onClick={onNew}>
+          <h1 className="headline mt-6 text-title-2">{missing}</h1>
+          <p className="mt-3 text-body text-muted">Results are kept for 30 days, or until someone deletes them.</p>
+          <Button variant="primary" icon="upload" className="mt-6" onClick={onNew}>
             Analyze a recording
           </Button>
         </div>
@@ -54,11 +54,11 @@ export function SavedRunPage({ id, onNew, onDelete }: { id: string; onNew: () =>
   if (!run) {
     return (
       <Page>
-        <Skeleton className="h-4 w-24" />
-        <Skeleton className="mt-3 h-8 w-72" />
-        <div className="mt-8 grid gap-6 lg:grid-cols-2">
-          <Skeleton className="h-64" />
-          <Skeleton className="h-64" />
+        <Skeleton className="h-4 w-40" />
+        <Skeleton className="mt-4 h-12 w-2/3" />
+        <div className="mt-10 grid gap-6 lg:grid-split">
+          <Skeleton className="h-80" />
+          <Skeleton className="h-80" />
         </div>
       </Page>
     );

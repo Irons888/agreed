@@ -13,11 +13,7 @@ export function Tooltip({ content, children, side = 'top' }: { content: ReactNod
     <T.Root>
       <T.Trigger asChild>{children}</T.Trigger>
       <T.Portal>
-        <T.Content
-          side={side}
-          sideOffset={6}
-          className="z-30 max-w-72 rounded-sm bg-ink px-2.5 py-1.5 text-caption text-ink-contrast shadow-md"
-        >
+        <T.Content side={side} sideOffset={6} className="z-30 max-w-72 bg-ink px-2.5 py-1.5 text-caption text-ink-contrast">
           {content}
         </T.Content>
       </T.Portal>
