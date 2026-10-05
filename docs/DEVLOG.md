@@ -26,3 +26,17 @@ Times are local (EEST).
   - reasoning "low": 16 s, 4 of 6 items fully right. The privacy policy update became `needs_review` and lost "before launch".
   - reasoning "medium": 25–33 s, worse and unstable between runs. Agreed tasks were labelled as open questions, and one owner was invented.
 - Next: a real prompt with definitions and an example, verification in code, and stability measured over repeated runs.
+
+### Pipeline v1 and the first eval
+
+- 19:10: pipeline v1 works end to end through `POST /api/runs` (streamed progress):
+  1. turns rebuilt from word-level speakers;
+  2. gpt-oss-120b with reasoning "low", temperature 0 and one worked example from a different domain (a bakery, phrased unlike the test set);
+  3. every claim verified in code: quotes replaced by transcript words, times from recognition, unsupported status, owner or deadline downgraded or removed with a note;
+  4. dates resolved deterministically, and only with a recording date.
+- First eval, one run per case: all 6 cases pass.
+  - Inclusion 26/26, 0 exclusion errors.
+  - Time to result: T1 17 s, T4 9 s, T3 48 s. Extraction is 85–95% of it, and model latency varies a lot between calls.
+  - Transcript ready after about 1–2 s.
+  - Cost at list prices: about $0.007 per audio minute (T1: $0.0082 for 71 s).
+- Next: stability over 5 runs per case. This needs Workers Paid: the free allocation is 10,000 neurons a day, and a T1 run uses about 745.

@@ -1,0 +1,119 @@
+{
+  "startedAt": "2026-10-05T16:07:41.637Z",
+  "base": "http://127.0.0.1:8787",
+  "runs": 1,
+  "reasoning": "low",
+  "cases": [
+    {
+      "case": "T1-main",
+      "outcome": "result",
+      "runs": [
+        {
+          "run": 1,
+          "error": null,
+          "pass": true,
+          "included": "6/6",
+          "exclusionErrors": 0,
+          "failed": [],
+          "checks": 32,
+          "clientMs": 17045,
+          "transcriptMs": 2255,
+          "serverMs": {
+            "asrMs": 2220,
+            "extractMs": 14779,
+            "verifyMs": 4,
+            "totalMs": 17011
+          },
+          "usage": {
+            "audioMinutes": 1.183,
+            "asrAttempts": 1,
+            "asrNeurons": 559.27,
+            "llmCalls": 1,
+            "llmPromptTokens": 2578,
+            "llmCompletionTokens": 1526,
+            "llmNeurons": 186.07,
+            "retries": 0
+          },
+          "cost": {
+            "asrUsd": 0.006152,
+            "llmUsd": 0.002047,
+            "totalUsd": 0.008199,
+            "perAudioMinuteUsd": 0.00693,
+            "pricesCheckedOn": "2026-10-05"
+          },
+          "items": [
+            {
+              "title": "Send API documentation",
+              "status": "agreed",
+              "owner": "Mark",
+              "deadline": "by Wednesday",
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Add dark mode",
+              "status": "not_accepted",
+              "owner": null,
+              "deadline": null,
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Staging demo ready",
+              "status": "agreed",
+              "owner": "Mark",
+              "deadline": "Monday",
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Book meeting room for client workshop",
+              "status": "cancelled",
+              "owner": "Anna",
+              "deadline": null,
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Update privacy policy page",
+              "status": "agreed",
+              "owner": null,
+              "deadline": "before launch",
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Client single sign‑on requirement",
+              "status": "open_question",
+              "owner": null,
+              "deadline": null,
+              "date": null,
+              "notes": []
+            }
+          ],
+          "dropped": []
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "runs": 1,
+    "errors": 0,
+    "passed": 1,
+    "inclusion": "6/6",
+    "exclusionErrors": 0,
+    "stability": {
+      "T1-main": "1/1"
+    },
+    "timeToResultMs": {
+      "p50": 17045,
+      "p90": 17045
+    },
+    "timeToTranscriptMs": {
+      "p50": 2255
+    },
+    "retries": 0,
+    "costPerRunUsd": 0.008199,
+    "costPerAudioMinuteUsd": 0.006931
+  }
+}

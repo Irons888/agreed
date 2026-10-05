@@ -3,10 +3,21 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "dev:api": "wrangler dev --port 8787 --ip 127.0.0.1",
+    "typecheck": "tsc --noEmit",
+    "cf-types": "wrangler types",
+    "eval": "node eval/run.mjs",
     "testset:build": "node testset/build.mjs",
     "testset:voices": "node testset/build.mjs --list-voices"
   },
   "engines": {
     "node": ">=22"
+  },
+  "dependencies": {
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "typescript": "^7.0.2",
+    "wrangler": "^4.147.0"
   }
 }
