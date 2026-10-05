@@ -1,0 +1,1025 @@
+{
+  "version": 1,
+  "id": "5f459eb5-8c97-40ea-ae3f-e8677714be47",
+  "createdAt": "2026-10-05T17:27:28.977Z",
+  "fileName": "T3-ambiguous.wav",
+  "durationSec": 39.54,
+  "outcome": "clarify",
+  "decline": null,
+  "speakers": [
+    {
+      "id": "S1",
+      "name": null,
+      "label": "Speaker 1",
+      "words": 65,
+      "intro": null
+    },
+    {
+      "id": "S2",
+      "name": null,
+      "label": "Speaker 2",
+      "words": 51,
+      "intro": null
+    }
+  ],
+  "recordingDate": null,
+  "turns": [
+    {
+      "id": "u1",
+      "speaker": "S1",
+      "start": 0.32,
+      "end": 2.4799998,
+      "text": "So the export bug is still open.",
+      "words": [
+        {
+          "text": "So",
+          "start": 0.32,
+          "end": 0.64
+        },
+        {
+          "text": "the",
+          "start": 0.64,
+          "end": 0.88
+        },
+        {
+          "text": "export",
+          "start": 0.88,
+          "end": 1.28
+        },
+        {
+          "text": "bug",
+          "start": 1.28,
+          "end": 1.52
+        },
+        {
+          "text": "is",
+          "start": 1.52,
+          "end": 1.68
+        },
+        {
+          "text": "still",
+          "start": 1.68,
+          "end": 1.92
+        },
+        {
+          "text": "open.",
+          "start": 1.92,
+          "end": 2.4799998
+        }
+      ]
+    },
+    {
+      "id": "u2",
+      "speaker": "S2",
+      "start": 2.6399999,
+      "end": 5.84,
+      "text": "Yeah. I'll try to get a fix in by Friday, but no promises.",
+      "words": [
+        {
+          "text": "Yeah.",
+          "start": 2.6399999,
+          "end": 2.96
+        },
+        {
+          "text": "I'll",
+          "start": 2.96,
+          "end": 3.1999998
+        },
+        {
+          "text": "try",
+          "start": 3.1999998,
+          "end": 3.28
+        },
+        {
+          "text": "to",
+          "start": 3.28,
+          "end": 3.36
+        },
+        {
+          "text": "get",
+          "start": 3.36,
+          "end": 3.52
+        },
+        {
+          "text": "a",
+          "start": 3.52,
+          "end": 3.6
+        },
+        {
+          "text": "fix",
+          "start": 3.6,
+          "end": 3.84
+        },
+        {
+          "text": "in",
+          "start": 3.84,
+          "end": 4
+        },
+        {
+          "text": "by",
+          "start": 4,
+          "end": 4.24
+        },
+        {
+          "text": "Friday,",
+          "start": 4.24,
+          "end": 4.7999997
+        },
+        {
+          "text": "but",
+          "start": 4.7999997,
+          "end": 4.88
+        },
+        {
+          "text": "no",
+          "start": 4.88,
+          "end": 5.12
+        },
+        {
+          "text": "promises.",
+          "start": 5.12,
+          "end": 5.84
+        }
+      ]
+    },
+    {
+      "id": "u3",
+      "speaker": "S1",
+      "start": 6.16,
+      "end": 11.36,
+      "text": "Okay. And the invoices issue, someone should probably talk to finance about it at some point.",
+      "words": [
+        {
+          "text": "Okay.",
+          "start": 6.16,
+          "end": 6.7999997
+        },
+        {
+          "text": "And",
+          "start": 6.7999997,
+          "end": 6.96
+        },
+        {
+          "text": "the",
+          "start": 6.96,
+          "end": 7.12
+        },
+        {
+          "text": "invoices",
+          "start": 7.12,
+          "end": 7.6
+        },
+        {
+          "text": "issue,",
+          "start": 7.6,
+          "end": 8.24
+        },
+        {
+          "text": "someone",
+          "start": 8.24,
+          "end": 8.639999
+        },
+        {
+          "text": "should",
+          "start": 8.639999,
+          "end": 8.88
+        },
+        {
+          "text": "probably",
+          "start": 8.88,
+          "end": 9.28
+        },
+        {
+          "text": "talk",
+          "start": 9.28,
+          "end": 9.5199995
+        },
+        {
+          "text": "to",
+          "start": 9.5199995,
+          "end": 9.679999
+        },
+        {
+          "text": "finance",
+          "start": 9.679999,
+          "end": 10.08
+        },
+        {
+          "text": "about",
+          "start": 10.08,
+          "end": 10.32
+        },
+        {
+          "text": "it",
+          "start": 10.32,
+          "end": 10.48
+        },
+        {
+          "text": "at",
+          "start": 10.48,
+          "end": 10.639999
+        },
+        {
+          "text": "some",
+          "start": 10.639999,
+          "end": 10.8
+        },
+        {
+          "text": "point.",
+          "start": 10.8,
+          "end": 11.36
+        }
+      ]
+    },
+    {
+      "id": "u4",
+      "speaker": "S2",
+      "start": 11.84,
+      "end": 14.32,
+      "text": "Probably. I don't really know who handles that now.",
+      "words": [
+        {
+          "text": "Probably.",
+          "start": 11.84,
+          "end": 12.559999
+        },
+        {
+          "text": "I",
+          "start": 12.639999,
+          "end": 12.88
+        },
+        {
+          "text": "don't",
+          "start": 12.88,
+          "end": 13.12
+        },
+        {
+          "text": "really",
+          "start": 13.12,
+          "end": 13.28
+        },
+        {
+          "text": "know",
+          "start": 13.28,
+          "end": 13.44
+        },
+        {
+          "text": "who",
+          "start": 13.44,
+          "end": 13.599999
+        },
+        {
+          "text": "handles",
+          "start": 13.599999,
+          "end": 13.92
+        },
+        {
+          "text": "that",
+          "start": 13.92,
+          "end": 14.16
+        },
+        {
+          "text": "now.",
+          "start": 14.16,
+          "end": 14.32
+        }
+      ]
+    },
+    {
+      "id": "u5",
+      "speaker": "S1",
+      "start": 14.665,
+      "end": 17.705,
+      "text": "Me neither. We could also move the release. I'm not sure.",
+      "words": [
+        {
+          "text": "Me",
+          "start": 14.665,
+          "end": 15.065001
+        },
+        {
+          "text": "neither.",
+          "start": 15.065001,
+          "end": 15.465
+        },
+        {
+          "text": "We",
+          "start": 15.465,
+          "end": 15.625
+        },
+        {
+          "text": "could",
+          "start": 15.625,
+          "end": 15.785
+        },
+        {
+          "text": "also",
+          "start": 15.785,
+          "end": 16.025
+        },
+        {
+          "text": "move",
+          "start": 16.025,
+          "end": 16.265
+        },
+        {
+          "text": "the",
+          "start": 16.265,
+          "end": 16.425
+        },
+        {
+          "text": "release.",
+          "start": 16.425,
+          "end": 16.825
+        },
+        {
+          "text": "I'm",
+          "start": 16.825,
+          "end": 16.985
+        },
+        {
+          "text": "not",
+          "start": 16.985,
+          "end": 17.145
+        },
+        {
+          "text": "sure.",
+          "start": 17.145,
+          "end": 17.705
+        }
+      ]
+    },
+    {
+      "id": "u6",
+      "speaker": "S2",
+      "start": 18.105,
+      "end": 20.744999,
+      "text": "Maybe. It depends on the export fix, I guess.",
+      "words": [
+        {
+          "text": "Maybe.",
+          "start": 18.105,
+          "end": 18.665
+        },
+        {
+          "text": "It",
+          "start": 18.665,
+          "end": 18.825
+        },
+        {
+          "text": "depends",
+          "start": 18.825,
+          "end": 19.145
+        },
+        {
+          "text": "on",
+          "start": 19.145,
+          "end": 19.305
+        },
+        {
+          "text": "the",
+          "start": 19.305,
+          "end": 19.465
+        },
+        {
+          "text": "export",
+          "start": 19.465,
+          "end": 19.785
+        },
+        {
+          "text": "fix,",
+          "start": 19.785,
+          "end": 20.185
+        },
+        {
+          "text": "I",
+          "start": 20.185,
+          "end": 20.265
+        },
+        {
+          "text": "guess.",
+          "start": 20.265,
+          "end": 20.744999
+        }
+      ]
+    },
+    {
+      "id": "u7",
+      "speaker": "S1",
+      "start": 20.985,
+      "end": 24.665,
+      "text": "Right? And the onboarding emails, those might need a rewrite too.",
+      "words": [
+        {
+          "text": "Right?",
+          "start": 20.985,
+          "end": 21.465
+        },
+        {
+          "text": "And",
+          "start": 21.465,
+          "end": 21.705
+        },
+        {
+          "text": "the",
+          "start": 21.705,
+          "end": 21.865
+        },
+        {
+          "text": "onboarding",
+          "start": 21.865,
+          "end": 22.265
+        },
+        {
+          "text": "emails,",
+          "start": 22.265,
+          "end": 22.985
+        },
+        {
+          "text": "those",
+          "start": 22.985,
+          "end": 23.145
+        },
+        {
+          "text": "might",
+          "start": 23.145,
+          "end": 23.385
+        },
+        {
+          "text": "need",
+          "start": 23.385,
+          "end": 23.545
+        },
+        {
+          "text": "a",
+          "start": 23.545,
+          "end": 23.705
+        },
+        {
+          "text": "rewrite",
+          "start": 23.705,
+          "end": 24.025
+        },
+        {
+          "text": "too.",
+          "start": 24.025,
+          "end": 24.665
+        }
+      ]
+    },
+    {
+      "id": "u8",
+      "speaker": "S2",
+      "start": 24.904999,
+      "end": 27.064999,
+      "text": "Could be. Let's see how it goes.",
+      "words": [
+        {
+          "text": "Could",
+          "start": 24.904999,
+          "end": 25.305
+        },
+        {
+          "text": "be.",
+          "start": 25.305,
+          "end": 25.785
+        },
+        {
+          "text": "Let's",
+          "start": 25.945,
+          "end": 26.345001
+        },
+        {
+          "text": "see",
+          "start": 26.345001,
+          "end": 26.505001
+        },
+        {
+          "text": "how",
+          "start": 26.505001,
+          "end": 26.744999
+        },
+        {
+          "text": "it",
+          "start": 26.744999,
+          "end": 26.825
+        },
+        {
+          "text": "goes.",
+          "start": 26.825,
+          "end": 27.064999
+        }
+      ]
+    },
+    {
+      "id": "u9",
+      "speaker": "S1",
+      "start": 27.66,
+      "end": 31.02,
+      "text": "What about the analytics dashboard? Is that still on the list?",
+      "words": [
+        {
+          "text": "What",
+          "start": 27.66,
+          "end": 27.9
+        },
+        {
+          "text": "about",
+          "start": 27.9,
+          "end": 28.14
+        },
+        {
+          "text": "the",
+          "start": 28.14,
+          "end": 28.3
+        },
+        {
+          "text": "analytics",
+          "start": 28.3,
+          "end": 28.78
+        },
+        {
+          "text": "dashboard?",
+          "start": 28.78,
+          "end": 29.5
+        },
+        {
+          "text": "Is",
+          "start": 29.5,
+          "end": 29.74
+        },
+        {
+          "text": "that",
+          "start": 29.74,
+          "end": 29.9
+        },
+        {
+          "text": "still",
+          "start": 29.9,
+          "end": 30.22
+        },
+        {
+          "text": "on",
+          "start": 30.22,
+          "end": 30.380001
+        },
+        {
+          "text": "the",
+          "start": 30.380001,
+          "end": 30.46
+        },
+        {
+          "text": "list?",
+          "start": 30.46,
+          "end": 31.02
+        }
+      ]
+    },
+    {
+      "id": "u10",
+      "speaker": "S2",
+      "start": 31.26,
+      "end": 34.62,
+      "text": "Good question. I'm not sure anyone has looked at it.",
+      "words": [
+        {
+          "text": "Good",
+          "start": 31.26,
+          "end": 31.66
+        },
+        {
+          "text": "question.",
+          "start": 31.66,
+          "end": 32.3
+        },
+        {
+          "text": "I'm",
+          "start": 32.38,
+          "end": 32.7
+        },
+        {
+          "text": "not",
+          "start": 32.7,
+          "end": 32.86
+        },
+        {
+          "text": "sure",
+          "start": 32.86,
+          "end": 33.1
+        },
+        {
+          "text": "anyone",
+          "start": 33.1,
+          "end": 33.58
+        },
+        {
+          "text": "has",
+          "start": 33.58,
+          "end": 33.82
+        },
+        {
+          "text": "looked",
+          "start": 33.82,
+          "end": 33.98
+        },
+        {
+          "text": "at",
+          "start": 33.98,
+          "end": 34.14
+        },
+        {
+          "text": "it.",
+          "start": 34.14,
+          "end": 34.62
+        }
+      ]
+    },
+    {
+      "id": "u11",
+      "speaker": "S1",
+      "start": 34.78,
+      "end": 37.739998,
+      "text": "Maybe we talk again after the thing next week?",
+      "words": [
+        {
+          "text": "Maybe",
+          "start": 34.78,
+          "end": 35.66
+        },
+        {
+          "text": "we",
+          "start": 35.66,
+          "end": 35.82
+        },
+        {
+          "text": "talk",
+          "start": 35.82,
+          "end": 36.059998
+        },
+        {
+          "text": "again",
+          "start": 36.059998,
+          "end": 36.3
+        },
+        {
+          "text": "after",
+          "start": 36.3,
+          "end": 36.62
+        },
+        {
+          "text": "the",
+          "start": 36.62,
+          "end": 36.7
+        },
+        {
+          "text": "thing",
+          "start": 36.7,
+          "end": 36.94
+        },
+        {
+          "text": "next",
+          "start": 36.94,
+          "end": 37.18
+        },
+        {
+          "text": "week?",
+          "start": 37.18,
+          "end": 37.739998
+        }
+      ]
+    },
+    {
+      "id": "u12",
+      "speaker": "S2",
+      "start": 37.9,
+      "end": 38.94,
+      "text": "Maybe. We'll see.",
+      "words": [
+        {
+          "text": "Maybe.",
+          "start": 37.9,
+          "end": 38.46
+        },
+        {
+          "text": "We'll",
+          "start": 38.46,
+          "end": 38.7
+        },
+        {
+          "text": "see.",
+          "start": 38.7,
+          "end": 38.94
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "fix-the-export-bug-1",
+      "title": "Fix the export bug",
+      "status": "needs_review",
+      "owner": {
+        "kind": "speaker",
+        "speaker": "S2",
+        "name": "Speaker 2",
+        "how": "tentative"
+      },
+      "deadline": {
+        "kind": "relative",
+        "date": null,
+        "ambiguous": false,
+        "raw": "by Friday",
+        "previous": []
+      },
+      "evidence": [
+        {
+          "turn": "u2",
+          "speaker": "S2",
+          "role": "hedge",
+          "quote": "I'll try to get a fix in by Friday, but no promises.",
+          "start": 2.96,
+          "end": 5.84,
+          "match": "exact"
+        }
+      ],
+      "why": "Sara only said she might fix it (u2); that is a hedged commitment.",
+      "checks": [
+        {
+          "name": "quotes",
+          "ok": true
+        },
+        {
+          "name": "status",
+          "ok": true
+        },
+        {
+          "name": "owner",
+          "ok": true
+        },
+        {
+          "name": "deadline",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "talk-to-finance-about-invoices-issue-2",
+      "title": "Talk to finance about invoices issue",
+      "status": "not_accepted",
+      "owner": {
+        "kind": "none"
+      },
+      "deadline": {
+        "kind": "none",
+        "raw": null,
+        "date": null,
+        "ambiguous": false,
+        "previous": []
+      },
+      "evidence": [
+        {
+          "turn": "u3",
+          "speaker": "S1",
+          "role": "proposal",
+          "quote": "And the invoices issue, someone should probably talk to finance about it at some point.",
+          "start": 6.7999997,
+          "end": 11.36,
+          "match": "exact"
+        },
+        {
+          "turn": "u4",
+          "speaker": "S2",
+          "role": "rejection",
+          "quote": "Probably. I don't really know who handles that now.",
+          "start": 11.84,
+          "end": 14.32,
+          "match": "exact"
+        }
+      ],
+      "why": "Tom proposed it (u3) and Sara did not accept (u4).",
+      "checks": [
+        {
+          "name": "quotes",
+          "ok": true
+        },
+        {
+          "name": "status",
+          "ok": true
+        },
+        {
+          "name": "owner",
+          "ok": true
+        },
+        {
+          "name": "deadline",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "move-the-release-3",
+      "title": "Move the release",
+      "status": "not_accepted",
+      "owner": {
+        "kind": "none"
+      },
+      "deadline": {
+        "kind": "none",
+        "raw": null,
+        "date": null,
+        "ambiguous": false,
+        "previous": []
+      },
+      "evidence": [
+        {
+          "turn": "u5",
+          "speaker": "S1",
+          "role": "proposal",
+          "quote": "We could also move the release. I'm not sure.",
+          "start": 15.465,
+          "end": 17.705,
+          "match": "exact"
+        }
+      ],
+      "why": "Tom suggested moving the release (u5) but no one accepted.",
+      "checks": [
+        {
+          "name": "quotes",
+          "ok": true
+        },
+        {
+          "name": "status",
+          "ok": true
+        },
+        {
+          "name": "owner",
+          "ok": true
+        },
+        {
+          "name": "deadline",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "rewrite-onboarding-emails-4",
+      "title": "Rewrite onboarding emails",
+      "status": "not_accepted",
+      "owner": {
+        "kind": "none"
+      },
+      "deadline": {
+        "kind": "none",
+        "raw": null,
+        "date": null,
+        "ambiguous": false,
+        "previous": []
+      },
+      "evidence": [
+        {
+          "turn": "u7",
+          "speaker": "S1",
+          "role": "proposal",
+          "quote": "And the onboarding emails, those might need a rewrite too.",
+          "start": 21.465,
+          "end": 24.665,
+          "match": "exact"
+        },
+        {
+          "turn": "u8",
+          "speaker": "S2",
+          "role": "rejection",
+          "quote": "Could be. Let's see how it goes.",
+          "start": 24.904999,
+          "end": 27.064999,
+          "match": "exact"
+        }
+      ],
+      "why": "Tom raised the need (u7) and Sara did not commit (u8).",
+      "checks": [
+        {
+          "name": "quotes",
+          "ok": true
+        },
+        {
+          "name": "status",
+          "ok": true
+        },
+        {
+          "name": "owner",
+          "ok": true
+        },
+        {
+          "name": "deadline",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "analytics-dashboard-status-5",
+      "title": "Analytics dashboard status",
+      "status": "open_question",
+      "owner": {
+        "kind": "none"
+      },
+      "deadline": {
+        "kind": "none",
+        "raw": null,
+        "date": null,
+        "ambiguous": false,
+        "previous": []
+      },
+      "evidence": [
+        {
+          "turn": "u9",
+          "speaker": "S1",
+          "role": "question",
+          "quote": "What about the analytics dashboard? Is that still on the list?",
+          "start": 27.66,
+          "end": 31.02,
+          "match": "exact"
+        },
+        {
+          "turn": "u10",
+          "speaker": "S2",
+          "role": "no_answer",
+          "quote": "Good question. I'm not sure anyone has looked at it.",
+          "start": 31.26,
+          "end": 34.62,
+          "match": "exact"
+        }
+      ],
+      "why": "The question (u9) received no answer (u10).",
+      "checks": [
+        {
+          "name": "quotes",
+          "ok": true
+        },
+        {
+          "name": "status",
+          "ok": true
+        },
+        {
+          "name": "owner",
+          "ok": true
+        },
+        {
+          "name": "deadline",
+          "ok": true
+        }
+      ]
+    }
+  ],
+  "dropped": [],
+  "clarifications": [
+    {
+      "kind": "speaker_names",
+      "blocking": true,
+      "speakers": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "kind": "recording_date",
+      "blocking": false
+    },
+    {
+      "kind": "review_items",
+      "blocking": false,
+      "items": [
+        "fix-the-export-bug-1"
+      ]
+    }
+  ],
+  "metrics": {
+    "models": {
+      "asr": "@cf/deepgram/nova-3",
+      "llm": "@cf/openai/gpt-oss-120b",
+      "reasoning": "low"
+    },
+    "timings": {
+      "asrMs": 937,
+      "extractMs": 30491,
+      "verifyMs": 0,
+      "totalMs": 31428
+    },
+    "usage": {
+      "audioMinutes": 0.659,
+      "asrAttempts": 1,
+      "asrNeurons": 311.56,
+      "llmCalls": 1,
+      "llmPromptTokens": 2438,
+      "llmCompletionTokens": 1145,
+      "llmNeurons": 155.64,
+      "retries": 0
+    },
+    "cost": {
+      "asrUsd": 0.003427,
+      "llmUsd": 0.001712,
+      "totalUsd": 0.005139,
+      "perAudioMinuteUsd": 0.007798,
+      "pricesCheckedOn": "2026-10-05"
+    }
+  }
+}

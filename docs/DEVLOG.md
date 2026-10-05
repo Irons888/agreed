@@ -72,3 +72,8 @@ Times are local (EEST).
   - the server sends a heartbeat line every 5 s;
   - if the stream still breaks, the app (and the eval) fetch the stored result by its run id instead of failing;
   - recoveries are counted separately in the report.
+- 20:34: final eval (gpt-oss-120b, 5 runs per case, live deployment, single stream):
+  - **30/30 runs passed**, 130/130 items with the right status, 0 unsupported items, 0 dropped connections, 0 retries;
+  - time to result p50 23.2 s, p90 31.5 s; transcript after 1.2 s;
+  - $0.0071 per audio minute, about 74% of it recognition.
+- Storybook now renders real T1, T3, T4 and T5 results from this eval. README and delivery notes carry the final numbers.

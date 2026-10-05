@@ -1,8 +1,17 @@
 import type { Item, Result } from '../../worker/types';
 import t1 from './t1-result.json';
+import t3 from './t3-result.json';
+import t4 from './t4-result.json';
+import t5 from './t5-result.json';
 
-/** A real result: T1 processed by the live pipeline (eval run), not hand-written. */
+// Real results from the final eval on the live deployment (eval/results/2026-10-05T17-21-03-651Z), not hand-written.
 export const t1Result = t1 as unknown as Result;
+/** Unnamed speakers and hedged statements: the product asks who is who. */
+export const t3Result = t3 as unknown as Result;
+/** The recording states its date, so deadlines become calendar dates. */
+export const t4Result = t4 as unknown as Result;
+/** Three voices: the product declines. */
+export const t5Result = t5 as unknown as Result;
 
 const byTitle = (word: string) => t1Result.items.find((i) => i.title.toLowerCase().includes(word))!;
 export const agreedItem = byTitle('api');
@@ -22,11 +31,7 @@ export const needsReviewItem: Item = {
   checks: agreedItem.checks.map((c) => (c.name === 'status' ? { ...c, ok: false, note: 'The commitment is hedged: “I\'ll try to send them, no promises.”' } : c)),
 };
 
-export const datedItem: Item = {
-  ...agreedItem,
-  id: 'variant-dated',
-  deadline: { kind: 'date', raw: 'by Wednesday', date: '2026-10-07', ambiguous: false, previous: [] },
-};
+export const datedItem: Item = t4Result.items.find((i) => i.deadline.kind === 'date' && i.owner.kind === 'speaker')!;
 
 export const ambiguousDateItem: Item = {
   ...agreedItem,
@@ -48,21 +53,8 @@ export const correctedOwnerItem: Item = {
   ),
 };
 
-export const unnamedResult: Result = {
-  ...t1Result,
-  outcome: 'clarify',
-  speakers: t1Result.speakers.map((s) => ({ ...s, name: null, label: `Speaker ${s.id.slice(1)}`, intro: null })),
-  items: t1Result.items.map((i) => (i.owner.kind === 'speaker' ? { ...i, owner: { ...i.owner, name: `Speaker ${i.owner.speaker.slice(1)}` } } : i)),
-  clarifications: [{ kind: 'speaker_names', blocking: true, speakers: ['S1', 'S2'] }, ...t1Result.clarifications],
-};
+export const unnamedResult: Result = t3Result;
 
-export const declinedResult: Result = {
-  ...t1Result,
-  outcome: 'decline',
-  decline: { reason: 'too_many_voices', message: 'More than two voices were detected. This prototype supports conversations between two people.' },
-  speakers: [...t1Result.speakers, { id: 'S3', name: null, label: 'Speaker 3', words: 18, intro: null }],
-  items: [],
-  clarifications: [],
-};
+export const declinedResult: Result = t5Result;
 
 export const emptyResult: Result = { ...t1Result, items: [], clarifications: [] };

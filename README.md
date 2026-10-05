@@ -25,6 +25,25 @@ Scope: English, two clearly distinguishable speakers, up to 3 minutes, no overla
   - Hedged agreements (“I'll try, no promises”): marked *Needs review*.
   - Three voices or a single voice: it declines and says why.
 
+## Measured
+
+Final eval: 5 runs per test recording on the live deployment.
+
+| | |
+|---|---|
+| Runs passed | **30 / 30** |
+| Real items found with the right status | **130 / 130** |
+| Unsupported items added | **0** |
+| Time to the full verified result, p50 / p90 | **23.2 s / 31.5 s** |
+| Time to the transcript | **1.2 s** |
+| Variable cost | **$0.0071 per audio minute** at Workers AI list prices |
+
+Hosting is separate: Workers Paid, $5 a month.
+
+The weak spot is the time to the full result: nearly all of it is the extraction model, and it varies between runs.
+- gpt-oss-20b was tried as a faster option. It was not faster (24 s) and lost two owners, so gpt-oss-120b stays.
+- Details are in the [delivery notes](docs/DELIVERY_NOTES.md).
+
 ## How it works
 
 ```

@@ -3,14 +3,15 @@ import { prepareSample, type PreparedAudio } from '@/lib/audio/prepare';
 import { HomePage } from '@/pages/home';
 import { QualityPage } from '@/pages/quality';
 import { RunPage, type RunState } from '@/pages/run';
-import { declinedResult, emptyResult, t1Result, unnamedResult } from '@/fixtures';
+import { declinedResult, emptyResult, t1Result, t4Result, unnamedResult } from '@/fixtures';
 import type { Result as RunResult } from '../../../worker/types';
 
 const meta = { title: 'Pages/Screens', parameters: { layout: 'fullscreen', audio: false } } satisfies Meta;
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const loadT1 = async () => ({ audio: await prepareSample('/samples/T1-main.wav', 'T1-main.wav') });
+const load = (name: string) => async () => ({ audio: await prepareSample(`/samples/${name}.wav`, `${name}.wav`) });
+const loadT1 = load('T1-main');
 
 const run = (audio: PreparedAudio, result: RunResult | null, extra: Partial<RunState> = {}): RunState => ({
   key: 1,
@@ -21,7 +22,7 @@ const run = (audio: PreparedAudio, result: RunResult | null, extra: Partial<RunS
     extract: result ? { status: 'done', ms: 13955 } : { status: 'active', startedAt: Date.now() - 4100 },
     verify: result ? { status: 'done', ms: 7 } : { status: 'pending' },
   },
-  transcript: { speakers: result?.speakers ?? unnamedResult.speakers, turns: t1Result.turns },
+  transcript: { speakers: result?.speakers ?? t1Result.speakers.map((sp) => ({ ...sp, name: null, label: `Speaker ${sp.id.slice(1)}` })), turns: result?.turns ?? t1Result.turns },
   result,
   error: null,
   clientMs: result ? 16300 : null,
@@ -41,8 +42,13 @@ export const Result: Story = {
 };
 
 export const ResultUnnamedSpeakers: Story = {
-  loaders: [loadT1],
+  loaders: [load('T3-ambiguous')],
   render: (_, { loaded }) => <RunPage run={run(loaded.audio as PreparedAudio, unnamedResult)} onNew={() => {}} onRetry={() => {}} />,
+};
+
+export const ResultWithDates: Story = {
+  loaders: [load('T4-dated')],
+  render: (_, { loaded }) => <RunPage run={run(loaded.audio as PreparedAudio, t4Result)} onNew={() => {}} onRetry={() => {}} />,
 };
 
 export const ResultNothingFound: Story = {
@@ -51,7 +57,7 @@ export const ResultNothingFound: Story = {
 };
 
 export const Declined: Story = {
-  loaders: [loadT1],
+  loaders: [load('T5-three-voices')],
   render: (_, { loaded }) => <RunPage run={run(loaded.audio as PreparedAudio, declinedResult)} onNew={() => {}} onRetry={() => {}} />,
 };
 

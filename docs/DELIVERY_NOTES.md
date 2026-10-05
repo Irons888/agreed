@@ -10,32 +10,57 @@
 
 All test recordings, scripts, timelines and expected results are in [`testset/`](../testset). The expected results were committed before any product code existed (commit `9c14984`). T3 and T4 were later lengthened from 20 to 40 seconds, still before any product run; see section 3.
 
-| Case | Input | Expected | Actual (5 runs on the live deployment) |
+| Case | Input | Expected | Actual: final eval, 5 runs per case on the live deployment |
 |---|---|---|---|
-| T1 | Anna (PM) and Mark (backend), 1:11. Proposal never accepted, accepted task, corrected deadline, cancelled task, task with no owner, open question | 3 agreed (one with no owner, one moved from Thursday to Monday), 1 open question, dark mode not accepted, meeting room cancelled. Weekdays stay as spoken, marked “date context missing” | _filled from eval_ |
-| T2 | T1 with one agreement changed: dark mode accepted | As T1, but dark mode agreed (Mark, “by Friday”) | _filled from eval_ |
-| T3 | No introductions, every statement hedged | Asks who is speaking. No agreed tasks, no owners, no dates | _filled from eval_ |
-| T4 | States its date (“Monday, October 5th, 2026”) | tomorrow → Oct 6, Friday → Oct 9, today → Oct 5, Wednesday next week → Oct 14 | _filled from eval_ |
-| T5 | Three voices | Declines: more than two voices | _filled from eval_ |
-| T6 | T1 over a noisy phone line | Same as T1 | _filled from eval_ |
+| T1 | Anna (PM) and Mark (backend), 1:11. Proposal never accepted, accepted task, corrected deadline, cancelled task, task with no owner, open question | 3 agreed (one with no owner, one moved from Thursday to Monday), 1 open question, dark mode not accepted, meeting room cancelled. Weekdays stay as spoken, marked “date context missing” | **5/5 pass.** All 6 items with the right status, owner and deadline every run; 0 extras. Median 31.5 s |
+| T2 | T1 with one agreement changed: dark mode accepted | As T1, but dark mode agreed (Mark, “by Friday”) | **5/5 pass.** Dark mode agreed (Mark, “by Friday”); everything else as T1. Median 26.6 s |
+| T3 | No introductions, every statement hedged | Asks who is speaking. No agreed tasks, no owners, no dates | **5/5 pass.** Asks who is speaking; 0 agreed tasks; the hedged fix is “Needs review”; no owners or dates. Median 23.2 s |
+| T4 | States its date (“Monday, October 5th, 2026”) | tomorrow → Oct 6, Friday → Oct 9, today → Oct 5, Wednesday next week → Oct 14 | **5/5 pass.** Oct 6, Oct 9, Oct 5, Oct 14 every run; “let's do a review” has no owner. Median 21.4 s |
+| T5 | Three voices | Declines: more than two voices | **5/5 pass.** Declined after recognition, no list. 0.8 s |
+| T6 | T1 over a noisy phone line | Same as T1 | **5/5 pass.** Same result as T1. Median 27.3 s |
 
 Scoring: `eval/run.mjs` uploads each recording to the API and checks the result against `expected.json`.
 - An expected item counts as found only if its key words appear and its quote falls within the expected lines of the timeline.
 - Then status, owner, deadline wording, calendar date and deadline history are checked.
 - Every item that matches nothing in the expected list is an unsupported extra.
 
-Reports: `eval/reports/`. Full results of every run: `eval/results/`.
+Final eval: [`eval/reports/2026-10-05T17-21-03-651Z.md`](../eval/reports/2026-10-05T17-21-03-651Z.md). Full results of every run: `eval/results/2026-10-05T17-21-03-651Z/`.
+
+| | Final eval |
+|---|---|
+| Runs passed | **30 / 30** |
+| Real items found with the right status | **130 / 130** |
+| Unsupported items (extras, upgraded statuses, guessed owners or dates) | **0** |
+| Failed requests / recovered dropped connections / retries | 0 / 0 / 0 |
 
 ## 2. What failed, and what is unfinished
 
-_filled at the end_
+**Failed along the way, now fixed.** Each item is described in [DEVLOG](DEVLOG.md).
+- **Stability run v1** (stopped after 9 runs, 5 passed):
+  - once, the facilitator's “let's go through what's left” became an item;
+  - three times, “the privacy policy page has to be updated” — answered “Yes, that definitely needs to happen” — was marked not accepted or needs review, because the model confused *no owner* with *not agreed*.
+  - Fixed with prompt rules and two verification rules (roles are checked against the words; a plain “yes” to a proposal can't be silently dropped).
+- **Dropped connections.** 9 of 30 runs broke off mid-stream during a period of unstable network. The stream now sends a heartbeat, and a broken stream is recovered from storage by run id. The final eval had no drops.
+- **Speaker grouping.** The speech model's own grouping glued two speakers together (section 3). Turns are now rebuilt from words.
+
+**Still weak:**
+- **Time to the full result.** Median 23 s, p90 31.5 s, up to 50 s on T1. Nearly all of it is the extraction model on Workers AI, and the same input can take 21 s or 50 s. A smaller model (gpt-oss-20b) was no faster and lost owners. The transcript shows after about 1.2 s, so the page is not empty while you wait.
+- **Short recordings.** Under about 30 seconds, two voices can be heard as one. The product declines such input rather than guessing.
+- **Synthetic test audio.** All recordings are text-to-speech; T6 adds phone-line noise, but there is no real human recording in the set.
+- **Clarification answers are not saved.** Speaker names, the recording date and review decisions apply on the page, but a shared link shows the original result.
+
+**Not built:**
+- a side-by-side T1/T2 comparison view;
+- answering clarifications by voice;
+- recording from the microphone in the browser (upload covers the brief);
+- a lint rule that enforces design tokens (the rule is documented in Storybook).
 
 ## 3. How AI output was checked: one example
 
 The speech model's own turn segmentation was wrong in a way the transcript text alone would hide.
 - **How it was caught.** Deepgram Nova-3 returns both per-word speakers and grouped utterances. Checked against the test set's ground-truth `timeline.json`, every one of T1's 210 words had the right speaker, but one utterance glued Mark's introduction (“And I'm Mark…”) and Anna's next sentence into a single utterance labelled Anna.
 - **Effect.** Fed to the extraction model, that misattribution produced a wrong owner: the cancelled meeting-room booking became Mark's.
-- **Fix.** Turns are rebuilt from word-level speakers and Deepgram's utterances are ignored. The rebuilt transcript has 22 turns for 24 script lines; the two differences are pairs of consecutive lines by the same speaker. Owners have been right on every run since.
+- **Fix.** Turns are rebuilt from word-level speakers and Deepgram's utterances are ignored. The rebuilt transcript has 22 turns for 24 script lines; the two differences are pairs of consecutive lines by the same speaker. Since then every owner check in the gpt-oss-120b evals has passed, including all 30 runs of the final eval.
 
 Other checks that changed decisions, all in [DEVLOG](DEVLOG.md):
 - **`smart_format`** rewrote “October 5th, 2026” as “10/05/2026”, so it is off: quotes must be what was said.
@@ -50,7 +75,26 @@ Every model claim is also verified in code on each run:
 
 ## 4. Measurements
 
-_filled from the stability eval: time to useful result p50/p90, time to transcript, cost per run and per audio minute_
+Measured on the live deployment in the final eval: 30 runs, 0 errors.
+
+| Measure | Value |
+|---|---|
+| Time to the full verified result (upload → list), p50 / p90 | **23.2 s / 31.5 s** |
+| Time to the transcript (first useful output), p50 | **1.2 s** |
+| Recognition time (Nova-3) for a 71 s recording | about 2 s |
+| Variable cost per run (average over the test set) | **$0.0061** |
+| Variable cost per audio minute | **$0.0071** |
+| Of which recognition | about 74% ($0.0052 per minute) |
+| Cost of the whole 30-run eval | about $0.18 |
+
+Model comparison, same eval, same day:
+
+| Extraction model | Runs passed (of completed) | Quality failures | Time p50 | Cost per audio minute |
+|---|---|---|---|---|
+| gpt-oss-120b (chosen) | 30/30 in the final eval | 0 | 23.2 s | $0.0071 |
+| gpt-oss-20b | 19/21 | 2 lost owners | 24.0 s | $0.0064 |
+
+Recognition dominates the cost, so the smaller model saves little and costs accuracy.
 
 **Variable cost per operation**, at Workers AI list prices checked on 2026-10-05:
 
@@ -86,4 +130,15 @@ _filled by the author_
 
 ## 7. What I would improve next
 
-_filled at the end_
+1. **Speed.**
+   - Show items as they are found instead of waiting for the whole answer.
+   - Measure a faster host for the same model (for example Groq) against the eval.
+   - Split long conversations into overlapping windows.
+2. **Save clarification answers** with the result, with a small edit history, so a shared link shows the confirmed version.
+3. **A bigger test set:**
+   - real human recordings;
+   - interruptions, sarcasm, paraphrased acceptances;
+   - names misheard by recognition;
+   - more than two speakers once diarization is mapped to names.
+4. **Longer recordings and more languages:** chunked recognition; per-language rules for hedges and dates.
+5. **Hand-off** of confirmed items to task trackers (Linear, Jira) through their APIs or MCP. Out of scope for this brief.

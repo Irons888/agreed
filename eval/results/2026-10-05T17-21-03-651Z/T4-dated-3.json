@@ -1,0 +1,978 @@
+{
+  "version": 1,
+  "id": "da669023-f2a5-4aa0-9c9e-c8d2aba045d6",
+  "createdAt": "2026-10-05T17:29:14.420Z",
+  "fileName": "T4-dated.wav",
+  "durationSec": 37.05,
+  "outcome": "result",
+  "decline": null,
+  "speakers": [
+    {
+      "id": "S1",
+      "name": "Anna",
+      "label": "Anna",
+      "words": 70,
+      "intro": {
+        "turn": "u1",
+        "speaker": "S1",
+        "role": "commitment",
+        "quote": "I'm Anna, the project manager.",
+        "start": 3.12,
+        "end": 5.04,
+        "match": "exact"
+      }
+    },
+    {
+      "id": "S2",
+      "name": "Mark",
+      "label": "Mark",
+      "words": 41,
+      "intro": {
+        "turn": "u2",
+        "speaker": "S2",
+        "role": "commitment",
+        "quote": "I'm Mark, back end developer.",
+        "start": 5.7599998,
+        "end": 7.44,
+        "match": "exact"
+      }
+    }
+  ],
+  "recordingDate": {
+    "date": "2026-10-05",
+    "source": "recording",
+    "evidence": {
+      "turn": "u1",
+      "speaker": "S1",
+      "role": "commitment",
+      "quote": "It's Monday, October fifth twenty twenty six.",
+      "start": 0.71999997,
+      "end": 3.12,
+      "match": "exact"
+    }
+  },
+  "turns": [
+    {
+      "id": "u1",
+      "speaker": "S1",
+      "start": 0.24,
+      "end": 5.04,
+      "text": "Hi. It's Monday, October fifth twenty twenty six. I'm Anna, the project manager.",
+      "words": [
+        {
+          "text": "Hi.",
+          "start": 0.24,
+          "end": 0.71999997
+        },
+        {
+          "text": "It's",
+          "start": 0.71999997,
+          "end": 0.96
+        },
+        {
+          "text": "Monday,",
+          "start": 0.96,
+          "end": 1.36
+        },
+        {
+          "text": "October",
+          "start": 1.36,
+          "end": 1.5999999
+        },
+        {
+          "text": "fifth",
+          "start": 1.5999999,
+          "end": 2
+        },
+        {
+          "text": "twenty",
+          "start": 2,
+          "end": 2.32
+        },
+        {
+          "text": "twenty",
+          "start": 2.32,
+          "end": 2.6399999
+        },
+        {
+          "text": "six.",
+          "start": 2.6399999,
+          "end": 3.12
+        },
+        {
+          "text": "I'm",
+          "start": 3.12,
+          "end": 3.36
+        },
+        {
+          "text": "Anna,",
+          "start": 3.36,
+          "end": 3.9199998
+        },
+        {
+          "text": "the",
+          "start": 3.9199998,
+          "end": 4
+        },
+        {
+          "text": "project",
+          "start": 4,
+          "end": 4.3199997
+        },
+        {
+          "text": "manager.",
+          "start": 4.3199997,
+          "end": 5.04
+        }
+      ]
+    },
+    {
+      "id": "u2",
+      "speaker": "S2",
+      "start": 5.52,
+      "end": 7.44,
+      "text": "And I'm Mark, back end developer.",
+      "words": [
+        {
+          "text": "And",
+          "start": 5.52,
+          "end": 5.7599998
+        },
+        {
+          "text": "I'm",
+          "start": 5.7599998,
+          "end": 6
+        },
+        {
+          "text": "Mark,",
+          "start": 6,
+          "end": 6.3199997
+        },
+        {
+          "text": "back",
+          "start": 6.3199997,
+          "end": 6.48
+        },
+        {
+          "text": "end",
+          "start": 6.48,
+          "end": 6.72
+        },
+        {
+          "text": "developer.",
+          "start": 6.72,
+          "end": 7.44
+        }
+      ]
+    },
+    {
+      "id": "u3",
+      "speaker": "S1",
+      "start": 7.6,
+      "end": 10.16,
+      "text": "Quick sync on the login bug. How bad is it?",
+      "words": [
+        {
+          "text": "Quick",
+          "start": 7.6,
+          "end": 7.9199996
+        },
+        {
+          "text": "sync",
+          "start": 7.9199996,
+          "end": 8.16
+        },
+        {
+          "text": "on",
+          "start": 8.16,
+          "end": 8.32
+        },
+        {
+          "text": "the",
+          "start": 8.32,
+          "end": 8.48
+        },
+        {
+          "text": "login",
+          "start": 8.48,
+          "end": 8.72
+        },
+        {
+          "text": "bug.",
+          "start": 8.72,
+          "end": 9.2
+        },
+        {
+          "text": "How",
+          "start": 9.2,
+          "end": 9.36
+        },
+        {
+          "text": "bad",
+          "start": 9.36,
+          "end": 9.5199995
+        },
+        {
+          "text": "is",
+          "start": 9.5199995,
+          "end": 9.76
+        },
+        {
+          "text": "it?",
+          "start": 9.76,
+          "end": 10.16
+        }
+      ]
+    },
+    {
+      "id": "u4",
+      "speaker": "S2",
+      "start": 10.32,
+      "end": 14.32,
+      "text": "Some users get logged out after a few minutes. I found the calls this morning.",
+      "words": [
+        {
+          "text": "Some",
+          "start": 10.32,
+          "end": 10.559999
+        },
+        {
+          "text": "users",
+          "start": 10.559999,
+          "end": 10.88
+        },
+        {
+          "text": "get",
+          "start": 10.88,
+          "end": 11.12
+        },
+        {
+          "text": "logged",
+          "start": 11.12,
+          "end": 11.44
+        },
+        {
+          "text": "out",
+          "start": 11.44,
+          "end": 11.679999
+        },
+        {
+          "text": "after",
+          "start": 11.679999,
+          "end": 11.92
+        },
+        {
+          "text": "a",
+          "start": 11.92,
+          "end": 12.08
+        },
+        {
+          "text": "few",
+          "start": 12.08,
+          "end": 12.24
+        },
+        {
+          "text": "minutes.",
+          "start": 12.24,
+          "end": 12.799999
+        },
+        {
+          "text": "I",
+          "start": 13.04,
+          "end": 13.28
+        },
+        {
+          "text": "found",
+          "start": 13.28,
+          "end": 13.44
+        },
+        {
+          "text": "the",
+          "start": 13.44,
+          "end": 13.599999
+        },
+        {
+          "text": "calls",
+          "start": 13.599999,
+          "end": 13.84
+        },
+        {
+          "text": "this",
+          "start": 13.84,
+          "end": 14.08
+        },
+        {
+          "text": "morning.",
+          "start": 14.08,
+          "end": 14.32
+        }
+      ]
+    },
+    {
+      "id": "u5",
+      "speaker": "S1",
+      "start": 14.724999,
+      "end": 17.125,
+      "text": "Good. Can you deploy the fix tomorrow?",
+      "words": [
+        {
+          "text": "Good.",
+          "start": 14.724999,
+          "end": 15.365
+        },
+        {
+          "text": "Can",
+          "start": 15.365,
+          "end": 15.605
+        },
+        {
+          "text": "you",
+          "start": 15.605,
+          "end": 15.764999
+        },
+        {
+          "text": "deploy",
+          "start": 15.764999,
+          "end": 16.085
+        },
+        {
+          "text": "the",
+          "start": 16.085,
+          "end": 16.244999
+        },
+        {
+          "text": "fix",
+          "start": 16.244999,
+          "end": 16.484999
+        },
+        {
+          "text": "tomorrow?",
+          "start": 16.484999,
+          "end": 17.125
+        }
+      ]
+    },
+    {
+      "id": "u6",
+      "speaker": "S2",
+      "start": 17.285,
+      "end": 19.125,
+      "text": "Yes. I'll deploy it tomorrow morning.",
+      "words": [
+        {
+          "text": "Yes.",
+          "start": 17.285,
+          "end": 17.685
+        },
+        {
+          "text": "I'll",
+          "start": 17.685,
+          "end": 17.925
+        },
+        {
+          "text": "deploy",
+          "start": 17.925,
+          "end": 18.164999
+        },
+        {
+          "text": "it",
+          "start": 18.164999,
+          "end": 18.324999
+        },
+        {
+          "text": "tomorrow",
+          "start": 18.324999,
+          "end": 18.564999
+        },
+        {
+          "text": "morning.",
+          "start": 18.564999,
+          "end": 19.125
+        }
+      ]
+    },
+    {
+      "id": "u7",
+      "speaker": "S1",
+      "start": 19.365,
+      "end": 21.845,
+      "text": "Great. Then I'll run the QA pass by Friday.",
+      "words": [
+        {
+          "text": "Great.",
+          "start": 19.365,
+          "end": 19.845
+        },
+        {
+          "text": "Then",
+          "start": 19.845,
+          "end": 20.005
+        },
+        {
+          "text": "I'll",
+          "start": 20.005,
+          "end": 20.164999
+        },
+        {
+          "text": "run",
+          "start": 20.164999,
+          "end": 20.324999
+        },
+        {
+          "text": "the",
+          "start": 20.324999,
+          "end": 20.404999
+        },
+        {
+          "text": "QA",
+          "start": 20.404999,
+          "end": 20.724998
+        },
+        {
+          "text": "pass",
+          "start": 20.724998,
+          "end": 20.965
+        },
+        {
+          "text": "by",
+          "start": 20.965,
+          "end": 21.205
+        },
+        {
+          "text": "Friday.",
+          "start": 21.205,
+          "end": 21.845
+        }
+      ]
+    },
+    {
+      "id": "u8",
+      "speaker": "S2",
+      "start": 22.324999,
+      "end": 24.724998,
+      "text": "Sounds good. Should we tell the support team?",
+      "words": [
+        {
+          "text": "Sounds",
+          "start": 22.324999,
+          "end": 22.645
+        },
+        {
+          "text": "good.",
+          "start": 22.645,
+          "end": 23.044998
+        },
+        {
+          "text": "Should",
+          "start": 23.044998,
+          "end": 23.365
+        },
+        {
+          "text": "we",
+          "start": 23.365,
+          "end": 23.525
+        },
+        {
+          "text": "tell",
+          "start": 23.525,
+          "end": 23.685
+        },
+        {
+          "text": "the",
+          "start": 23.685,
+          "end": 23.925
+        },
+        {
+          "text": "support",
+          "start": 23.925,
+          "end": 24.244999
+        },
+        {
+          "text": "team?",
+          "start": 24.244999,
+          "end": 24.724998
+        }
+      ]
+    },
+    {
+      "id": "u9",
+      "speaker": "S1",
+      "start": 24.884998,
+      "end": 27.925,
+      "text": "Yes. I'll email them today so they know what to say to customers.",
+      "words": [
+        {
+          "text": "Yes.",
+          "start": 24.884998,
+          "end": 25.285
+        },
+        {
+          "text": "I'll",
+          "start": 25.285,
+          "end": 25.525
+        },
+        {
+          "text": "email",
+          "start": 25.525,
+          "end": 25.845
+        },
+        {
+          "text": "them",
+          "start": 25.845,
+          "end": 26.005
+        },
+        {
+          "text": "today",
+          "start": 26.005,
+          "end": 26.324999
+        },
+        {
+          "text": "so",
+          "start": 26.324999,
+          "end": 26.564999
+        },
+        {
+          "text": "they",
+          "start": 26.564999,
+          "end": 26.724998
+        },
+        {
+          "text": "know",
+          "start": 26.724998,
+          "end": 26.884998
+        },
+        {
+          "text": "what",
+          "start": 26.884998,
+          "end": 27.044998
+        },
+        {
+          "text": "to",
+          "start": 27.044998,
+          "end": 27.204998
+        },
+        {
+          "text": "say",
+          "start": 27.204998,
+          "end": 27.364998
+        },
+        {
+          "text": "to",
+          "start": 27.364998,
+          "end": 27.525
+        },
+        {
+          "text": "customers.",
+          "start": 27.525,
+          "end": 27.925
+        }
+      ]
+    },
+    {
+      "id": "u10",
+      "speaker": "S2",
+      "start": 28.692062,
+      "end": 29.412062,
+      "text": "Perfect.",
+      "words": [
+        {
+          "text": "Perfect.",
+          "start": 28.692062,
+          "end": 29.412062
+        }
+      ]
+    },
+    {
+      "id": "u11",
+      "speaker": "S1",
+      "start": 29.572063,
+      "end": 33.012062,
+      "text": "And let's do a short review of the incident on Wednesday next week.",
+      "words": [
+        {
+          "text": "And",
+          "start": 29.572063,
+          "end": 29.812063
+        },
+        {
+          "text": "let's",
+          "start": 29.812063,
+          "end": 30.052063
+        },
+        {
+          "text": "do",
+          "start": 30.052063,
+          "end": 30.212063
+        },
+        {
+          "text": "a",
+          "start": 30.212063,
+          "end": 30.292063
+        },
+        {
+          "text": "short",
+          "start": 30.292063,
+          "end": 30.532063
+        },
+        {
+          "text": "review",
+          "start": 30.532063,
+          "end": 30.772062
+        },
+        {
+          "text": "of",
+          "start": 30.772062,
+          "end": 30.932062
+        },
+        {
+          "text": "the",
+          "start": 30.932062,
+          "end": 31.092062
+        },
+        {
+          "text": "incident",
+          "start": 31.092062,
+          "end": 31.412064
+        },
+        {
+          "text": "on",
+          "start": 31.412064,
+          "end": 31.732063
+        },
+        {
+          "text": "Wednesday",
+          "start": 31.732063,
+          "end": 32.13206
+        },
+        {
+          "text": "next",
+          "start": 32.13206,
+          "end": 32.452065
+        },
+        {
+          "text": "week.",
+          "start": 32.452065,
+          "end": 33.012062
+        }
+      ]
+    },
+    {
+      "id": "u12",
+      "speaker": "S2",
+      "start": 33.172062,
+      "end": 35.092064,
+      "text": "Okay. Wednesday next week works.",
+      "words": [
+        {
+          "text": "Okay.",
+          "start": 33.172062,
+          "end": 33.572063
+        },
+        {
+          "text": "Wednesday",
+          "start": 33.572063,
+          "end": 33.97206
+        },
+        {
+          "text": "next",
+          "start": 33.97206,
+          "end": 34.212063
+        },
+        {
+          "text": "week",
+          "start": 34.212063,
+          "end": 34.452065
+        },
+        {
+          "text": "works.",
+          "start": 34.452065,
+          "end": 35.092064
+        }
+      ]
+    },
+    {
+      "id": "u13",
+      "speaker": "S1",
+      "start": 35.172062,
+      "end": 36.372063,
+      "text": "Thanks. That's all for today.",
+      "words": [
+        {
+          "text": "Thanks.",
+          "start": 35.172062,
+          "end": 35.572063
+        },
+        {
+          "text": "That's",
+          "start": 35.572063,
+          "end": 35.81206
+        },
+        {
+          "text": "all",
+          "start": 35.81206,
+          "end": 35.97206
+        },
+        {
+          "text": "for",
+          "start": 35.97206,
+          "end": 36.13206
+        },
+        {
+          "text": "today.",
+          "start": 36.13206,
+          "end": 36.372063
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "deploy-the-fix-1",
+      "title": "Deploy the fix",
+      "status": "agreed",
+      "owner": {
+        "kind": "speaker",
+        "speaker": "S2",
+        "name": "Mark",
+        "how": "commitment"
+      },
+      "deadline": {
+        "kind": "date",
+        "date": "2026-10-06",
+        "ambiguous": false,
+        "raw": "tomorrow morning",
+        "previous": []
+      },
+      "evidence": [
+        {
+          "turn": "u5",
+          "speaker": "S1",
+          "role": "request",
+          "quote": "Can you deploy the fix tomorrow?",
+          "start": 15.365,
+          "end": 17.125,
+          "match": "exact"
+        },
+        {
+          "turn": "u6",
+          "speaker": "S2",
+          "role": "acceptance",
+          "quote": "Yes. I'll deploy it tomorrow morning.",
+          "start": 17.285,
+          "end": 19.125,
+          "match": "exact"
+        }
+      ],
+      "why": "Mark was asked in u5 and agreed in u6; the deadline \"tomorrow morning\" was set.",
+      "checks": [
+        {
+          "name": "quotes",
+          "ok": true
+        },
+        {
+          "name": "status",
+          "ok": true
+        },
+        {
+          "name": "owner",
+          "ok": true
+        },
+        {
+          "name": "deadline",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "run-qa-pass-2",
+      "title": "Run QA pass",
+      "status": "agreed",
+      "owner": {
+        "kind": "speaker",
+        "speaker": "S1",
+        "name": "Anna",
+        "how": "commitment"
+      },
+      "deadline": {
+        "kind": "date",
+        "date": "2026-10-09",
+        "ambiguous": false,
+        "raw": "by Friday",
+        "previous": []
+      },
+      "evidence": [
+        {
+          "turn": "u7",
+          "speaker": "S1",
+          "role": "commitment",
+          "quote": "Great. Then I'll run the QA pass by Friday.",
+          "start": 19.365,
+          "end": 21.845,
+          "match": "exact"
+        }
+      ],
+      "why": "Anna committed in u7; no further discussion, so it is agreed.",
+      "checks": [
+        {
+          "name": "quotes",
+          "ok": true
+        },
+        {
+          "name": "status",
+          "ok": true
+        },
+        {
+          "name": "owner",
+          "ok": true
+        },
+        {
+          "name": "deadline",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "email-support-team-3",
+      "title": "Email support team",
+      "status": "agreed",
+      "owner": {
+        "kind": "speaker",
+        "speaker": "S1",
+        "name": "Anna",
+        "how": "commitment"
+      },
+      "deadline": {
+        "kind": "date",
+        "date": "2026-10-05",
+        "ambiguous": false,
+        "raw": "today",
+        "previous": []
+      },
+      "evidence": [
+        {
+          "turn": "u9",
+          "speaker": "S1",
+          "role": "commitment",
+          "quote": "Yes. I'll email them today so they know what to say to customers.",
+          "start": 24.884998,
+          "end": 27.925,
+          "match": "exact"
+        },
+        {
+          "turn": "u10",
+          "speaker": "S2",
+          "role": "acceptance",
+          "quote": "Perfect.",
+          "start": 28.692062,
+          "end": 29.412062,
+          "match": "exact"
+        }
+      ],
+      "why": "Anna committed in u9 and Mark affirmed in u10; deadline \"today\" was set.",
+      "checks": [
+        {
+          "name": "quotes",
+          "ok": true
+        },
+        {
+          "name": "status",
+          "ok": true
+        },
+        {
+          "name": "owner",
+          "ok": true
+        },
+        {
+          "name": "deadline",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "short-review-of-incident-4",
+      "title": "Short review of incident",
+      "status": "agreed",
+      "owner": {
+        "kind": "none"
+      },
+      "deadline": {
+        "kind": "date",
+        "date": "2026-10-14",
+        "ambiguous": false,
+        "raw": "Wednesday next week",
+        "previous": []
+      },
+      "evidence": [
+        {
+          "turn": "u11",
+          "speaker": "S1",
+          "role": "proposal",
+          "quote": "And let's do a short review of the incident on Wednesday next week.",
+          "start": 29.572063,
+          "end": 33.012062,
+          "match": "exact"
+        },
+        {
+          "turn": "u12",
+          "speaker": "S2",
+          "role": "acceptance",
+          "quote": "Okay. Wednesday next week works.",
+          "start": 33.172062,
+          "end": 35.092064,
+          "match": "exact"
+        }
+      ],
+      "why": "Anna proposed in u11 and Mark accepted in u12; deadline \"Wednesday next week\" was agreed.",
+      "checks": [
+        {
+          "name": "quotes",
+          "ok": true
+        },
+        {
+          "name": "status",
+          "ok": true
+        },
+        {
+          "name": "owner",
+          "ok": true
+        },
+        {
+          "name": "deadline",
+          "ok": true
+        }
+      ]
+    }
+  ],
+  "dropped": [],
+  "clarifications": [],
+  "metrics": {
+    "models": {
+      "asr": "@cf/deepgram/nova-3",
+      "llm": "@cf/openai/gpt-oss-120b",
+      "reasoning": "low"
+    },
+    "timings": {
+      "asrMs": 876,
+      "extractMs": 20274,
+      "verifyMs": 0,
+      "totalMs": 21150
+    },
+    "usage": {
+      "audioMinutes": 0.617,
+      "asrAttempts": 1,
+      "asrNeurons": 291.89,
+      "llmCalls": 1,
+      "llmPromptTokens": 2444,
+      "llmCompletionTokens": 1004,
+      "llmNeurons": 146.22,
+      "retries": 0
+    },
+    "cost": {
+      "asrUsd": 0.003211,
+      "llmUsd": 0.001608,
+      "totalUsd": 0.004819,
+      "perAudioMinuteUsd": 0.007805,
+      "pricesCheckedOn": "2026-10-05"
+    }
+  }
+}

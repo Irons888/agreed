@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "id": "f46d7fd9-30ca-4171-aa88-306d049edbb9",
-  "createdAt": "2026-10-05T16:26:27.441Z",
+  "id": "30a2aa12-0883-4f81-96df-87c1ad950cb8",
+  "createdAt": "2026-10-05T17:22:45.528Z",
   "fileName": "T1-main.wav",
   "durationSec": 70.98,
   "outcome": "result",
@@ -1312,8 +1312,8 @@
           "turn": "u5",
           "speaker": "S1",
           "role": "request",
-          "quote": "Right. Mark, can you send them the API docs by Wednesday?",
-          "start": 12.724999,
+          "quote": "Mark, can you send them the API docs by Wednesday?",
+          "start": 13.205,
           "end": 16.085,
           "match": "exact"
         },
@@ -1327,7 +1327,7 @@
           "match": "exact"
         }
       ],
-      "why": "Mark was asked to send the docs (u5) and he committed (u6); no later change.",
+      "why": "Mark committed in u6 after Anna's request in u5.",
       "checks": [
         {
           "name": "quotes",
@@ -1417,7 +1417,7 @@
         "ambiguous": false,
         "raw": "Monday",
         "previous": [
-          "Thursday"
+          "by Thursday"
         ]
       },
       "evidence": [
@@ -1442,7 +1442,7 @@
         {
           "turn": "u18",
           "speaker": "S2",
-          "role": "deadline_change",
+          "role": "request",
           "quote": "Actually, about the staging demo. Thursday is too tight because of the database migration. Can we say Monday instead?",
           "start": 50.280003,
           "end": 57,
@@ -1458,7 +1458,7 @@
           "match": "exact"
         }
       ],
-      "why": "Initial deadline Thursday (u12) was changed to Monday (u18‑u19) and Mark accepted the new date.",
+      "why": "Initial agreement on Thursday (u12) was changed to Monday (u19).",
       "checks": [
         {
           "name": "quotes",
@@ -1509,13 +1509,13 @@
           "turn": "u19",
           "speaker": "S1",
           "role": "cancellation",
-          "quote": "I won't book the meeting room after all.",
-          "start": 63.24,
+          "quote": "They wanna run the workshop online, so I won't book the meeting room after all.",
+          "start": 61.08,
           "end": 65.08,
-          "match": "repaired"
+          "match": "exact"
         }
       ],
-      "why": "Anna committed to book the room (u13) but later cancelled that commitment (u19).",
+      "why": "Anna committed (u13) but later cancelled the booking (u19).",
       "checks": [
         {
           "name": "quotes",
@@ -1554,8 +1554,8 @@
           "turn": "u15",
           "speaker": "S1",
           "role": "proposal",
-          "quote": "One more thing. The privacy policy page has to be updated before launch.",
-          "start": 37.215,
+          "quote": "The privacy policy page has to be updated before launch.",
+          "start": 38.254997,
           "end": 41.695,
           "match": "exact"
         },
@@ -1569,7 +1569,7 @@
           "match": "exact"
         }
       ],
-      "why": "Both participants agreed the page must be updated before launch (u15‑u16).",
+      "why": "Mark affirmed the need (u16) after Anna's statement (u15).",
       "checks": [
         {
           "name": "quotes",
@@ -1581,7 +1581,8 @@
         },
         {
           "name": "owner",
-          "ok": true
+          "ok": false,
+          "note": "Owner removed: the quotes show no commitment by Mark and no request that Mark accepted."
         },
         {
           "name": "deadline",
@@ -1623,7 +1624,7 @@
           "match": "exact"
         }
       ],
-      "why": "Mark asked the question (u16) and no answer was given (u17).",
+      "why": "The question (u16) remained unanswered (u17).",
       "checks": [
         {
           "name": "quotes",
@@ -1658,26 +1659,26 @@
       "reasoning": "low"
     },
     "timings": {
-      "asrMs": 2149,
-      "extractMs": 43955,
-      "verifyMs": 7,
-      "totalMs": 46111
+      "asrMs": 2230,
+      "extractMs": 18716,
+      "verifyMs": 0,
+      "totalMs": 20946
     },
     "usage": {
       "audioMinutes": 1.183,
       "asrAttempts": 1,
       "asrNeurons": 559.27,
       "llmCalls": 1,
-      "llmPromptTokens": 2578,
-      "llmCompletionTokens": 1721,
-      "llmNeurons": 199.37,
+      "llmPromptTokens": 2669,
+      "llmCompletionTokens": 1577,
+      "llmNeurons": 192.44,
       "retries": 0
     },
     "cost": {
       "asrUsd": 0.006152,
-      "llmUsd": 0.002193,
-      "totalUsd": 0.008345,
-      "perAudioMinuteUsd": 0.007054,
+      "llmUsd": 0.002117,
+      "totalUsd": 0.008269,
+      "perAudioMinuteUsd": 0.006989,
       "pricesCheckedOn": "2026-10-05"
     }
   }
