@@ -79,6 +79,26 @@
         "name": "Liam",
         "voice_id": "TX3LPaxmHKxFdv7VOQHJ"
       }
+    ],
+    "sofia": [
+      {
+        "name": "Jessica",
+        "voice_id": "cgSgspJ2msm6clMCkdW9"
+      },
+      {
+        "name": "Laura",
+        "voice_id": "FGY2WhTYpPnrIDTdsKH5"
+      }
+    ],
+    "tom": [
+      {
+        "name": "Chris",
+        "voice_id": "iP95p4xoKVk53GoZ742B"
+      },
+      {
+        "name": "Eric",
+        "voice_id": "cjVigY5qzO86Huf0OWal"
+      }
     ]
   },
   "aliases": {

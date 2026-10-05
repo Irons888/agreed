@@ -1,0 +1,75 @@
+{
+  "case": "T8-natural-call",
+  "purpose": "Normal input spoken like a real call: the five required cases and an open question, as in T1, plus a hedged offer, small talk, fillers, laughter and two interruptions. Written before its first run.",
+  "outcome": "result",
+  "speakers": { "sofia": "Sofia", "tom": "Tom" },
+  "recording_date": null,
+  "items": [
+    {
+      "id": "api-docs",
+      "covers": "accepted task",
+      "keys": ["API doc", "docs"],
+      "status": "agreed",
+      "owner": { "name": "Tom" },
+      "deadline": { "raw_contains": "Wednesday", "date": null },
+      "evidence_lines": ["L8", "L9", "L10"]
+    },
+    {
+      "id": "dark-mode",
+      "covers": "proposal that is never accepted",
+      "keys": ["dark mode"],
+      "status": "not_accepted",
+      "evidence_lines": ["L14", "L15"]
+    },
+    {
+      "id": "staging-demo",
+      "covers": "corrected deadline",
+      "keys": ["staging demo"],
+      "status": "agreed",
+      "owner": { "name": "Tom" },
+      "deadline": { "raw_contains": "Monday", "date": null, "changed_from_contains": "Thursday" },
+      "evidence_lines": ["L17", "L18", "L29", "L32"]
+    },
+    {
+      "id": "workshop-room",
+      "covers": "cancelled task",
+      "keys": ["room"],
+      "status": "cancelled",
+      "evidence_lines": ["L19", "L21", "L34"]
+    },
+    {
+      "id": "privacy-policy",
+      "covers": "task with no named owner",
+      "keys": ["privacy policy"],
+      "status": "agreed",
+      "owner": { "name": null },
+      "deadline": { "raw_contains": "before launch", "date": null },
+      "evidence_lines": ["L23", "L24"]
+    },
+    {
+      "id": "sso",
+      "covers": "unresolved question",
+      "keys": ["single sign-on", "SSO"],
+      "status": "open_question",
+      "evidence_lines": ["L25", "L26"]
+    },
+    {
+      "id": "flaky-tests",
+      "covers": "hedged offer",
+      "keys": ["flaky", "test"],
+      "status": "needs_review",
+      "evidence_lines": ["L27", "L28"]
+    }
+  ],
+  "traps": [
+    "Dark mode must not become an agreed task: Tom only offered it (\"we could\") and Sofia turned it down while he was still talking.",
+    "The room booking must end cancelled (L34), although Sofia first said \"I'll book it anyway\" (L21).",
+    "The privacy policy update must not get an owner: nobody took it.",
+    "The flaky tests are hedged (\"I'll try… no promises\"): Sofia's \"That's fine\" does not turn them into a commitment.",
+    "The staging demo deadline must be Monday, not Thursday; the migration question in between (L30–L31) is not a task.",
+    "The auth and webhook details belong to the API docs task, not a separate one.",
+    "Small talk (the weekend, moving apartments) and the projector jokes are not items.",
+    "The interruptions at L15 and L20 start while the other person is still talking; quotes must stay with the person who said them.",
+    "No calendar dates anywhere: the call never says what day it is."
+  ]
+}
