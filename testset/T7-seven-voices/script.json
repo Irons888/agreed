@@ -1,0 +1,32 @@
+{
+  "case": "T7-seven-voices",
+  "title": "Seven people on a stand-up: far outside the supported scope",
+  "language": "en",
+  "speakers": {
+    "anna": "Anna, project manager",
+    "mark": "Mark, backend developer",
+    "lena": "Lena, designer",
+    "george": "George, QA",
+    "priya": "Priya, frontend developer",
+    "daniel": "Daniel, data and analytics",
+    "charlie": "Charlie, infrastructure"
+  },
+  "lines": [
+    { "id": "L1", "speaker": "anna", "text": "Morning, everyone. I'm Anna, the project manager. Quick round of names for the new client team." },
+    { "id": "L2", "speaker": "mark", "text": "I'm Mark, I handle the back end." },
+    { "id": "L3", "speaker": "lena", "text": "Lena here, I do the design." },
+    { "id": "L4", "speaker": "george", "text": "I'm George, quality assurance." },
+    { "id": "L5", "speaker": "priya", "text": "Hi, I'm Priya, front end." },
+    { "id": "L6", "speaker": "daniel", "text": "Daniel, data and analytics." },
+    { "id": "L7", "speaker": "charlie", "text": "And I'm Charlie, I look after the infrastructure." },
+    { "id": "L8", "speaker": "anna", "text": "Great. Mark, can you finish the payment API by Friday?" },
+    { "id": "L9", "speaker": "mark", "text": "Yes, I'll have it done by Friday." },
+    { "id": "L10", "speaker": "george", "text": "Then I'll test it on Monday." },
+    { "id": "L11", "speaker": "priya", "text": "We could also redo the checkout page, if there's time." },
+    { "id": "L12", "speaker": "anna", "text": "Let's leave that for the next release." },
+    { "id": "L13", "speaker": "charlie", "text": "I'll set up the staging server tomorrow." },
+    { "id": "L14", "speaker": "daniel", "text": "Does anyone know when the client wants the first report?" },
+    { "id": "L15", "speaker": "lena", "text": "No idea. Nobody has asked them yet." },
+    { "id": "L16", "speaker": "anna", "text": "Okay. Thanks, everyone." }
+  ]
+}

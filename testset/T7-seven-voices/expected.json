@@ -1,0 +1,11 @@
+{
+  "case": "T7-seven-voices",
+  "purpose": "Far outside the scope: seven speakers. Written before the first run. The product should decline instead of returning a list, however many of the seven voices recognition tells apart.",
+  "outcome": "decline",
+  "decline_reason": "speaker_count",
+  "items": [],
+  "traps": [
+    "No commitments list: Mark's payment API, George's testing and Charlie's staging server must not appear as tasks, because owners cannot be attributed reliably with seven voices.",
+    "If recognition merges some voices, the result is still a decline as long as more than two are detected; the number detected is reported, not assumed to be seven."
+  ]
+}
