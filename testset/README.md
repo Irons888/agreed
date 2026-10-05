@@ -1,6 +1,6 @@
 # Test set
 
-Small, reproducible recordings with expected results. The scripts and every `expected.json` were written and committed **before any product code existed**. The git history shows that order.
+Small, reproducible recordings with expected results. The scripts and `expected.json` of T1–T6 were written and committed **before any product code existed**. T7 was added later, and its expected result was committed before its first run. The git history shows that order.
 
 | Case | What it is | What it checks | Expected outcome |
 |---|---|---|---|
@@ -10,6 +10,7 @@ Small, reproducible recordings with expected results. The scripts and every `exp
 | T4-dated | The date is said out loud at the start | Relative dates are resolved only from the recording | “tomorrow” → 2026-10-06, “by Friday” → 2026-10-09 |
 | T5-three-voices | Three people on the call | Out-of-scope input | Decline: three voices detected, the prototype supports two |
 | T6-noisy | T1 over a noisy phone line (300–3400 Hz, pink noise) | Robustness | Same as T1 |
+| T7-seven-voices | Seven people on a stand-up, 2–5 seconds of speech each | Far outside the scope, and short turns that are hard to tell apart | Decline: more than two voices detected, no tasks |
 
 ## Files in each case
 

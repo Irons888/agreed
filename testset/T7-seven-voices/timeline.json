@@ -1,0 +1,118 @@
+{
+  "case": "T7-seven-voices",
+  "duration": 42.086,
+  "lines": [
+    {
+      "id": "L1",
+      "speaker": "anna",
+      "text": "Morning, everyone. I'm Anna, the project manager. Quick round of names for the new client team.",
+      "start": 0.4,
+      "end": 5.739
+    },
+    {
+      "id": "L2",
+      "speaker": "mark",
+      "text": "I'm Mark, I handle the back end.",
+      "start": 6.189,
+      "end": 7.996
+    },
+    {
+      "id": "L3",
+      "speaker": "lena",
+      "text": "Lena here, I do the design.",
+      "start": 8.446,
+      "end": 9.895
+    },
+    {
+      "id": "L4",
+      "speaker": "george",
+      "text": "I'm George, quality assurance.",
+      "start": 10.345,
+      "end": 12.049
+    },
+    {
+      "id": "L5",
+      "speaker": "priya",
+      "text": "Hi, I'm Priya, front end.",
+      "start": 12.499,
+      "end": 13.827
+    },
+    {
+      "id": "L6",
+      "speaker": "daniel",
+      "text": "Daniel, data and analytics.",
+      "start": 14.277,
+      "end": 15.893
+    },
+    {
+      "id": "L7",
+      "speaker": "charlie",
+      "text": "And I'm Charlie, I look after the infrastructure.",
+      "start": 16.343,
+      "end": 18.758
+    },
+    {
+      "id": "L8",
+      "speaker": "anna",
+      "text": "Great. Mark, can you finish the payment API by Friday?",
+      "start": 19.208,
+      "end": 22.13
+    },
+    {
+      "id": "L9",
+      "speaker": "mark",
+      "text": "Yes, I'll have it done by Friday.",
+      "start": 22.58,
+      "end": 24.081
+    },
+    {
+      "id": "L10",
+      "speaker": "george",
+      "text": "Then I'll test it on Monday.",
+      "start": 24.531,
+      "end": 25.879
+    },
+    {
+      "id": "L11",
+      "speaker": "priya",
+      "text": "We could also redo the checkout page, if there's time.",
+      "start": 26.329,
+      "end": 29.21
+    },
+    {
+      "id": "L12",
+      "speaker": "anna",
+      "text": "Let's leave that for the next release.",
+      "start": 29.66,
+      "end": 31.431
+    },
+    {
+      "id": "L13",
+      "speaker": "charlie",
+      "text": "I'll set up the staging server tomorrow.",
+      "start": 31.881,
+      "end": 33.496
+    },
+    {
+      "id": "L14",
+      "speaker": "daniel",
+      "text": "Does anyone know when the client wants the first report?",
+      "start": 33.946,
+      "end": 37.206
+    },
+    {
+      "id": "L15",
+      "speaker": "lena",
+      "text": "No idea. Nobody has asked them yet.",
+      "start": 37.656,
+      "end": 39.908
+    },
+    {
+      "id": "L16",
+      "speaker": "anna",
+      "text": "Okay. Thanks, everyone.",
+      "start": 40.358,
+      "end": 41.486
+    }
+  ]
+}
