@@ -28,11 +28,24 @@
       "evidence_lines": ["L5", "L6"]
     },
     {
+      "id": "onboarding-emails",
+      "keys": ["onboarding"],
+      "status": ["not_accepted", "needs_review"],
+      "optional": true,
+      "evidence_lines": ["L7", "L8"]
+    },
+    {
+      "id": "analytics-dashboard",
+      "keys": ["analytics", "dashboard"],
+      "status": "open_question",
+      "evidence_lines": ["L9", "L10"]
+    },
+    {
       "id": "talk-again",
       "keys": ["talk again", "next week"],
       "status": ["not_accepted", "needs_review"],
       "optional": true,
-      "evidence_lines": ["L7", "L8"]
+      "evidence_lines": ["L11", "L12"]
     }
   ],
   "traps": [

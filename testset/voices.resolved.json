@@ -1,0 +1,22 @@
+{
+  "anna": {
+    "name": "Sarah",
+    "voice_id": "EXAVITQu4vr4xnSDxMaL"
+  },
+  "mark": {
+    "name": "Brian",
+    "voice_id": "nPczCjzI2devNBz1zQrb"
+  },
+  "lena": {
+    "name": "Alice",
+    "voice_id": "Xb7hH8MSUJpSbSDYk0k2"
+  },
+  "s1": {
+    "name": "Sarah",
+    "voice_id": "EXAVITQu4vr4xnSDxMaL"
+  },
+  "s2": {
+    "name": "Brian",
+    "voice_id": "nPczCjzI2devNBz1zQrb"
+  }
+}

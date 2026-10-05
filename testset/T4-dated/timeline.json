@@ -1,0 +1,97 @@
+{
+  "case": "T4-dated",
+  "duration": 37.047,
+  "lines": [
+    {
+      "id": "L1",
+      "speaker": "anna",
+      "text": "Hi, it's Monday, October 5th, 2026. I'm Anna, the project manager.",
+      "start": 0.4,
+      "end": 5.091
+    },
+    {
+      "id": "L2",
+      "speaker": "mark",
+      "text": "And I'm Mark, backend developer.",
+      "start": 5.541,
+      "end": 7.197
+    },
+    {
+      "id": "L3",
+      "speaker": "anna",
+      "text": "Quick sync on the login bug. How bad is it?",
+      "start": 7.647,
+      "end": 9.827
+    },
+    {
+      "id": "L4",
+      "speaker": "mark",
+      "text": "Some users get logged out after a few minutes. I found the cause this morning.",
+      "start": 10.277,
+      "end": 14.385
+    },
+    {
+      "id": "L5",
+      "speaker": "anna",
+      "text": "Good. Can you deploy the fix tomorrow?",
+      "start": 14.835,
+      "end": 16.908
+    },
+    {
+      "id": "L6",
+      "speaker": "mark",
+      "text": "Yes, I'll deploy it tomorrow morning.",
+      "start": 17.358,
+      "end": 18.909
+    },
+    {
+      "id": "L7",
+      "speaker": "anna",
+      "text": "Great. Then I'll run the QA pass by Friday.",
+      "start": 19.359,
+      "end": 21.769
+    },
+    {
+      "id": "L8",
+      "speaker": "mark",
+      "text": "Sounds good. Should we tell the support team?",
+      "start": 22.219,
+      "end": 24.478
+    },
+    {
+      "id": "L9",
+      "speaker": "anna",
+      "text": "Yes, I'll email them today so they know what to say to customers.",
+      "start": 24.928,
+      "end": 28.285
+    },
+    {
+      "id": "L10",
+      "speaker": "mark",
+      "text": "Perfect.",
+      "start": 28.735,
+      "end": 29.123
+    },
+    {
+      "id": "L11",
+      "speaker": "anna",
+      "text": "And let's do a short review of the incident on Wednesday next week.",
+      "start": 29.573,
+      "end": 32.77
+    },
+    {
+      "id": "L12",
+      "speaker": "mark",
+      "text": "Okay, Wednesday next week works.",
+      "start": 33.22,
+      "end": 34.775
+    },
+    {
+      "id": "L13",
+      "speaker": "anna",
+      "text": "Thanks, that's all for today.",
+      "start": 35.225,
+      "end": 36.447
+    }
+  ]
+}

@@ -9,10 +9,16 @@
   "lines": [
     { "id": "L1", "speaker": "anna", "text": "Hi, it's Monday, October 5th, 2026. I'm Anna, the project manager." },
     { "id": "L2", "speaker": "mark", "text": "And I'm Mark, backend developer." },
-    { "id": "L3", "speaker": "anna", "text": "Mark, about the login bug. Can you deploy the fix tomorrow?" },
-    { "id": "L4", "speaker": "mark", "text": "Yes, I'll deploy it tomorrow morning." },
-    { "id": "L5", "speaker": "anna", "text": "Great. Then I'll run the QA pass by Friday." },
-    { "id": "L6", "speaker": "mark", "text": "Sounds good." },
-    { "id": "L7", "speaker": "anna", "text": "Thanks, that's all for today." }
+    { "id": "L3", "speaker": "anna", "text": "Quick sync on the login bug. How bad is it?" },
+    { "id": "L4", "speaker": "mark", "text": "Some users get logged out after a few minutes. I found the cause this morning." },
+    { "id": "L5", "speaker": "anna", "text": "Good. Can you deploy the fix tomorrow?" },
+    { "id": "L6", "speaker": "mark", "text": "Yes, I'll deploy it tomorrow morning." },
+    { "id": "L7", "speaker": "anna", "text": "Great. Then I'll run the QA pass by Friday." },
+    { "id": "L8", "speaker": "mark", "text": "Sounds good. Should we tell the support team?" },
+    { "id": "L9", "speaker": "anna", "text": "Yes, I'll email them today so they know what to say to customers." },
+    { "id": "L10", "speaker": "mark", "text": "Perfect." },
+    { "id": "L11", "speaker": "anna", "text": "And let's do a short review of the incident on Wednesday next week." },
+    { "id": "L12", "speaker": "mark", "text": "Okay, Wednesday next week works." },
+    { "id": "L13", "speaker": "anna", "text": "Thanks, that's all for today." }
   ]
 }

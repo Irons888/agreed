@@ -11,7 +11,7 @@
       "status": "agreed",
       "owner": { "name": "Mark" },
       "deadline": { "raw_contains": "tomorrow", "date": "2026-10-06" },
-      "evidence_lines": ["L3", "L4"]
+      "evidence_lines": ["L5", "L6"]
     },
     {
       "id": "qa-pass",
@@ -19,10 +19,27 @@
       "status": "agreed",
       "owner": { "name": "Anna" },
       "deadline": { "raw_contains": "Friday", "date": "2026-10-09" },
-      "evidence_lines": ["L5", "L6"]
+      "evidence_lines": ["L7", "L8"]
+    },
+    {
+      "id": "email-support",
+      "keys": ["support", "email"],
+      "status": "agreed",
+      "owner": { "name": "Anna" },
+      "deadline": { "raw_contains": "today", "date": "2026-10-05" },
+      "evidence_lines": ["L8", "L9"]
+    },
+    {
+      "id": "incident-review",
+      "keys": ["review", "incident"],
+      "status": "agreed",
+      "owner": { "name": null },
+      "deadline": { "raw_contains": "Wednesday next week", "date": "2026-10-14" },
+      "evidence_lines": ["L11", "L12"]
     }
   ],
   "traps": [
-    "Dates must be anchored to the date said at L1, not to the day the file is processed."
+    "Dates must be anchored to the date said at L1, not to the day the file is processed.",
+    "\"Let's do a review\" names no owner."
   ]
 }

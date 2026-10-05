@@ -1,0 +1,7 @@
+// Throwaway spike: checks what Workers AI speech models return for our test audio.
+{
+  "name": "agreed-spike-workers-ai",
+  "main": "index.js",
+  "compatibility_date": "2026-10-01",
+  "ai": { "binding": "AI" }
+}

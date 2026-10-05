@@ -1,0 +1,90 @@
+{
+  "case": "T3-ambiguous",
+  "duration": 39.544,
+  "lines": [
+    {
+      "id": "L1",
+      "speaker": "s1",
+      "text": "So, the export bug is still open.",
+      "start": 0.4,
+      "end": 2.252
+    },
+    {
+      "id": "L2",
+      "speaker": "s2",
+      "text": "Yeah. I'll try to get a fix in by Friday, but no promises.",
+      "start": 2.702,
+      "end": 5.683
+    },
+    {
+      "id": "L3",
+      "speaker": "s1",
+      "text": "Okay. And the invoices issue? Someone should probably talk to finance about it at some point.",
+      "start": 6.133,
+      "end": 11.254
+    },
+    {
+      "id": "L4",
+      "speaker": "s2",
+      "text": "Probably. I don't really know who handles that now.",
+      "start": 11.704,
+      "end": 14.327
+    },
+    {
+      "id": "L5",
+      "speaker": "s1",
+      "text": "Me neither. We could also move the release, I'm not sure.",
+      "start": 14.776,
+      "end": 17.611
+    },
+    {
+      "id": "L6",
+      "speaker": "s2",
+      "text": "Maybe. It depends on the export fix, I guess.",
+      "start": 18.061,
+      "end": 20.481
+    },
+    {
+      "id": "L7",
+      "speaker": "s1",
+      "text": "Right. And the onboarding emails, those might need a rewrite too.",
+      "start": 20.931,
+      "end": 24.525
+    },
+    {
+      "id": "L8",
+      "speaker": "s2",
+      "text": "Could be. Let's see how it goes.",
+      "start": 24.975,
+      "end": 27.235
+    },
+    {
+      "id": "L9",
+      "speaker": "s1",
+      "text": "What about the analytics dashboard? Is that still on the list?",
+      "start": 27.685,
+      "end": 30.887
+    },
+    {
+      "id": "L10",
+      "speaker": "s2",
+      "text": "Good question. I'm not sure anyone has looked at it.",
+      "start": 31.337,
+      "end": 34.269
+    },
+    {
+      "id": "L11",
+      "speaker": "s1",
+      "text": "Hmm. Maybe we talk again after the thing next week?",
+      "start": 34.719,
+      "end": 37.457
+    },
+    {
+      "id": "L12",
+      "speaker": "s2",
+      "text": "Maybe. We'll see.",
+      "start": 37.907,
+      "end": 38.944
+    }
+  ]
+}

@@ -9,11 +9,15 @@
   "lines": [
     { "id": "L1", "speaker": "s1", "text": "So, the export bug is still open." },
     { "id": "L2", "speaker": "s2", "text": "Yeah. I'll try to get a fix in by Friday, but no promises." },
-    { "id": "L3", "speaker": "s1", "text": "Okay. Someone should probably talk to finance about the invoices at some point." },
-    { "id": "L4", "speaker": "s2", "text": "Probably." },
-    { "id": "L5", "speaker": "s1", "text": "We could also move the release. I'm not sure." },
-    { "id": "L6", "speaker": "s2", "text": "Maybe. Let's see how it goes." },
-    { "id": "L7", "speaker": "s1", "text": "Maybe we talk again after the thing next week?" },
-    { "id": "L8", "speaker": "s2", "text": "Maybe." }
+    { "id": "L3", "speaker": "s1", "text": "Okay. And the invoices issue? Someone should probably talk to finance about it at some point." },
+    { "id": "L4", "speaker": "s2", "text": "Probably. I don't really know who handles that now." },
+    { "id": "L5", "speaker": "s1", "text": "Me neither. We could also move the release, I'm not sure." },
+    { "id": "L6", "speaker": "s2", "text": "Maybe. It depends on the export fix, I guess." },
+    { "id": "L7", "speaker": "s1", "text": "Right. And the onboarding emails, those might need a rewrite too." },
+    { "id": "L8", "speaker": "s2", "text": "Could be. Let's see how it goes." },
+    { "id": "L9", "speaker": "s1", "text": "What about the analytics dashboard? Is that still on the list?" },
+    { "id": "L10", "speaker": "s2", "text": "Good question. I'm not sure anyone has looked at it." },
+    { "id": "L11", "speaker": "s1", "text": "Hmm. Maybe we talk again after the thing next week?" },
+    { "id": "L12", "speaker": "s2", "text": "Maybe. We'll see." }
   ]
 }

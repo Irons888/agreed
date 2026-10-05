@@ -1,0 +1,174 @@
+{
+  "case": "T2-changed",
+  "duration": 72.549,
+  "lines": [
+    {
+      "id": "L1",
+      "speaker": "anna",
+      "text": "Hi, I'm Anna, the project manager for the Brightside portal.",
+      "start": 0.4,
+      "end": 3.198
+    },
+    {
+      "id": "L2",
+      "speaker": "mark",
+      "text": "And I'm Mark, I'm handling the backend.",
+      "start": 3.648,
+      "end": 5.449
+    },
+    {
+      "id": "L3",
+      "speaker": "anna",
+      "text": "Great. Let's go through what's left before the client launch.",
+      "start": 5.899,
+      "end": 8.684
+    },
+    {
+      "id": "L4",
+      "speaker": "mark",
+      "text": "Sure. First, the client is still waiting for our API documentation.",
+      "start": 9.134,
+      "end": 12.232
+    },
+    {
+      "id": "L5",
+      "speaker": "anna",
+      "text": "Right. Mark, can you send them the API docs by Wednesday?",
+      "start": 12.682,
+      "end": 15.898
+    },
+    {
+      "id": "L6",
+      "speaker": "mark",
+      "text": "Yes, I'll send the API docs by Wednesday.",
+      "start": 16.348,
+      "end": 18.379
+    },
+    {
+      "id": "L7",
+      "speaker": "anna",
+      "text": "Perfect, thanks.",
+      "start": 18.829,
+      "end": 19.664
+    },
+    {
+      "id": "L8",
+      "speaker": "mark",
+      "text": "Also, we could add a dark mode while we're at it. Users keep asking for it.",
+      "start": 20.114,
+      "end": 24.167
+    },
+    {
+      "id": "L9",
+      "speaker": "anna",
+      "text": "Actually, that's a good idea. Mark, can you take it by Friday?",
+      "start": 24.617,
+      "end": 27.522
+    },
+    {
+      "id": "L10",
+      "speaker": "mark",
+      "text": "Sure, I'll do the dark mode by Friday.",
+      "start": 27.972,
+      "end": 29.907
+    },
+    {
+      "id": "L11",
+      "speaker": "anna",
+      "text": "Next, the staging demo. Can you have it ready by Thursday?",
+      "start": 30.357,
+      "end": 33.301
+    },
+    {
+      "id": "L12",
+      "speaker": "mark",
+      "text": "Thursday works.",
+      "start": 33.751,
+      "end": 34.494
+    },
+    {
+      "id": "L13",
+      "speaker": "anna",
+      "text": "And I'll book a meeting room for the client workshop.",
+      "start": 34.944,
+      "end": 37.503
+    },
+    {
+      "id": "L14",
+      "speaker": "mark",
+      "text": "Okay.",
+      "start": 37.953,
+      "end": 38.37
+    },
+    {
+      "id": "L15",
+      "speaker": "anna",
+      "text": "One more thing. The privacy policy page has to be updated before launch.",
+      "start": 38.82,
+      "end": 43.092
+    },
+    {
+      "id": "L16",
+      "speaker": "mark",
+      "text": "Yes, that definitely needs to happen.",
+      "start": 43.542,
+      "end": 45.322
+    },
+    {
+      "id": "L17",
+      "speaker": "mark",
+      "text": "Oh, and do we know if the client needs single sign-on?",
+      "start": 45.622,
+      "end": 48.446
+    },
+    {
+      "id": "L18",
+      "speaker": "anna",
+      "text": "No idea yet. Nobody has asked them.",
+      "start": 48.896,
+      "end": 50.95
+    },
+    {
+      "id": "L19",
+      "speaker": "mark",
+      "text": "Actually, about the staging demo. Thursday is too tight because of the database migration. Can we say Monday instead?",
+      "start": 51.85,
+      "end": 58.392
+    },
+    {
+      "id": "L20",
+      "speaker": "anna",
+      "text": "Okay, let's make it Monday.",
+      "start": 58.842,
+      "end": 60.101
+    },
+    {
+      "id": "L21",
+      "speaker": "anna",
+      "text": "And I just got a message from the client. They want to run the workshop online, so I won't book the meeting room after all.",
+      "start": 60.701,
+      "end": 66.753
+    },
+    {
+      "id": "L22",
+      "speaker": "mark",
+      "text": "Makes sense.",
+      "start": 67.203,
+      "end": 67.903
+    },
+    {
+      "id": "L23",
+      "speaker": "anna",
+      "text": "Great, I think that's everything. Thanks, Mark.",
+      "start": 68.353,
+      "end": 70.386
+    },
+    {
+      "id": "L24",
+      "speaker": "mark",
+      "text": "Thanks, Anna. Talk soon.",
+      "start": 70.836,
+      "end": 71.949
+    }
+  ]
+}

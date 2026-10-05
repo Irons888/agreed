@@ -2,9 +2,20 @@
   "model": "eleven_multilingual_v2",
   "seed": 42,
   "speakers": {
-    "anna": ["Sarah", "Jessica", "Laura", "Matilda"],
-    "mark": ["Brian", "Eric", "Chris", "Will"],
-    "lena": ["Alice", "Charlotte", "Lily"]
+    "anna": [
+      { "name": "Sarah", "voice_id": "EXAVITQu4vr4xnSDxMaL" },
+      { "name": "Jessica", "voice_id": "cgSgspJ2msm6clMCkdW9" },
+      { "name": "Laura", "voice_id": "FGY2WhTYpPnrIDTdsKH5" }
+    ],
+    "mark": [
+      { "name": "Brian", "voice_id": "nPczCjzI2devNBz1zQrb" },
+      { "name": "Eric", "voice_id": "cjVigY5qzO86Huf0OWal" },
+      { "name": "Chris", "voice_id": "iP95p4xoKVk53GoZ742B" }
+    ],
+    "lena": [
+      { "name": "Alice", "voice_id": "Xb7hH8MSUJpSbSDYk0k2" },
+      { "name": "Lily", "voice_id": "pFZP5JQG7iQjIQuC4Bku" }
+    ]
   },
   "aliases": {
     "s1": "anna",

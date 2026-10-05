@@ -1,0 +1,55 @@
+{
+  "case": "T5-three-voices",
+  "duration": 15.943,
+  "lines": [
+    {
+      "id": "L1",
+      "speaker": "anna",
+      "text": "Hi everyone, I'm Anna, the project manager.",
+      "start": 0.4,
+      "end": 2.651
+    },
+    {
+      "id": "L2",
+      "speaker": "mark",
+      "text": "I'm Mark, backend.",
+      "start": 3.101,
+      "end": 3.91
+    },
+    {
+      "id": "L3",
+      "speaker": "lena",
+      "text": "And I'm Lena, I do the design.",
+      "start": 4.36,
+      "end": 6.258
+    },
+    {
+      "id": "L4",
+      "speaker": "anna",
+      "text": "Lena, can you send the new mockups by Thursday?",
+      "start": 6.708,
+      "end": 9.134
+    },
+    {
+      "id": "L5",
+      "speaker": "lena",
+      "text": "Sure, I'll send them by Thursday.",
+      "start": 9.584,
+      "end": 11.389
+    },
+    {
+      "id": "L6",
+      "speaker": "mark",
+      "text": "And I'll review the API changes tomorrow.",
+      "start": 11.839,
+      "end": 13.792
+    },
+    {
+      "id": "L7",
+      "speaker": "anna",
+      "text": "Great, thanks both.",
+      "start": 14.242,
+      "end": 15.343
+    }
+  ]
+}

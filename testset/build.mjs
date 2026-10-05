@@ -50,19 +50,23 @@ async function listVoices() {
   return voices;
 }
 
-const firstName = (name) => name.split(/[\s\-–—(]/)[0].toLowerCase();
-
+// Candidates are ElevenLabs premade voices. If the key may list voices, only voices the
+// account actually has are picked; otherwise the premade IDs are used as they are.
 async function resolveVoices() {
-  const voices = await listVoices();
+  let available = null;
+  try {
+    available = new Set((await listVoices()).map((v) => v.voice_id));
+  } catch (err) {
+    if (!/voices_read|missing_permissions/.test(err.message)) throw err;
+    console.log('This key cannot list voices, so the premade voice IDs from voices.json are used as is.');
+  }
   const used = new Set();
   const resolved = {};
-  for (const [speaker, preferred] of Object.entries(config.speakers)) {
-    const voice = preferred
-      .map((name) => voices.find((v) => firstName(v.name) === name.toLowerCase() && !used.has(v.voice_id)))
-      .find(Boolean);
-    if (!voice) throw new Error(`None of ${preferred.join(', ')} is available for "${speaker}". Run with --list-voices.`);
+  for (const [speaker, candidates] of Object.entries(config.speakers)) {
+    const voice = candidates.find((c) => !used.has(c.voice_id) && (!available || available.has(c.voice_id)));
+    if (!voice) throw new Error(`No available voice for "${speaker}" in voices.json.`);
     used.add(voice.voice_id);
-    resolved[speaker] = { voice_id: voice.voice_id, name: voice.name };
+    resolved[speaker] = voice;
   }
   for (const [alias, speaker] of Object.entries(config.aliases ?? {})) resolved[alias] = resolved[speaker];
   return resolved;
