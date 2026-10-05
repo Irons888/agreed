@@ -1,0 +1,10 @@
+{
+  "case": "T2-changed",
+  "title": "Brightside portal: pre-launch sync (dark mode accepted)",
+  "base": "../T1-main",
+  "change": "Anna accepts the dark mode proposal instead of declining it. Every other line is identical to T1.",
+  "replace": {
+    "L9": { "speaker": "anna", "text": "Actually, that's a good idea. Mark, can you take it by Friday?" },
+    "L10": { "speaker": "mark", "text": "Sure, I'll do the dark mode by Friday." }
+  }
+}

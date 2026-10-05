@@ -1,0 +1,18 @@
+{
+  "case": "T4-dated",
+  "title": "Login bug fix: the date is said out loud",
+  "language": "en",
+  "speakers": {
+    "anna": "Anna, project manager",
+    "mark": "Mark, backend developer"
+  },
+  "lines": [
+    { "id": "L1", "speaker": "anna", "text": "Hi, it's Monday, October 5th, 2026. I'm Anna, the project manager." },
+    { "id": "L2", "speaker": "mark", "text": "And I'm Mark, backend developer." },
+    { "id": "L3", "speaker": "anna", "text": "Mark, about the login bug. Can you deploy the fix tomorrow?" },
+    { "id": "L4", "speaker": "mark", "text": "Yes, I'll deploy it tomorrow morning." },
+    { "id": "L5", "speaker": "anna", "text": "Great. Then I'll run the QA pass by Friday." },
+    { "id": "L6", "speaker": "mark", "text": "Sounds good." },
+    { "id": "L7", "speaker": "anna", "text": "Thanks, that's all for today." }
+  ]
+}

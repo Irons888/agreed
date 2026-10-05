@@ -1,0 +1,12 @@
+{
+  "name": "agreed",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "testset:build": "node testset/build.mjs",
+    "testset:voices": "node testset/build.mjs --list-voices"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "model": "eleven_multilingual_v2",
+  "seed": 42,
+  "speakers": {
+    "anna": ["Sarah", "Jessica", "Laura", "Matilda"],
+    "mark": ["Brian", "Eric", "Chris", "Will"],
+    "lena": ["Alice", "Charlotte", "Lily"]
+  },
+  "aliases": {
+    "s1": "anna",
+    "s2": "mark"
+  }
+}

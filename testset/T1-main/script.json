@@ -1,0 +1,35 @@
+{
+  "case": "T1-main",
+  "title": "Brightside portal: pre-launch sync",
+  "language": "en",
+  "speakers": {
+    "anna": "Anna, project manager",
+    "mark": "Mark, backend developer"
+  },
+  "lines": [
+    { "id": "L1", "speaker": "anna", "text": "Hi, I'm Anna, the project manager for the Brightside portal." },
+    { "id": "L2", "speaker": "mark", "text": "And I'm Mark, I'm handling the backend." },
+    { "id": "L3", "speaker": "anna", "text": "Great. Let's go through what's left before the client launch." },
+    { "id": "L4", "speaker": "mark", "text": "Sure. First, the client is still waiting for our API documentation." },
+    { "id": "L5", "speaker": "anna", "text": "Right. Mark, can you send them the API docs by Wednesday?" },
+    { "id": "L6", "speaker": "mark", "text": "Yes, I'll send the API docs by Wednesday." },
+    { "id": "L7", "speaker": "anna", "text": "Perfect, thanks." },
+    { "id": "L8", "speaker": "mark", "text": "Also, we could add a dark mode while we're at it. Users keep asking for it." },
+    { "id": "L9", "speaker": "anna", "text": "Hmm, I'd rather keep the scope tight for this release." },
+    { "id": "L10", "speaker": "mark", "text": "Fair enough." },
+    { "id": "L11", "speaker": "anna", "text": "Next, the staging demo. Can you have it ready by Thursday?" },
+    { "id": "L12", "speaker": "mark", "text": "Thursday works." },
+    { "id": "L13", "speaker": "anna", "text": "And I'll book a meeting room for the client workshop." },
+    { "id": "L14", "speaker": "mark", "text": "Okay." },
+    { "id": "L15", "speaker": "anna", "text": "One more thing. The privacy policy page has to be updated before launch." },
+    { "id": "L16", "speaker": "mark", "text": "Yes, that definitely needs to happen." },
+    { "id": "L17", "speaker": "mark", "text": "Oh, and do we know if the client needs single sign-on?", "pause_before_ms": 300 },
+    { "id": "L18", "speaker": "anna", "text": "No idea yet. Nobody has asked them." },
+    { "id": "L19", "speaker": "mark", "text": "Actually, about the staging demo. Thursday is too tight because of the database migration. Can we say Monday instead?", "pause_before_ms": 900 },
+    { "id": "L20", "speaker": "anna", "text": "Okay, let's make it Monday." },
+    { "id": "L21", "speaker": "anna", "text": "And I just got a message from the client. They want to run the workshop online, so I won't book the meeting room after all.", "pause_before_ms": 600 },
+    { "id": "L22", "speaker": "mark", "text": "Makes sense." },
+    { "id": "L23", "speaker": "anna", "text": "Great, I think that's everything. Thanks, Mark." },
+    { "id": "L24", "speaker": "mark", "text": "Thanks, Anna. Talk soon." }
+  ]
+}

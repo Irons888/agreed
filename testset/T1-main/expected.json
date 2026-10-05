@@ -1,0 +1,65 @@
+{
+  "case": "T1-main",
+  "purpose": "Normal input. Contains all five required cases from the brief plus one unresolved question.",
+  "outcome": "result",
+  "speakers": { "anna": "Anna", "mark": "Mark" },
+  "recording_date": null,
+  "items": [
+    {
+      "id": "api-docs",
+      "covers": "accepted task",
+      "keys": ["API doc"],
+      "status": "agreed",
+      "owner": { "name": "Mark" },
+      "deadline": { "raw_contains": "Wednesday", "date": null },
+      "evidence_lines": ["L5", "L6"]
+    },
+    {
+      "id": "dark-mode",
+      "covers": "proposal that is never accepted",
+      "keys": ["dark mode"],
+      "status": "not_accepted",
+      "evidence_lines": ["L8", "L9"]
+    },
+    {
+      "id": "staging-demo",
+      "covers": "corrected deadline",
+      "keys": ["staging demo"],
+      "status": "agreed",
+      "owner": { "name": "Mark" },
+      "deadline": { "raw_contains": "Monday", "date": null, "changed_from_contains": "Thursday" },
+      "evidence_lines": ["L11", "L12", "L19", "L20"]
+    },
+    {
+      "id": "meeting-room",
+      "covers": "cancelled task",
+      "keys": ["meeting room"],
+      "status": "cancelled",
+      "evidence_lines": ["L13", "L21"]
+    },
+    {
+      "id": "privacy-policy",
+      "covers": "task with no named owner",
+      "keys": ["privacy policy"],
+      "status": "agreed",
+      "owner": { "name": null },
+      "deadline": { "raw_contains": "before launch", "date": null },
+      "evidence_lines": ["L15", "L16"]
+    },
+    {
+      "id": "sso",
+      "covers": "unresolved question",
+      "keys": ["single sign-on", "SSO"],
+      "status": "open_question",
+      "evidence_lines": ["L17", "L18"]
+    }
+  ],
+  "traps": [
+    "Dark mode must not become an agreed task: it was only proposed (\"we could\") and Anna declined.",
+    "The meeting room booking must not stay active: Anna cancelled it at L21.",
+    "The privacy policy update must not get an owner: nobody took it.",
+    "No task like \"ask the client about SSO\": nobody committed to asking.",
+    "The staging demo deadline must be Monday, not Thursday.",
+    "No calendar dates anywhere: the recording never says what day it is."
+  ]
+}

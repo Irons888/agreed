@@ -1,0 +1,7 @@
+node_modules/
+.env
+.wrangler/
+dist/
+storybook-static/
+testset/.cache/
+.DS_Store

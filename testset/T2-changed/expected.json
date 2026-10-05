@@ -1,0 +1,58 @@
+{
+  "case": "T2-changed",
+  "purpose": "Second version of T1 that changes one agreement: the dark mode proposal is accepted. Everything else must stay exactly as in T1.",
+  "outcome": "result",
+  "speakers": { "anna": "Anna", "mark": "Mark" },
+  "recording_date": null,
+  "items": [
+    {
+      "id": "api-docs",
+      "keys": ["API doc"],
+      "status": "agreed",
+      "owner": { "name": "Mark" },
+      "deadline": { "raw_contains": "Wednesday", "date": null },
+      "evidence_lines": ["L5", "L6"]
+    },
+    {
+      "id": "dark-mode",
+      "covers": "the changed agreement",
+      "keys": ["dark mode"],
+      "status": "agreed",
+      "owner": { "name": "Mark" },
+      "deadline": { "raw_contains": "Friday", "date": null },
+      "evidence_lines": ["L8", "L9", "L10"]
+    },
+    {
+      "id": "staging-demo",
+      "keys": ["staging demo"],
+      "status": "agreed",
+      "owner": { "name": "Mark" },
+      "deadline": { "raw_contains": "Monday", "date": null, "changed_from_contains": "Thursday" },
+      "evidence_lines": ["L11", "L12", "L19", "L20"]
+    },
+    {
+      "id": "meeting-room",
+      "keys": ["meeting room"],
+      "status": "cancelled",
+      "evidence_lines": ["L13", "L21"]
+    },
+    {
+      "id": "privacy-policy",
+      "keys": ["privacy policy"],
+      "status": "agreed",
+      "owner": { "name": null },
+      "deadline": { "raw_contains": "before launch", "date": null },
+      "evidence_lines": ["L15", "L16"]
+    },
+    {
+      "id": "sso",
+      "keys": ["single sign-on", "SSO"],
+      "status": "open_question",
+      "evidence_lines": ["L17", "L18"]
+    }
+  ],
+  "traps": [
+    "Only dark mode may differ from the T1 result.",
+    "\"by Friday\" must stay as spoken: the recording never says what day it is."
+  ]
+}

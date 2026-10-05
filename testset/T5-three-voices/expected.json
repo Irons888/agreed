@@ -1,0 +1,10 @@
+{
+  "case": "T5-three-voices",
+  "purpose": "Input outside the scope (three speakers). The product should decline to conclude instead of returning a list.",
+  "outcome": "decline",
+  "decline_reason": "speaker_count",
+  "items": [],
+  "traps": [
+    "No commitments list: with three voices, owners cannot be attributed reliably within this prototype's scope."
+  ]
+}

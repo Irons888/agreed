@@ -1,0 +1,28 @@
+{
+  "case": "T4-dated",
+  "purpose": "Relative dates that can be resolved, because the recording states its own date.",
+  "outcome": "result",
+  "speakers": { "anna": "Anna", "mark": "Mark" },
+  "recording_date": "2026-10-05",
+  "items": [
+    {
+      "id": "deploy-fix",
+      "keys": ["deploy", "login"],
+      "status": "agreed",
+      "owner": { "name": "Mark" },
+      "deadline": { "raw_contains": "tomorrow", "date": "2026-10-06" },
+      "evidence_lines": ["L3", "L4"]
+    },
+    {
+      "id": "qa-pass",
+      "keys": ["QA"],
+      "status": "agreed",
+      "owner": { "name": "Anna" },
+      "deadline": { "raw_contains": "Friday", "date": "2026-10-09" },
+      "evidence_lines": ["L5", "L6"]
+    }
+  ],
+  "traps": [
+    "Dates must be anchored to the date said at L1, not to the day the file is processed."
+  ]
+}

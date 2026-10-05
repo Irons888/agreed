@@ -1,0 +1,19 @@
+{
+  "case": "T5-three-voices",
+  "title": "Three people on the call: outside the supported scope",
+  "language": "en",
+  "speakers": {
+    "anna": "Anna, project manager",
+    "mark": "Mark, backend developer",
+    "lena": "Lena, designer"
+  },
+  "lines": [
+    { "id": "L1", "speaker": "anna", "text": "Hi everyone, I'm Anna, the project manager." },
+    { "id": "L2", "speaker": "mark", "text": "I'm Mark, backend." },
+    { "id": "L3", "speaker": "lena", "text": "And I'm Lena, I do the design." },
+    { "id": "L4", "speaker": "anna", "text": "Lena, can you send the new mockups by Thursday?" },
+    { "id": "L5", "speaker": "lena", "text": "Sure, I'll send them by Thursday." },
+    { "id": "L6", "speaker": "mark", "text": "And I'll review the API changes tomorrow." },
+    { "id": "L7", "speaker": "anna", "text": "Great, thanks both." }
+  ]
+}

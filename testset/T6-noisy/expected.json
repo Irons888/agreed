@@ -1,0 +1,5 @@
+{
+  "case": "T6-noisy",
+  "purpose": "Robustness check: the T1 conversation over a noisy phone line must give the same result as T1.",
+  "same_as": "../T1-main/expected.json"
+}

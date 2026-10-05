@@ -1,0 +1,7 @@
+{
+  "case": "T6-noisy",
+  "title": "T1 over a noisy phone line",
+  "from_audio": "../T1-main",
+  "transform": "phone_noise",
+  "change": "Same audio as T1, band-limited to telephone range (300–3400 Hz) with pink background noise mixed in."
+}

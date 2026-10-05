@@ -1,0 +1,19 @@
+{
+  "case": "T3-ambiguous",
+  "title": "Unnamed speakers, nothing firmly agreed",
+  "language": "en",
+  "speakers": {
+    "s1": "Speaker 1 (does not introduce herself)",
+    "s2": "Speaker 2 (does not introduce himself)"
+  },
+  "lines": [
+    { "id": "L1", "speaker": "s1", "text": "So, the export bug is still open." },
+    { "id": "L2", "speaker": "s2", "text": "Yeah. I'll try to get a fix in by Friday, but no promises." },
+    { "id": "L3", "speaker": "s1", "text": "Okay. Someone should probably talk to finance about the invoices at some point." },
+    { "id": "L4", "speaker": "s2", "text": "Probably." },
+    { "id": "L5", "speaker": "s1", "text": "We could also move the release. I'm not sure." },
+    { "id": "L6", "speaker": "s2", "text": "Maybe. Let's see how it goes." },
+    { "id": "L7", "speaker": "s1", "text": "Maybe we talk again after the thing next week?" },
+    { "id": "L8", "speaker": "s2", "text": "Maybe." }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "case": "T3-ambiguous",
+  "purpose": "Input on which the product should ask instead of concluding: speakers never introduce themselves and every statement is hedged.",
+  "outcome": "clarify",
+  "clarify": ["speaker_names"],
+  "speakers": { "s1": null, "s2": null },
+  "recording_date": null,
+  "items": [
+    {
+      "id": "export-fix",
+      "keys": ["export"],
+      "status": "needs_review",
+      "deadline": { "raw_contains": "Friday", "date": null },
+      "evidence_lines": ["L2"],
+      "note": "\"I'll try ... but no promises\" is not a firm commitment."
+    },
+    {
+      "id": "finance",
+      "keys": ["finance", "invoice"],
+      "status": ["needs_review", "not_accepted"],
+      "owner": { "name": null },
+      "evidence_lines": ["L3", "L4"]
+    },
+    {
+      "id": "move-release",
+      "keys": ["release"],
+      "status": ["not_accepted", "needs_review"],
+      "evidence_lines": ["L5", "L6"]
+    },
+    {
+      "id": "talk-again",
+      "keys": ["talk again", "next week"],
+      "status": ["not_accepted", "needs_review"],
+      "optional": true,
+      "evidence_lines": ["L7", "L8"]
+    }
+  ],
+  "traps": [
+    "Zero agreed tasks: nothing here is a firm commitment.",
+    "No owner names: nobody says their name.",
+    "No calendar dates: \"by Friday\" and \"next week\" have no date context."
+  ]
+}
