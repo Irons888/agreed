@@ -35,6 +35,12 @@ type Report = {
 
 const ASR_NAMES: Record<string, string> = { 'elevenlabs/scribe_v2': 'ElevenLabs Scribe v2', '@cf/deepgram/nova-3': 'Deepgram Nova-3' };
 
+/** Same rule as the eval runner: the value at rank ⌈p·n⌉. */
+const percentile = (values: number[], p: number) => {
+  const sorted = [...values].sort((a, b) => a - b);
+  return sorted.length ? sorted[Math.min(sorted.length - 1, Math.ceil((p / 100) * sorted.length) - 1)] : null;
+};
+
 const median = (values: number[]) => {
   const sorted = [...values].sort((a, b) => a - b);
   return sorted.length ? sorted[Math.floor((sorted.length - 1) / 2)] : null;
@@ -63,6 +69,9 @@ export function QualityPage({ onStart }: { onStart: (audio: PreparedAudio, prepa
   }, []);
 
   const s = report?.summary;
+  // Declines finish in about 2 s, so they are left out of the time it takes to get a list.
+  const listMs = (report?.cases ?? []).filter((c) => c.outcome !== 'decline').flatMap((c) => c.runs.flatMap((r) => (r.clientMs != null ? [r.clientMs] : [])));
+  const toList = { p50: percentile(listMs, 50), p90: percentile(listMs, 90) };
 
   return (
     <Page className="space-y-14">
@@ -91,9 +100,9 @@ export function QualityPage({ onStart }: { onStart: (audio: PreparedAudio, prepa
           <MetricTile label="Real items found" value={s.inclusion} sub="with the right final status" />
           <MetricTile label="Unsupported items" value={String(s.exclusionErrors)} sub="extras, upgraded statuses, guessed owners or dates" />
           <MetricTile
-            label="Time to result"
-            value={s.timeToResultMs.p50 != null ? seconds(s.timeToResultMs.p50) : '—'}
-            sub={`median · p90 ${s.timeToResultMs.p90 != null ? seconds(s.timeToResultMs.p90) : '—'} · transcript after ${s.timeToTranscriptMs.p50 != null ? seconds(s.timeToTranscriptMs.p50) : '—'}`}
+            label="Time to the list"
+            value={toList.p50 != null ? seconds(toList.p50) : '—'}
+            sub={`median · p90 ${toList.p90 != null ? seconds(toList.p90) : '—'} · transcript after ${s.timeToTranscriptMs.p50 != null ? seconds(s.timeToTranscriptMs.p50) : '—'}`}
           />
           <MetricTile
             label="Cost per audio minute"

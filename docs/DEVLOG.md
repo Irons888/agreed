@@ -146,7 +146,7 @@ Times are local (EEST).
 - The fallback was tested with mocked responses: a rejected key goes straight to Nova-3; a server error, a rate limit or a timeout gets one more try first.
 - Small fix found on the way: `?model=` and `?asr=` were checked with `in`, so `?model=toString` passed as a model name. Now `Object.hasOwn`.
 - How long Scribe v2 takes, called directly, 3 calls each:
-  - T1 (1:11) sent from this machine: 2.9–3.3 s; fetched by ElevenLabs from the Cloudflare demo: 2.4–3.1 s. The upload is a small part, so the deployment will not be noticeably faster;
+  - T1 (1:11) sent from this machine: 2.9–3.3 s; fetched by ElevenLabs from the Cloudflare demo: 2.4–3.1 s. The upload is a small part; on the deployment T1's recognition took 3.0 s (median of 5), against 3.5 s from this machine;
   - a 3-minute recording, the limit: 5.1–6.9 s;
   - Nova-3 took 1.8 s for T1.
 - How much speech a voice needs, on clips cut from T1 and T7:
@@ -154,3 +154,13 @@ Times are local (EEST).
   - voices of the same gender, one line of 1.3–1.8 s each: two men, two women, and four men in a 10-second clip were all told apart;
   - for comparison, Nova-3 heard 18 s of Anna and Mark as one voice.
   - The voices are synthetic and clean. Real calls with similar voices, noise or crosstalk may need more.
+
+### Deployed with Scribe v2
+
+- The ElevenLabs key is a Worker secret. Deployed together with the simpler screens, History and Tasks.
+- Final eval on the live deployment, 5 runs per case:
+  - **35/35 runs passed**; 130/130 items with the right status, 0 unsupported items, 0 retries, 0 dropped connections. Report: `eval/reports/2026-10-05T21-36-32-844Z.md`;
+  - recordings that get a list (T1–T4, T6): p50 17.5 s, p90 28.0 s. With Nova-3 it was 24.5 s and 31.7 s, but that gap is the extraction model varying between runs; recognition itself is slower, and the transcript shows after 2.2 s instead of 1.2 s;
+  - $0.0053 per audio minute instead of $0.0071.
+- The Quality page's time tile now leaves declines out. They finish in about 2 s, and with T7 next to T5 they pulled the median down to 13.4 s.
+- Storybook fixtures now come from this eval, so they show what Scribe v2 produces.

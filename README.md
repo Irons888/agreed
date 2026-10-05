@@ -41,15 +41,15 @@ Scope: English, two clearly distinguishable speakers, up to 3 minutes, no overla
 
 ## Measured
 
-Latest eval: 5 runs per test recording with Scribe v2, the Worker running locally against the same hosted models.
+Final eval: 5 runs per test recording on the live deployment, with Scribe v2.
 
 | | |
 |---|---|
 | Runs passed | **35 / 35** |
 | Real items found with the right status | **130 / 130** |
 | Unsupported items added | **0** |
-| Time to the full verified result, p50 / p90 | **19.8 s / 33.2 s** |
-| Time to the transcript | **2.8 s** |
+| Time to the full verified list, p50 / p90 (declines take about 2 s) | **17.5 s / 28.0 s** |
+| Time to the transcript | **2.2 s** |
 | Variable cost | **$0.0053 per audio minute** at ElevenLabs and Workers AI list prices |
 
 With Nova-3 the same pipeline passed T1–T6 (30/30 on the live deployment, $0.0071 per audio minute) but heard T7's seven people as one voice.

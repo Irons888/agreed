@@ -4,7 +4,7 @@ import t3 from './t3-result.json';
 import t4 from './t4-result.json';
 import t5 from './t5-result.json';
 
-// Real results from the final eval on the live deployment (eval/results/2026-10-05T17-21-03-651Z), not hand-written.
+// Real results from the final eval on the live deployment (eval/results/2026-10-05T21-36-32-844Z), not hand-written.
 export const t1Result = t1 as unknown as Result;
 /** Unnamed speakers and hedged statements: the product asks who is who. */
 export const t3Result = t3 as unknown as Result;

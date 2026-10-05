@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "id": "f4279a0c-3005-4cca-a45f-378f609b74f1",
-  "createdAt": "2026-10-05T17:28:36.488Z",
+  "id": "4d7998ac-bf8c-4a79-ae3e-0e1f76bf2207",
+  "createdAt": "2026-10-05T21:41:08.836Z",
   "fileName": "T4-dated.wav",
   "durationSec": 37.05,
   "outcome": "result",
@@ -11,14 +11,14 @@
       "id": "S1",
       "name": "Anna",
       "label": "Anna",
-      "words": 70,
+      "words": 69,
       "intro": {
         "turn": "u1",
         "speaker": "S1",
         "role": "commitment",
         "quote": "I'm Anna, the project manager.",
-        "start": 3.12,
-        "end": 5.04,
+        "start": 3.16,
+        "end": 4.8,
         "match": "exact"
       }
     },
@@ -26,14 +26,14 @@
       "id": "S2",
       "name": "Mark",
       "label": "Mark",
-      "words": 41,
+      "words": 40,
       "intro": {
         "turn": "u2",
         "speaker": "S2",
         "role": "commitment",
-        "quote": "I'm Mark, back end developer.",
-        "start": 5.7599998,
-        "end": 7.44,
+        "quote": "I'm Mark, backend developer.",
+        "start": 5.78,
+        "end": 7.12,
         "match": "exact"
       }
     }
@@ -45,9 +45,9 @@
       "turn": "u1",
       "speaker": "S1",
       "role": "commitment",
-      "quote": "It's Monday, October fifth twenty twenty six.",
-      "start": 0.71999997,
-      "end": 3.12,
+      "quote": "it's Monday, October fifth, twenty twenty-six.",
+      "start": 0.76,
+      "end": 2.98,
       "match": "exact"
     }
   },
@@ -55,672 +55,662 @@
     {
       "id": "u1",
       "speaker": "S1",
-      "start": 0.24,
-      "end": 5.04,
-      "text": "Hi. It's Monday, October fifth twenty twenty six. I'm Anna, the project manager.",
+      "start": 0.48,
+      "end": 4.8,
+      "text": "Hi, it's Monday, October fifth, twenty twenty-six. I'm Anna, the project manager.",
       "words": [
         {
-          "text": "Hi.",
-          "start": 0.24,
-          "end": 0.71999997
+          "text": "Hi,",
+          "start": 0.48,
+          "end": 0.68
         },
         {
-          "text": "It's",
-          "start": 0.71999997,
-          "end": 0.96
+          "text": "it's",
+          "start": 0.76,
+          "end": 0.9
         },
         {
           "text": "Monday,",
-          "start": 0.96,
-          "end": 1.36
+          "start": 0.94,
+          "end": 1.16
         },
         {
           "text": "October",
-          "start": 1.36,
-          "end": 1.5999999
+          "start": 1.22,
+          "end": 1.56
         },
         {
-          "text": "fifth",
-          "start": 1.5999999,
-          "end": 2
-        },
-        {
-          "text": "twenty",
-          "start": 2,
-          "end": 2.32
+          "text": "fifth,",
+          "start": 1.66,
+          "end": 1.9
         },
         {
           "text": "twenty",
-          "start": 2.32,
-          "end": 2.6399999
+          "start": 2.04,
+          "end": 2.24
         },
         {
-          "text": "six.",
-          "start": 2.6399999,
-          "end": 3.12
+          "text": "twenty-six.",
+          "start": 2.34,
+          "end": 2.98
         },
         {
           "text": "I'm",
-          "start": 3.12,
-          "end": 3.36
+          "start": 3.16,
+          "end": 3.34
         },
         {
           "text": "Anna,",
-          "start": 3.36,
-          "end": 3.9199998
+          "start": 3.42,
+          "end": 3.7
         },
         {
           "text": "the",
-          "start": 3.9199998,
-          "end": 4
+          "start": 3.88,
+          "end": 3.94
         },
         {
           "text": "project",
-          "start": 4,
-          "end": 4.3199997
+          "start": 3.98,
+          "end": 4.28
         },
         {
           "text": "manager.",
-          "start": 4.3199997,
-          "end": 5.04
+          "start": 4.34,
+          "end": 4.8
         }
       ]
     },
     {
       "id": "u2",
       "speaker": "S2",
-      "start": 5.52,
-      "end": 7.44,
-      "text": "And I'm Mark, back end developer.",
+      "start": 5.62,
+      "end": 7.12,
+      "text": "And I'm Mark, backend developer.",
       "words": [
         {
           "text": "And",
-          "start": 5.52,
-          "end": 5.7599998
+          "start": 5.62,
+          "end": 5.7
         },
         {
           "text": "I'm",
-          "start": 5.7599998,
-          "end": 6
+          "start": 5.78,
+          "end": 5.88
         },
         {
           "text": "Mark,",
-          "start": 6,
-          "end": 6.3199997
+          "start": 5.94,
+          "end": 6.18
         },
         {
-          "text": "back",
-          "start": 6.3199997,
-          "end": 6.48
-        },
-        {
-          "text": "end",
-          "start": 6.48,
-          "end": 6.72
+          "text": "backend",
+          "start": 6.3,
+          "end": 6.6
         },
         {
           "text": "developer.",
-          "start": 6.72,
-          "end": 7.44
+          "start": 6.68,
+          "end": 7.12
         }
       ]
     },
     {
       "id": "u3",
       "speaker": "S1",
-      "start": 7.6,
-      "end": 10.16,
+      "start": 7.72,
+      "end": 9.82,
       "text": "Quick sync on the login bug. How bad is it?",
       "words": [
         {
           "text": "Quick",
-          "start": 7.6,
-          "end": 7.9199996
+          "start": 7.72,
+          "end": 7.88
         },
         {
           "text": "sync",
-          "start": 7.9199996,
-          "end": 8.16
+          "start": 7.98,
+          "end": 8.18
         },
         {
           "text": "on",
-          "start": 8.16,
-          "end": 8.32
+          "start": 8.22,
+          "end": 8.28
         },
         {
           "text": "the",
           "start": 8.32,
-          "end": 8.48
+          "end": 8.36
         },
         {
           "text": "login",
-          "start": 8.48,
-          "end": 8.72
+          "start": 8.4,
+          "end": 8.7
         },
         {
           "text": "bug.",
-          "start": 8.72,
-          "end": 9.2
+          "start": 8.78,
+          "end": 9
         },
         {
           "text": "How",
-          "start": 9.2,
-          "end": 9.36
+          "start": 9.24,
+          "end": 9.34
         },
         {
           "text": "bad",
-          "start": 9.36,
-          "end": 9.5199995
+          "start": 9.38,
+          "end": 9.52
         },
         {
           "text": "is",
-          "start": 9.5199995,
-          "end": 9.76
+          "start": 9.56,
+          "end": 9.66
         },
         {
           "text": "it?",
-          "start": 9.76,
-          "end": 10.16
+          "start": 9.72,
+          "end": 9.82
         }
       ]
     },
     {
       "id": "u4",
       "speaker": "S2",
-      "start": 10.32,
-      "end": 14.32,
-      "text": "Some users get logged out after a few minutes. I found the calls this morning.",
+      "start": 10.38,
+      "end": 14.34,
+      "text": "Some users get logged out after a few minutes. I found the cause this morning.",
       "words": [
         {
           "text": "Some",
-          "start": 10.32,
-          "end": 10.559999
+          "start": 10.38,
+          "end": 10.56
         },
         {
           "text": "users",
-          "start": 10.559999,
-          "end": 10.88
+          "start": 10.64,
+          "end": 10.92
         },
         {
           "text": "get",
-          "start": 10.88,
-          "end": 11.12
+          "start": 10.96,
+          "end": 11.1
         },
         {
           "text": "logged",
-          "start": 11.12,
+          "start": 11.16,
           "end": 11.44
         },
         {
           "text": "out",
-          "start": 11.44,
-          "end": 11.679999
+          "start": 11.5,
+          "end": 11.62
         },
         {
           "text": "after",
-          "start": 11.679999,
-          "end": 11.92
+          "start": 11.7,
+          "end": 11.88
         },
         {
           "text": "a",
           "start": 11.92,
-          "end": 12.08
+          "end": 11.96
         },
         {
           "text": "few",
-          "start": 12.08,
-          "end": 12.24
+          "start": 12.02,
+          "end": 12.14
         },
         {
           "text": "minutes.",
-          "start": 12.24,
-          "end": 12.799999
+          "start": 12.18,
+          "end": 12.46
         },
         {
           "text": "I",
-          "start": 13.04,
-          "end": 13.28
+          "start": 13.18,
+          "end": 13.24
         },
         {
           "text": "found",
-          "start": 13.28,
-          "end": 13.44
+          "start": 13.3,
+          "end": 13.46
         },
         {
           "text": "the",
-          "start": 13.44,
-          "end": 13.599999
+          "start": 13.48,
+          "end": 13.56
         },
         {
-          "text": "calls",
-          "start": 13.599999,
+          "text": "cause",
+          "start": 13.6,
           "end": 13.84
         },
         {
           "text": "this",
-          "start": 13.84,
-          "end": 14.08
+          "start": 13.86,
+          "end": 14.02
         },
         {
           "text": "morning.",
-          "start": 14.08,
-          "end": 14.32
+          "start": 14.06,
+          "end": 14.34
         }
       ]
     },
     {
       "id": "u5",
       "speaker": "S1",
-      "start": 14.724999,
-      "end": 17.125,
+      "start": 14.92,
+      "end": 16.86,
       "text": "Good. Can you deploy the fix tomorrow?",
       "words": [
         {
           "text": "Good.",
-          "start": 14.724999,
-          "end": 15.365
+          "start": 14.92,
+          "end": 15.12
         },
         {
           "text": "Can",
-          "start": 15.365,
-          "end": 15.605
+          "start": 15.48,
+          "end": 15.6
         },
         {
           "text": "you",
-          "start": 15.605,
-          "end": 15.764999
+          "start": 15.64,
+          "end": 15.7
         },
         {
           "text": "deploy",
-          "start": 15.764999,
-          "end": 16.085
+          "start": 15.74,
+          "end": 16.04
         },
         {
           "text": "the",
-          "start": 16.085,
-          "end": 16.244999
+          "start": 16.079,
+          "end": 16.18
         },
         {
           "text": "fix",
-          "start": 16.244999,
-          "end": 16.484999
+          "start": 16.219,
+          "end": 16.42
         },
         {
           "text": "tomorrow?",
-          "start": 16.484999,
-          "end": 17.125
+          "start": 16.48,
+          "end": 16.86
         }
       ]
     },
     {
       "id": "u6",
       "speaker": "S2",
-      "start": 17.285,
-      "end": 19.125,
-      "text": "Yes. I'll deploy it tomorrow morning.",
+      "start": 17.46,
+      "end": 18.84,
+      "text": "Yes, I'll deploy it tomorrow morning.",
       "words": [
         {
-          "text": "Yes.",
-          "start": 17.285,
-          "end": 17.685
+          "text": "Yes,",
+          "start": 17.46,
+          "end": 17.64
         },
         {
           "text": "I'll",
-          "start": 17.685,
-          "end": 17.925
+          "start": 17.7,
+          "end": 17.8
         },
         {
           "text": "deploy",
-          "start": 17.925,
-          "end": 18.164999
+          "start": 17.84,
+          "end": 18.12
         },
         {
           "text": "it",
-          "start": 18.164999,
-          "end": 18.324999
+          "start": 18.16,
+          "end": 18.22
         },
         {
           "text": "tomorrow",
-          "start": 18.324999,
-          "end": 18.564999
+          "start": 18.26,
+          "end": 18.54
         },
         {
           "text": "morning.",
-          "start": 18.564999,
-          "end": 19.125
+          "start": 18.58,
+          "end": 18.84
         }
       ]
     },
     {
       "id": "u7",
       "speaker": "S1",
-      "start": 19.365,
-      "end": 21.845,
+      "start": 19.42,
+      "end": 21.54,
       "text": "Great. Then I'll run the QA pass by Friday.",
       "words": [
         {
           "text": "Great.",
-          "start": 19.365,
-          "end": 19.845
+          "start": 19.42,
+          "end": 19.7
         },
         {
           "text": "Then",
-          "start": 19.845,
-          "end": 20.005
+          "start": 19.9,
+          "end": 20
         },
         {
           "text": "I'll",
-          "start": 20.005,
-          "end": 20.164999
+          "start": 20.04,
+          "end": 20.12
         },
         {
           "text": "run",
-          "start": 20.164999,
-          "end": 20.324999
+          "start": 20.16,
+          "end": 20.28
         },
         {
           "text": "the",
-          "start": 20.324999,
-          "end": 20.404999
+          "start": 20.3,
+          "end": 20.38
         },
         {
           "text": "QA",
-          "start": 20.404999,
-          "end": 20.724998
+          "start": 20.52,
+          "end": 20.66
         },
         {
           "text": "pass",
-          "start": 20.724998,
-          "end": 20.965
+          "start": 20.76,
+          "end": 20.98
         },
         {
           "text": "by",
-          "start": 20.965,
-          "end": 21.205
+          "start": 21.02,
+          "end": 21.16
         },
         {
           "text": "Friday.",
-          "start": 21.205,
-          "end": 21.845
+          "start": 21.2,
+          "end": 21.54
         }
       ]
     },
     {
       "id": "u8",
       "speaker": "S2",
-      "start": 22.324999,
-      "end": 24.724998,
+      "start": 22.32,
+      "end": 24.42,
       "text": "Sounds good. Should we tell the support team?",
       "words": [
         {
           "text": "Sounds",
-          "start": 22.324999,
-          "end": 22.645
+          "start": 22.32,
+          "end": 22.58
         },
         {
           "text": "good.",
-          "start": 22.645,
-          "end": 23.044998
+          "start": 22.64,
+          "end": 22.92
         },
         {
           "text": "Should",
-          "start": 23.044998,
-          "end": 23.365
+          "start": 23.2,
+          "end": 23.36
         },
         {
           "text": "we",
-          "start": 23.365,
-          "end": 23.525
+          "start": 23.4,
+          "end": 23.48
         },
         {
           "text": "tell",
-          "start": 23.525,
-          "end": 23.685
+          "start": 23.54,
+          "end": 23.68
         },
         {
           "text": "the",
-          "start": 23.685,
-          "end": 23.925
+          "start": 23.7,
+          "end": 23.8
         },
         {
           "text": "support",
-          "start": 23.925,
-          "end": 24.244999
+          "start": 23.82,
+          "end": 24.1
         },
         {
           "text": "team?",
-          "start": 24.244999,
-          "end": 24.724998
+          "start": 24.2,
+          "end": 24.42
         }
       ]
     },
     {
       "id": "u9",
       "speaker": "S1",
-      "start": 24.884998,
-      "end": 27.925,
-      "text": "Yes. I'll email them today so they know what to say to customers.",
+      "start": 25.04,
+      "end": 28.08,
+      "text": "Yes. I'll email them today, so they know what to say to customers.",
       "words": [
         {
           "text": "Yes.",
-          "start": 24.884998,
-          "end": 25.285
+          "start": 25.04,
+          "end": 25.28
         },
         {
           "text": "I'll",
-          "start": 25.285,
-          "end": 25.525
+          "start": 25.34,
+          "end": 25.48
         },
         {
           "text": "email",
-          "start": 25.525,
-          "end": 25.845
+          "start": 25.54,
+          "end": 25.8
         },
         {
           "text": "them",
-          "start": 25.845,
-          "end": 26.005
+          "start": 25.82,
+          "end": 25.96
         },
         {
-          "text": "today",
-          "start": 26.005,
-          "end": 26.324999
+          "text": "today,",
+          "start": 26,
+          "end": 26.36
         },
         {
           "text": "so",
-          "start": 26.324999,
-          "end": 26.564999
+          "start": 26.48,
+          "end": 26.56
         },
         {
           "text": "they",
-          "start": 26.564999,
-          "end": 26.724998
+          "start": 26.6,
+          "end": 26.72
         },
         {
           "text": "know",
-          "start": 26.724998,
-          "end": 26.884998
+          "start": 26.74,
+          "end": 26.86
         },
         {
           "text": "what",
-          "start": 26.884998,
-          "end": 27.044998
+          "start": 26.9,
+          "end": 27
         },
         {
           "text": "to",
-          "start": 27.044998,
-          "end": 27.204998
+          "start": 27.04,
+          "end": 27.14
         },
         {
           "text": "say",
-          "start": 27.204998,
-          "end": 27.364998
+          "start": 27.18,
+          "end": 27.3
         },
         {
           "text": "to",
-          "start": 27.364998,
-          "end": 27.525
+          "start": 27.34,
+          "end": 27.42
         },
         {
           "text": "customers.",
-          "start": 27.525,
-          "end": 27.925
+          "start": 27.46,
+          "end": 28.08
         }
       ]
     },
     {
       "id": "u10",
       "speaker": "S2",
-      "start": 28.692062,
-      "end": 29.412062,
+      "start": 28.8,
+      "end": 29.1,
       "text": "Perfect.",
       "words": [
         {
           "text": "Perfect.",
-          "start": 28.692062,
-          "end": 29.412062
+          "start": 28.8,
+          "end": 29.1
         }
       ]
     },
     {
       "id": "u11",
       "speaker": "S1",
-      "start": 29.572063,
-      "end": 33.012062,
+      "start": 29.76,
+      "end": 32.72,
       "text": "And let's do a short review of the incident on Wednesday next week.",
       "words": [
         {
           "text": "And",
-          "start": 29.572063,
-          "end": 29.812063
+          "start": 29.76,
+          "end": 29.82
         },
         {
           "text": "let's",
-          "start": 29.812063,
-          "end": 30.052063
+          "start": 29.86,
+          "end": 30.02
         },
         {
           "text": "do",
-          "start": 30.052063,
-          "end": 30.212063
+          "start": 30.04,
+          "end": 30.12
         },
         {
           "text": "a",
-          "start": 30.212063,
-          "end": 30.292063
+          "start": 30.16,
+          "end": 30.22
         },
         {
           "text": "short",
-          "start": 30.292063,
-          "end": 30.532063
+          "start": 30.26,
+          "end": 30.46
         },
         {
           "text": "review",
-          "start": 30.532063,
-          "end": 30.772062
+          "start": 30.5,
+          "end": 30.78
         },
         {
           "text": "of",
-          "start": 30.772062,
-          "end": 30.932062
+          "start": 30.82,
+          "end": 30.9
         },
         {
           "text": "the",
-          "start": 30.932062,
-          "end": 31.092062
+          "start": 30.94,
+          "end": 31
         },
         {
           "text": "incident",
-          "start": 31.092062,
-          "end": 31.412064
+          "start": 31.06,
+          "end": 31.5
         },
         {
           "text": "on",
-          "start": 31.412064,
-          "end": 31.732063
+          "start": 31.56,
+          "end": 31.68
         },
         {
           "text": "Wednesday",
-          "start": 31.732063,
-          "end": 32.13206
+          "start": 31.74,
+          "end": 32.1
         },
         {
           "text": "next",
-          "start": 32.13206,
-          "end": 32.452065
+          "start": 32.18,
+          "end": 32.4
         },
         {
           "text": "week.",
-          "start": 32.452065,
-          "end": 33.012062
+          "start": 32.46,
+          "end": 32.72
         }
       ]
     },
     {
       "id": "u12",
       "speaker": "S2",
-      "start": 33.172062,
-      "end": 35.092064,
+      "start": 33.32,
+      "end": 34.72,
       "text": "Okay. Wednesday next week works.",
       "words": [
         {
           "text": "Okay.",
-          "start": 33.172062,
-          "end": 33.572063
+          "start": 33.32,
+          "end": 33.56
         },
         {
           "text": "Wednesday",
-          "start": 33.572063,
-          "end": 33.97206
+          "start": 33.64,
+          "end": 33.96
         },
         {
           "text": "next",
-          "start": 33.97206,
-          "end": 34.212063
+          "start": 34,
+          "end": 34.18
         },
         {
           "text": "week",
-          "start": 34.212063,
-          "end": 34.452065
+          "start": 34.22,
+          "end": 34.36
         },
         {
           "text": "works.",
-          "start": 34.452065,
-          "end": 35.092064
+          "start": 34.44,
+          "end": 34.72
         }
       ]
     },
     {
       "id": "u13",
       "speaker": "S1",
-      "start": 35.172062,
-      "end": 36.372063,
+      "start": 35.3,
+      "end": 36.36,
       "text": "Thanks. That's all for today.",
       "words": [
         {
           "text": "Thanks.",
-          "start": 35.172062,
-          "end": 35.572063
+          "start": 35.3,
+          "end": 35.54
         },
         {
           "text": "That's",
-          "start": 35.572063,
-          "end": 35.81206
+          "start": 35.6,
+          "end": 35.74
         },
         {
           "text": "all",
-          "start": 35.81206,
-          "end": 35.97206
+          "start": 35.8,
+          "end": 35.9
         },
         {
           "text": "for",
-          "start": 35.97206,
-          "end": 36.13206
+          "start": 35.94,
+          "end": 36.04
         },
         {
           "text": "today.",
-          "start": 36.13206,
-          "end": 36.372063
+          "start": 36.08,
+          "end": 36.36
         }
       ]
     }
@@ -749,21 +739,21 @@
           "speaker": "S1",
           "role": "request",
           "quote": "Can you deploy the fix tomorrow?",
-          "start": 15.365,
-          "end": 17.125,
+          "start": 15.48,
+          "end": 16.86,
           "match": "exact"
         },
         {
           "turn": "u6",
           "speaker": "S2",
           "role": "commitment",
-          "quote": "Yes. I'll deploy it tomorrow morning.",
-          "start": 17.285,
-          "end": 19.125,
+          "quote": "Yes, I'll deploy it tomorrow morning.",
+          "start": 17.46,
+          "end": 18.84,
           "match": "exact"
         }
       ],
-      "why": "Mark committed in u6 after Anna's request in u5.",
+      "why": "Mark committed in u6 after Anna's request in u5; no later changes.",
       "checks": [
         {
           "name": "quotes",
@@ -805,13 +795,13 @@
           "turn": "u7",
           "speaker": "S1",
           "role": "commitment",
-          "quote": "Then I'll run the QA pass by Friday.",
-          "start": 19.845,
-          "end": 21.845,
+          "quote": "Great. Then I'll run the QA pass by Friday.",
+          "start": 19.42,
+          "end": 21.54,
           "match": "exact"
         }
       ],
-      "why": "Anna stated her intent in u7; no objection was raised.",
+      "why": "Anna stated she will run it by Friday; no objection.",
       "checks": [
         {
           "name": "quotes",
@@ -853,13 +843,13 @@
           "turn": "u9",
           "speaker": "S1",
           "role": "commitment",
-          "quote": "I'll email them today so they know what to say to customers.",
-          "start": 25.285,
-          "end": 27.925,
+          "quote": "Yes. I'll email them today, so they know what to say to customers.",
+          "start": 25.04,
+          "end": 28.08,
           "match": "exact"
         }
       ],
-      "why": "Anna committed in u9; no objection was raised.",
+      "why": "Anna committed to email today; no later rejection.",
       "checks": [
         {
           "name": "quotes",
@@ -899,8 +889,8 @@
           "speaker": "S1",
           "role": "proposal",
           "quote": "And let's do a short review of the incident on Wednesday next week.",
-          "start": 29.572063,
-          "end": 33.012062,
+          "start": 29.76,
+          "end": 32.72,
           "match": "exact"
         },
         {
@@ -908,12 +898,12 @@
           "speaker": "S2",
           "role": "acceptance",
           "quote": "Okay. Wednesday next week works.",
-          "start": 33.172062,
-          "end": 35.092064,
+          "start": 33.32,
+          "end": 34.72,
           "match": "exact"
         }
       ],
-      "why": "Anna proposed in u11 and Mark accepted in u12.",
+      "why": "Anna proposed and Mark accepted; no owner named.",
       "checks": [
         {
           "name": "quotes",
@@ -938,31 +928,32 @@
   "clarifications": [],
   "metrics": {
     "models": {
-      "asr": "@cf/deepgram/nova-3",
+      "asr": "elevenlabs/scribe_v2",
+      "asrFallback": false,
       "llm": "@cf/openai/gpt-oss-120b",
       "reasoning": "low"
     },
     "timings": {
-      "asrMs": 966,
-      "extractMs": 12536,
+      "asrMs": 1735,
+      "extractMs": 7186,
       "verifyMs": 0,
-      "totalMs": 13502
+      "totalMs": 8921
     },
     "usage": {
       "audioMinutes": 0.617,
       "asrAttempts": 1,
-      "asrNeurons": 291.89,
+      "asrNeurons": 0,
       "llmCalls": 1,
-      "llmPromptTokens": 2444,
-      "llmCompletionTokens": 979,
-      "llmNeurons": 144.51,
+      "llmPromptTokens": 2445,
+      "llmCompletionTokens": 930,
+      "llmNeurons": 141.2,
       "retries": 0
     },
     "cost": {
-      "asrUsd": 0.003211,
-      "llmUsd": 0.00159,
-      "totalUsd": 0.0048,
-      "perAudioMinuteUsd": 0.007775,
+      "asrUsd": 0.002264,
+      "llmUsd": 0.001553,
+      "totalUsd": 0.003817,
+      "perAudioMinuteUsd": 0.006182,
       "pricesCheckedOn": "2026-10-05"
     }
   }
