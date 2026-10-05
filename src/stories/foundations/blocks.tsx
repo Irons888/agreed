@@ -20,9 +20,9 @@ export function Swatch({ token, use }: { token: string; use: string }) {
     <div className="flex items-center gap-3 rounded-card border border-border bg-surface p-2.5">
       <span className="size-10 shrink-0 rounded-sm border border-border" style={{ background: `var(${token})` }} />
       <div className="min-w-0">
-        <p className="font-mono text-caption text-text">{token}</p>
-        <p className="font-mono text-caption text-subtle">{value}</p>
-        <p className="text-caption text-muted">{use}</p>
+        <div className="font-mono text-caption text-text">{token}</div>
+        <div className="font-mono text-caption text-subtle">{value}</div>
+        <div className="text-caption text-muted">{use}</div>
       </div>
     </div>
   );
@@ -57,19 +57,19 @@ export function TypeScale() {
       {TYPE_SCALE.map(([cls, spec, use]) => (
         <div key={cls} className="grid gap-1 p-4 sm:grid-cols-[180px_1fr]">
           <div>
-            <p className="font-mono text-caption text-text">{cls}</p>
-            <p className="font-mono text-caption text-subtle">{spec}</p>
-            <p className="text-caption text-muted">{use}</p>
+            <div className="font-mono text-caption text-text">{cls}</div>
+            <div className="font-mono text-caption text-subtle">{spec}</div>
+            <div className="text-caption text-muted">{use}</div>
           </div>
-          <p className={`${cls} ${cls === 'text-display' || cls.startsWith('text-title') ? 'font-semibold' : ''} text-text`}>Send the API docs by Wednesday</p>
+          <div className={`${cls} ${cls === 'text-display' || cls.startsWith('text-title') ? 'font-semibold' : ''} text-text`}>Send the API docs by Wednesday</div>
         </div>
       ))}
       <div className="grid gap-1 p-4 sm:grid-cols-[180px_1fr]">
         <div>
-          <p className="font-mono text-caption text-text">font-mono tabular</p>
-          <p className="text-caption text-muted">Times, money, counts</p>
+          <div className="font-mono text-caption text-text">font-mono tabular</div>
+          <div className="text-caption text-muted">Times, money, counts</div>
         </div>
-        <p className="font-mono text-body text-text tabular">0:41 · 2:03 · $0.0071/min · 16.3 s</p>
+        <div className="font-mono text-body text-text tabular">0:41 · 2:03 · $0.0071/min · 16.3 s</div>
       </div>
     </div>
   );
@@ -125,8 +125,8 @@ export function IconGrid() {
             <Icon name={name} size={20} />
           </span>
           <div>
-            <p className="font-mono text-caption text-text">{name}</p>
-            <p className="text-caption text-muted">{MEANING[name]}</p>
+            <div className="font-mono text-caption text-text">{name}</div>
+            <div className="text-caption text-muted">{MEANING[name]}</div>
           </div>
         </div>
       ))}
