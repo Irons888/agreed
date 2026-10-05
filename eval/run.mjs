@@ -52,11 +52,18 @@ async function runOnce({ name, audio }) {
   let res;
   // The public API allows a few runs a minute per visitor; the eval waits instead of failing.
   for (let attempt = 0; ; attempt++) {
-    res = await fetch(`${base}/api/runs?reasoning=${reasoning}&model=${model}`, {
-      method: 'POST',
-      body: audio,
-      headers: { 'content-type': 'audio/wav', 'x-file-name': `${name}.wav` },
-    });
+    try {
+      res = await fetch(`${base}/api/runs?reasoning=${reasoning}&model=${model}`, {
+        method: 'POST',
+        body: audio,
+        headers: { 'content-type': 'audio/wav', 'x-file-name': `${name}.wav` },
+      });
+    } catch (err) {
+      // The upload never reached the server, so retrying cannot double-process anything.
+      if (attempt >= 2) throw err;
+      await wait(3000);
+      continue;
+    }
     if (res.status !== 429 || attempt >= 8) break;
     await res.text();
     await wait(15000);
@@ -68,20 +75,37 @@ async function runOnce({ name, audio }) {
   let result = null;
   let error = null;
   let transcriptMs = null;
-  for await (const chunk of res.body) {
-    buffer += decoder.decode(chunk, { stream: true });
-    let newline;
-    while ((newline = buffer.indexOf('\n')) >= 0) {
-      const line = buffer.slice(0, newline).trim();
-      buffer = buffer.slice(newline + 1);
-      if (!line) continue;
-      const event = JSON.parse(line);
-      if (event.type === 'transcript') transcriptMs = performance.now() - started;
-      if (event.type === 'result') result = event.result;
-      if (event.type === 'error') error = event.message;
+  let runId = null;
+  let recovered = false;
+  try {
+    for await (const chunk of res.body) {
+      buffer += decoder.decode(chunk, { stream: true });
+      let newline;
+      while ((newline = buffer.indexOf('\n')) >= 0) {
+        const line = buffer.slice(0, newline).trim();
+        buffer = buffer.slice(newline + 1);
+        if (!line) continue;
+        const event = JSON.parse(line);
+        if (event.type === 'accepted') runId = event.id;
+        if (event.type === 'transcript') transcriptMs = performance.now() - started;
+        if (event.type === 'result') result = event.result;
+        if (event.type === 'error') error = event.message;
+      }
     }
+  } catch (err) {
+    // Same as the app: a dropped connection is recovered from storage by the run id.
+    if (!runId) throw err;
   }
-  return { result, error, clientMs: Math.round(performance.now() - started), transcriptMs: transcriptMs && Math.round(transcriptMs) };
+  if (!result && !error && runId) {
+    const deadline = Date.now() + 120000;
+    while (!result && Date.now() < deadline) {
+      const stored = await fetch(`${base}/api/runs/${runId}`).catch(() => null);
+      if (stored?.ok) result = await stored.json();
+      else await wait(2000);
+    }
+    recovered = !!result;
+  }
+  return { result, error, recovered, clientMs: Math.round(performance.now() - started), transcriptMs: transcriptMs && Math.round(transcriptMs) };
 }
 
 // ---- scoring --------------------------------------------------------------
@@ -198,6 +222,7 @@ for (const name of cases) {
     caseReport.runs.push({
       run: i,
       error: run.error ?? null,
+      recovered: run.recovered ?? false,
       pass: !run.error && failed.length === 0,
       included: required.length ? `${found}/${required.length}` : 'n/a',
       exclusionErrors: run.result ? exclusionErrors(checks) : null,
@@ -221,7 +246,7 @@ for (const name of cases) {
     const last = caseReport.runs.at(-1);
     console.log(
       `${name} #${i}: ${last.pass ? 'PASS' : 'FAIL'}  included ${last.included}  exclusion errors ${last.exclusionErrors ?? '-'}  ` +
-        `${last.clientMs ?? '-'} ms  $${last.cost?.totalUsd ?? '-'}${last.error ? `  error: ${last.error}` : ''}`,
+        `${last.clientMs ?? '-'} ms  $${last.cost?.totalUsd ?? '-'}${last.recovered ? '  (recovered after a dropped connection)' : ''}${last.error ? `  error: ${last.error}` : ''}`,
     );
     for (const f of last.failed) console.log(`    ✗ ${f.item} — ${f.check}: ${f.detail}`);
   }
@@ -248,6 +273,7 @@ report.summary = {
   timeToResultMs: { p50: percentile(ok.map((r) => r.clientMs), 50), p90: percentile(ok.map((r) => r.clientMs), 90) },
   timeToTranscriptMs: { p50: percentile(ok.map((r) => r.transcriptMs).filter(Boolean), 50) },
   retries: ok.reduce((s, r) => s + (r.usage?.retries ?? 0), 0),
+  recoveredAfterDroppedConnection: ok.filter((r) => r.recovered).length,
   costPerRunUsd: ok.length ? Math.round((totalUsd / ok.length) * 1e6) / 1e6 : null,
   costPerAudioMinuteUsd: audioMinutes ? Math.round((totalUsd / audioMinutes) * 1e6) / 1e6 : null,
 };

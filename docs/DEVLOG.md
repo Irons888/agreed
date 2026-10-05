@@ -61,3 +61,14 @@ Times are local (EEST).
      - a role is corrected by its words: an affirmative reply with no hedge words is an acceptance;
      - not_accepted with a plain “yes” reply and no rejection becomes needs_review instead of silently dropping the task.
 - 19:46: deployed the fixes; started the final 5-run eval for gpt-oss-120b and, for comparison, gpt-oss-20b.
+
+### Final eval, model comparison and dropped connections
+
+- Eval after the fixes, 5 runs per case, gpt-oss-120b and gpt-oss-20b running at the same time on the live deployment.
+  - gpt-oss-120b: every completed run passed. Inclusion 92/92, 0 unsupported items; T1 5/5, T2 5/5. Report: `eval/reports/2026-10-05T16-46-19-547Z.md`.
+  - gpt-oss-20b: T1 lost the staging-demo owner twice; time p50 24 s, the same as 120b. Not worth the quality loss. Report: `eval/reports/2026-10-05T16-46-19-576Z.md`.
+- 9 of 30 runs in each eval broke off mid-stream (`terminated`, `fetch failed`). The failures cluster in time, not by case: even the 1-second decline case was hit. `wrangler tail` from the same machine also kept losing its keep-alive, and a deploy took 90 s instead of 12. The likely cause is the network between this machine and Cloudflare dropping long, quiet connections while the model thinks.
+- 20:21: made the product robust to that, which mobile users need anyway:
+  - the server sends a heartbeat line every 5 s;
+  - if the stream still breaks, the app (and the eval) fetch the stored result by its run id instead of failing;
+  - recoveries are counted separately in the report.

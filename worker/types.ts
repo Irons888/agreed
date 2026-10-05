@@ -107,4 +107,6 @@ export type RunEvent =
   | { type: 'stage'; stage: 'transcribe' | 'extract' | 'verify'; status: 'start' | 'done'; ms?: number }
   | { type: 'transcript'; speakers: Speaker[]; turns: Turn[] }
   | { type: 'result'; result: Result }
-  | { type: 'error'; message: string };
+  | { type: 'error'; message: string }
+  /** Sent every few seconds so idle connections are not dropped while the model thinks. */
+  | { type: 'tick' };

@@ -34,7 +34,9 @@ async function createRun(request: Request, env: Env, ctx: ExecutionContext): Pro
   const { readable, writable } = new TransformStream<Uint8Array, Uint8Array>();
   const writer = writable.getWriter();
   const encoder = new TextEncoder();
-  const emit = (event: RunEvent) => void writer.write(encoder.encode(`${JSON.stringify(event)}\n`));
+  // If the visitor's connection drops, processing goes on and the result is still saved under its id.
+  const emit = (event: RunEvent) => writer.write(encoder.encode(`${JSON.stringify(event)}\n`)).catch(() => {});
+  const heartbeat = setInterval(() => emit({ type: 'tick' }), 5000);
 
   ctx.waitUntil(
     (async () => {
@@ -46,7 +48,8 @@ async function createRun(request: Request, env: Env, ctx: ExecutionContext): Pro
       } catch (err) {
         emit({ type: 'error', message: err instanceof Error ? err.message : 'Processing failed.' });
       } finally {
-        await writer.close();
+        clearInterval(heartbeat);
+        await writer.close().catch(() => {});
       }
     })(),
   );

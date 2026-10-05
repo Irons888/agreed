@@ -1,0 +1,1705 @@
+{
+  "version": 1,
+  "id": "56876ba7-07bb-42a3-bbfe-29c3c9dd2b6b",
+  "createdAt": "2026-10-05T17:04:10.736Z",
+  "fileName": "T6-noisy.wav",
+  "durationSec": 70.98,
+  "outcome": "result",
+  "decline": null,
+  "speakers": [
+    {
+      "id": "S1",
+      "name": "Anna",
+      "label": "Anna",
+      "words": 120,
+      "intro": {
+        "turn": "u1",
+        "speaker": "S1",
+        "role": "commitment",
+        "quote": "I'm Anna,",
+        "start": 0.71999997,
+        "end": 1.36,
+        "match": "exact"
+      }
+    },
+    {
+      "id": "S2",
+      "name": "Mark",
+      "label": "Mark",
+      "words": 91,
+      "intro": {
+        "turn": "u2",
+        "speaker": "S2",
+        "role": "commitment",
+        "quote": "I'm Mark.",
+        "start": 3.84,
+        "end": 4.3199997,
+        "match": "exact"
+      }
+    }
+  ],
+  "recordingDate": null,
+  "turns": [
+    {
+      "id": "u1",
+      "speaker": "S1",
+      "start": 0.24,
+      "end": 3.5199997,
+      "text": "Hi. I'm Anna, the project manager for the Bright side portal.",
+      "words": [
+        {
+          "text": "Hi.",
+          "start": 0.24,
+          "end": 0.71999997
+        },
+        {
+          "text": "I'm",
+          "start": 0.71999997,
+          "end": 0.96
+        },
+        {
+          "text": "Anna,",
+          "start": 0.96,
+          "end": 1.36
+        },
+        {
+          "text": "the",
+          "start": 1.36,
+          "end": 1.4399999
+        },
+        {
+          "text": "project",
+          "start": 1.4399999,
+          "end": 1.68
+        },
+        {
+          "text": "manager",
+          "start": 1.68,
+          "end": 2.08
+        },
+        {
+          "text": "for",
+          "start": 2.08,
+          "end": 2.24
+        },
+        {
+          "text": "the",
+          "start": 2.24,
+          "end": 2.32
+        },
+        {
+          "text": "Bright",
+          "start": 2.32,
+          "end": 2.56
+        },
+        {
+          "text": "side",
+          "start": 2.56,
+          "end": 2.8
+        },
+        {
+          "text": "portal.",
+          "start": 2.8,
+          "end": 3.5199997
+        }
+      ]
+    },
+    {
+      "id": "u2",
+      "speaker": "S2",
+      "start": 3.6,
+      "end": 5.76,
+      "text": "And I'm Mark. I'm handling the back end.",
+      "words": [
+        {
+          "text": "And",
+          "start": 3.6,
+          "end": 3.84
+        },
+        {
+          "text": "I'm",
+          "start": 3.84,
+          "end": 4.08
+        },
+        {
+          "text": "Mark.",
+          "start": 4.08,
+          "end": 4.3199997
+        },
+        {
+          "text": "I'm",
+          "start": 4.3199997,
+          "end": 4.56
+        },
+        {
+          "text": "handling",
+          "start": 4.56,
+          "end": 4.88
+        },
+        {
+          "text": "the",
+          "start": 4.88,
+          "end": 5.04
+        },
+        {
+          "text": "back",
+          "start": 5.04,
+          "end": 5.2
+        },
+        {
+          "text": "end.",
+          "start": 5.2,
+          "end": 5.76
+        }
+      ]
+    },
+    {
+      "id": "u3",
+      "speaker": "S1",
+      "start": 5.8399997,
+      "end": 8.879999,
+      "text": "Great. Let's go through what's left before the client launch.",
+      "words": [
+        {
+          "text": "Great.",
+          "start": 5.8399997,
+          "end": 6.3999996
+        },
+        {
+          "text": "Let's",
+          "start": 6.3999996,
+          "end": 6.72
+        },
+        {
+          "text": "go",
+          "start": 6.72,
+          "end": 6.7999997
+        },
+        {
+          "text": "through",
+          "start": 6.7999997,
+          "end": 7.04
+        },
+        {
+          "text": "what's",
+          "start": 7.04,
+          "end": 7.2799997
+        },
+        {
+          "text": "left",
+          "start": 7.2799997,
+          "end": 7.52
+        },
+        {
+          "text": "before",
+          "start": 7.52,
+          "end": 7.7599998
+        },
+        {
+          "text": "the",
+          "start": 7.7599998,
+          "end": 7.9199996
+        },
+        {
+          "text": "client",
+          "start": 7.9199996,
+          "end": 8.24
+        },
+        {
+          "text": "launch.",
+          "start": 8.24,
+          "end": 8.879999
+        }
+      ]
+    },
+    {
+      "id": "u4",
+      "speaker": "S2",
+      "start": 9.04,
+      "end": 12.32,
+      "text": "Sure. First, the client is still waiting for our API documentation.",
+      "words": [
+        {
+          "text": "Sure.",
+          "start": 9.04,
+          "end": 9.5199995
+        },
+        {
+          "text": "First,",
+          "start": 9.5199995,
+          "end": 9.84
+        },
+        {
+          "text": "the",
+          "start": 9.84,
+          "end": 9.92
+        },
+        {
+          "text": "client",
+          "start": 9.92,
+          "end": 10.16
+        },
+        {
+          "text": "is",
+          "start": 10.16,
+          "end": 10.32
+        },
+        {
+          "text": "still",
+          "start": 10.32,
+          "end": 10.559999
+        },
+        {
+          "text": "waiting",
+          "start": 10.559999,
+          "end": 10.719999
+        },
+        {
+          "text": "for",
+          "start": 10.719999,
+          "end": 10.88
+        },
+        {
+          "text": "our",
+          "start": 10.88,
+          "end": 11.04
+        },
+        {
+          "text": "API",
+          "start": 11.04,
+          "end": 11.44
+        },
+        {
+          "text": "documentation.",
+          "start": 11.44,
+          "end": 12.32
+        }
+      ]
+    },
+    {
+      "id": "u5",
+      "speaker": "S1",
+      "start": 12.639999,
+      "end": 16.065,
+      "text": "Right. Mark, can you send them the API docs by Wednesday?",
+      "words": [
+        {
+          "text": "Right.",
+          "start": 12.639999,
+          "end": 13.2
+        },
+        {
+          "text": "Mark,",
+          "start": 13.2,
+          "end": 13.679999
+        },
+        {
+          "text": "can",
+          "start": 13.679999,
+          "end": 13.84
+        },
+        {
+          "text": "you",
+          "start": 13.84,
+          "end": 13.92
+        },
+        {
+          "text": "send",
+          "start": 13.92,
+          "end": 14.08
+        },
+        {
+          "text": "them",
+          "start": 14.08,
+          "end": 14.24
+        },
+        {
+          "text": "the",
+          "start": 14.24,
+          "end": 14.4
+        },
+        {
+          "text": "API",
+          "start": 14.4,
+          "end": 14.799999
+        },
+        {
+          "text": "docs",
+          "start": 14.799999,
+          "end": 15.5199995
+        },
+        {
+          "text": "by",
+          "start": 15.105,
+          "end": 15.344999
+        },
+        {
+          "text": "Wednesday?",
+          "start": 15.344999,
+          "end": 16.065
+        }
+      ]
+    },
+    {
+      "id": "u6",
+      "speaker": "S2",
+      "start": 16.305,
+      "end": 18.625,
+      "text": "Yes. I'll send the API docs by Wednesday.",
+      "words": [
+        {
+          "text": "Yes.",
+          "start": 16.305,
+          "end": 16.625
+        },
+        {
+          "text": "I'll",
+          "start": 16.625,
+          "end": 16.785
+        },
+        {
+          "text": "send",
+          "start": 16.785,
+          "end": 16.945
+        },
+        {
+          "text": "the",
+          "start": 16.945,
+          "end": 17.105
+        },
+        {
+          "text": "API",
+          "start": 17.105,
+          "end": 17.425
+        },
+        {
+          "text": "docs",
+          "start": 17.425,
+          "end": 17.744999
+        },
+        {
+          "text": "by",
+          "start": 17.744999,
+          "end": 17.984999
+        },
+        {
+          "text": "Wednesday.",
+          "start": 17.984999,
+          "end": 18.625
+        }
+      ]
+    },
+    {
+      "id": "u7",
+      "speaker": "S1",
+      "start": 18.785,
+      "end": 19.824999,
+      "text": "Perfect. Thanks.",
+      "words": [
+        {
+          "text": "Perfect.",
+          "start": 18.785,
+          "end": 19.345
+        },
+        {
+          "text": "Thanks.",
+          "start": 19.345,
+          "end": 19.824999
+        }
+      ]
+    },
+    {
+      "id": "u8",
+      "speaker": "S2",
+      "start": 20.145,
+      "end": 24.465,
+      "text": "Also, we could add a dark mode while we're at it. Users keep asking for it.",
+      "words": [
+        {
+          "text": "Also,",
+          "start": 20.145,
+          "end": 20.705
+        },
+        {
+          "text": "we",
+          "start": 20.705,
+          "end": 20.785
+        },
+        {
+          "text": "could",
+          "start": 20.785,
+          "end": 20.945
+        },
+        {
+          "text": "add",
+          "start": 20.945,
+          "end": 21.105
+        },
+        {
+          "text": "a",
+          "start": 21.105,
+          "end": 21.185
+        },
+        {
+          "text": "dark",
+          "start": 21.185,
+          "end": 21.505
+        },
+        {
+          "text": "mode",
+          "start": 21.505,
+          "end": 21.744999
+        },
+        {
+          "text": "while",
+          "start": 21.744999,
+          "end": 21.984999
+        },
+        {
+          "text": "we're",
+          "start": 21.984999,
+          "end": 22.145
+        },
+        {
+          "text": "at",
+          "start": 22.145,
+          "end": 22.305
+        },
+        {
+          "text": "it.",
+          "start": 22.305,
+          "end": 22.785
+        },
+        {
+          "text": "Users",
+          "start": 22.865,
+          "end": 23.265
+        },
+        {
+          "text": "keep",
+          "start": 23.265,
+          "end": 23.505
+        },
+        {
+          "text": "asking",
+          "start": 23.505,
+          "end": 23.744999
+        },
+        {
+          "text": "for",
+          "start": 23.744999,
+          "end": 24.064999
+        },
+        {
+          "text": "it.",
+          "start": 24.064999,
+          "end": 24.465
+        }
+      ]
+    },
+    {
+      "id": "u9",
+      "speaker": "S1",
+      "start": 24.704998,
+      "end": 27.105,
+      "text": "I'd rather keep the scope tight for this release.",
+      "words": [
+        {
+          "text": "I'd",
+          "start": 24.704998,
+          "end": 25.345
+        },
+        {
+          "text": "rather",
+          "start": 25.345,
+          "end": 25.585
+        },
+        {
+          "text": "keep",
+          "start": 25.585,
+          "end": 25.744999
+        },
+        {
+          "text": "the",
+          "start": 25.744999,
+          "end": 25.904999
+        },
+        {
+          "text": "scope",
+          "start": 25.904999,
+          "end": 26.145
+        },
+        {
+          "text": "tight",
+          "start": 26.145,
+          "end": 26.465
+        },
+        {
+          "text": "for",
+          "start": 26.465,
+          "end": 26.625
+        },
+        {
+          "text": "this",
+          "start": 26.625,
+          "end": 26.864998
+        },
+        {
+          "text": "release.",
+          "start": 26.864998,
+          "end": 27.105
+        }
+      ]
+    },
+    {
+      "id": "u10",
+      "speaker": "S2",
+      "start": 27.78,
+      "end": 28.66,
+      "text": "Fair enough.",
+      "words": [
+        {
+          "text": "Fair",
+          "start": 27.78,
+          "end": 28.1
+        },
+        {
+          "text": "enough.",
+          "start": 28.1,
+          "end": 28.66
+        }
+      ]
+    },
+    {
+      "id": "u11",
+      "speaker": "S1",
+      "start": 28.74,
+      "end": 31.86,
+      "text": "Next, the staging demo. Can you have it ready by Thursday?",
+      "words": [
+        {
+          "text": "Next,",
+          "start": 28.74,
+          "end": 29.220001
+        },
+        {
+          "text": "the",
+          "start": 29.220001,
+          "end": 29.380001
+        },
+        {
+          "text": "staging",
+          "start": 29.380001,
+          "end": 29.7
+        },
+        {
+          "text": "demo.",
+          "start": 29.7,
+          "end": 30.26
+        },
+        {
+          "text": "Can",
+          "start": 30.26,
+          "end": 30.42
+        },
+        {
+          "text": "you",
+          "start": 30.42,
+          "end": 30.5
+        },
+        {
+          "text": "have",
+          "start": 30.5,
+          "end": 30.66
+        },
+        {
+          "text": "it",
+          "start": 30.66,
+          "end": 30.740002
+        },
+        {
+          "text": "ready",
+          "start": 30.740002,
+          "end": 30.98
+        },
+        {
+          "text": "by",
+          "start": 30.98,
+          "end": 31.220001
+        },
+        {
+          "text": "Thursday?",
+          "start": 31.220001,
+          "end": 31.86
+        }
+      ]
+    },
+    {
+      "id": "u12",
+      "speaker": "S2",
+      "start": 32.1,
+      "end": 33.22,
+      "text": "Thursday works.",
+      "words": [
+        {
+          "text": "Thursday",
+          "start": 32.1,
+          "end": 32.58
+        },
+        {
+          "text": "works.",
+          "start": 32.58,
+          "end": 33.22
+        }
+      ]
+    },
+    {
+      "id": "u13",
+      "speaker": "S1",
+      "start": 33.38,
+      "end": 36.1,
+      "text": "And I'll book a meeting room for the client workshop.",
+      "words": [
+        {
+          "text": "And",
+          "start": 33.38,
+          "end": 33.54
+        },
+        {
+          "text": "I'll",
+          "start": 33.54,
+          "end": 33.78
+        },
+        {
+          "text": "book",
+          "start": 33.78,
+          "end": 33.940002
+        },
+        {
+          "text": "a",
+          "start": 33.940002,
+          "end": 34.1
+        },
+        {
+          "text": "meeting",
+          "start": 34.1,
+          "end": 34.34
+        },
+        {
+          "text": "room",
+          "start": 34.34,
+          "end": 34.66
+        },
+        {
+          "text": "for",
+          "start": 34.66,
+          "end": 34.82
+        },
+        {
+          "text": "the",
+          "start": 34.82,
+          "end": 34.9
+        },
+        {
+          "text": "client",
+          "start": 34.9,
+          "end": 35.22
+        },
+        {
+          "text": "workshop.",
+          "start": 35.22,
+          "end": 36.1
+        }
+      ]
+    },
+    {
+      "id": "u14",
+      "speaker": "S2",
+      "start": 36.42,
+      "end": 36.98,
+      "text": "Okay.",
+      "words": [
+        {
+          "text": "Okay.",
+          "start": 36.42,
+          "end": 36.98
+        }
+      ]
+    },
+    {
+      "id": "u15",
+      "speaker": "S1",
+      "start": 37.14,
+      "end": 41.7,
+      "text": "One more thing. The privacy policy page has to be updated before launch.",
+      "words": [
+        {
+          "text": "One",
+          "start": 37.14,
+          "end": 37.46
+        },
+        {
+          "text": "more",
+          "start": 37.46,
+          "end": 37.7
+        },
+        {
+          "text": "thing.",
+          "start": 37.7,
+          "end": 38.18
+        },
+        {
+          "text": "The",
+          "start": 38.260002,
+          "end": 38.42
+        },
+        {
+          "text": "privacy",
+          "start": 38.42,
+          "end": 38.9
+        },
+        {
+          "text": "policy",
+          "start": 38.9,
+          "end": 39.3
+        },
+        {
+          "text": "page",
+          "start": 39.3,
+          "end": 39.7
+        },
+        {
+          "text": "has",
+          "start": 39.7,
+          "end": 39.940002
+        },
+        {
+          "text": "to",
+          "start": 39.940002,
+          "end": 40.1
+        },
+        {
+          "text": "be",
+          "start": 40.1,
+          "end": 40.260002
+        },
+        {
+          "text": "updated",
+          "start": 40.260002,
+          "end": 40.66
+        },
+        {
+          "text": "before",
+          "start": 40.66,
+          "end": 40.98
+        },
+        {
+          "text": "launch.",
+          "start": 40.98,
+          "end": 41.7
+        }
+      ]
+    },
+    {
+      "id": "u16",
+      "speaker": "S2",
+      "start": 41.940002,
+      "end": 47.124996,
+      "text": "Yes. That definitely needs to happen. Oh, and do we know if the client needs single sign on?",
+      "words": [
+        {
+          "text": "Yes.",
+          "start": 41.940002,
+          "end": 42.42
+        },
+        {
+          "text": "That",
+          "start": 42.42,
+          "end": 43.3
+        },
+        {
+          "text": "definitely",
+          "start": 42.885,
+          "end": 43.045
+        },
+        {
+          "text": "needs",
+          "start": 43.045,
+          "end": 43.364998
+        },
+        {
+          "text": "to",
+          "start": 43.364998,
+          "end": 43.445
+        },
+        {
+          "text": "happen.",
+          "start": 43.445,
+          "end": 44.004997
+        },
+        {
+          "text": "Oh,",
+          "start": 44.004997,
+          "end": 44.324997
+        },
+        {
+          "text": "and",
+          "start": 44.324997,
+          "end": 44.484997
+        },
+        {
+          "text": "do",
+          "start": 44.484997,
+          "end": 44.725
+        },
+        {
+          "text": "we",
+          "start": 44.725,
+          "end": 44.804996
+        },
+        {
+          "text": "know",
+          "start": 44.804996,
+          "end": 44.964996
+        },
+        {
+          "text": "if",
+          "start": 44.964996,
+          "end": 45.125
+        },
+        {
+          "text": "the",
+          "start": 45.125,
+          "end": 45.285
+        },
+        {
+          "text": "client",
+          "start": 45.285,
+          "end": 45.684998
+        },
+        {
+          "text": "needs",
+          "start": 45.684998,
+          "end": 45.925
+        },
+        {
+          "text": "single",
+          "start": 45.925,
+          "end": 46.324997
+        },
+        {
+          "text": "sign",
+          "start": 46.324997,
+          "end": 46.565
+        },
+        {
+          "text": "on?",
+          "start": 46.565,
+          "end": 47.124996
+        }
+      ]
+    },
+    {
+      "id": "u17",
+      "speaker": "S1",
+      "start": 47.285,
+      "end": 49.684998,
+      "text": "No idea yet. Nobody has asked them.",
+      "words": [
+        {
+          "text": "No",
+          "start": 47.285,
+          "end": 47.605
+        },
+        {
+          "text": "idea",
+          "start": 47.605,
+          "end": 47.844997
+        },
+        {
+          "text": "yet.",
+          "start": 47.844997,
+          "end": 48.245
+        },
+        {
+          "text": "Nobody",
+          "start": 48.245,
+          "end": 48.565
+        },
+        {
+          "text": "has",
+          "start": 48.565,
+          "end": 48.805
+        },
+        {
+          "text": "asked",
+          "start": 48.805,
+          "end": 49.125
+        },
+        {
+          "text": "them.",
+          "start": 49.125,
+          "end": 49.684998
+        }
+      ]
+    },
+    {
+      "id": "u18",
+      "speaker": "S2",
+      "start": 50.324997,
+      "end": 56.725,
+      "text": "Actually, about the staging demo. Thursday is too tight because of the database migration. Can we say Monday instead?",
+      "words": [
+        {
+          "text": "Actually,",
+          "start": 50.324997,
+          "end": 50.804996
+        },
+        {
+          "text": "about",
+          "start": 50.804996,
+          "end": 50.885
+        },
+        {
+          "text": "the",
+          "start": 50.885,
+          "end": 51.045
+        },
+        {
+          "text": "staging",
+          "start": 51.045,
+          "end": 51.364998
+        },
+        {
+          "text": "demo.",
+          "start": 51.364998,
+          "end": 52.085
+        },
+        {
+          "text": "Thursday",
+          "start": 52.164997,
+          "end": 52.565
+        },
+        {
+          "text": "is",
+          "start": 52.565,
+          "end": 52.805
+        },
+        {
+          "text": "too",
+          "start": 52.805,
+          "end": 53.045
+        },
+        {
+          "text": "tight",
+          "start": 53.045,
+          "end": 53.364998
+        },
+        {
+          "text": "because",
+          "start": 53.364998,
+          "end": 53.765
+        },
+        {
+          "text": "of",
+          "start": 53.765,
+          "end": 53.925
+        },
+        {
+          "text": "the",
+          "start": 53.925,
+          "end": 54.004997
+        },
+        {
+          "text": "database",
+          "start": 54.004997,
+          "end": 54.565
+        },
+        {
+          "text": "migration.",
+          "start": 54.565,
+          "end": 55.284996
+        },
+        {
+          "text": "Can",
+          "start": 55.445,
+          "end": 55.684998
+        },
+        {
+          "text": "we",
+          "start": 55.684998,
+          "end": 55.844997
+        },
+        {
+          "text": "say",
+          "start": 55.844997,
+          "end": 56.004997
+        },
+        {
+          "text": "Monday",
+          "start": 56.004997,
+          "end": 56.324997
+        },
+        {
+          "text": "instead?",
+          "start": 56.324997,
+          "end": 56.725
+        }
+      ]
+    },
+    {
+      "id": "u19",
+      "speaker": "S1",
+      "start": 57.18,
+      "end": 65.42,
+      "text": "Okay. Let's make it Monday. And I just got a message from the client. They wanna run the workshop online, so I won't book the meeting room after all.",
+      "words": [
+        {
+          "text": "Okay.",
+          "start": 57.18,
+          "end": 57.58
+        },
+        {
+          "text": "Let's",
+          "start": 57.58,
+          "end": 57.82
+        },
+        {
+          "text": "make",
+          "start": 57.82,
+          "end": 57.98
+        },
+        {
+          "text": "it",
+          "start": 57.98,
+          "end": 58.14
+        },
+        {
+          "text": "Monday.",
+          "start": 58.14,
+          "end": 58.78
+        },
+        {
+          "text": "And",
+          "start": 59.100002,
+          "end": 59.260002
+        },
+        {
+          "text": "I",
+          "start": 59.260002,
+          "end": 59.420002
+        },
+        {
+          "text": "just",
+          "start": 59.420002,
+          "end": 59.5
+        },
+        {
+          "text": "got",
+          "start": 59.5,
+          "end": 59.74
+        },
+        {
+          "text": "a",
+          "start": 59.74,
+          "end": 59.82
+        },
+        {
+          "text": "message",
+          "start": 59.82,
+          "end": 60.06
+        },
+        {
+          "text": "from",
+          "start": 60.06,
+          "end": 60.3
+        },
+        {
+          "text": "the",
+          "start": 60.3,
+          "end": 60.46
+        },
+        {
+          "text": "client.",
+          "start": 60.46,
+          "end": 61.02
+        },
+        {
+          "text": "They",
+          "start": 61.02,
+          "end": 61.260002
+        },
+        {
+          "text": "wanna",
+          "start": 61.260002,
+          "end": 61.5
+        },
+        {
+          "text": "run",
+          "start": 61.5,
+          "end": 61.74
+        },
+        {
+          "text": "the",
+          "start": 61.74,
+          "end": 61.82
+        },
+        {
+          "text": "workshop",
+          "start": 61.82,
+          "end": 62.14
+        },
+        {
+          "text": "online,",
+          "start": 62.14,
+          "end": 63.02
+        },
+        {
+          "text": "so",
+          "start": 63.18,
+          "end": 63.260002
+        },
+        {
+          "text": "I",
+          "start": 63.260002,
+          "end": 63.420002
+        },
+        {
+          "text": "won't",
+          "start": 63.420002,
+          "end": 63.66
+        },
+        {
+          "text": "book",
+          "start": 63.66,
+          "end": 63.9
+        },
+        {
+          "text": "the",
+          "start": 63.9,
+          "end": 64.06
+        },
+        {
+          "text": "meeting",
+          "start": 64.06,
+          "end": 64.3
+        },
+        {
+          "text": "room",
+          "start": 64.3,
+          "end": 64.54
+        },
+        {
+          "text": "after",
+          "start": 64.54,
+          "end": 64.94
+        },
+        {
+          "text": "all.",
+          "start": 64.94,
+          "end": 65.42
+        }
+      ]
+    },
+    {
+      "id": "u20",
+      "speaker": "S2",
+      "start": 65.66,
+      "end": 66.54,
+      "text": "Makes sense.",
+      "words": [
+        {
+          "text": "Makes",
+          "start": 65.66,
+          "end": 65.98
+        },
+        {
+          "text": "sense.",
+          "start": 65.98,
+          "end": 66.54
+        }
+      ]
+    },
+    {
+      "id": "u21",
+      "speaker": "S1",
+      "start": 66.7,
+      "end": 69.1,
+      "text": "Great. I think that's everything. Thanks, Mark.",
+      "words": [
+        {
+          "text": "Great.",
+          "start": 66.7,
+          "end": 67.18
+        },
+        {
+          "text": "I",
+          "start": 67.18,
+          "end": 67.34
+        },
+        {
+          "text": "think",
+          "start": 67.34,
+          "end": 67.5
+        },
+        {
+          "text": "that's",
+          "start": 67.5,
+          "end": 67.74
+        },
+        {
+          "text": "everything.",
+          "start": 67.74,
+          "end": 68.22
+        },
+        {
+          "text": "Thanks,",
+          "start": 68.22,
+          "end": 68.54
+        },
+        {
+          "text": "Mark.",
+          "start": 68.54,
+          "end": 69.1
+        }
+      ]
+    },
+    {
+      "id": "u22",
+      "speaker": "S2",
+      "start": 69.18,
+      "end": 70.46,
+      "text": "Thanks, Anna. Talk soon.",
+      "words": [
+        {
+          "text": "Thanks,",
+          "start": 69.18,
+          "end": 69.58
+        },
+        {
+          "text": "Anna.",
+          "start": 69.58,
+          "end": 69.98
+        },
+        {
+          "text": "Talk",
+          "start": 69.98,
+          "end": 70.14
+        },
+        {
+          "text": "soon.",
+          "start": 70.14,
+          "end": 70.46
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "send-api-documentation-1",
+      "title": "Send API documentation",
+      "status": "agreed",
+      "owner": {
+        "kind": "speaker",
+        "speaker": "S2",
+        "name": "Mark",
+        "how": "commitment"
+      },
+      "deadline": {
+        "kind": "relative",
+        "date": null,
+        "ambiguous": false,
+        "raw": "by Wednesday",
+        "previous": []
+      },
+      "evidence": [
+        {
+          "turn": "u5",
+          "speaker": "S1",
+          "role": "request",
+          "quote": "Mark, can you send them the API docs by Wednesday?",
+          "start": 13.2,
+          "end": 16.065,
+          "match": "exact"
+        },
+        {
+          "turn": "u6",
+          "speaker": "S2",
+          "role": "commitment",
+          "quote": "Yes. I'll send the API docs by Wednesday.",
+          "start": 16.305,
+          "end": 18.625,
+          "match": "exact"
+        },
+        {
+          "turn": "u7",
+          "speaker": "S1",
+          "role": "acceptance",
+          "quote": "Perfect. Thanks.",
+          "start": 18.785,
+          "end": 19.824999,
+          "match": "exact"
+        }
+      ],
+      "why": "Mark committed in u6 and Anna accepted in u7.",
+      "checks": [
+        {
+          "name": "quotes",
+          "ok": true
+        },
+        {
+          "name": "status",
+          "ok": true
+        },
+        {
+          "name": "owner",
+          "ok": true
+        },
+        {
+          "name": "deadline",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "add-dark-mode-2",
+      "title": "Add dark mode",
+      "status": "not_accepted",
+      "owner": {
+        "kind": "none"
+      },
+      "deadline": {
+        "kind": "none",
+        "raw": null,
+        "date": null,
+        "ambiguous": false,
+        "previous": []
+      },
+      "evidence": [
+        {
+          "turn": "u8",
+          "speaker": "S2",
+          "role": "proposal",
+          "quote": "Also, we could add a dark mode while we're at it. Users keep asking for it.",
+          "start": 20.145,
+          "end": 24.465,
+          "match": "exact"
+        },
+        {
+          "turn": "u9",
+          "speaker": "S1",
+          "role": "rejection",
+          "quote": "I'd rather keep the scope tight for this release.",
+          "start": 24.704998,
+          "end": 27.105,
+          "match": "exact"
+        }
+      ],
+      "why": "Mark proposed in u8 but Anna rejected in u9.",
+      "checks": [
+        {
+          "name": "quotes",
+          "ok": true
+        },
+        {
+          "name": "status",
+          "ok": true
+        },
+        {
+          "name": "owner",
+          "ok": true
+        },
+        {
+          "name": "deadline",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "staging-demo-ready-3",
+      "title": "Staging demo ready",
+      "status": "agreed",
+      "owner": {
+        "kind": "speaker",
+        "speaker": "S2",
+        "name": "Mark",
+        "how": "accepted_request"
+      },
+      "deadline": {
+        "kind": "relative",
+        "date": null,
+        "ambiguous": false,
+        "raw": "Monday",
+        "previous": [
+          "Thursday"
+        ]
+      },
+      "evidence": [
+        {
+          "turn": "u11",
+          "speaker": "S1",
+          "role": "request",
+          "quote": "Next, the staging demo. Can you have it ready by Thursday?",
+          "start": 28.74,
+          "end": 31.86,
+          "match": "exact"
+        },
+        {
+          "turn": "u12",
+          "speaker": "S2",
+          "role": "acceptance",
+          "quote": "Thursday works.",
+          "start": 32.1,
+          "end": 33.22,
+          "match": "exact"
+        },
+        {
+          "turn": "u18",
+          "speaker": "S2",
+          "role": "deadline_change",
+          "quote": "Actually, about the staging demo. Thursday is too tight because of the database migration. Can we say Monday instead?",
+          "start": 50.324997,
+          "end": 56.725,
+          "match": "exact"
+        },
+        {
+          "turn": "u19",
+          "speaker": "S1",
+          "role": "acceptance",
+          "quote": "Okay. Let's make it Monday.",
+          "start": 57.18,
+          "end": 58.78,
+          "match": "exact"
+        }
+      ],
+      "why": "Mark initially agreed to Thursday in u12, then proposed Monday in u18 and Anna accepted in u19.",
+      "checks": [
+        {
+          "name": "quotes",
+          "ok": true
+        },
+        {
+          "name": "status",
+          "ok": true
+        },
+        {
+          "name": "owner",
+          "ok": true
+        },
+        {
+          "name": "deadline",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "book-meeting-room-for-client-workshop-4",
+      "title": "Book meeting room for client workshop",
+      "status": "cancelled",
+      "owner": {
+        "kind": "none"
+      },
+      "deadline": {
+        "kind": "none",
+        "raw": null,
+        "date": null,
+        "ambiguous": false,
+        "previous": []
+      },
+      "evidence": [
+        {
+          "turn": "u13",
+          "speaker": "S1",
+          "role": "request",
+          "quote": "And I'll book a meeting room for the client workshop.",
+          "start": 33.38,
+          "end": 36.1,
+          "match": "exact"
+        },
+        {
+          "turn": "u14",
+          "speaker": "S2",
+          "role": "acceptance",
+          "quote": "Okay.",
+          "start": 36.42,
+          "end": 36.98,
+          "match": "exact"
+        },
+        {
+          "turn": "u19",
+          "speaker": "S1",
+          "role": "cancellation",
+          "quote": "And I just got a message from the client. They wanna run the workshop online, so I won't book the meeting room after all.",
+          "start": 59.100002,
+          "end": 65.42,
+          "match": "exact"
+        }
+      ],
+      "why": "Anna committed to book in u13, Mark accepted in u14, then Anna cancelled in u19.",
+      "checks": [
+        {
+          "name": "quotes",
+          "ok": true
+        },
+        {
+          "name": "status",
+          "ok": true
+        },
+        {
+          "name": "owner",
+          "ok": false,
+          "note": "Owner removed: the quotes show no commitment by Anna and no request that Anna accepted."
+        },
+        {
+          "name": "deadline",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "update-privacy-policy-page-5",
+      "title": "Update privacy policy page",
+      "status": "agreed",
+      "owner": {
+        "kind": "none"
+      },
+      "deadline": {
+        "kind": "vague",
+        "date": null,
+        "ambiguous": false,
+        "raw": "before launch",
+        "previous": []
+      },
+      "evidence": [
+        {
+          "turn": "u15",
+          "speaker": "S1",
+          "role": "request",
+          "quote": "The privacy policy page has to be updated before launch.",
+          "start": 38.260002,
+          "end": 41.7,
+          "match": "exact"
+        },
+        {
+          "turn": "u16",
+          "speaker": "S2",
+          "role": "acceptance",
+          "quote": "Yes. That definitely needs to happen.",
+          "start": 41.940002,
+          "end": 44.004997,
+          "match": "exact"
+        }
+      ],
+      "why": "Anna stated the requirement in u15 and Mark accepted in u16.",
+      "checks": [
+        {
+          "name": "quotes",
+          "ok": true
+        },
+        {
+          "name": "status",
+          "ok": true
+        },
+        {
+          "name": "owner",
+          "ok": true
+        },
+        {
+          "name": "deadline",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "client-needs-single-sign-on-6",
+      "title": "Client needs single sign on?",
+      "status": "open_question",
+      "owner": {
+        "kind": "none"
+      },
+      "deadline": {
+        "kind": "none",
+        "raw": null,
+        "date": null,
+        "ambiguous": false,
+        "previous": []
+      },
+      "evidence": [
+        {
+          "turn": "u16",
+          "speaker": "S2",
+          "role": "question",
+          "quote": "Oh, and do we know if the client needs single sign on?",
+          "start": 44.004997,
+          "end": 47.124996,
+          "match": "exact"
+        },
+        {
+          "turn": "u17",
+          "speaker": "S1",
+          "role": "no_answer",
+          "quote": "No idea yet. Nobody has asked them.",
+          "start": 47.285,
+          "end": 49.684998,
+          "match": "exact"
+        }
+      ],
+      "why": "The question was asked in u16 and no answer was given in u17.",
+      "checks": [
+        {
+          "name": "quotes",
+          "ok": true
+        },
+        {
+          "name": "status",
+          "ok": true
+        },
+        {
+          "name": "owner",
+          "ok": true
+        },
+        {
+          "name": "deadline",
+          "ok": true
+        }
+      ]
+    }
+  ],
+  "dropped": [],
+  "clarifications": [
+    {
+      "kind": "recording_date",
+      "blocking": false
+    }
+  ],
+  "metrics": {
+    "models": {
+      "asr": "@cf/deepgram/nova-3",
+      "llm": "@cf/openai/gpt-oss-20b",
+      "reasoning": "low"
+    },
+    "timings": {
+      "asrMs": 1417,
+      "extractMs": 28046,
+      "verifyMs": 0,
+      "totalMs": 29463
+    },
+    "usage": {
+      "audioMinutes": 1.183,
+      "asrAttempts": 1,
+      "asrNeurons": 559.27,
+      "llmCalls": 1,
+      "llmPromptTokens": 2673,
+      "llmCompletionTokens": 2049,
+      "llmNeurons": 104.48,
+      "retries": 0
+    },
+    "cost": {
+      "asrUsd": 0.006152,
+      "llmUsd": 0.001149,
+      "totalUsd": 0.007301,
+      "perAudioMinuteUsd": 0.006171,
+      "pricesCheckedOn": "2026-10-05"
+    }
+  }
+}
