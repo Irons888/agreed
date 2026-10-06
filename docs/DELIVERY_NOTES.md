@@ -140,7 +140,16 @@ Free allowances (the daily Workers AI neurons, hours included in an ElevenLabs p
 
 _filled by the author_
 
-## 7. What I would improve next
+## 7. Beyond the brief
+
+The core flow alone meets the brief: upload a two-person call, get the final commitments with quotes, listen to each one. Everything below is extra, kept apart from that flow, and can be ignored when judging it.
+
+- **History and the Tasks board.** A commitments list is something people come back to, so the results are kept (in the browser, with no accounts) and gathered on a board: to check, to do, open questions, done. You can pick calls, name a voice, assign or edit a task. The call page stays the verified record; edits never change it.
+- **Quality page and Storybook.** For reviewers: the latest eval with every failed check, the test recordings to run live, and the design system the screens are built from.
+- **T7 and T8.** Stress tests at and past the edge of the scope: seven voices, which must be declined for the right reason, and the main call spoken like a real one, with interruptions.
+- **ElevenLabs Scribe v2 for recognition.** Nova-3 heard short turns as one voice. Scribe v2 separates them and costs less; Nova-3 stays as the automatic fallback.
+
+## 8. What I would improve next
 
 1. **Speed.**
    - Show items as they are found instead of waiting for the whole answer.
