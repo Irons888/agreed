@@ -36,7 +36,8 @@ export const COMMITMENT = /\b(i'll|i will|i'm going to|i am going to|i can|i sha
 export const FIRST_PERSON = /\b(i|i'll|i'm|i've|i'd|me|my)\b/;
 
 /** A request addressed to the listener: "can you", "could you", "please". */
-export const ADDRESSED = /\b(can you|could you|would you|will you|you'll|you will|you can|please)\b/;
+export const ADDRESSED =
+  /\b(can you|could you|would you|will you|you'll|you will|you can|please|do you want to|do you wanna|you wanna|would you mind|you could|you should|you need to|you have to|i need you to|i'd like you to)\b/;
 
 /** A reply that opens with agreement: "Yes", "Sure", "Agreed", "Definitely", "Sounds good". */
 export const AFFIRMATIVE = /^(yes|yeah|yep|sure|agreed|definitely|absolutely|of course|okay|ok|sounds good|makes sense|right|good idea)\b/;
