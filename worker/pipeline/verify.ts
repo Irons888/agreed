@@ -240,14 +240,33 @@ function verifyItem(raw: LlmItem, n: number, ctx: ItemContext): { item: Item } |
   };
 }
 
+const titleWords = (title: string) => new Set(title.toLowerCase().split(/[^\p{L}\p{N}]+/u).filter((w) => w.length > 2));
+
+/**
+ * The model sometimes lists one item two or three times. A repeat has the same final state, rests on the
+ * same turns, and has a similar title. One turn can hold two different tasks, so shared turns alone are not enough.
+ */
+function isRepeat(a: Item, b: Item) {
+  if (a.status !== b.status) return false;
+  const turnsA = new Set(a.evidence.map((e) => e.turn));
+  const turnsB = new Set(b.evidence.map((e) => e.turn));
+  const sharedTurns = [...turnsA].filter((t) => turnsB.has(t)).length;
+  if (!sharedTurns || sharedTurns < Math.min(turnsA.size, turnsB.size)) return false;
+  const wordsA = titleWords(a.title);
+  const wordsB = titleWords(b.title);
+  const sharedWords = [...wordsA].filter((w) => wordsB.has(w)).length;
+  return sharedWords / (new Set([...wordsA, ...wordsB]).size || 1) >= 0.5;
+}
+
 export function verifyItems(llm: LlmOutput, turns: Turn[], speakers: Speaker[], anchor: string | null) {
   const ctx: ItemContext = { index: indexTurns(turns), speakers, anchor };
   const items: Item[] = [];
   const dropped: { title: string; reason: string }[] = [];
   llm.items.forEach((raw, i) => {
     const verdict = verifyItem(raw, i + 1, ctx);
-    if ('item' in verdict) items.push(verdict.item);
-    else dropped.push(verdict.dropped);
+    if (!('item' in verdict)) dropped.push(verdict.dropped);
+    else if (items.some((kept) => isRepeat(kept, verdict.item))) dropped.push({ title: verdict.item.title, reason: 'Listed twice by the model; kept once.' });
+    else items.push(verdict.item);
   });
   items.sort((a, b) => a.evidence[0].start - b.evidence[0].start);
   return { items, dropped };
