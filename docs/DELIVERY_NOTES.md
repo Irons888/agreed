@@ -144,7 +144,15 @@ Free allowances (the daily Workers AI neurons, hours included in an ElevenLabs p
 
 ## 6. Time spent
 
-_filled by the author_
+About 7 hours of focused work, estimated by the author:
+
+| Part | Time |
+|---|---|
+| Research: how existing products and APIs handle this | 1 h |
+| Plan and roadmap | 1 h |
+| Design | 1 h |
+| Development | 2 h |
+| Debugging and finding weak spots (tests, edge cases, real recordings) | 2 h |
 
 ## 7. Beyond the brief
 
