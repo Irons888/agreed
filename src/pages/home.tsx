@@ -44,7 +44,7 @@ function Block({ title, link, onLink, children }: { title: string; link?: string
 export function HomePage({ onStart, onNavigate }: { onStart: (audio: PreparedAudio, prepareMs: number) => void; onNavigate: (path: string) => void }) {
   const samples = useSamples();
   const { busy, error, startFile, startSample } = useStart(onStart);
-  const examples = (samples ?? []).filter((s) => EXAMPLES.includes(s.case));
+  const examples = EXAMPLES.flatMap((name) => (samples ?? []).filter((s) => s.case === name));
   const main: Sample | undefined = examples.find((s) => s.case === MAIN_EXAMPLE);
 
   const history = useHistory().filter((e) => !isExpired(e));

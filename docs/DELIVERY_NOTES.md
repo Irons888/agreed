@@ -12,13 +12,14 @@ All test recordings, scripts, timelines and expected results are in [`testset/`]
 
 | Case | Input | Expected | Actual: final eval on the live deployment, Scribe v2, 5 runs per case |
 |---|---|---|---|
-| T1 | Anna (PM) and Mark (backend), 1:11. Proposal never accepted, accepted task, corrected deadline, cancelled task, task with no owner, open question | 3 agreed (one with no owner, one moved from Thursday to Monday), 1 open question, dark mode not accepted, meeting room cancelled. Weekdays stay as spoken, marked “date context missing” | **5/5 pass.** All 6 items with the right status, owner and deadline every run; 0 extras. Median 20.7 s |
-| T2 | T1 with one agreement changed: dark mode accepted | As T1, but dark mode agreed (Mark, “by Friday”) | **5/5 pass.** Dark mode agreed (Mark, “by Friday”); everything else as T1. Median 15.3 s |
-| T3 | No introductions, every statement hedged | Asks who is speaking. No agreed tasks, no owners, no dates | **5/5 pass.** Asks who is speaking; 0 agreed tasks; the hedged fix (“by Friday”, tentative) is under “Needs your check”; no confirmed owners or calendar dates. Median 9.8 s |
-| T4 | States its date (“Monday, October 5th, 2026”) | tomorrow → Oct 6, Friday → Oct 9, today → Oct 5, Wednesday next week → Oct 14 | **5/5 pass.** Oct 6, Oct 9, Oct 5, Oct 14 every run; “let's do a review” has no owner. Median 19.3 s |
+| T1 | Anna (PM) and Mark (backend), 1:11. Proposal never accepted, accepted task, corrected deadline, cancelled task, task with no owner, open question | 3 agreed (one with no owner, one moved from Thursday to Monday), 1 open question, dark mode not accepted, meeting room cancelled. Weekdays stay as spoken, marked “date context missing” | **5/5 pass.** All 6 items with the right status, owner and deadline every run; 0 extras. Median 31.4 s |
+| T2 | T1 with one agreement changed: dark mode accepted | As T1, but dark mode agreed (Mark, “by Friday”) | **5/5 pass.** Dark mode agreed (Mark, “by Friday”); everything else as T1. Median 17.6 s |
+| T3 | No introductions, every statement hedged | Asks who is speaking. No agreed tasks, no owners, no dates | **5/5 pass.** Asks who is speaking; 0 agreed tasks; the hedged fix (“by Friday”, tentative) is under “Needs your check”; no confirmed owners or calendar dates. Median 15.7 s |
+| T4 | States its date (“Monday, October 5th, 2026”) | tomorrow → Oct 6, Friday → Oct 9, today → Oct 5, Wednesday next week → Oct 14 | **5/5 pass.** Oct 6, Oct 9, Oct 5, Oct 14 every run; “let's do a review” has no owner. Median 13.0 s |
 | T5 | Three voices | Declines: more than two voices | **5/5 pass.** Three voices heard, declined, no list. 1.4 s |
-| T6 | T1 over a noisy phone line | Same as T1 | **5/5 pass.** Same result as T1. Median 23.7 s |
-| T7 | Seven people on a stand-up, 0:42, 2–5 s each. Added later; expected result committed before its first run | Declines: more than two voices. No tasks | **5/5 pass.** Seven voices heard, declined, no list. 1.9 s. With Nova-3: one voice heard, so it declined for the wrong reason |
+| T6 | T1 over a noisy phone line | Same as T1 | **5/5 pass.** Same result as T1. Median 28.1 s |
+| T7 | Seven people on a stand-up, 0:42, 2–5 s each. Added later; expected result committed before its first run | Declines: more than two voices. No tasks | **5/5 pass.** Seven voices heard, declined, no list. 2.3 s. With Nova-3: one voice heard, so it declined for the wrong reason |
+| T8 | Sofia (product lead) and Tom (backend), 2:34, spoken like a real call: small talk, fillers, laughter, a hedged offer, two interruptions. Added later; expected result committed before its first run | As T1: API docs (Tom, “by Wednesday”), staging demo moved from Thursday to Monday, privacy policy with no owner, the SSO question, dark mode not accepted, the room booking cancelled. Plus the flaky tests under “To check”, because Tom said “I'll try… no promises” | **5/5 pass.** All 7 items right every run; once the model listed dark mode twice and the copy was removed. Median 43.1 s |
 
 Scoring: `eval/run.mjs` uploads each recording to the API and checks the result against `expected.json`.
 - An expected item counts as found only if its key words appear and its quote falls within the expected lines of the timeline.
@@ -26,12 +27,12 @@ Scoring: `eval/run.mjs` uploads each recording to the API and checks the result 
 - Every item that matches nothing in the expected list is an unsupported extra.
 - A decline must give the right reason: with more than two people in the timeline, only “more than two voices” passes.
 
-Final eval on the live deployment with Scribe v2: [`eval/reports/2026-10-05T21-36-32-844Z.md`](../eval/reports/2026-10-05T21-36-32-844Z.md), every result in `eval/results/2026-10-05T21-36-32-844Z/`. The same code with the Worker running locally also passed 35/35: [`eval/reports/2026-10-05T21-02-00-081Z.md`](../eval/reports/2026-10-05T21-02-00-081Z.md). The previous final eval, with Nova-3, also ran on the live deployment: [`eval/reports/2026-10-05T17-21-03-651Z.md`](../eval/reports/2026-10-05T17-21-03-651Z.md).
+Final eval on the live deployment with Scribe v2, T1–T8: [`eval/reports/2026-10-06T08-41-22-435Z.md`](../eval/reports/2026-10-06T08-41-22-435Z.md), every result in `eval/results/2026-10-06T08-41-22-435Z/`. The eval before the last two fixes (section 2) passed 38/40: [`eval/reports/2026-10-06T08-27-46-237Z.md`](../eval/reports/2026-10-06T08-27-46-237Z.md). Earlier, T1–T7 passed 35/35 on the live deployment and 35/35 with the Worker running locally. The final eval with Nova-3, before the switch, also ran on the live deployment: [`eval/reports/2026-10-05T17-21-03-651Z.md`](../eval/reports/2026-10-05T17-21-03-651Z.md).
 
-| | Scribe v2, T1–T7 | Nova-3, T1–T6 |
+| | Scribe v2, T1–T8 | Nova-3, T1–T6 |
 |---|---|---|
-| Runs passed | **35 / 35** | 30 / 30; T7 fails in a separate run: one voice heard of seven |
-| Real items found with the right status | **130 / 130** | 130 / 130 |
+| Runs passed | **40 / 40** | 30 / 30; T7 fails in a separate run: one voice heard of seven |
+| Real items found with the right status | **165 / 165** | 130 / 130 |
 | Unsupported items (extras, upgraded statuses, guessed owners or dates) | **0** | 0 |
 | Failed requests / recovered dropped connections / retries | 0 / 0 / 0 | 0 / 0 / 0 |
 
@@ -44,9 +45,12 @@ Final eval on the live deployment with Scribe v2: [`eval/reports/2026-10-05T21-3
   - Fixed with prompt rules and two verification rules (roles are checked against the words; a plain “yes” to a proposal can't be silently dropped).
 - **Dropped connections.** 9 of 30 runs broke off mid-stream during a period of unstable network. The stream now sends a heartbeat, and a broken stream is recovered from storage by run id. The final eval had no drops.
 - **Speaker grouping.** The speech model's own grouping glued two speakers together (section 3). Turns are now rebuilt from words.
+- **Repeated items (T8).** In the first five T8 runs the model twice listed “Add dark mode” two or three times with the same quotes: 3/5 passed. Verification now keeps one; a repeat needs the same state, the same turns and a similar title, because one turn can hold two different tasks. Checked against every stored result: it merges only those repeats.
+- **The call's date as an item (T4, once in 40 runs).** The model made an item of “It's Monday, October fifth”. The checks found no commitment in it but kept it under “To check”. An item whose quotes all lie inside the date sentence is now removed with that reason.
 
 **Still weak:**
-- **Time to the full result.** Median 17.5 s and p90 28 s in the final eval; up to 50 s was seen on T1 before. Nearly all of it is the extraction model on Workers AI, and the same input, T1, has taken 13 s in one run and 50 s in another. A smaller model (gpt-oss-20b) was no faster and lost owners. The transcript shows after about 2 s, so the page is not empty while you wait.
+- **Time to the full result.** Median 24 s and p90 41 s in the final eval, up to 50 s on the 2½-minute T8. Nearly all of it is the extraction model on Workers AI, and the same input, T1, has taken 13 s in one run and 50 s in another. A smaller model (gpt-oss-20b) was no faster and lost owners. The transcript shows after about 2 s, so the page is not empty while you wait.
+- **A deadline the model leaves out.** In the eval before the final one, the model once dropped “before launch” from the privacy policy task in T8. The code removes unsupported deadlines but never adds one the model did not give, so such a miss shows as a task without a deadline.
 - **Telling voices apart depends on recognition.** Nova-3, the first choice, heard short turns as one voice: T7 came out as 1 voice of 7, and an 18-second cut with two people as 1. Scribe v2 now separates every test recording, and on cuts it told apart a single 0.4-second “Okay.” and same-gender voices with one 1.3–1.8 s line each. But all of them are clean synthetic voices; similar voices or crosstalk on a real call may still merge. When only one voice is heard, the product declines instead of guessing.
 - **A third party hears the audio.** Recognition runs at ElevenLabs, under their API terms. Without an ElevenLabs key the app falls back to Nova-3 on Workers AI, and then nothing leaves Cloudflare.
 - **Synthetic test audio.** All recordings are text-to-speech; T6 adds phone-line noise, but there is no real human recording in the set.
@@ -56,8 +60,7 @@ Final eval on the live deployment with Scribe v2: [`eval/reports/2026-10-05T21-3
 - a side-by-side T1/T2 comparison view;
 - answering clarifications by voice;
 - recording from the microphone in the browser (upload covers the brief);
-- a lint rule that enforces design tokens (the rule is documented in Storybook);
-- the audio of T8, a natural version of the main call (script and expected result are committed; generating it needs about 2,350 ElevenLabs credits the account did not have left). The eval skips cases without audio.
+- a lint rule that enforces design tokens (the rule is documented in Storybook).
 
 ## 3. How AI output was checked: one example
 
@@ -79,20 +82,20 @@ Every model claim is also verified in code on each run:
 
 ## 4. Measurements
 
-Final evals on the live deployment: 35 runs with Scribe v2 and, before the switch, 30 runs with Nova-3. No errors in either.
+Final evals on the live deployment: 40 runs with Scribe v2 (T1–T8) and, before the switch, 30 runs with Nova-3 (T1–T6). No errors in either. T8 is 2½ minutes long, so it raises the time and the cost per run.
 
 | Measure | Scribe v2 (current) | Nova-3 (before) |
 |---|---|---|
-| Time to the full verified list (upload → list), p50 / p90, recordings that get a list | **17.5 s / 28.0 s** | 24.5 s / 31.7 s |
-| Time to the transcript (first useful output), p50 | **2.2 s** | 1.2 s |
-| Recognition time for a 71 s recording, median | 3.0 s | 1.8 s |
+| Time to the full verified list (upload → list), p50 / p90, recordings that get a list | **24.1 s / 41.1 s** | 24.5 s / 31.7 s |
+| Time to the transcript (first useful output), p50 | **2.5 s** | 1.2 s |
+| Recognition time for a 71 s recording, median | 4.0 s | 1.8 s |
 | Recognition time for a 3-minute recording (separate test, 3 calls) | 5.1–6.9 s | — |
-| Variable cost per run (average over the test set) | **$0.0044** | $0.0061 |
-| Variable cost per audio minute | **$0.0053** | $0.0071 |
-| Of which recognition | about 69% ($0.0037 per minute) | about 74% ($0.0052 per minute) |
-| Cost of the whole eval | about $0.16 for 35 runs | about $0.18 for 30 runs |
+| Variable cost per run (average over the test set) | **$0.0054** | $0.0061 |
+| Variable cost per audio minute | **$0.0051** | $0.0071 |
+| Of which recognition | about 72% ($0.0037 per minute) | about 74% ($0.0052 per minute) |
+| Cost of the whole eval | about $0.22 for 40 runs | about $0.18 for 30 runs |
 
-Scribe v2 shows the transcript about 1 s later and costs a quarter less. The list came faster in this eval, but that is the extraction model varying between runs; recognition itself is 1–1.5 s slower.
+Scribe v2 shows the transcript about 1.3 s later and costs about 30% less per audio minute. The time to the list is about the same as with Nova-3: almost all of it is the extraction model, which varies from run to run (T1's median was 21 s in one eval and 31 s in the next).
 
 Extraction model comparison, measured with Nova-3 recognition on the same day:
 
@@ -119,7 +122,7 @@ Free allowances (the daily Workers AI neurons, hours included in an ElevenLabs p
 - Workers Paid: $5 a month, which includes 10 M requests;
 - R2 storage: $0.015 per GB-month. A 3-minute recording is about 5.8 MB, so the free 10 GB holds about 1,700 recordings.
 
-**One-off cost of the test set.** About 3,000 characters of ElevenLabs text-to-speech, within its free monthly allowance. This is not an operating cost.
+**One-off cost of the test set.** About 6,000 characters of ElevenLabs text-to-speech (T1–T7 with Multilingual v2, T8 with Eleven v4): about $0.48 at the list price of $0.08 per 1,000 characters, whatever plan paid for it. It is a development cost, not an operating cost.
 
 ## 5. Exact AI tools and models
 

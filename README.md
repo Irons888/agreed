@@ -45,12 +45,12 @@ Final eval: 5 runs per test recording on the live deployment, with Scribe v2.
 
 | | |
 |---|---|
-| Runs passed | **35 / 35** |
-| Real items found with the right status | **130 / 130** |
+| Runs passed | **40 / 40** |
+| Real items found with the right status | **165 / 165** |
 | Unsupported items added | **0** |
-| Time to the full verified list, p50 / p90 (declines take about 2 s) | **17.5 s / 28.0 s** |
-| Time to the transcript | **2.2 s** |
-| Variable cost | **$0.0053 per audio minute** at ElevenLabs and Workers AI list prices |
+| Time to the full verified list, p50 / p90 (declines take about 2 s) | **24.1 s / 41.1 s** |
+| Time to the transcript | **2.5 s** |
+| Variable cost | **$0.0051 per audio minute** at ElevenLabs and Workers AI list prices |
 
 With Nova-3 the same pipeline passed T1–T6 (30/30 on the live deployment, $0.0071 per audio minute) but heard T7's seven people as one voice.
 
@@ -105,7 +105,7 @@ npm run deploy                                # builds the app and Storybook, de
 
 ## Test set and eval
 
-`testset/` holds seven recordings with scripts and expected results. The expected results were committed **before any product code existed**, as the git history shows. See [testset/README.md](testset/README.md).
+`testset/` holds eight recordings with scripts and expected results. The expected results were committed **before any product code existed**, as the git history shows. See [testset/README.md](testset/README.md).
 
 | Case | What it checks |
 |---|---|
@@ -116,6 +116,7 @@ npm run deploy                                # builds the app and Storybook, de
 | T5 | Three voices; should decline |
 | T6 | T1 over a noisy phone line |
 | T7 | Seven people, 2–5 s of speech each; should decline as more than two voices. Added later, expected result committed before its first run |
+| T8 | The situations of T1 spoken like a real call, 2:34: small talk, fillers, laughter, a hedged offer, two interruptions. Added later, expected result committed before its first run |
 
 `npm run eval` uploads each recording to the live pipeline, scores the result against `expected.json` and writes `eval/reports/` and the full results to `eval/results/`. Nothing is cached.
 

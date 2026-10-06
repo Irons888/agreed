@@ -172,7 +172,7 @@ Times are local (EEST).
 - Feedback: the test calls sound scripted. Wrote T8 with the same situations as T1, the way people actually talk: small talk about the weekend, fillers, laughter, “I'll try… no promises”, and two interruptions. Expected result committed before any run (79eba52).
 - `testset/build.mjs` can now generate a case as one dialogue (ElevenLabs text to dialogue, Eleven v4), so turns and laughter sound natural. The API returns when each character is spoken, which gives `timeline.json`; `overlap_ms` moves an interruption so it starts while the other person is still talking.
 - Checked on a short sample first: `[laughs]` came out as laughter (Scribe tagged it as a sound), `[jumping in]` was not read aloud, and the two voices were separated.
-- Not generated yet: the account's free ElevenLabs allowance had 268 credits left, and T8 needs about 2,350. A Scribe call did not use those credits, so recognition in production is not affected. The eval and the sample list skip cases without audio.
+- At first not generated: the account's free ElevenLabs allowance had 268 credits left, and T8 needs about 2,350. A Scribe call did not use those credits, so recognition in production was not affected. The eval and the sample list skip cases without audio.
 
 ### Tasks as a board
 
@@ -188,3 +188,15 @@ Times are local (EEST).
   - a task can be edited: title, owner, deadline wording and date. Edits are a working copy on the board, marked “Edited by you”, with the original quote still playable and a way back to the call's version. The result page keeps what the recording supports, so the evidence never mixes with the user's changes.
 - History entries saved before the board are refreshed once from the stored results, so old recordings get quotes and voice ids without being analysed again.
 - Checked in the browser: hiding calls, “only”, reload with the address, naming a voice, assigning an owner, a full edit and going back, ▶, ticks, phone width.
+
+### T8 on the live deployment
+
+- After the top-up: 2:34, 2,344 characters. Checked with Scribe before any product run: two voices, eight chuckles and a sigh came out as sounds, no direction tag was read aloud, and about 7 of 412 words around the interruptions went to the other voice. “Sofia” is heard as “Sophia”, the same name by ear, so the expected speaker name now accepts both spellings; that change was committed before the first run.
+- First product runs, 5 on the live deployment: 3/5. Twice the model listed “Add dark mode” two or three times with the same quotes; once it also missed the SSO question.
+- Fix: verification keeps one copy of a repeated item. A repeat needs the same state, the same turns and a similar title, because one turn can hold two tasks. Run over every stored result, it merges only those repeats.
+- Full eval with T8, 40 runs: 38/40.
+  - T4 once: an item made of “It's Monday, October fifth”. Now an item whose quotes all lie inside the date sentence is removed; a task said in the same turn stays (tested on a synthetic call).
+  - T8 once: “before launch” left out of the privacy policy task. Not fixed in code on purpose: verification removes unsupported deadlines but never adds one the model did not give.
+- Final eval, 40 runs on the live deployment: **40/40**, 165/165 items with the right status, 0 unsupported, 0 retries. Lists p50 24.1 s, p90 41.1 s (T8 is 2½ minutes); transcript after 2.5 s; $0.0051 per audio minute. The repeat rule removed a duplicate “dark mode” in one T8 run.
+- The home page's example is now T8, the call that sounds real; T1 stays on the Quality page.
+

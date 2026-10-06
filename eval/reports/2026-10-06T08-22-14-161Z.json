@@ -1,0 +1,562 @@
+{
+  "startedAt": "2026-10-06T08:22:14.161Z",
+  "base": "https://agreed.rhanaev7-138.workers.dev",
+  "runs": 5,
+  "reasoning": "low",
+  "model": "gpt-oss-120b",
+  "asr": "server default",
+  "cases": [
+    {
+      "case": "T8-natural-call",
+      "outcome": "result",
+      "runs": [
+        {
+          "run": 1,
+          "error": null,
+          "recovered": false,
+          "pass": true,
+          "included": "7/7",
+          "exclusionErrors": 0,
+          "failed": [],
+          "checks": 35,
+          "clientMs": 22166,
+          "transcriptMs": 5477,
+          "asr": "elevenlabs/scribe_v2",
+          "voicesHeard": 2,
+          "serverMs": {
+            "asrMs": 5484,
+            "extractMs": 16495,
+            "verifyMs": 0,
+            "totalMs": 21979
+          },
+          "usage": {
+            "audioMinutes": 2.577,
+            "asrAttempts": 1,
+            "asrNeurons": 0,
+            "llmCalls": 1,
+            "llmPromptTokens": 3144,
+            "llmCompletionTokens": 1717,
+            "llmNeurons": 217.1,
+            "retries": 0
+          },
+          "cost": {
+            "asrUsd": 0.009448,
+            "llmUsd": 0.002388,
+            "totalUsd": 0.011836,
+            "perAudioMinuteUsd": 0.004593,
+            "pricesCheckedOn": "2026-10-05"
+          },
+          "items": [
+            {
+              "title": "Send API docs to partner team",
+              "status": "agreed",
+              "owner": "Tom",
+              "deadline": "by Wednesday",
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Add dark mode to partner portal",
+              "status": "not_accepted",
+              "owner": null,
+              "deadline": null,
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Deploy staging demo",
+              "status": "agreed",
+              "owner": "Tom",
+              "deadline": "Monday",
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Book big room for client workshop",
+              "status": "cancelled",
+              "owner": "Sophia",
+              "deadline": null,
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Update privacy policy page",
+              "status": "agreed",
+              "owner": null,
+              "deadline": "before launch",
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Determine if client needs single sign‑on (SSO)",
+              "status": "open_question",
+              "owner": null,
+              "deadline": null,
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Investigate flaky tests in payment module",
+              "status": "needs_review",
+              "owner": "Tom",
+              "deadline": "this week",
+              "date": null,
+              "notes": []
+            }
+          ],
+          "dropped": []
+        },
+        {
+          "run": 2,
+          "error": null,
+          "recovered": false,
+          "pass": true,
+          "included": "7/7",
+          "exclusionErrors": 0,
+          "failed": [],
+          "checks": 35,
+          "clientMs": 40625,
+          "transcriptMs": 4761,
+          "asr": "elevenlabs/scribe_v2",
+          "voicesHeard": 2,
+          "serverMs": {
+            "asrMs": 4770,
+            "extractMs": 35359,
+            "verifyMs": 0,
+            "totalMs": 40129
+          },
+          "usage": {
+            "audioMinutes": 2.577,
+            "asrAttempts": 1,
+            "asrNeurons": 0,
+            "llmCalls": 1,
+            "llmPromptTokens": 3144,
+            "llmCompletionTokens": 1857,
+            "llmNeurons": 226.65,
+            "retries": 0
+          },
+          "cost": {
+            "asrUsd": 0.009448,
+            "llmUsd": 0.002493,
+            "totalUsd": 0.011941,
+            "perAudioMinuteUsd": 0.004634,
+            "pricesCheckedOn": "2026-10-05"
+          },
+          "items": [
+            {
+              "title": "Send API docs to partner team",
+              "status": "agreed",
+              "owner": "Tom",
+              "deadline": "by Wednesday",
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Add dark mode",
+              "status": "not_accepted",
+              "owner": null,
+              "deadline": null,
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Staging demo availability",
+              "status": "agreed",
+              "owner": "Tom",
+              "deadline": "Monday",
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Book big room for client workshop",
+              "status": "cancelled",
+              "owner": "Sophia",
+              "deadline": null,
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Update privacy policy page",
+              "status": "agreed",
+              "owner": null,
+              "deadline": "before launch",
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Determine if client needs single sign‑on (SSO)",
+              "status": "open_question",
+              "owner": null,
+              "deadline": null,
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Investigate flaky payment‑module tests",
+              "status": "needs_review",
+              "owner": "Tom",
+              "deadline": "this week",
+              "date": null,
+              "notes": []
+            }
+          ],
+          "dropped": []
+        },
+        {
+          "run": 3,
+          "error": null,
+          "recovered": false,
+          "pass": true,
+          "included": "7/7",
+          "exclusionErrors": 0,
+          "failed": [],
+          "checks": 35,
+          "clientMs": 32854,
+          "transcriptMs": 4160,
+          "asr": "elevenlabs/scribe_v2",
+          "voicesHeard": 2,
+          "serverMs": {
+            "asrMs": 4172,
+            "extractMs": 28496,
+            "verifyMs": 0,
+            "totalMs": 32668
+          },
+          "usage": {
+            "audioMinutes": 2.577,
+            "asrAttempts": 1,
+            "asrNeurons": 0,
+            "llmCalls": 1,
+            "llmPromptTokens": 3144,
+            "llmCompletionTokens": 1822,
+            "llmNeurons": 224.26,
+            "retries": 0
+          },
+          "cost": {
+            "asrUsd": 0.009448,
+            "llmUsd": 0.002467,
+            "totalUsd": 0.011915,
+            "perAudioMinuteUsd": 0.004624,
+            "pricesCheckedOn": "2026-10-05"
+          },
+          "items": [
+            {
+              "title": "Send API docs to partner team",
+              "status": "agreed",
+              "owner": "Tom",
+              "deadline": "by Wednesday",
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Add dark mode to partner portal",
+              "status": "not_accepted",
+              "owner": null,
+              "deadline": null,
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Staging demo availability",
+              "status": "agreed",
+              "owner": "Tom",
+              "deadline": "Monday",
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Book big room for client workshop",
+              "status": "cancelled",
+              "owner": null,
+              "deadline": null,
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Update privacy policy page",
+              "status": "agreed",
+              "owner": null,
+              "deadline": "before launch",
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Determine if client needs single sign‑on (SSO)",
+              "status": "open_question",
+              "owner": null,
+              "deadline": null,
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Investigate flaky tests in payment module",
+              "status": "needs_review",
+              "owner": "Tom",
+              "deadline": "this week",
+              "date": null,
+              "notes": []
+            }
+          ],
+          "dropped": []
+        },
+        {
+          "run": 4,
+          "error": null,
+          "recovered": false,
+          "pass": false,
+          "included": "6/7",
+          "exclusionErrors": 2,
+          "failed": [
+            {
+              "item": "sso",
+              "check": "found",
+              "ok": false,
+              "detail": "missing"
+            },
+            {
+              "item": "extra: Add dark mode",
+              "check": "unsupported extra",
+              "ok": false,
+              "detail": "not_accepted"
+            },
+            {
+              "item": "extra: Add dark mode",
+              "check": "unsupported extra",
+              "ok": false,
+              "detail": "not_accepted"
+            }
+          ],
+          "checks": 35,
+          "clientMs": 93988,
+          "transcriptMs": 7655,
+          "asr": "elevenlabs/scribe_v2",
+          "voicesHeard": 2,
+          "serverMs": {
+            "asrMs": 7645,
+            "extractMs": 86092,
+            "verifyMs": 0,
+            "totalMs": 93737
+          },
+          "usage": {
+            "audioMinutes": 2.577,
+            "asrAttempts": 1,
+            "asrNeurons": 0,
+            "llmCalls": 2,
+            "llmPromptTokens": 7901,
+            "llmCompletionTokens": 8122,
+            "llmNeurons": 805.17,
+            "retries": 1
+          },
+          "cost": {
+            "asrUsd": 0.009448,
+            "llmUsd": 0.008857,
+            "totalUsd": 0.018305,
+            "perAudioMinuteUsd": 0.007104,
+            "pricesCheckedOn": "2026-10-05"
+          },
+          "items": [
+            {
+              "title": "Send API docs to partner team",
+              "status": "agreed",
+              "owner": "Tom",
+              "deadline": "by Wednesday",
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Add dark mode",
+              "status": "not_accepted",
+              "owner": null,
+              "deadline": null,
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Add dark mode",
+              "status": "not_accepted",
+              "owner": null,
+              "deadline": null,
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Add dark mode",
+              "status": "not_accepted",
+              "owner": null,
+              "deadline": null,
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Staging demo ready",
+              "status": "agreed",
+              "owner": "Tom",
+              "deadline": "Monday",
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Book big room for client workshop",
+              "status": "cancelled",
+              "owner": "Sophia",
+              "deadline": null,
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Update privacy policy page",
+              "status": "agreed",
+              "owner": null,
+              "deadline": "before launch",
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Investigate flaky tests in payment module",
+              "status": "needs_review",
+              "owner": "Tom",
+              "deadline": "this week",
+              "date": null,
+              "notes": []
+            }
+          ],
+          "dropped": []
+        },
+        {
+          "run": 5,
+          "error": null,
+          "recovered": false,
+          "pass": false,
+          "included": "7/7",
+          "exclusionErrors": 1,
+          "failed": [
+            {
+              "item": "extra: Add dark mode",
+              "check": "unsupported extra",
+              "ok": false,
+              "detail": "not_accepted"
+            }
+          ],
+          "checks": 36,
+          "clientMs": 26503,
+          "transcriptMs": 5378,
+          "asr": "elevenlabs/scribe_v2",
+          "voicesHeard": 2,
+          "serverMs": {
+            "asrMs": 5385,
+            "extractMs": 19984,
+            "verifyMs": 0,
+            "totalMs": 25369
+          },
+          "usage": {
+            "audioMinutes": 2.577,
+            "asrAttempts": 1,
+            "asrNeurons": 0,
+            "llmCalls": 1,
+            "llmPromptTokens": 3144,
+            "llmCompletionTokens": 2227,
+            "llmNeurons": 251.88,
+            "retries": 0
+          },
+          "cost": {
+            "asrUsd": 0.009448,
+            "llmUsd": 0.002771,
+            "totalUsd": 0.012219,
+            "perAudioMinuteUsd": 0.004742,
+            "pricesCheckedOn": "2026-10-05"
+          },
+          "items": [
+            {
+              "title": "Send API docs to partner team",
+              "status": "agreed",
+              "owner": "Tom",
+              "deadline": "by Wednesday",
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Add dark mode",
+              "status": "not_accepted",
+              "owner": null,
+              "deadline": null,
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Add dark mode",
+              "status": "not_accepted",
+              "owner": null,
+              "deadline": null,
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Staging demo ready",
+              "status": "agreed",
+              "owner": "Tom",
+              "deadline": "Monday",
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Book big room for client workshop",
+              "status": "cancelled",
+              "owner": "Sophia",
+              "deadline": null,
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Update privacy policy page",
+              "status": "agreed",
+              "owner": null,
+              "deadline": "before launch",
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Determine if single sign‑on (SSO) is required",
+              "status": "open_question",
+              "owner": null,
+              "deadline": null,
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Investigate flaky tests in payment module",
+              "status": "needs_review",
+              "owner": "Tom",
+              "deadline": "this week",
+              "date": null,
+              "notes": []
+            }
+          ],
+          "dropped": []
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "runs": 5,
+    "errors": 0,
+    "passed": 3,
+    "inclusion": "34/35",
+    "exclusionErrors": 3,
+    "stability": {
+      "T8-natural-call": "3/5"
+    },
+    "timeToResultMs": {
+      "p50": 32854,
+      "p90": 93988
+    },
+    "timeToTranscriptMs": {
+      "p50": 5378
+    },
+    "retries": 1,
+    "recoveredAfterDroppedConnection": 0,
+    "costPerRunUsd": 0.013243,
+    "costPerAudioMinuteUsd": 0.005139,
+    "asrUsed": [
+      "elevenlabs/scribe_v2"
+    ]
+  }
+}

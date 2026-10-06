@@ -11,7 +11,7 @@ Small, reproducible recordings with expected results. The scripts and `expected.
 | T5-three-voices | Three people on the call | Out-of-scope input | Decline: three voices detected, the prototype supports two |
 | T6-noisy | T1 over a noisy phone line (300–3400 Hz, pink noise) | Robustness | Same as T1 |
 | T7-seven-voices | Seven people on a stand-up, 2–5 seconds of speech each | Far outside the scope, and short turns that are hard to tell apart | Decline: more than two voices detected, no tasks |
-| T8-natural-call | The situations of T1 spoken like a real call: small talk, fillers, laughter, a hedged offer, two interruptions. Generated as one dialogue with Eleven v4 | Natural speech, overlapping interruptions | Result as T1, plus the hedged offer under “To check”. Audio not generated yet; the eval skips it until it is |
+| T8-natural-call | The situations of T1 spoken like a real call: small talk, fillers, laughter, a hedged offer, two interruptions. Generated as one dialogue with Eleven v4 | Natural speech, overlapping interruptions | Result as T1, plus the hedged offer under “To check” |
 
 ## Files in each case
 
