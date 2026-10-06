@@ -20,6 +20,12 @@ const cases = (await readdir(TESTSET, { withFileTypes: true }))
 const index = [];
 for (const name of cases) {
   const dir = path.join(TESTSET, name);
+  try {
+    await access(path.join(dir, 'audio.wav'));
+  } catch {
+    console.log(`${name}: no audio yet (npm run testset:build), not offered as a sample`);
+    continue;
+  }
   const script = await readJson(path.join(dir, 'script.json'));
   let expected = await readJson(path.join(dir, 'expected.json'));
   if (expected.same_as) expected = { ...(await readJson(path.resolve(dir, expected.same_as))), purpose: expected.purpose };

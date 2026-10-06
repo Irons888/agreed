@@ -4,6 +4,9 @@
 // Every line is synthesized on its own and stitched together with pauses, so we know
 // exactly when each line starts and ends (timeline.json). Lines are cached by voice and
 // text, which keeps unchanged lines byte-identical between T1 and T2.
+// A case with "engine": "dialogue" (T8) is generated as one conversation instead, so turns,
+// laughter and interruptions sound like a real call; the API returns when every character is
+// spoken, which gives the same timeline.
 //
 //   node testset/build.mjs                    build every case
 //   node testset/build.mjs T1-main T6-noisy   build selected cases
@@ -184,6 +187,116 @@ async function buildSpoken(dir, script, voices) {
   return duration;
 }
 
+// Requests stay under the length the dialogue API generates reliably.
+const DIALOGUE_MAX_CHARS = 1800;
+const DIALOGUE_JOIN_MS = 250;
+
+async function dialogue(model, seed, inputs) {
+  const id = createHash('sha1').update(JSON.stringify({ model, seed, inputs })).digest('hex');
+  const file = path.join(CACHE, `${id}.dialogue.json`);
+  try {
+    return JSON.parse(await readFile(file, 'utf8'));
+  } catch {
+    // Not cached yet.
+  }
+  const res = await eleven('/v1/text-to-dialogue/with-timestamps?output_format=pcm_16000', {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ inputs, model_id: model, seed }),
+  });
+  const body = await res.json();
+  charactersSent += inputs.reduce((n, input) => n + input.text.length, 0);
+  await mkdir(CACHE, { recursive: true });
+  await writeFile(file, JSON.stringify(body));
+  return body;
+}
+
+// An interruption stays in the same request as the line it cuts off.
+function dialogueChunks(lines) {
+  const chunks = [];
+  let current = [];
+  let size = 0;
+  for (const line of lines) {
+    if (current.length > 1 && size + line.text.length > DIALOGUE_MAX_CHARS) {
+      const carried = line.overlap_ms ? [current.pop()] : [];
+      chunks.push(current);
+      current = carried;
+      size = carried.reduce((n, l) => n + l.text.length, 0);
+    }
+    current.push(line);
+    size += line.text.length;
+  }
+  if (current.length) chunks.push(current);
+  return chunks;
+}
+
+// Where each input's audio lies, and its first and last spoken character; [tags] are directions, not speech.
+function dialogueSpans(body, count) {
+  const { characters, character_start_times_seconds: starts, character_end_times_seconds: ends } = body.alignment;
+  const spans = Array.from({ length: count }, () => ({ from: Infinity, to: 0, start: Infinity, end: 0 }));
+  for (const segment of body.voice_segments) {
+    const span = spans[segment.dialogue_input_index];
+    span.from = Math.min(span.from, segment.start_time_seconds);
+    span.to = Math.max(span.to, segment.end_time_seconds);
+    let inTag = false;
+    for (let c = segment.character_start_index; c < segment.character_end_index; c++) {
+      if (characters[c] === '[') inTag = true;
+      if (!inTag && /[\p{L}\p{N}]/u.test(characters[c])) {
+        span.start = Math.min(span.start, starts[c]);
+        span.end = Math.max(span.end, ends[c]);
+      }
+      if (characters[c] === ']') inTag = false;
+    }
+  }
+  return spans;
+}
+
+const firstSound = (samples, threshold = 500) => {
+  const i = samples.findIndex((v) => Math.abs(v) >= threshold);
+  return i < 0 ? 0 : i;
+};
+const spokenText = (text) => text.replace(/\[[^\]]*\]\s*/g, '').trim();
+
+async function buildDialogue(dir, script, voices) {
+  const placed = [];
+  const timeline = [];
+  let cursor = LEAD_IN_MS / 1000;
+  let lastSpoken = null;
+  for (const [n, chunk] of dialogueChunks(script.lines).entries()) {
+    const inputs = chunk.map((line) => ({ text: line.text, voice_id: voices[line.speaker].voice_id }));
+    const body = await dialogue(script.model ?? 'eleven_v4', script.seed ?? config.seed, inputs);
+    const bytes = Buffer.from(body.audio_base64, 'base64');
+    const pcm = new Int16Array(bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.length - (bytes.length % 2)));
+    const spans = dialogueSpans(body, chunk.length);
+    if (n > 0) cursor += DIALOGUE_JOIN_MS / 1000;
+    for (const [i, line] of chunk.entries()) {
+      const span = spans[i];
+      const samples = pcm.subarray(Math.round(span.from * RATE), Math.round(span.to * RATE));
+      let at = cursor;
+      // An interruption: the first sound of this line starts overlap_ms before the other person stops talking.
+      if (line.overlap_ms && lastSpoken !== null) at = lastSpoken - line.overlap_ms / 1000 - firstSound(samples) / RATE;
+      placed.push({ samples, at });
+      const start = at + span.start - span.from;
+      const end = at + span.end - span.from;
+      timeline.push({ id: line.id, speaker: line.speaker, text: spokenText(line.text), start: round(start), end: round(end) });
+      lastSpoken = end;
+      cursor = at + samples.length / RATE;
+    }
+  }
+  const duration = round(cursor + TAIL_MS / 1000);
+  const mix = new Float32Array(Math.ceil(duration * RATE));
+  for (const { samples, at } of placed) {
+    const offset = Math.round(at * RATE);
+    for (let i = 0; i < samples.length; i++) mix[offset + i] += samples[i];
+  }
+  const out = Buffer.alloc(mix.length * 2);
+  for (let i = 0; i < mix.length; i++) out.writeInt16LE(Math.max(-32768, Math.min(32767, Math.round(mix[i]))), i * 2);
+  await writeFile(path.join(dir, 'audio.wav'), wav(out));
+  await writeFile(path.join(dir, 'timeline.json'), `${JSON.stringify({ case: script.case, duration, lines: timeline }, null, 2)}\n`);
+  await writeFile(path.join(dir, 'script.md'), scriptMarkdown(script, timeline));
+  return duration;
+}
+
 // T6: the T1 audio band-limited to a phone line, with pink noise underneath.
 async function buildPhoneNoise(dir, script) {
   const source = path.resolve(dir, script.from_audio);
@@ -221,7 +334,8 @@ let voices;
 for (const [name, script] of scripts) {
   if (script.from_audio) continue;
   voices ??= await resolveVoices();
-  const duration = await buildSpoken(path.join(TESTSET, name), script, voices);
+  const build = script.engine === 'dialogue' ? buildDialogue : buildSpoken;
+  const duration = await build(path.join(TESTSET, name), script, voices);
   const warning = duration > MAX_SECONDS ? '  (longer than the 3-minute scope)' : '';
   console.log(`${name}: ${clock(duration)}, ${script.lines.length} lines${warning}`);
 }

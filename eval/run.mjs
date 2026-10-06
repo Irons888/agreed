@@ -10,7 +10,7 @@
 //
 // Writes eval/reports/<timestamp>.json and .md, eval/reports/latest.json, and every full result to eval/results/<timestamp>/.
 
-import { readFile, writeFile, mkdir, readdir } from 'node:fs/promises';
+import { access, readFile, writeFile, mkdir, readdir } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -30,10 +30,12 @@ const runs = Number(option('runs', '1'));
 const reasoning = option('reasoning', 'low');
 const model = option('model', 'gpt-oss-120b');
 const asr = option('asr', '');
-const allCases = (await readdir(TESTSET, { withFileTypes: true }))
-  .filter((d) => d.isDirectory() && /^T\d/.test(d.name))
-  .map((d) => d.name)
-  .sort();
+const hasAudio = (name) => access(path.join(TESTSET, name, 'audio.wav')).then(() => true, () => false);
+const allCases = [];
+for (const d of (await readdir(TESTSET, { withFileTypes: true })).filter((d) => d.isDirectory() && /^T\d/.test(d.name)).sort((a, b) => a.name.localeCompare(b.name))) {
+  if (await hasAudio(d.name)) allCases.push(d.name);
+  else console.log(`${d.name}: no audio yet (npm run testset:build), skipped`);
+}
 const cases = args.length ? args : allCases;
 
 const readJson = async (file) => JSON.parse(await readFile(file, 'utf8'));
