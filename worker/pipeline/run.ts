@@ -113,7 +113,7 @@ export async function runPipeline(env: Env, input: RunInput, emit: (event: RunEv
   t = Date.now();
   const speakers = verifySpeakers(extraction.output, voices, turns);
   const recording = verifyRecordingDate(extraction.output, turns);
-  const { items, dropped } = verifyItems(extraction.output, turns, speakers, recording?.date ?? null);
+  const { items, dropped } = verifyItems(extraction.output, turns, speakers, recording?.date ?? null, recording?.evidence ?? null);
   timings.verifyMs = Date.now() - t;
   emit({ type: 'stage', stage: 'verify', status: 'done', ms: timings.verifyMs });
 

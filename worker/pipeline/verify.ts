@@ -258,13 +258,18 @@ function isRepeat(a: Item, b: Item) {
   return sharedWords / (new Set([...wordsA, ...wordsB]).size || 1) >= 0.5;
 }
 
-export function verifyItems(llm: LlmOutput, turns: Turn[], speakers: Speaker[], anchor: string | null) {
+/** Every quote lies inside the sentence that says when the call happened ("It's Monday, October 5th"). */
+const onlyRestatesDate = (item: Item, date: Evidence | null) =>
+  !!date && item.evidence.every((e) => e.turn === date.turn && e.start >= date.start - 0.05 && e.end <= date.end + 0.05);
+
+export function verifyItems(llm: LlmOutput, turns: Turn[], speakers: Speaker[], anchor: string | null, dateEvidence: Evidence | null = null) {
   const ctx: ItemContext = { index: indexTurns(turns), speakers, anchor };
   const items: Item[] = [];
   const dropped: { title: string; reason: string }[] = [];
   llm.items.forEach((raw, i) => {
     const verdict = verifyItem(raw, i + 1, ctx);
     if (!('item' in verdict)) dropped.push(verdict.dropped);
+    else if (onlyRestatesDate(verdict.item, dateEvidence)) dropped.push({ title: verdict.item.title, reason: 'It only says when the call happened.' });
     else if (items.some((kept) => isRepeat(kept, verdict.item))) dropped.push({ title: verdict.item.title, reason: 'Listed twice by the model; kept once.' });
     else items.push(verdict.item);
   });
