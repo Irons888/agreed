@@ -113,7 +113,7 @@ export function QualityPage({ onStart }: { onStart: (audio: PreparedAudio, prepa
         </section>
       )}
 
-      <Section title="Test recordings" text="Short calls made for this test. Each one runs live on the same pipeline as an upload; nothing is cached.">
+      <Section title="Test recordings" text="Short calls made for this test, and two excerpts of real meetings from the AMI corpus. Each one runs live on the same pipeline as an upload; nothing is cached.">
         {samples === undefined ? (
           <Skeleton className="h-48" />
         ) : samples.length ? (

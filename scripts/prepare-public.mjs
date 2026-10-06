@@ -15,7 +15,7 @@ await mkdir(SAMPLES, { recursive: true });
 const cases = (await readdir(TESTSET, { withFileTypes: true }))
   .filter((d) => d.isDirectory() && /^T\d/.test(d.name))
   .map((d) => d.name)
-  .sort();
+  .sort((a, b) => a.localeCompare(b, 'en', { numeric: true }));
 
 const index = [];
 for (const name of cases) {

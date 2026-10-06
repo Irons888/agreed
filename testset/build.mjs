@@ -324,7 +324,7 @@ if (args.includes('--list-voices')) {
 const allCases = (await readdir(TESTSET, { withFileTypes: true }))
   .filter((entry) => entry.isDirectory() && /^T\d/.test(entry.name))
   .map((entry) => entry.name)
-  .sort();
+  .sort((a, b) => a.localeCompare(b, 'en', { numeric: true }));
 const cases = args.length ? args : allCases;
 const scripts = new Map();
 for (const name of cases) scripts.set(name, await loadScript(path.join(TESTSET, name)));

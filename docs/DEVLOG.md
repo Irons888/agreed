@@ -200,3 +200,16 @@ Times are local (EEST).
 - Final eval, 40 runs on the live deployment: **40/40**, 165/165 items with the right status, 0 unsupported, 0 retries. Lists p50 24.1 s, p90 41.1 s (T8 is 2½ minutes); transcript after 2.5 s; $0.0051 per audio minute. The repeat rule removed a duplicate “dark mode” in one T8 run.
 - The home page's example is now T8, the call that sounds real; T1 stays on the Quality page.
 
+### Real recordings
+
+- Asked for real voices next to the synthetic ones. The brief wants material that can be shared, so the source is the AMI Meeting Corpus (CC BY 4.0, real project meetings, many speakers with accents).
+- Found the windows with a script over the corpus's word-level transcripts: about three minutes, two voices only (a third person says at most a word or two), and words like “I'll”, “can you”, “by tomorrow”. 68 of 171 meetings have such a window; most real two-person stretches hold few commitments.
+  - **T9** (EN2002d, 27:48–30:43): two colleagues plan software work, talk over each other, never say their names.
+  - **T10** (ES2008a, 2:30–5:20): four people introduce themselves at a kick-off.
+  - Expected results written from the corpus transcript and committed before the first run.
+- First runs: T10 5/5 (declined, 3–4 voices heard). T9 0/5:
+  - the expected file had guessed the voice numbering and spelled “six” where recognition writes “6”. Corrected after the run and recorded as such: owners are now given as the person in the timeline, and the eval finds that person's voice by overlap;
+  - “do you wanna write him an email?” “Sure.” lost its owner: everyday request phrasing now counts;
+  - a question answered on the spot was listed as open, as it was once in T3 and once in T8. Now the first real reply decides; simulated on every stored result, it removed the 5 answered questions and kept all 178 real ones.
+- Final eval, T1–T10, 5 runs each on the live deployment: 44/50. The recordings made for the test 39/40 (T8 once without an owner the model left out); T10 5/5; T9 0/5. In T9 the email and the file task are found every run with the right people; “I'd need your snippets by tomorrow evening” answered only with “Yeah. Yep.” is never counted as agreed, and twice an explanation of a past decision became a declined proposal. Lists p50 20.8 s, p90 43.4 s; $0.0047 per audio minute.
+

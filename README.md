@@ -41,16 +41,18 @@ Scope: English, two clearly distinguishable speakers, up to 3 minutes, no overla
 
 ## Measured
 
-Final eval: 5 runs per test recording on the live deployment, with Scribe v2.
+Final eval: 5 runs per test recording on the live deployment, with Scribe v2: eight recordings made for the test and two real meetings.
 
 | | |
 |---|---|
-| Runs passed | **40 / 40** |
-| Real items found with the right status | **165 / 165** |
-| Unsupported items added | **0** |
-| Time to the full verified list, p50 / p90 (declines take about 2 s) | **24.1 s / 41.1 s** |
-| Time to the transcript | **2.5 s** |
-| Variable cost | **$0.0051 per audio minute** at ElevenLabs and Workers AI list prices |
+| Runs passed | **44 / 50**: 39 / 40 on the recordings made for the test; real meetings T10 5 / 5, T9 0 / 5 |
+| Real items found with the right status | **176 / 180** |
+| Unsupported items added | **3**, all in the real two-person meeting (T9) |
+| Time to the full verified list, p50 / p90 (declines take about 2 s) | **20.8 s / 43.4 s** |
+| Time to the transcript | **2.8 s** |
+| Variable cost | **$0.0047 per audio minute** at ElevenLabs and Workers AI list prices |
+
+On real speech (T9) the product asks who is who, finds the email and the file task every run with the right people, and invents no owner; it does not count “Yeah. Yep.” as accepting an indirect request, and twice it listed an explanation of a past decision as a declined proposal. Details are in the delivery notes.
 
 With Nova-3 the same pipeline passed T1–T6 (30/30 on the live deployment, $0.0071 per audio minute) but heard T7's seven people as one voice.
 
@@ -105,7 +107,7 @@ npm run deploy                                # builds the app and Storybook, de
 
 ## Test set and eval
 
-`testset/` holds eight recordings with scripts and expected results. The expected results were committed **before any product code existed**, as the git history shows. See [testset/README.md](testset/README.md).
+`testset/` holds ten recordings with expected results: eight made for this test and two excerpts of real meetings. The expected results were committed **before any product code existed**, as the git history shows. See [testset/README.md](testset/README.md).
 
 | Case | What it checks |
 |---|---|
@@ -117,6 +119,8 @@ npm run deploy                                # builds the app and Storybook, de
 | T6 | T1 over a noisy phone line |
 | T7 | Seven people, 2–5 s of speech each; should decline as more than two voices. Added later, expected result committed before its first run |
 | T8 | The situations of T1 spoken like a real call, 2:34: small talk, fillers, laughter, a hedged offer, two interruptions. Added later, expected result committed before its first run |
+| T9 | A real meeting (AMI corpus): two colleagues plan work, overlapping and unnamed; should ask who is who and find three agreed tasks |
+| T10 | A real meeting (AMI corpus): four people introduce themselves; should decline |
 
 `npm run eval` uploads each recording to the live pipeline, scores the result against `expected.json` and writes `eval/reports/` and the full results to `eval/results/`. Nothing is cached.
 

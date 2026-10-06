@@ -32,7 +32,7 @@ const model = option('model', 'gpt-oss-120b');
 const asr = option('asr', '');
 const hasAudio = (name) => access(path.join(TESTSET, name, 'audio.wav')).then(() => true, () => false);
 const allCases = [];
-for (const d of (await readdir(TESTSET, { withFileTypes: true })).filter((d) => d.isDirectory() && /^T\d/.test(d.name)).sort((a, b) => a.name.localeCompare(b.name))) {
+for (const d of (await readdir(TESTSET, { withFileTypes: true })).filter((d) => d.isDirectory() && /^T\d/.test(d.name)).sort((a, b) => a.name.localeCompare(b.name, 'en', { numeric: true }))) {
   if (await hasAudio(d.name)) allCases.push(d.name);
   else console.log(`${d.name}: no audio yet (npm run testset:build), skipped`);
 }
