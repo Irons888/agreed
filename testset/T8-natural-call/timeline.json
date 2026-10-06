@@ -1,0 +1,265 @@
+{
+  "case": "T8-natural-call",
+  "duration": 154.608,
+  "lines": [
+    {
+      "id": "L1",
+      "speaker": "sofia",
+      "text": "Hey Tom! Can you hear me okay?",
+      "start": 0.4,
+      "end": 2.08
+    },
+    {
+      "id": "L2",
+      "speaker": "tom",
+      "text": "Yep, loud and clear. Hey Sofia. How was the weekend?",
+      "start": 2.4,
+      "end": 5.84
+    },
+    {
+      "id": "L3",
+      "speaker": "sofia",
+      "text": "Short. Way too short. You?",
+      "start": 6.72,
+      "end": 9.28
+    },
+    {
+      "id": "L4",
+      "speaker": "tom",
+      "text": "Moving apartments. Don't ask.",
+      "start": 10.32,
+      "end": 12.24
+    },
+    {
+      "id": "L5",
+      "speaker": "sofia",
+      "text": "Oof. Okay, I won't. So, um, quick intro for the recording. I'm Sofia, I'm the product lead on the partner portal.",
+      "start": 12.56,
+      "end": 20.72
+    },
+    {
+      "id": "L6",
+      "speaker": "tom",
+      "text": "And I'm Tom, I'm doing the backend. Well... mostly the backend.",
+      "start": 21.04,
+      "end": 25.04
+    },
+    {
+      "id": "L7",
+      "speaker": "sofia",
+      "text": "Mostly. Okay, so I just wanna go through what's left before the launch, 'cause it's getting... close. Like, really close.",
+      "start": 25.84,
+      "end": 33.84
+    },
+    {
+      "id": "L8",
+      "speaker": "tom",
+      "text": "Yeah. So, first thing, the partner team is still waiting on the API docs. They pinged me again this morning, actually.",
+      "start": 34.16,
+      "end": 41.04
+    },
+    {
+      "id": "L9",
+      "speaker": "sofia",
+      "text": "Ugh, right. Can you get those over to them? Like, by Wednesday?",
+      "start": 41.36,
+      "end": 45.44
+    },
+    {
+      "id": "L10",
+      "speaker": "tom",
+      "text": "Yeah, yeah. I'll send them the docs by Wednesday. That's fine.",
+      "start": 45.84,
+      "end": 48.88
+    },
+    {
+      "id": "L11",
+      "speaker": "sofia",
+      "text": "Does that include the auth part? They kept asking about tokens.",
+      "start": 49.12,
+      "end": 52.56
+    },
+    {
+      "id": "L12",
+      "speaker": "tom",
+      "text": "Yeah, the whole thing. Auth, webhooks, all of it.",
+      "start": 52.8,
+      "end": 56.16
+    },
+    {
+      "id": "L13",
+      "speaker": "sofia",
+      "text": "Perfect.",
+      "start": 56.4,
+      "end": 56.96
+    },
+    {
+      "id": "L14",
+      "speaker": "tom",
+      "text": "Oh, and while I'm in there, we could also add a dark mode. People keep asking for it, and it's honestly not that much work, I could just—",
+      "start": 57.28,
+      "end": 64.4
+    },
+    {
+      "id": "L15",
+      "speaker": "sofia",
+      "text": "I know, I know. I'd rather not. Not this release, let's keep it tight.",
+      "start": 64.474,
+      "end": 68.527
+    },
+    {
+      "id": "L16",
+      "speaker": "tom",
+      "text": "Fair. Fair enough.",
+      "start": 68.847,
+      "end": 69.887
+    },
+    {
+      "id": "L17",
+      "speaker": "sofia",
+      "text": "Okay, next one. The staging demo. Can you have it up by Thursday?",
+      "start": 70.207,
+      "end": 74.287
+    },
+    {
+      "id": "L18",
+      "speaker": "tom",
+      "text": "Thursday... yeah. Thursday works.",
+      "start": 74.607,
+      "end": 77.167
+    },
+    {
+      "id": "L19",
+      "speaker": "sofia",
+      "text": "Great. And I'll book the big room for the client workshop, the one on the fourth—",
+      "start": 77.487,
+      "end": 81.647
+    },
+    {
+      "id": "L20",
+      "speaker": "tom",
+      "text": "The one with the projector that never works?",
+      "start": 81.358,
+      "end": 83.198
+    },
+    {
+      "id": "L21",
+      "speaker": "sofia",
+      "text": "Yes. That one. I'll book it anyway.",
+      "start": 84.038,
+      "end": 86.238
+    },
+    {
+      "id": "L22",
+      "speaker": "tom",
+      "text": "Okay.",
+      "start": 87.038,
+      "end": 87.438
+    },
+    {
+      "id": "L23",
+      "speaker": "sofia",
+      "text": "Um, one more thing. The privacy policy page has to be updated before launch. Like, it really has to.",
+      "start": 87.838,
+      "end": 94.558
+    },
+    {
+      "id": "L24",
+      "speaker": "tom",
+      "text": "Yeah, no, that definitely needs to happen.",
+      "start": 94.878,
+      "end": 97.518
+    },
+    {
+      "id": "L25",
+      "speaker": "tom",
+      "text": "Oh, and do we even know if they need single sign-on? SSO?",
+      "start": 97.798,
+      "end": 101.678
+    },
+    {
+      "id": "L26",
+      "speaker": "sofia",
+      "text": "Honestly? No idea. Nobody's asked them yet.",
+      "start": 102.078,
+      "end": 105.278
+    },
+    {
+      "id": "L27",
+      "speaker": "tom",
+      "text": "Hm. Okay. Also, uh, the flaky tests in the payment module... I'll try to look at them this week, but, you know, no promises.",
+      "start": 105.518,
+      "end": 113.518
+    },
+    {
+      "id": "L28",
+      "speaker": "sofia",
+      "text": "That's fine. Whenever you can.",
+      "start": 113.758,
+      "end": 115.278
+    },
+    {
+      "id": "L29",
+      "speaker": "tom",
+      "text": "Actually, wait, sorry, going back to the staging demo. Thursday's too tight. The database migration is gonna eat, like, the whole week. Can we say Monday instead?",
+      "start": 115.768,
+      "end": 125.048
+    },
+    {
+      "id": "L30",
+      "speaker": "sofia",
+      "text": "Is the migration okay, though? Should I be worried?",
+      "start": 125.288,
+      "end": 128.088
+    },
+    {
+      "id": "L31",
+      "speaker": "tom",
+      "text": "Nah, it's fine. It's just slow. Lots of data.",
+      "start": 128.408,
+      "end": 131.608
+    },
+    {
+      "id": "L32",
+      "speaker": "sofia",
+      "text": "Okay. Monday... yeah, okay. Let's make it Monday.",
+      "start": 132.008,
+      "end": 136.168
+    },
+    {
+      "id": "L33",
+      "speaker": "tom",
+      "text": "Cool. Thank you.",
+      "start": 136.408,
+      "end": 137.368
+    },
+    {
+      "id": "L34",
+      "speaker": "sofia",
+      "text": "Oh, and I just got a message from the client. They wanna do the workshop online now, so... I won't book the room after all.",
+      "start": 137.688,
+      "end": 144.888
+    },
+    {
+      "id": "L35",
+      "speaker": "tom",
+      "text": "The projector lives another day.",
+      "start": 145.928,
+      "end": 147.608
+    },
+    {
+      "id": "L36",
+      "speaker": "sofia",
+      "text": "Exactly. Okay, I think that's everything. Thanks, Tom.",
+      "start": 148.328,
+      "end": 152.008
+    },
+    {
+      "id": "L37",
+      "speaker": "tom",
+      "text": "Thanks, Sofia. Talk soon.",
+      "start": 152.328,
+      "end": 153.768
+    }
+  ]
+}
