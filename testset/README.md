@@ -12,6 +12,12 @@ Small, reproducible recordings with expected results. The scripts and `expected.
 | T6-noisy | T1 over a noisy phone line (300–3400 Hz, pink noise) | Robustness | Same as T1 |
 | T7-seven-voices | Seven people on a stand-up, 2–5 seconds of speech each | Far outside the scope, and short turns that are hard to tell apart | Decline: more than two voices detected, no tasks |
 | T8-natural-call | The situations of T1 spoken like a real call: small talk, fillers, laughter, a hedged offer, two interruptions. Generated as one dialogue with Eleven v4 | Natural speech, overlapping interruptions | Result as T1, plus the hedged offer under “To check” |
+| T9-real-two-people | A real recording: two colleagues plan software work, talk over each other and never say their names (AMI EN2002d, 27:48–30:43) | Real speech: overlaps, false starts, hedges, no introductions | Asks who is who. Agreed: an email (Speaker 2), the file made readable today before half past six (Speaker 1), code snippets by tomorrow evening (Speaker 2). Nothing else agreed |
+| T10-real-four-people | A real recording: four people introduce themselves at a kick-off (AMI ES2008a, 2:30–5:20) | Outside the scope, with real voices | Decline: more than two voices |
+
+## Real recordings
+
+T9 and T10 are excerpts of the [AMI Meeting Corpus](https://groups.inf.ed.ac.uk/ami/corpus/) (AMI Consortium), released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Changes: cut to the times above; `timeline.json` and `script.md` were built from the corpus word-level transcript. Their `script.json` records the source and is marked `recorded`, so `build.mjs` leaves them alone. The expected results were written from the transcript before the first run.
 
 ## Files in each case
 

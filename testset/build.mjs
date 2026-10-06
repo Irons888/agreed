@@ -332,7 +332,8 @@ for (const name of cases) scripts.set(name, await loadScript(path.join(TESTSET, 
 // Spoken cases first: T6 is made from the T1 audio.
 let voices;
 for (const [name, script] of scripts) {
-  if (script.from_audio) continue;
+  // Real recordings (T9, T10) are cut from a corpus, not generated.
+  if (script.from_audio || script.recorded) continue;
   voices ??= await resolveVoices();
   const build = script.engine === 'dialogue' ? buildDialogue : buildSpoken;
   const duration = await build(path.join(TESTSET, name), script, voices);

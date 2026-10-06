@@ -1,0 +1,21 @@
+{
+  "case": "T9-real-two-people",
+  "title": "Two people planning software work: a real recording, not introduced",
+  "language": "en",
+  "recorded": true,
+  "source": {
+    "corpus": "AMI Meeting Corpus",
+    "meeting": "EN2002d",
+    "audio": "EN2002d.Mix-Headset.wav",
+    "from_seconds": 1668.0,
+    "to_seconds": 1843.0,
+    "licence": "CC BY 4.0",
+    "url": "https://groups.inf.ed.ac.uk/ami/corpus/",
+    "changes": "Cut to this excerpt; timeline built from the corpus word-level transcript."
+  },
+  "speakers": {
+    "b": "AMI participant B",
+    "c": "AMI participant C",
+    "d": "AMI participant D"
+  }
+}

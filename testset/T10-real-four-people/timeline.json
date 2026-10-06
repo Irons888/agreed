@@ -1,0 +1,195 @@
+{
+  "case": "T10-real-four-people",
+  "duration": 170.0,
+  "lines": [
+    {
+      "id": "L1",
+      "speaker": "b",
+      "text": "no artistic talents",
+      "start": 0.06,
+      "end": 1.12
+    },
+    {
+      "id": "L2",
+      "speaker": "a",
+      "text": "How do you spell your name? Thanks",
+      "start": 2.02,
+      "end": 5.11
+    },
+    {
+      "id": "L3",
+      "speaker": "b",
+      "text": "A_ L_ I_ M_ A_",
+      "start": 3.08,
+      "end": 4.5
+    },
+    {
+      "id": "L4",
+      "speaker": "b",
+      "text": "Oh, and I guess I'm the Industrial Designer on this project. So let's see if I can get um here. I will draw a little turtle for you all. Not necessarily 'cause it's my absolute favourite animal, but just that I think they're drawable",
+      "start": 5.82,
+      "end": 27.37
+    },
+    {
+      "id": "L5",
+      "speaker": "b",
+      "text": "And you have the pretty little shell going on",
+      "start": 30.36,
+      "end": 32.37
+    },
+    {
+      "id": "L6",
+      "speaker": "b",
+      "text": "Some little eyes. Happy",
+      "start": 35.05,
+      "end": 37.21
+    },
+    {
+      "id": "L7",
+      "speaker": "b",
+      "text": "There you go. That's a turtle",
+      "start": 42.5,
+      "end": 43.98
+    },
+    {
+      "id": "L8",
+      "speaker": "d",
+      "text": "Yes",
+      "start": 45.19,
+      "end": 45.4
+    },
+    {
+      "id": "L9",
+      "speaker": "a",
+      "text": "So what are your favourite characteristics?",
+      "start": 45.91,
+      "end": 47.4
+    },
+    {
+      "id": "L10",
+      "speaker": "b",
+      "text": "Um. I I like the whole having a shell thing. It's quite cool carry your home around where you go, um quite decorative little animals, they can swim, they can, they're very adaptable, they carry everything they need with them, um and they're easy to draw",
+      "start": 47.54,
+      "end": 65.41
+    },
+    {
+      "id": "L11",
+      "speaker": "a",
+      "text": "Mm",
+      "start": 50.49,
+      "end": 50.9
+    },
+    {
+      "id": "L12",
+      "speaker": "a",
+      "text": "Excellent. Shall we just go around the table?",
+      "start": 67.04,
+      "end": 69.63
+    },
+    {
+      "id": "L13",
+      "speaker": "c",
+      "text": "Uh Okay. Well, my name is Iain uh and I'm the User Interface Designer for the project. Um",
+      "start": 70.07,
+      "end": 79.15
+    },
+    {
+      "id": "L14",
+      "speaker": "a",
+      "text": "Mm",
+      "start": 72.53,
+      "end": 72.73
+    },
+    {
+      "id": "L15",
+      "speaker": "c",
+      "text": "And I'll try and draw my favourite animal",
+      "start": 80.56,
+      "end": 83.21
+    },
+    {
+      "id": "L16",
+      "speaker": "c",
+      "text": "I'll I should leave that one on there shouldn't I before I callously rub it off",
+      "start": 89.09,
+      "end": 92.8
+    },
+    {
+      "id": "L17",
+      "speaker": "b",
+      "text": "No, you can erase the turtle, it's alright",
+      "start": 90.19,
+      "end": 92.29
+    },
+    {
+      "id": "L18",
+      "speaker": "a",
+      "text": "Might be nice to have them all up there at same time",
+      "start": 92.75,
+      "end": 94.69
+    },
+    {
+      "id": "L19",
+      "speaker": "c",
+      "text": "Um I'm not gonna draw it quite to scale um",
+      "start": 96.18,
+      "end": 100.15
+    },
+    {
+      "id": "L20",
+      "speaker": "c",
+      "text": "Is that at least identifiable?",
+      "start": 125.17,
+      "end": 126.79
+    },
+    {
+      "id": "L21",
+      "speaker": "b",
+      "text": "Snake. Well, snake? It's w",
+      "start": 128.14,
+      "end": 132.31
+    },
+    {
+      "id": "L22",
+      "speaker": "d",
+      "text": "Well",
+      "start": 128.29,
+      "end": 128.76
+    },
+    {
+      "id": "L23",
+      "speaker": "c",
+      "text": "It's a whale, yes. Thanks. Um and, yeah, the reason I like whales is 'cause uh they're well, first of all they're quite intelligent um and also they're they're kind of mysterious, like we don't really know much about them or or understand how they work, how they form groups. And I just find them interesting animals",
+      "start": 129.06,
+      "end": 151.29
+    },
+    {
+      "id": "L24",
+      "speaker": "a",
+      "text": "Em",
+      "start": 129.07,
+      "end": 129.37
+    },
+    {
+      "id": "L25",
+      "speaker": "d",
+      "text": "Oh my god, it's better than what I'm gonna be able to do",
+      "start": 131.21,
+      "end": 133.1
+    },
+    {
+      "id": "L26",
+      "speaker": "d",
+      "text": "Take my contraptions with me",
+      "start": 158.15,
+      "end": 159.87
+    },
+    {
+      "id": "L27",
+      "speaker": "d",
+      "text": "Alright, I'm Jessy. I'm from around D_C_ ish sort of in the U_S_. And we're gonna",
+      "start": 162.1,
+      "end": 169.9
+    }
+  ]
+}

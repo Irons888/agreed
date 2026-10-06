@@ -1,0 +1,22 @@
+{
+  "case": "T10-real-four-people",
+  "title": "Four people introduce themselves at a kick-off: a real recording",
+  "language": "en",
+  "recorded": true,
+  "source": {
+    "corpus": "AMI Meeting Corpus",
+    "meeting": "ES2008a",
+    "audio": "ES2008a.Mix-Headset.wav",
+    "from_seconds": 150.0,
+    "to_seconds": 320.0,
+    "licence": "CC BY 4.0",
+    "url": "https://groups.inf.ed.ac.uk/ami/corpus/",
+    "changes": "Cut to this excerpt; timeline built from the corpus word-level transcript."
+  },
+  "speakers": {
+    "a": "AMI participant A",
+    "b": "AMI participant B",
+    "c": "AMI participant C",
+    "d": "AMI participant D"
+  }
+}

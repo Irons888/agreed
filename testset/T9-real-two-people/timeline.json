@@ -1,0 +1,300 @@
+{
+  "case": "T9-real-two-people",
+  "duration": 175.0,
+  "lines": [
+    {
+      "id": "L1",
+      "speaker": "b",
+      "text": "So do you wanna write him an email then? That'd be good",
+      "start": 2.52,
+      "end": 5.26
+    },
+    {
+      "id": "L2",
+      "speaker": "d",
+      "text": "Sure",
+      "start": 4.53,
+      "end": 4.83
+    },
+    {
+      "id": "L3",
+      "speaker": "b",
+      "text": "Um",
+      "start": 7.17,
+      "end": 7.77
+    },
+    {
+      "id": "L4",
+      "speaker": "b",
+      "text": "And uh when I get home today, which will be before",
+      "start": 10.5,
+      "end": 14.96
+    },
+    {
+      "id": "L5",
+      "speaker": "b",
+      "text": "um",
+      "start": 16.37,
+      "end": 16.96
+    },
+    {
+      "id": "L6",
+      "speaker": "b",
+      "text": "before half past six, I will make that file readable, writable, everything",
+      "start": 18.22,
+      "end": 23.92
+    },
+    {
+      "id": "L7",
+      "speaker": "d",
+      "text": "Oh yeah, sure. Yeah, no no big rush",
+      "start": 22.46,
+      "end": 24.62
+    },
+    {
+      "id": "L8",
+      "speaker": "b",
+      "text": "Uh-uh. Well I I will",
+      "start": 25.18,
+      "end": 27.06
+    },
+    {
+      "id": "L9",
+      "speaker": "d",
+      "text": "Although just to get it out of the way. So I'll try and remember to do that to my own s",
+      "start": 27.01,
+      "end": 31.52
+    },
+    {
+      "id": "L10",
+      "speaker": "b",
+      "text": "Well I will I will need your snippets of code or it'd be good if I had them by tomorrow evening",
+      "start": 31.06,
+      "end": 38.0
+    },
+    {
+      "id": "L11",
+      "speaker": "d",
+      "text": "Yeah",
+      "start": 36.28,
+      "end": 36.54
+    },
+    {
+      "id": "L12",
+      "speaker": "d",
+      "text": "Yeah",
+      "start": 38.39,
+      "end": 38.63
+    },
+    {
+      "id": "L13",
+      "speaker": "d",
+      "text": "Yep",
+      "start": 40.21,
+      "end": 40.4
+    },
+    {
+      "id": "L14",
+      "speaker": "b",
+      "text": "Oh, I was gonna ask um",
+      "start": 41.35,
+      "end": 43.05
+    },
+    {
+      "id": "L15",
+      "speaker": "b",
+      "text": "at the moment your search window",
+      "start": 44.89,
+      "end": 46.34
+    },
+    {
+      "id": "L16",
+      "speaker": "b",
+      "text": "how is it organised?",
+      "start": 47.65,
+      "end": 48.57
+    },
+    {
+      "id": "L17",
+      "speaker": "d",
+      "text": "Just basic um pretty much like the interim do you wanna do you have the interim stuff? Just um sorta like Google type thing and just um Oh",
+      "start": 49.32,
+      "end": 57.65
+    },
+    {
+      "id": "L18",
+      "speaker": "b",
+      "text": "But at the beginning, it when you haven't searched yet, is it is it just is it still divided into two and the bottom half is just just empty? Okay",
+      "start": 57.07,
+      "end": 65.95
+    },
+    {
+      "id": "L19",
+      "speaker": "d",
+      "text": "Yeah. Yeah",
+      "start": 63.59,
+      "end": 64.88
+    },
+    {
+      "id": "L20",
+      "speaker": "d",
+      "text": "Then as these come up it'll just pop 'em in there",
+      "start": 67.17,
+      "end": 69.64
+    },
+    {
+      "id": "L21",
+      "speaker": "b",
+      "text": "And then if you, I don't know, double-click on one",
+      "start": 70.82,
+      "end": 73.68
+    },
+    {
+      "id": "L22",
+      "speaker": "d",
+      "text": "It doesn't do anything yet. S like that's that's the other big part. I mean how to get that that communication between the two different kinds of windows",
+      "start": 74.33,
+      "end": 82.73
+    },
+    {
+      "id": "L23",
+      "speaker": "b",
+      "text": "Okay",
+      "start": 76.58,
+      "end": 76.86
+    },
+    {
+      "id": "L24",
+      "speaker": "b",
+      "text": "Yeah",
+      "start": 86.3,
+      "end": 86.62
+    },
+    {
+      "id": "L25",
+      "speaker": "d",
+      "text": "Because the thing is if we have different things in here, like transcripts versus summaries versus topics, um that was why it was sorta deciding to get the three panes in there instead of just the one. Um",
+      "start": 86.61,
+      "end": 96.85
+    },
+    {
+      "id": "L26",
+      "speaker": "b",
+      "text": "Yeah yeah yeah. Hmm",
+      "start": 90.87,
+      "end": 92.86
+    },
+    {
+      "id": "L27",
+      "speaker": "d",
+      "text": "Yeah, so so there's a couple of those little things as we Yeah, exact It's beautiful. Yeah, m M_ makes more sense",
+      "start": 98.99,
+      "end": 107.29
+    },
+    {
+      "id": "L28",
+      "speaker": "b",
+      "text": "Well y y this this is the icon by the way",
+      "start": 100.02,
+      "end": 105.81
+    },
+    {
+      "id": "L29",
+      "speaker": "c",
+      "text": "Hmm",
+      "start": 102.74,
+      "end": 103.1
+    },
+    {
+      "id": "L30",
+      "speaker": "b",
+      "text": "Um, yeah, maybe you wanna do um left-handed um yeah, one left-click um highlights the the result in whatever you've got open",
+      "start": 107.59,
+      "end": 116.51
+    },
+    {
+      "id": "L31",
+      "speaker": "d",
+      "text": "Okay. Is that how it works in the other ones? In like the other windows like the various like um if we're in the topic. Or",
+      "start": 116.84,
+      "end": 123.98
+    },
+    {
+      "id": "L32",
+      "speaker": "b",
+      "text": "Which other ones?",
+      "start": 120.05,
+      "end": 120.47
+    },
+    {
+      "id": "L33",
+      "speaker": "b",
+      "text": "Um yeah. Usually one left click, it's highlights it cross-highlights everything, I think. Yeah",
+      "start": 121.69,
+      "end": 130.47
+    },
+    {
+      "id": "L34",
+      "speaker": "d",
+      "text": "If you have like a particular w window that you want me to mimic its behaviour, then like just find it in the programme and just say, okay, just how this one does it. So if it's like the topic window or the whatever",
+      "start": 131.27,
+      "end": 142.51
+    },
+    {
+      "id": "L35",
+      "speaker": "b",
+      "text": "Mm well it's difficult, because",
+      "start": 142.08,
+      "end": 143.82
+    },
+    {
+      "id": "L36",
+      "speaker": "d",
+      "text": "So then I can just sorta trace back and figure out what objects they are and bring 'em into here. So",
+      "start": 148.63,
+      "end": 154.69
+    },
+    {
+      "id": "L37",
+      "speaker": "b",
+      "text": "Well you could look up",
+      "start": 148.79,
+      "end": 149.51
+    },
+    {
+      "id": "L38",
+      "speaker": "b",
+      "text": "Mm no, that's difficult. Because it the transcription window does cross-highlighting",
+      "start": 155.47,
+      "end": 159.97
+    },
+    {
+      "id": "L39",
+      "speaker": "b",
+      "text": "In a very awkward way, because it has to find the topic first. That was that was a pain",
+      "start": 161.24,
+      "end": 167.84
+    },
+    {
+      "id": "L40",
+      "speaker": "d",
+      "text": "Hmm",
+      "start": 162.85,
+      "end": 163.1
+    },
+    {
+      "id": "L41",
+      "speaker": "d",
+      "text": "Okay",
+      "start": 164.82,
+      "end": 165.09
+    },
+    {
+      "id": "L42",
+      "speaker": "b",
+      "text": "And um when you when you g um right-click on a topic, it pops open the",
+      "start": 169.44,
+      "end": 174.99
+    }
+  ]
+}

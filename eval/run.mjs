@@ -174,7 +174,9 @@ function score(expected, timeline, result) {
     }
     if (exp.deadline) {
       const raw = match.deadline.raw ?? '';
-      add(exp.id, 'deadline wording', norm(raw).includes(norm(exp.deadline.raw_contains)), `got "${raw}"`);
+      // Wording can be a list when a deadline can be said back in more than one honest way ("today", "before half past six").
+      const wordings = [exp.deadline.raw_contains].flat();
+      add(exp.id, 'deadline wording', wordings.some((w) => norm(raw).includes(norm(w))), `got "${raw}"`);
       add(exp.id, 'deadline date', (match.deadline.date ?? null) === exp.deadline.date, `expected ${exp.deadline.date}, got ${match.deadline.date}`);
       if (exp.deadline.changed_from_contains) {
         const prev = match.deadline.previous.join(' | ');

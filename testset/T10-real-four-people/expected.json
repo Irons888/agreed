@@ -1,0 +1,11 @@
+{
+  "case": "T10-real-four-people",
+  "purpose": "Real speech from the AMI Meeting Corpus (CC BY 4.0): four people introduce themselves at a kick-off. Outside the two-speaker scope, so the product should decline for that reason. Written before the first run.",
+  "outcome": "decline",
+  "decline_reason": "speaker_count",
+  "items": [],
+  "traps": [
+    "No list: drawing a favourite animal on the whiteboard is not a project task.",
+    "Short turns by two of the four people may be hard to tell apart; the result is still a decline as long as more than two voices are heard."
+  ]
+}
