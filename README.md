@@ -146,7 +146,8 @@ docs/              DEVLOG.md (what was tried, what failed, how outputs were chec
 - Radix UI primitives, and the shadcn/ui pattern (class-variance-authority, tailwind-merge);
 - Lucide icons, the Onest, Geist and Geist Mono fonts;
 - zod and Storybook;
-- ElevenLabs voices for the test recordings.
+- ElevenLabs voices for the test recordings made for this test;
+- two excerpts of the AMI Meeting Corpus (CC BY 4.0) as real test recordings, credited in `testset/README.md`.
 
 **Own work:**
 - the pipeline: turn building, prompt and worked example, verification rules, date resolution, cost accounting;

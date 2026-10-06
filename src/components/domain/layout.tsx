@@ -15,7 +15,7 @@ export function Logo() {
   );
 }
 
-/** Three places for a user (New, History, Tasks); the reviewer pages sit on the right. */
+/** Full width: the logo on the left, the three places for a user (New, History, Tasks) in the middle, the reviewer pages on the right. */
 export function TopNav({ onNavigate, current }: { onNavigate: (path: string) => void; current: string }) {
   const go = (path: string) => (e: MouseEvent) => {
     e.preventDefault();
@@ -33,8 +33,8 @@ export function TopNav({ onNavigate, current }: { onNavigate: (path: string) => 
   );
   return (
     <header className="surface-dark border-b-2 border-border-strong">
-      <div className="mx-auto flex h-16 max-w-6xl items-center gap-4 px-4 sm:gap-8 sm:px-6 lg:px-8">
-        <a href="/" onClick={go('/')} aria-label="Agreed, new recording">
+      <div className="grid h-16 grid-cols-[1fr_auto_1fr] items-center gap-4 px-4 sm:px-6 lg:px-8">
+        <a href="/" onClick={go('/')} aria-label="Agreed, new recording" className="justify-self-start">
           <Logo />
         </a>
         <nav aria-label="Main" className="flex items-center gap-1">
@@ -42,7 +42,7 @@ export function TopNav({ onNavigate, current }: { onNavigate: (path: string) => 
           {tab('/history', 'History')}
           {tab('/tasks', 'Tasks')}
         </nav>
-        <div className="ml-auto hidden items-center gap-1 md:flex">
+        <div className="hidden items-center gap-1 justify-self-end md:flex">
           <a
             href="/quality"
             onClick={go('/quality')}
