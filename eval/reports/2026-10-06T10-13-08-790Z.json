@@ -1,0 +1,506 @@
+{
+  "startedAt": "2026-10-06T10:13:08.790Z",
+  "base": "https://agreed.rhanaev7-138.workers.dev",
+  "runs": 5,
+  "reasoning": "low",
+  "model": "gpt-oss-120b",
+  "asr": "server default",
+  "cases": [
+    {
+      "case": "T9-real-two-people",
+      "outcome": "clarify",
+      "runs": [
+        {
+          "run": 1,
+          "error": null,
+          "recovered": false,
+          "pass": false,
+          "included": "2/3",
+          "exclusionErrors": 0,
+          "failed": [
+            {
+              "item": "file-access",
+              "check": "owner",
+              "ok": false,
+              "detail": "expected the voice of B (S2), got null"
+            },
+            {
+              "item": "file-access",
+              "check": "deadline wording",
+              "ok": false,
+              "detail": "got \"\""
+            },
+            {
+              "item": "code-snippets",
+              "check": "status",
+              "ok": false,
+              "detail": "expected agreed, got needs_review"
+            },
+            {
+              "item": "code-snippets",
+              "check": "owner",
+              "ok": false,
+              "detail": "expected the voice of D (S1), got null"
+            },
+            {
+              "item": "code-snippets",
+              "check": "deadline wording",
+              "ok": false,
+              "detail": "got \"\""
+            }
+          ],
+          "checks": 21,
+          "clientMs": 22081,
+          "transcriptMs": 8515,
+          "asr": "elevenlabs/scribe_v2",
+          "voicesHeard": 2,
+          "serverMs": {
+            "asrMs": 8553,
+            "extractMs": 13274,
+            "verifyMs": 0,
+            "totalMs": 21827
+          },
+          "usage": {
+            "audioMinutes": 2.917,
+            "asrAttempts": 1,
+            "asrNeurons": 0,
+            "llmCalls": 1,
+            "llmPromptTokens": 3637,
+            "llmCompletionTokens": 1403,
+            "llmNeurons": 211.38,
+            "retries": 0
+          },
+          "cost": {
+            "asrUsd": 0.010694,
+            "llmUsd": 0.002325,
+            "totalUsd": 0.01302,
+            "perAudioMinuteUsd": 0.004464,
+            "pricesCheckedOn": "2026-10-05"
+          },
+          "items": [
+            {
+              "title": "Write him an email",
+              "status": "agreed",
+              "owner": "Speaker 1",
+              "deadline": null,
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Make the file readable and writable",
+              "status": "agreed",
+              "owner": null,
+              "deadline": null,
+              "date": null,
+              "notes": [
+                "1 quote(s) not found in the transcript were removed.",
+                "Owner removed: the quotes show no commitment by Speaker 2 and no request that Speaker 2 accepted.",
+                "Deadline “before half past 6” removed: that wording is not in the quoted turns."
+              ]
+            },
+            {
+              "title": "Provide code snippets",
+              "status": "needs_review",
+              "owner": null,
+              "deadline": null,
+              "date": null,
+              "notes": [
+                "1 quote(s) not found in the transcript were removed.",
+                "Owner removed: the quotes show no commitment by Speaker 1 and no request that Speaker 1 accepted.",
+                "Deadline “by tomorrow evening” removed: that wording is not in the quoted turns."
+              ]
+            }
+          ],
+          "dropped": [
+            {
+              "title": "How is the search window organized?",
+              "reason": "It was answered in the call."
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "error": null,
+          "recovered": false,
+          "pass": false,
+          "included": "1/3",
+          "exclusionErrors": 0,
+          "failed": [
+            {
+              "item": "file-access",
+              "check": "found",
+              "ok": false,
+              "detail": "missing"
+            },
+            {
+              "item": "code-snippets",
+              "check": "found",
+              "ok": false,
+              "detail": "missing"
+            }
+          ],
+          "checks": 11,
+          "clientMs": 31019,
+          "transcriptMs": 10252,
+          "asr": "elevenlabs/scribe_v2",
+          "voicesHeard": 2,
+          "serverMs": {
+            "asrMs": 10289,
+            "extractMs": 20444,
+            "verifyMs": 0,
+            "totalMs": 30733
+          },
+          "usage": {
+            "audioMinutes": 2.917,
+            "asrAttempts": 1,
+            "asrNeurons": 0,
+            "llmCalls": 1,
+            "llmPromptTokens": 3657,
+            "llmCompletionTokens": 1273,
+            "llmNeurons": 203.15,
+            "retries": 0
+          },
+          "cost": {
+            "asrUsd": 0.010694,
+            "llmUsd": 0.002235,
+            "totalUsd": 0.012929,
+            "perAudioMinuteUsd": 0.004433,
+            "pricesCheckedOn": "2026-10-05"
+          },
+          "items": [
+            {
+              "title": "Write him an email",
+              "status": "agreed",
+              "owner": "Speaker 1",
+              "deadline": null,
+              "date": null,
+              "notes": []
+            }
+          ],
+          "dropped": [
+            {
+              "title": "Make the file readable and writable",
+              "reason": "None of its quotes were found in the transcript."
+            },
+            {
+              "title": "Provide code snippets",
+              "reason": "None of its quotes were found in the transcript."
+            },
+            {
+              "title": "How is the search window organized?",
+              "reason": "It was answered in the call."
+            }
+          ]
+        },
+        {
+          "run": 3,
+          "error": null,
+          "recovered": false,
+          "pass": false,
+          "included": "1/3",
+          "exclusionErrors": 0,
+          "failed": [
+            {
+              "item": "file-access",
+              "check": "found",
+              "ok": false,
+              "detail": "missing"
+            },
+            {
+              "item": "code-snippets",
+              "check": "status",
+              "ok": false,
+              "detail": "expected agreed, got not_accepted"
+            },
+            {
+              "item": "code-snippets",
+              "check": "owner",
+              "ok": false,
+              "detail": "expected the voice of D (S1), got null"
+            },
+            {
+              "item": "code-snippets",
+              "check": "deadline wording",
+              "ok": false,
+              "detail": "got \"\""
+            }
+          ],
+          "checks": 19,
+          "clientMs": 20444,
+          "transcriptMs": 7519,
+          "asr": "elevenlabs/scribe_v2",
+          "voicesHeard": 2,
+          "serverMs": {
+            "asrMs": 7530,
+            "extractMs": 12780,
+            "verifyMs": 0,
+            "totalMs": 20310
+          },
+          "usage": {
+            "audioMinutes": 2.917,
+            "asrAttempts": 1,
+            "asrNeurons": 0,
+            "llmCalls": 1,
+            "llmPromptTokens": 3657,
+            "llmCompletionTokens": 1294,
+            "llmNeurons": 204.59,
+            "retries": 0
+          },
+          "cost": {
+            "asrUsd": 0.010694,
+            "llmUsd": 0.00225,
+            "totalUsd": 0.012945,
+            "perAudioMinuteUsd": 0.004438,
+            "pricesCheckedOn": "2026-10-05"
+          },
+          "items": [
+            {
+              "title": "Write him an email",
+              "status": "agreed",
+              "owner": "Speaker 1",
+              "deadline": null,
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Remember to do that tonight",
+              "status": "needs_review",
+              "owner": "Speaker 1",
+              "deadline": "tonight",
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Provide code snippets",
+              "status": "not_accepted",
+              "owner": null,
+              "deadline": null,
+              "date": null,
+              "notes": []
+            }
+          ],
+          "dropped": [
+            {
+              "title": "Make the file readable and writable",
+              "reason": "None of its quotes were found in the transcript."
+            }
+          ]
+        },
+        {
+          "run": 4,
+          "error": null,
+          "recovered": false,
+          "pass": false,
+          "included": "2/3",
+          "exclusionErrors": 0,
+          "failed": [
+            {
+              "item": "code-snippets",
+              "check": "status",
+              "ok": false,
+              "detail": "expected agreed, got needs_review"
+            },
+            {
+              "item": "code-snippets",
+              "check": "owner",
+              "ok": false,
+              "detail": "expected the voice of D (S1), got null"
+            },
+            {
+              "item": "code-snippets",
+              "check": "deadline wording",
+              "ok": false,
+              "detail": "got \"\""
+            }
+          ],
+          "checks": 21,
+          "clientMs": 27261,
+          "transcriptMs": 6243,
+          "asr": "elevenlabs/scribe_v2",
+          "voicesHeard": 2,
+          "serverMs": {
+            "asrMs": 6206,
+            "extractMs": 20841,
+            "verifyMs": 0,
+            "totalMs": 27047
+          },
+          "usage": {
+            "audioMinutes": 2.917,
+            "asrAttempts": 1,
+            "asrNeurons": 0,
+            "llmCalls": 1,
+            "llmPromptTokens": 3637,
+            "llmCompletionTokens": 1348,
+            "llmNeurons": 207.63,
+            "retries": 0
+          },
+          "cost": {
+            "asrUsd": 0.010694,
+            "llmUsd": 0.002284,
+            "totalUsd": 0.012978,
+            "perAudioMinuteUsd": 0.00445,
+            "pricesCheckedOn": "2026-10-05"
+          },
+          "items": [
+            {
+              "title": "Write him an email",
+              "status": "agreed",
+              "owner": "Speaker 1",
+              "deadline": null,
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Make the file readable and writable",
+              "status": "agreed",
+              "owner": "Speaker 2",
+              "deadline": "before half past 6:00",
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Provide code snippets",
+              "status": "needs_review",
+              "owner": null,
+              "deadline": null,
+              "date": null,
+              "notes": [
+                "Owner removed: the quotes show no commitment by Speaker 1 and no request that Speaker 1 accepted.",
+                "Deadline “by tomorrow evening” removed: that wording is not in the quoted turns."
+              ]
+            }
+          ],
+          "dropped": [
+            {
+              "title": "How is the search window organized?",
+              "reason": "It was answered in the call."
+            }
+          ]
+        },
+        {
+          "run": 5,
+          "error": null,
+          "recovered": false,
+          "pass": false,
+          "included": "2/3",
+          "exclusionErrors": 0,
+          "failed": [
+            {
+              "item": "code-snippets",
+              "check": "status",
+              "ok": false,
+              "detail": "expected agreed, got needs_review"
+            },
+            {
+              "item": "code-snippets",
+              "check": "owner",
+              "ok": false,
+              "detail": "expected the voice of D (S1), got null"
+            },
+            {
+              "item": "code-snippets",
+              "check": "deadline wording",
+              "ok": false,
+              "detail": "got \"\""
+            }
+          ],
+          "checks": 24,
+          "clientMs": 26885,
+          "transcriptMs": 6074,
+          "asr": "elevenlabs/scribe_v2",
+          "voicesHeard": 2,
+          "serverMs": {
+            "asrMs": 6099,
+            "extractMs": 20567,
+            "verifyMs": 0,
+            "totalMs": 26666
+          },
+          "usage": {
+            "audioMinutes": 2.917,
+            "asrAttempts": 1,
+            "asrNeurons": 0,
+            "llmCalls": 1,
+            "llmPromptTokens": 3658,
+            "llmCompletionTokens": 1366,
+            "llmNeurons": 209.53,
+            "retries": 0
+          },
+          "cost": {
+            "asrUsd": 0.010694,
+            "llmUsd": 0.002305,
+            "totalUsd": 0.012999,
+            "perAudioMinuteUsd": 0.004457,
+            "pricesCheckedOn": "2026-10-05"
+          },
+          "items": [
+            {
+              "title": "Write him an email",
+              "status": "agreed",
+              "owner": "Speaker 1",
+              "deadline": null,
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Make the file readable and writable",
+              "status": "agreed",
+              "owner": "Speaker 2",
+              "deadline": "before half past 6:00",
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Do that (unspecified task) tonight",
+              "status": "needs_review",
+              "owner": "Speaker 1",
+              "deadline": "tonight",
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Provide code snippets to S2",
+              "status": "needs_review",
+              "owner": null,
+              "deadline": null,
+              "date": null,
+              "notes": [
+                "Owner removed: the quotes show no commitment by Speaker 1 and no request that Speaker 1 accepted.",
+                "Deadline “by tomorrow evening” removed: that wording is not in the quoted turns."
+              ]
+            }
+          ],
+          "dropped": [
+            {
+              "title": "How is the search window organized?",
+              "reason": "It was answered in the call."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "runs": 5,
+    "errors": 0,
+    "passed": 0,
+    "inclusion": "8/15",
+    "exclusionErrors": 0,
+    "stability": {
+      "T9-real-two-people": "0/5"
+    },
+    "timeToResultMs": {
+      "p50": 26885,
+      "p90": 31019
+    },
+    "timeToTranscriptMs": {
+      "p50": 7519
+    },
+    "retries": 0,
+    "recoveredAfterDroppedConnection": 0,
+    "costPerRunUsd": 0.012974,
+    "costPerAudioMinuteUsd": 0.004448,
+    "asrUsed": [
+      "elevenlabs/scribe_v2"
+    ]
+  }
+}

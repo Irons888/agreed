@@ -73,12 +73,42 @@ function toEvidence(turn: IndexedTurn, span: { from: number; to: number }, role:
   };
 }
 
+/**
+ * A turn and its continuation: the same person goes on after a short interjection by someone else
+ * ("…readable, writable—" "Oh, yeah" "…everything."). Recognition splits such a sentence in two; a quote may span both.
+ */
+function continuation(index: Index, id: string): IndexedTurn | null {
+  const turns = [...index.values()];
+  const at = turns.findIndex((t) => t.id === id);
+  const first = turns[at];
+  if (!first) return null;
+  for (let k = at + 1; k < turns.length && k <= at + 3; k++) {
+    const next = turns[k];
+    if (next.speaker === first.speaker) {
+      if (next.start - first.end > 3) return null;
+      return {
+        ...first,
+        end: next.end,
+        text: `${first.text} ${next.text}`,
+        words: [...first.words, ...next.words],
+        tokens: [...first.tokens, ...next.tokens],
+        tokenWord: [...first.tokenWord, ...next.tokenWord.map((w) => w + first.words.length)],
+      };
+    }
+    if (next.words.length > 3) return null;
+  }
+  return null;
+}
+
 function align(index: Index, turnId: string | null, quote: string, role: EvidenceRole): Evidence | null {
   const q = tokens(quote);
   const cited = turnId ? index.get(turnId) : undefined;
   if (cited) {
     const span = locate(cited, q, true);
     if (span) return toEvidence(cited, span, role, span.exact ? 'exact' : 'repaired');
+    const joined = continuation(index, cited.id);
+    const across = joined && locate(joined, q, true);
+    if (joined && across) return toEvidence(joined, across, role, across.exact ? 'exact' : 'repaired');
   }
   for (const turn of index.values()) {
     if (turn.id === turnId) continue;
@@ -212,7 +242,8 @@ function verifyItem(raw: LlmItem, n: number, ctx: ItemContext): { item: Item } |
   let deadline: Deadline = { kind: 'none', raw: null, date: null, ambiguous: false, previous: [] };
   let deadlineNote: string | undefined;
   if (raw.deadline && status !== 'not_accepted' && status !== 'open_question') {
-    const quotedTurns = evidence.map((e) => ctx.index.get(e.turn)!.text);
+    // A quote can run on into the next turn after an interjection, so its own words count too.
+    const quotedTurns = evidence.map((e) => `${ctx.index.get(e.turn)!.text} ${e.quote}`);
     const supported = (wording: string) => quotedTurns.some((text) => containsPhrase(text, wording));
     if (supported(raw.deadline)) {
       deadline = {

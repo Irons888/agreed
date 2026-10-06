@@ -9,14 +9,30 @@ export function normalize(text: string): string {
     .trim();
 }
 
+const NUMBER_WORDS: Record<string, string> = {
+  zero: '0', one: '1', two: '2', three: '3', four: '4', five: '5', six: '6', seven: '7', eight: '8', nine: '9', ten: '10',
+  eleven: '11', twelve: '12', thirteen: '13', fourteen: '14', fifteen: '15', sixteen: '16', seventeen: '17', eighteen: '18',
+  nineteen: '19', twenty: '20', thirty: '30', forty: '40', fifty: '50',
+};
+
+/**
+ * Words for matching quotes against the transcript. Recognition writes numbers its own way ("half past 6:00")
+ * and the model quotes them its own way ("half past six"), so both become "half past 6".
+ */
 export const tokens = (text: string): string[] => {
   const n = normalize(text);
-  return n ? n.split(' ') : [];
+  if (!n) return [];
+  const out: string[] = [];
+  for (const word of n.split(' ')) {
+    if (word === '00' && /^\d+$/.test(out[out.length - 1] ?? '')) continue;
+    out.push(NUMBER_WORDS[word] ?? word);
+  }
+  return out;
 };
 
 export const containsPhrase = (haystack: string, needle: string): boolean => {
-  const h = ` ${normalize(haystack)} `;
-  const n = normalize(needle);
+  const h = ` ${tokens(haystack).join(' ')} `;
+  const n = tokens(needle).join(' ');
   return n.length > 0 && h.includes(` ${n} `);
 };
 
