@@ -10,17 +10,19 @@ import { useSamples, useStart } from './use-start';
 
 const container = 'mx-auto max-w-6xl px-4 sm:px-6 lg:px-8';
 
-// Two of the six test recordings: the main case and the one whose dates resolve. The rest are on the Quality page.
-const EXAMPLES = ['T1-main', 'T4-dated'];
+// Two of the test recordings: a call spoken like a real one, and the one whose dates resolve. The rest are on the Quality page.
+const EXAMPLES = ['T8-natural-call', 'T4-dated'];
+const MAIN_EXAMPLE = 'T8-natural-call';
 
-// What T1 gives, written out, for people who haven't run anything yet. It illustrates the output; runs are always live.
+// What T8 gives, written out, for people who haven't run anything yet. It illustrates the output; runs are always live.
 const EXAMPLE_RESULT: TaskSummary[] = [
-  { id: 'x1', title: 'Send API documentation', status: 'agreed', owner: 'Mark', deadline: '“by Wednesday”', at: 16 },
-  { id: 'x2', title: 'Prepare staging demo', status: 'agreed', owner: 'Mark', deadline: '“Monday”, moved from “Thursday”', at: 57 },
-  { id: 'x3', title: 'Update privacy policy page', status: 'agreed', owner: null, deadline: '“before launch”', at: 41 },
-  { id: 'x4', title: 'Does the client need single sign-on?', status: 'open_question', owner: null, deadline: null, at: 44 },
-  { id: 'x5', title: 'Add dark mode', status: 'not_accepted', owner: null, deadline: null, at: 24 },
-  { id: 'x6', title: 'Book meeting room for the client workshop', status: 'cancelled', owner: 'Anna', deadline: null, at: 61 },
+  { id: 'x1', title: 'Send the API docs to the partner team', status: 'agreed', owner: 'Tom', deadline: '“by Wednesday”', at: 27 },
+  { id: 'x2', title: 'Have the staging demo up', status: 'agreed', owner: 'Tom', deadline: '“Monday”, moved from “Thursday”', at: 112 },
+  { id: 'x3', title: 'Update the privacy policy page', status: 'agreed', owner: null, deadline: '“before launch”', at: 76 },
+  { id: 'x4', title: 'Look into the flaky payment tests', status: 'needs_review', owner: 'Tom', deadline: '“this week”', at: 92 },
+  { id: 'x5', title: 'Does the client need single sign-on?', status: 'open_question', owner: null, deadline: null, at: 83 },
+  { id: 'x6', title: 'Add dark mode', status: 'not_accepted', owner: null, deadline: null, at: 45 },
+  { id: 'x7', title: 'Book the big room for the client workshop', status: 'cancelled', owner: 'Sophia', deadline: null, at: 61 },
 ];
 
 function Block({ title, link, onLink, children }: { title: string; link?: string; onLink?: () => void; children: ReactNode }) {
@@ -43,7 +45,7 @@ export function HomePage({ onStart, onNavigate }: { onStart: (audio: PreparedAud
   const samples = useSamples();
   const { busy, error, startFile, startSample } = useStart(onStart);
   const examples = (samples ?? []).filter((s) => EXAMPLES.includes(s.case));
-  const main: Sample | undefined = examples.find((s) => s.case === 'T1-main');
+  const main: Sample | undefined = examples.find((s) => s.case === MAIN_EXAMPLE);
 
   const history = useHistory().filter((e) => !isExpired(e));
   const latestTasks = history
@@ -88,10 +90,11 @@ export function HomePage({ onStart, onNavigate }: { onStart: (audio: PreparedAud
           <div className="grid gap-8 lg:grid-cols-2 lg:items-start">
             <div>
               <p className="text-caption font-medium text-muted">Example</p>
-              <h2 className="heading mt-1 text-title-2 text-text">What you get from a 70-second call</h2>
+              <h2 className="heading mt-1 text-title-2 text-text">What you get from a 2½-minute call</h2>
               <p className="mt-2 max-w-md text-body text-muted">
-                The tasks, written out with who and by when. A proposal nobody accepted and a task that was called off are listed apart, so nothing
-                dropped passes for a task. Every line keeps the quote it comes from; run the call to hear them.
+                The tasks, written out with who and by when. A promise made with “I'll try” waits for your check. A proposal nobody accepted and a task
+                that was called off are listed apart, so nothing dropped passes for a task. Every line keeps the quote it comes from; run the call to
+                hear them.
               </p>
               {main && (
                 <Button className="mt-5" icon="play" loading={busy === main.case} disabled={busy !== null && busy !== main.case} onClick={() => startSample(main)}>
