@@ -1,7 +1,7 @@
 import {
   ArrowLeft, ArrowRight, AudioLines, BookOpen, CalendarDays, CalendarX2, Check, ChevronDown, ChevronRight,
   CircleCheck, CircleDashed, CircleQuestionMark, CircleX, Coins, Copy, Cpu, Download, ExternalLink, FileAudio,
-  Gauge, History, Info, ListChecks, LoaderCircle, Pause, Play, Quote, RotateCcw, RotateCw, ShieldCheck, Timer,
+  Gauge, History, Info, ListChecks, LoaderCircle, Pause, Pencil, Play, Quote, RotateCcw, RotateCw, ShieldCheck, Timer,
   Trash2, TriangleAlert, Upload, User, UserX, Waves, X,
 } from 'lucide-react';
 import { cn } from '@/lib/cn';
@@ -46,6 +46,7 @@ export const ICONS = {
   expand: ChevronDown,
   open: ChevronRight,
   external: ExternalLink,
+  edit: Pencil,
 } as const;
 
 export type IconName = keyof typeof ICONS;

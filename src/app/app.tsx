@@ -27,10 +27,12 @@ function usePath() {
     return () => window.removeEventListener('popstate', onPop);
   }, []);
   // A hash (/r/:id#item) is kept in the address; the result page scrolls to that item.
+  // So is a query (/tasks?calls=…), which the Tasks board reads.
   const navigate = useCallback((to: string, replace = false) => {
     const url = new URL(to, window.location.origin);
-    if (url.pathname + url.hash !== window.location.pathname + window.location.hash) {
-      window.history[replace ? 'replaceState' : 'pushState'](null, '', url.pathname + url.hash);
+    const next = url.pathname + url.search + url.hash;
+    if (next !== window.location.pathname + window.location.search + window.location.hash) {
+      window.history[replace ? 'replaceState' : 'pushState'](null, '', next);
     }
     setPath(url.pathname);
     window.scrollTo({ top: 0 });

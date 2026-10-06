@@ -30,7 +30,7 @@ Scope: English, two clearly distinguishable speakers, up to 3 minutes, no overla
 - **New**: upload a recording or run an example call. Until you have results, it shows what you get, written out.
 - **Result** (`/r/:id`): the items with ▶ quotes, the recording and the transcript. The link works for 30 days.
 - **History**: every recording analysed in this browser, with its counts. No accounts: it is kept in the browser.
-- **Tasks**: everything agreed across those recordings, by person, plus open questions and items to check. Each line opens the result at that item.
+- **Tasks**: a board of everything from those recordings: *To check* (said with a hedge, waiting for your decision), *To do* (soonest deadline first, overdue marked), *Open questions* and *Done*. Choose which calls are on the board, filter by person, press ▶ on a card to hear the words it comes from, tick tasks off, name a voice nobody named, or edit a task. Edits stay on the board and are marked as yours; the result page keeps what the call supports.
 - **Quality report** and **Design system**: for reviewers.
 
 ## Simple by default

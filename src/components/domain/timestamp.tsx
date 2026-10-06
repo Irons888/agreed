@@ -3,7 +3,8 @@ import { clock } from '@/lib/format';
 import { cn } from '@/lib/cn';
 import { Icon } from '../ui/icon';
 
-function Equalizer() {
+/** Three bars that show a quote is playing. */
+export function Equalizer() {
   return (
     <span aria-hidden className="flex h-3 items-end gap-0.5">
       {[0, 1, 2].map((i) => (

@@ -50,7 +50,7 @@ export function SavedRunPage({ id, onNew, onDelete }: { id: string; onNew: () =>
           <h1 className="heading mt-6 text-title-2 text-text">{missing}</h1>
           <p className="mt-3 text-body text-muted">Results are kept for 30 days, or until someone deletes them.</p>
           <Button variant="primary" icon="upload" className="mt-6" onClick={onNew}>
-            Analyze a recording
+            Analyse a recording
           </Button>
         </div>
       </Page>

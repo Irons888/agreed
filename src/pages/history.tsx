@@ -22,7 +22,7 @@ export function HistoryPage({ onNavigate }: { onNavigate: (path: string) => void
         <div className="mt-8 border-2 border-dashed border-border-strong p-6">
           <p className="text-body text-muted">No recordings yet. Results you get here will be listed so you can come back to them.</p>
           <Button variant="primary" icon="upload" className="mt-4" onClick={() => onNavigate('/')}>
-            Analyze a recording
+            Analyse a recording
           </Button>
         </div>
       )}

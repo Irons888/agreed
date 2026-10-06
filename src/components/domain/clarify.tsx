@@ -5,7 +5,8 @@ import { Icon } from '../ui/icon';
 import { SpeakerAvatar } from './speaker';
 import { TimestampButton } from './timestamp';
 
-const inputStyle =
+/** The one style for text and date inputs. */
+export const inputStyle =
   'h-9 min-w-0 border-2 border-border-strong bg-surface px-2.5 text-body text-text placeholder:text-subtle focus-visible:border-focus';
 
 /** Speakers never said their names: ask once, with a sample of each voice. Nothing is processed again. */

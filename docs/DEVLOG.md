@@ -164,3 +164,27 @@ Times are local (EEST).
   - $0.0053 per audio minute instead of $0.0071.
 - The Quality page's time tile now leaves declines out. They finish in about 2 s, and with T7 next to T5 they pulled the median down to 13.4 s.
 - Storybook fixtures now come from this eval, so they show what Scribe v2 produces.
+
+## 2026-10-06
+
+### T8: the main call, spoken like a real one
+
+- Feedback: the test calls sound scripted. Wrote T8 with the same situations as T1, the way people actually talk: small talk about the weekend, fillers, laughter, “I'll try… no promises”, and two interruptions. Expected result committed before any run (79eba52).
+- `testset/build.mjs` can now generate a case as one dialogue (ElevenLabs text to dialogue, Eleven v4), so turns and laughter sound natural. The API returns when each character is spoken, which gives `timeline.json`; `overlap_ms` moves an interruption so it starts while the other person is still talking.
+- Checked on a short sample first: `[laughs]` came out as laughter (Scribe tagged it as a sound), `[jumping in]` was not read aloud, and the two voices were separated.
+- Not generated yet: the account's free ElevenLabs allowance had 268 credits left, and T8 needs about 2,350. A Scribe call did not use those credits, so recognition in production is not affected. The eval and the sample list skip cases without audio.
+
+### Tasks as a board
+
+- Feedback on the Tasks page: the logic was weak. It only listed agreed tasks by person, nothing could be done with them, and there was no audio.
+- Rebuilt it the way task boards work (Trello, Linear):
+  - columns **To check** (hedged), **To do** (soonest deadline first; overdue in red, today in orange), **Open questions** and **Done**;
+  - “Count as agreed” on a hedged card is the same answer the result page stores, so both pages agree;
+  - a tick moves a task to Done; ▶ on every card plays its quote from that recording through one shared player;
+  - a Calls list on the left chooses which recordings are on the board (all by default, untick to hide, “only” to keep one); the choice is in the address, `/tasks?calls=…`;
+  - person filter chips; proposals nobody accepted and cancelled tasks are folded under Not counted.
+- Names and edits, asked for next:
+  - a voice nobody named can be named from its card; the name goes on every task of that voice in that call and on the call page, through the same stored answer;
+  - a task can be edited: title, owner, deadline wording and date. Edits are a working copy on the board, marked “Edited by you”, with the original quote still playable and a way back to the call's version. The result page keeps what the recording supports, so the evidence never mixes with the user's changes.
+- History entries saved before the board are refreshed once from the stored results, so old recordings get quotes and voice ids without being analysed again.
+- Checked in the browser: hiding calls, “only”, reload with the address, naming a voice, assigning an owner, a full edit and going back, ▶, ticks, phone width.

@@ -50,13 +50,14 @@ Final eval on the live deployment with Scribe v2: [`eval/reports/2026-10-05T21-3
 - **Telling voices apart depends on recognition.** Nova-3, the first choice, heard short turns as one voice: T7 came out as 1 voice of 7, and an 18-second cut with two people as 1. Scribe v2 now separates every test recording, and on cuts it told apart a single 0.4-second “Okay.” and same-gender voices with one 1.3–1.8 s line each. But all of them are clean synthetic voices; similar voices or crosstalk on a real call may still merge. When only one voice is heard, the product declines instead of guessing.
 - **A third party hears the audio.** Recognition runs at ElevenLabs, under their API terms. Without an ElevenLabs key the app falls back to Nova-3 on Workers AI, and then nothing leaves Cloudflare.
 - **Synthetic test audio.** All recordings are text-to-speech; T6 adds phone-line noise, but there is no real human recording in the set.
-- **History lives in the browser.** There are no accounts, so History, Tasks and the answers to clarifications (speaker names, the call date, review decisions) are kept in this browser and re-applied when a result is opened again. Another device, or a shared link, shows the original result.
+- **History lives in the browser.** There are no accounts, so History, the Tasks board (ticks and edits) and the answers to clarifications (speaker names, the call date, review decisions) are kept in this browser and re-applied when a result is opened again. Another device, or a shared link, shows the original result.
 
 **Not built:**
 - a side-by-side T1/T2 comparison view;
 - answering clarifications by voice;
 - recording from the microphone in the browser (upload covers the brief);
-- a lint rule that enforces design tokens (the rule is documented in Storybook).
+- a lint rule that enforces design tokens (the rule is documented in Storybook);
+- the audio of T8, a natural version of the main call (script and expected result are committed; generating it needs about 2,350 ElevenLabs credits the account did not have left). The eval skips cases without audio.
 
 ## 3. How AI output was checked: one example
 
@@ -142,7 +143,7 @@ _filled by the author_
    - Show items as they are found instead of waiting for the whole answer.
    - Measure a faster host for the same model (for example Groq) against the eval.
    - Split long conversations into overlapping windows.
-2. **Save clarification answers on the server** with the result, with a small edit history, so a shared link and another device show the confirmed version. Accounts would also make History and Tasks follow the user.
+2. **Save clarification answers and board edits on the server** with the result, with a small edit history, so a shared link and another device show the confirmed version. Accounts would also make History and Tasks follow the user.
 3. **A bigger test set:**
    - real human recordings;
    - interruptions, sarcasm, paraphrased acceptances;

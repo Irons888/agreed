@@ -122,6 +122,7 @@ const MEANING: Record<IconName, string> = {
   expand: 'Collapse',
   open: 'Expand; pending step',
   external: 'External link',
+  edit: 'Edit a task on the board',
 };
 
 export function IconGrid() {
