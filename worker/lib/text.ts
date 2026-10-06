@@ -37,7 +37,7 @@ export const FIRST_PERSON = /\b(i|i'll|i'm|i've|i'd|me|my)\b/;
 
 /** A request addressed to the listener: "can you", "could you", "please". */
 export const ADDRESSED =
-  /\b(can you|could you|would you|will you|you'll|you will|you can|please|do you want to|do you wanna|you wanna|would you mind|you could|you should|you need to|you have to|i need you to|i'd like you to)\b/;
+  /\b(can you|could you|would you|will you|you'll|you will|you can|please|do you want to|do you wanna|you wanna|would you mind|you could|you should|you need to|you have to|i need you to|i'd like you to|need your|it would be good if you|it'd be good if you|it would be great if you|it'd be great if you)\b/;
 
 /** A reply that leaves a question open: "No idea", "Nobody has asked them", "It depends", "Good question". */
 export const UNKNOWN =

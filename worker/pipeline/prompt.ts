@@ -31,11 +31,11 @@ items: one item per distinct task, proposal or question. Merge every mention of 
 - agreed: someone committed ("I'll do it"), or accepted a request addressed to them ("Can you…?" "Yes"), or both clearly agreed that it must be done even if nobody takes it ("It has to be updated before launch." "Yes, definitely." is agreed, with no owner).
 - not_accepted: proposed or suggested ("we could", "what if", "maybe we should") and never accepted by the end: declined, deferred or ignored. Not knowing who will do it never makes an item not_accepted.
 - cancelled: agreed first, then explicitly called off later. Never report it as agreed.
-- needs_review: the acceptance is hedged or conditional ("I'll try", "might", "maybe", "no promises", "if I have time"), or you cannot tell whether it was agreed.
+- needs_review: the acceptance is hedged or conditional ("I'll try", "might", "maybe", "no promises", "if I have time"), or you cannot tell whether it was agreed. A common case: someone states a need or a wish aimed at the other person instead of asking ("I'll need your notes by Friday", "it would be good if you sent it"), and the only reply is a short "yeah", "yep", "mm-hmm" or "okay", which may only mean they are listening. Do not drop it: list it as needs_review, with the person it was aimed at as owner_speaker and their reply as an acceptance in the evidence, so the user can confirm it. A direct question answered "yes" or "sure" ("Can you send it?" "Sure.") is agreed.
 - open_question: a question about the work that is still unanswered at the end. Do not turn it into a task unless someone commits to finding out.
 Greetings, introductions, small talk and running the meeting itself ("let's go through what's left", "next topic", "anything else?") are not items.
 
-owner_speaker: the voice that committed, or that accepted a request addressed to it (S1, S2…). For needs_review, the voice that hedged.
+owner_speaker: the voice that committed, or that accepted a request addressed to it (S1, S2…). For needs_review, the voice that hedged, or the voice a need or wish was aimed at.
 owner_name: a named person who is not in the call and was given the task ("Lisa will send it"); otherwise null.
 If nobody took the task ("we need to", "someone should", "let's", "it has to be done"), both are null. Never guess an owner.
 
