@@ -45,14 +45,14 @@ Final eval: 5 runs per test recording on the live deployment, with Scribe v2: ei
 
 | | |
 |---|---|
-| Runs passed | **44 / 50**: 39 / 40 on the recordings made for the test; real meetings T10 5 / 5, T9 0 / 5 |
-| Real items found with the right status | **176 / 180** |
-| Unsupported items added | **3**, all in the real two-person meeting (T9) |
-| Time to the full verified list, p50 / p90 (declines take about 2 s) | **20.8 s / 43.4 s** |
-| Time to the transcript | **2.8 s** |
-| Variable cost | **$0.0047 per audio minute** at ElevenLabs and Workers AI list prices |
+| Runs passed | **44 / 50**: 39 / 40 on the recordings made for the test; real meetings T10 5 / 5, T9 0 / 5 by the strict check |
+| Real items found with the right status | **175 / 180** |
+| Unsupported items added | **2**, both in the real two-person meeting (T9) |
+| Time to the full verified list, p50 / p90 (declines take about 2 s) | **20.1 s / 32.8 s** |
+| Time to the transcript | **2.6 s** |
+| Variable cost | **$0.0048 per audio minute** at ElevenLabs and Workers AI list prices |
 
-On real speech (T9) the product asks who is who, finds the email and the file task every run with the right people, and invents no owner; it does not count “Yeah. Yep.” as accepting an indirect request, and twice it listed an explanation of a past decision as a declined proposal. Details are in the delivery notes.
+On real speech (T9) all three tasks are listed every run: the email and the file task agreed with the right people, and a need answered only with “Yeah.” under “To check” for the user to confirm, where the strict check expects “agreed”. Twice the model listed an explanation of a past decision as a declined proposal. Details are in the delivery notes.
 
 With Nova-3 the same pipeline passed T1–T6 (30/30 on the live deployment, $0.0071 per audio minute) but heard T7's seven people as one voice.
 

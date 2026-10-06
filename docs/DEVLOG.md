@@ -213,3 +213,14 @@ Times are local (EEST).
   - a question answered on the spot was listed as open, as it was once in T3 and once in T8. Now the first real reply decides; simulated on every stored result, it removed the 5 answered questions and kept all 178 real ones.
 - Final eval, T1–T10, 5 runs each on the live deployment: 44/50. The recordings made for the test 39/40 (T8 once without an owner the model left out); T10 5/5; T9 0/5. In T9 the email and the file task are found every run with the right people; “I'd need your snippets by tomorrow evening” answered only with “Yeah. Yep.” is never counted as agreed, and twice an explanation of a past decision became a declined proposal. Lists p50 20.8 s, p90 43.4 s; $0.0047 per audio minute.
 
+### Real speech, second round
+
+- Asked to stop losing “I'll need your snippets… by tomorrow evening” answered with “Yeah. Yep.”: such a need should at least reach “To check”.
+- Tried a prompt rule for it first. T9 improved little, and the full eval fell from 44/50 to 42/50 (T2 and T8 lost owners, deadlines and one question). Reverted.
+- Looking at why T9's items went missing showed something else: verification threw the file task out as “quotes not found”. Recognition wrote “half past 6:00”, the model quoted “half past six”, and the other person's “Oh, yeah” had cut the sentence into two turns. Fixed in code:
+  - numbers match either way (“six” = “6”, “6:00” = “6”), in quotes and in deadline wording;
+  - a quote may span the cited turn and up to three of the same person's turns around it, across pauses and short interjections; another person's turn is never stitched in;
+  - an item dropped for missing quotes now shows the quotes the model gave.
+- The need itself: the model called it not accepted and left the reply out of its quotes. The rule that turns “not accepted” into “to check” on a plain yes now also looks the reply up in the transcript.
+- Final eval, T1–T10, 5 runs each: 44/50. The recordings made for the test 39/40 (T2 once, in a run whose first answer failed the schema check); T10 5/5; T9 0/5 by the strict check, but all three tasks are listed every run, with the need under “To check” every time. Lists p50 20.1 s, p90 32.8 s; transcript after 2.6 s; $0.0048 per audio minute.
+
