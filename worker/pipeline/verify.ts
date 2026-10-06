@@ -216,8 +216,19 @@ function verifyItem(raw: LlmItem, n: number, ctx: ItemContext): { item: Item } |
     statusNote = 'No proposal was found in the quotes.';
   } else if (status === 'not_accepted' && !has('rejection')) {
     // The model says nobody accepted it, but the other person answered with a plain "yes": ask, don't decide.
+    // The reply is looked up in the transcript too, because the model may leave it out of its quotes.
     const proposal = evidence.find((e) => e.role === 'proposal' || e.role === 'request');
-    const yes = proposal && evidence.find((e) => e.speaker !== proposal.speaker && e.start >= proposal.end && AFFIRMATIVE.test(normalize(e.quote)));
+    let yes = proposal && evidence.find((e) => e.speaker !== proposal.speaker && e.start >= proposal.end && AFFIRMATIVE.test(normalize(e.quote)));
+    if (proposal && !yes) {
+      const reply = [...ctx.index.values()].find(
+        (t) => t.speaker !== proposal.speaker && t.start >= proposal.end - 0.5 && t.start <= proposal.end + 15 && !FILLER.test(normalize(t.text)),
+      );
+      if (reply && AFFIRMATIVE.test(normalize(reply.text))) {
+        yes = { turn: reply.id, speaker: reply.speaker, role: 'acceptance', quote: reply.text, start: reply.start, end: reply.end, match: 'exact' };
+        evidence.push(yes);
+        evidence.sort((x, y) => x.start - y.start);
+      }
+    }
     if (yes) statusNote = `Marked as not accepted, but the reply was “${yes.quote}”.`;
   }
   if (statusNote) status = 'needs_review';
