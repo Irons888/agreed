@@ -1,5 +1,7 @@
 # Delivery notes
 
+Українською: [DELIVERY_NOTES.uk.md](DELIVERY_NOTES.uk.md)
+
 - Live demo: https://agreed.rhanaev7-138.workers.dev
 - Design system: https://agreed.rhanaev7-138.workers.dev/storybook/
 - Quality report: https://agreed.rhanaev7-138.workers.dev/quality
@@ -62,7 +64,7 @@ Final eval on the live deployment with Scribe v2, T1–T10: [`eval/reports/2026-
 - **A third party hears the audio.** Recognition runs at ElevenLabs, under their API terms. Without an ElevenLabs key the app falls back to Nova-3 on Workers AI, and then nothing leaves Cloudflare.
 - **History lives in the browser.** There are no accounts, so History, the Tasks board (ticks and edits) and the answers to clarifications (speaker names, the call date, review decisions) are kept in this browser and re-applied when a result is opened again. Another device, or a shared link, shows the original result.
 
-**Not built:**
+**Not built** (extras from our plan; the brief does not require them):
 - a side-by-side T1/T2 comparison view;
 - answering clarifications by voice;
 - recording from the microphone in the browser (upload covers the brief);
@@ -140,7 +142,8 @@ Free allowances (the daily Workers AI neurons, hours included in an ElevenLabs p
   - Whisper large-v3-turbo (`@cf/openai/whisper-large-v3-turbo`): 24.8 s for a 71 s file and no speakers.
   - Nova-3 `smart_format`: rewrites spoken dates.
   - Nova-3 as the main recognition: merges voices on short turns (T7: 1 voice of 7). It is now only the fallback.
-- **Test audio:** ElevenLabs `eleven_multilingual_v2`, premade voices, generated line by line.
+- **Test audio:** ElevenLabs text-to-speech with premade voices: T1–T7 with `eleven_multilingual_v2`, line by line; T8 with Eleven v4 Text to Dialogue (`eleven_v4`), and its two interruptions are overlapped by `testset/build.mjs`. T9 and T10 are real recordings.
+- **Video walkthrough:** narration by ElevenLabs text-to-speech (`eleven_v4`, premade voice Eric), checked word by word with Scribe v2; the screen is recorded automatically on the live site in headless Chrome (Puppeteer). The wait for the list is shown sped up, with a label.
 
 ## 6. Time spent
 
@@ -153,6 +156,8 @@ About 7 hours of focused work, estimated by the author:
 | Design | 1 h |
 | Development | 2 h |
 | Debugging and finding weak spots (tests, edge cases, real recordings) | 2 h |
+
+Git and the DEVLOG show a longer calendar span: Oct 5, 18:14 to Oct 6, 14:20, with a night break. About 3 hours of it were evals running on the live deployment (a full 50-run eval takes about 15 minutes), and much of the rest was the coding agent building and testing on its own; the 7 hours are the author's own focused time.
 
 ## 7. Beyond the brief
 

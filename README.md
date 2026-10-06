@@ -5,7 +5,7 @@
 - Live demo: https://agreed.rhanaev7-138.workers.dev
 - Design system (Storybook): https://agreed.rhanaev7-138.workers.dev/storybook/
 - Quality report from the latest eval: https://agreed.rhanaev7-138.workers.dev/quality
-- Delivery notes (inputs, expected vs actual, failures, measurements, tools): [docs/DELIVERY_NOTES.md](docs/DELIVERY_NOTES.md)
+- Delivery notes (inputs, expected vs actual, failures, measurements, tools): [docs/DELIVERY_NOTES.md](docs/DELIVERY_NOTES.md) · українською: [docs/DELIVERY_NOTES.uk.md](docs/DELIVERY_NOTES.uk.md)
 
 Scope: English, two clearly distinguishable speakers, up to 3 minutes, no overlapping speech. Built as a test task for the Codebridge Product Builder role.
 
