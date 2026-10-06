@@ -6,7 +6,7 @@ English: [DELIVERY_NOTES.md](DELIVERY_NOTES.md). Це переклад один 
 - Дизайн-система: https://agreed.rhanaev7-138.workers.dev/storybook/
 - Звіт про якість: https://agreed.rhanaev7-138.workers.dev/quality
 - Репозиторій: цей репозиторій. Як встановити й запустити — у [README](../README.md).
-- Відеоогляд: _посилання_
+- Відеоогляд: https://drive.google.com/file/d/1VKxfhMRmoPT2UzKZccXIb0rdXhBeLbFA/view?usp=sharing
 
 ## 1. Тестові записи: очікуваний і фактичний результат
 

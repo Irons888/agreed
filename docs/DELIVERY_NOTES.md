@@ -6,7 +6,7 @@
 - Design system: https://agreed.rhanaev7-138.workers.dev/storybook/
 - Quality report: https://agreed.rhanaev7-138.workers.dev/quality
 - Repository: this repo. Setup is in the [README](../README.md).
-- Video walkthrough: _link_
+- Video walkthrough: https://drive.google.com/file/d/1VKxfhMRmoPT2UzKZccXIb0rdXhBeLbFA/view?usp=sharing
 
 ## 1. Sample inputs and expected vs actual results
 
