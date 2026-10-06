@@ -150,6 +150,19 @@ function score(expected, timeline, result) {
         return l && e.start <= l.end + 0.5 && e.end >= l.start - 0.5;
       }),
     );
+  // The product's voice for a person in the timeline: the one whose turns overlap that person's lines the most.
+  const voiceOf = (person) => {
+    const own = timeline.lines.filter((l) => l.speaker === person);
+    let best = null;
+    let bestOverlap = 0;
+    for (const s of result.speakers) {
+      const overlap = result.turns
+        .filter((t) => t.speaker === s.id)
+        .reduce((sum, t) => sum + own.reduce((acc, l) => acc + Math.max(0, Math.min(t.end, l.end) - Math.max(t.start, l.start)), 0), 0);
+      if (overlap > bestOverlap) [best, bestOverlap] = [s.id, overlap];
+    }
+    return best;
+  };
   const keyed = (item, keys) => {
     const text = norm([item.title, ...item.evidence.map((e) => e.quote)].join(' '));
     return keys.some((k) => text.includes(norm(k)));
@@ -169,8 +182,15 @@ function score(expected, timeline, result) {
     add(exp.id, 'status', allowed.includes(match.status), `expected ${allowed.join('|')}, got ${match.status}`);
     if (exp.owner !== undefined) {
       const got = match.owner.kind === 'none' ? null : match.owner.name;
-      const ok = exp.owner.name === null ? got === null : (got ?? '').toLowerCase() === exp.owner.name.toLowerCase();
-      add(exp.id, 'owner', ok, `expected ${exp.owner.name}, got ${got}`);
+      if (exp.owner.speaker) {
+        // Unnamed people are numbered by who is heard first, so the owner is checked by voice, not by number.
+        const want = voiceOf(exp.owner.speaker);
+        const gotVoice = match.owner.kind === 'speaker' ? match.owner.speaker : null;
+        add(exp.id, 'owner', !!want && gotVoice === want, `expected the voice of ${exp.owner.speaker.toUpperCase()} (${want}), got ${gotVoice ?? got}`);
+      } else {
+        const ok = exp.owner.name === null ? got === null : (got ?? '').toLowerCase() === exp.owner.name.toLowerCase();
+        add(exp.id, 'owner', ok, `expected ${exp.owner.name}, got ${got}`);
+      }
     }
     if (exp.deadline) {
       const raw = match.deadline.raw ?? '';

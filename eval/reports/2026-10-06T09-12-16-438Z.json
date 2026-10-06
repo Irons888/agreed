@@ -1,0 +1,787 @@
+{
+  "startedAt": "2026-10-06T09:12:16.438Z",
+  "base": "https://agreed.rhanaev7-138.workers.dev",
+  "runs": 5,
+  "reasoning": "low",
+  "model": "gpt-oss-120b",
+  "asr": "server default",
+  "cases": [
+    {
+      "case": "T9-real-two-people",
+      "outcome": "clarify",
+      "runs": [
+        {
+          "run": 1,
+          "error": null,
+          "recovered": false,
+          "pass": false,
+          "included": "2/3",
+          "exclusionErrors": 1,
+          "failed": [
+            {
+              "item": "email",
+              "check": "owner",
+              "ok": false,
+              "detail": "expected Speaker 2, got null"
+            },
+            {
+              "item": "file-access",
+              "check": "owner",
+              "ok": false,
+              "detail": "expected Speaker 1, got Speaker 2"
+            },
+            {
+              "item": "file-access",
+              "check": "deadline wording",
+              "ok": false,
+              "detail": "got \"before half past 6:00\""
+            },
+            {
+              "item": "code-snippets",
+              "check": "found",
+              "ok": false,
+              "detail": "missing"
+            },
+            {
+              "item": "extra: Add three panes UI",
+              "check": "unsupported extra",
+              "ok": false,
+              "detail": "not_accepted"
+            }
+          ],
+          "checks": 20,
+          "clientMs": 39990,
+          "transcriptMs": 10152,
+          "asr": "elevenlabs/scribe_v2",
+          "voicesHeard": 2,
+          "serverMs": {
+            "asrMs": 10162,
+            "extractMs": 29551,
+            "verifyMs": 0,
+            "totalMs": 39713
+          },
+          "usage": {
+            "audioMinutes": 2.917,
+            "asrAttempts": 1,
+            "asrNeurons": 0,
+            "llmCalls": 1,
+            "llmPromptTokens": 3512,
+            "llmCompletionTokens": 1533,
+            "llmNeurons": 216.27,
+            "retries": 0
+          },
+          "cost": {
+            "asrUsd": 0.010694,
+            "llmUsd": 0.002379,
+            "totalUsd": 0.013073,
+            "perAudioMinuteUsd": 0.004482,
+            "pricesCheckedOn": "2026-10-05"
+          },
+          "items": [
+            {
+              "title": "Write him an email",
+              "status": "agreed",
+              "owner": null,
+              "deadline": null,
+              "date": null,
+              "notes": [
+                "Owner removed: the quotes show no commitment by Speaker 1 and no request that Speaker 1 accepted."
+              ]
+            },
+            {
+              "title": "Add three panes UI",
+              "status": "not_accepted",
+              "owner": null,
+              "deadline": null,
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Make the file readable and writable",
+              "status": "agreed",
+              "owner": "Speaker 2",
+              "deadline": "before half past 6:00",
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Implement left‑click highlight feature",
+              "status": "not_accepted",
+              "owner": null,
+              "deadline": null,
+              "date": null,
+              "notes": []
+            }
+          ],
+          "dropped": [
+            {
+              "title": "Provide code snippets",
+              "reason": "None of its quotes were found in the transcript."
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "error": null,
+          "recovered": false,
+          "pass": false,
+          "included": "2/3",
+          "exclusionErrors": 1,
+          "failed": [
+            {
+              "item": "email",
+              "check": "owner",
+              "ok": false,
+              "detail": "expected Speaker 2, got null"
+            },
+            {
+              "item": "file-access",
+              "check": "owner",
+              "ok": false,
+              "detail": "expected Speaker 1, got Speaker 2"
+            },
+            {
+              "item": "file-access",
+              "check": "deadline wording",
+              "ok": false,
+              "detail": "got \"before half past 6\""
+            },
+            {
+              "item": "code-snippets",
+              "check": "status",
+              "ok": false,
+              "detail": "expected agreed, got not_accepted"
+            },
+            {
+              "item": "code-snippets",
+              "check": "owner",
+              "ok": false,
+              "detail": "expected Speaker 2, got null"
+            },
+            {
+              "item": "code-snippets",
+              "check": "deadline wording",
+              "ok": false,
+              "detail": "got \"\""
+            },
+            {
+              "item": "extra: How is the search window organized?",
+              "check": "unsupported extra",
+              "ok": false,
+              "detail": "open_question"
+            }
+          ],
+          "checks": 22,
+          "clientMs": 44181,
+          "transcriptMs": 8782,
+          "asr": "elevenlabs/scribe_v2",
+          "voicesHeard": 2,
+          "serverMs": {
+            "asrMs": 8735,
+            "extractMs": 35205,
+            "verifyMs": 0,
+            "totalMs": 43940
+          },
+          "usage": {
+            "audioMinutes": 2.917,
+            "asrAttempts": 1,
+            "asrNeurons": 0,
+            "llmCalls": 1,
+            "llmPromptTokens": 3503,
+            "llmCompletionTokens": 1385,
+            "llmNeurons": 205.89,
+            "retries": 0
+          },
+          "cost": {
+            "asrUsd": 0.010694,
+            "llmUsd": 0.002265,
+            "totalUsd": 0.012959,
+            "perAudioMinuteUsd": 0.004443,
+            "pricesCheckedOn": "2026-10-05"
+          },
+          "items": [
+            {
+              "title": "Write email to him",
+              "status": "agreed",
+              "owner": null,
+              "deadline": null,
+              "date": null,
+              "notes": [
+                "Owner removed: the quotes show no commitment by Speaker 1 and no request that Speaker 1 accepted."
+              ]
+            },
+            {
+              "title": "Make the file readable and writable",
+              "status": "agreed",
+              "owner": "Speaker 2",
+              "deadline": "before half past 6",
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Provide code snippets",
+              "status": "not_accepted",
+              "owner": null,
+              "deadline": null,
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "How is the search window organized?",
+              "status": "open_question",
+              "owner": null,
+              "deadline": null,
+              "date": null,
+              "notes": []
+            }
+          ],
+          "dropped": []
+        },
+        {
+          "run": 3,
+          "error": null,
+          "recovered": false,
+          "pass": false,
+          "included": "2/3",
+          "exclusionErrors": 0,
+          "failed": [
+            {
+              "item": "email",
+              "check": "owner",
+              "ok": false,
+              "detail": "expected Speaker 2, got null"
+            },
+            {
+              "item": "file-access",
+              "check": "owner",
+              "ok": false,
+              "detail": "expected Speaker 1, got Speaker 2"
+            },
+            {
+              "item": "file-access",
+              "check": "deadline wording",
+              "ok": false,
+              "detail": "got \"before half past 6:00\""
+            },
+            {
+              "item": "code-snippets",
+              "check": "status",
+              "ok": false,
+              "detail": "expected agreed, got needs_review"
+            },
+            {
+              "item": "code-snippets",
+              "check": "owner",
+              "ok": false,
+              "detail": "expected Speaker 2, got null"
+            }
+          ],
+          "checks": 21,
+          "clientMs": 40216,
+          "transcriptMs": 10719,
+          "asr": "elevenlabs/scribe_v2",
+          "voicesHeard": 2,
+          "serverMs": {
+            "asrMs": 10743,
+            "extractMs": 29260,
+            "verifyMs": 0,
+            "totalMs": 40003
+          },
+          "usage": {
+            "audioMinutes": 2.917,
+            "asrAttempts": 1,
+            "asrNeurons": 0,
+            "llmCalls": 1,
+            "llmPromptTokens": 3510,
+            "llmCompletionTokens": 1176,
+            "llmNeurons": 191.86,
+            "retries": 0
+          },
+          "cost": {
+            "asrUsd": 0.010694,
+            "llmUsd": 0.00211,
+            "totalUsd": 0.012805,
+            "perAudioMinuteUsd": 0.00439,
+            "pricesCheckedOn": "2026-10-05"
+          },
+          "items": [
+            {
+              "title": "Write him an email",
+              "status": "agreed",
+              "owner": null,
+              "deadline": null,
+              "date": null,
+              "notes": [
+                "Owner removed: the quotes show no commitment by Speaker 1 and no request that Speaker 1 accepted."
+              ]
+            },
+            {
+              "title": "Make the file readable and writable",
+              "status": "agreed",
+              "owner": "Speaker 2",
+              "deadline": "before half past 6:00",
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Provide code snippets",
+              "status": "needs_review",
+              "owner": null,
+              "deadline": "by tomorrow evening",
+              "date": null,
+              "notes": [
+                "No question was found in the quotes."
+              ]
+            }
+          ],
+          "dropped": []
+        },
+        {
+          "run": 4,
+          "error": null,
+          "recovered": false,
+          "pass": false,
+          "included": "2/3",
+          "exclusionErrors": 0,
+          "failed": [
+            {
+              "item": "email",
+              "check": "owner",
+              "ok": false,
+              "detail": "expected Speaker 2, got null"
+            },
+            {
+              "item": "file-access",
+              "check": "owner",
+              "ok": false,
+              "detail": "expected Speaker 1, got Speaker 2"
+            },
+            {
+              "item": "file-access",
+              "check": "deadline wording",
+              "ok": false,
+              "detail": "got \"before half past 6:00\""
+            },
+            {
+              "item": "code-snippets",
+              "check": "found",
+              "ok": false,
+              "detail": "missing"
+            }
+          ],
+          "checks": 22,
+          "clientMs": 42370,
+          "transcriptMs": 7741,
+          "asr": "elevenlabs/scribe_v2",
+          "voicesHeard": 2,
+          "serverMs": {
+            "asrMs": 7743,
+            "extractMs": 34441,
+            "verifyMs": 0,
+            "totalMs": 42184
+          },
+          "usage": {
+            "audioMinutes": 2.917,
+            "asrAttempts": 1,
+            "asrNeurons": 0,
+            "llmCalls": 1,
+            "llmPromptTokens": 3513,
+            "llmCompletionTokens": 1752,
+            "llmNeurons": 231.23,
+            "retries": 0
+          },
+          "cost": {
+            "asrUsd": 0.010694,
+            "llmUsd": 0.002544,
+            "totalUsd": 0.013238,
+            "perAudioMinuteUsd": 0.004539,
+            "pricesCheckedOn": "2026-10-05"
+          },
+          "items": [
+            {
+              "title": "Write him an email",
+              "status": "agreed",
+              "owner": null,
+              "deadline": null,
+              "date": null,
+              "notes": [
+                "Owner removed: the quotes show no commitment by Speaker 1 and no request that Speaker 1 accepted."
+              ]
+            },
+            {
+              "title": "Make the file readable and writable",
+              "status": "agreed",
+              "owner": "Speaker 2",
+              "deadline": "before half past 6:00",
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Remember to do that tonight",
+              "status": "needs_review",
+              "owner": "Speaker 1",
+              "deadline": "tonight",
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Implement left‑handed single‑click highlight",
+              "status": "not_accepted",
+              "owner": null,
+              "deadline": null,
+              "date": null,
+              "notes": []
+            }
+          ],
+          "dropped": [
+            {
+              "title": "Provide code snippets",
+              "reason": "None of its quotes were found in the transcript."
+            }
+          ]
+        },
+        {
+          "run": 5,
+          "error": null,
+          "recovered": false,
+          "pass": false,
+          "included": "2/3",
+          "exclusionErrors": 0,
+          "failed": [
+            {
+              "item": "email",
+              "check": "owner",
+              "ok": false,
+              "detail": "expected Speaker 2, got null"
+            },
+            {
+              "item": "file-access",
+              "check": "owner",
+              "ok": false,
+              "detail": "expected Speaker 1, got Speaker 2"
+            },
+            {
+              "item": "file-access",
+              "check": "deadline wording",
+              "ok": false,
+              "detail": "got \"before half past 6:00\""
+            },
+            {
+              "item": "code-snippets",
+              "check": "status",
+              "ok": false,
+              "detail": "expected agreed, got needs_review"
+            },
+            {
+              "item": "code-snippets",
+              "check": "owner",
+              "ok": false,
+              "detail": "expected Speaker 2, got null"
+            },
+            {
+              "item": "code-snippets",
+              "check": "deadline wording",
+              "ok": false,
+              "detail": "got \"\""
+            }
+          ],
+          "checks": 24,
+          "clientMs": 34032,
+          "transcriptMs": 6420,
+          "asr": "elevenlabs/scribe_v2",
+          "voicesHeard": 2,
+          "serverMs": {
+            "asrMs": 6457,
+            "extractMs": 27365,
+            "verifyMs": 0,
+            "totalMs": 33822
+          },
+          "usage": {
+            "audioMinutes": 2.917,
+            "asrAttempts": 1,
+            "asrNeurons": 0,
+            "llmCalls": 1,
+            "llmPromptTokens": 3499,
+            "llmCompletionTokens": 1545,
+            "llmNeurons": 216.67,
+            "retries": 0
+          },
+          "cost": {
+            "asrUsd": 0.010694,
+            "llmUsd": 0.002383,
+            "totalUsd": 0.013078,
+            "perAudioMinuteUsd": 0.004484,
+            "pricesCheckedOn": "2026-10-05"
+          },
+          "items": [
+            {
+              "title": "Write him an email",
+              "status": "agreed",
+              "owner": null,
+              "deadline": null,
+              "date": null,
+              "notes": [
+                "Owner removed: the quotes show no commitment by Speaker 1 and no request that Speaker 1 accepted."
+              ]
+            },
+            {
+              "title": "Make the file readable and writable",
+              "status": "agreed",
+              "owner": "Speaker 2",
+              "deadline": "before half past 6:00",
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Provide code snippets",
+              "status": "needs_review",
+              "owner": null,
+              "deadline": null,
+              "date": null,
+              "notes": [
+                "1 quote(s) not found in the transcript were removed.",
+                "No proposal was found in the quotes.",
+                "Deadline “by tomorrow evening” removed: that wording is not in the quoted turns."
+              ]
+            },
+            {
+              "title": "Left‑click highlight UI change",
+              "status": "not_accepted",
+              "owner": null,
+              "deadline": null,
+              "date": null,
+              "notes": []
+            }
+          ],
+          "dropped": []
+        }
+      ]
+    },
+    {
+      "case": "T10-real-four-people",
+      "outcome": "decline",
+      "runs": [
+        {
+          "run": 1,
+          "error": null,
+          "recovered": false,
+          "pass": true,
+          "included": "n/a",
+          "exclusionErrors": 0,
+          "failed": [],
+          "checks": 3,
+          "clientMs": 6199,
+          "transcriptMs": 5986,
+          "asr": "elevenlabs/scribe_v2",
+          "voicesHeard": 4,
+          "serverMs": {
+            "asrMs": 6011,
+            "extractMs": 0,
+            "verifyMs": 0,
+            "totalMs": 6011
+          },
+          "usage": {
+            "audioMinutes": 2.833,
+            "asrAttempts": 1,
+            "asrNeurons": 0,
+            "llmCalls": 0,
+            "llmPromptTokens": 0,
+            "llmCompletionTokens": 0,
+            "llmNeurons": 0,
+            "retries": 0
+          },
+          "cost": {
+            "asrUsd": 0.010389,
+            "llmUsd": 0,
+            "totalUsd": 0.010389,
+            "perAudioMinuteUsd": 0.003667,
+            "pricesCheckedOn": "2026-10-05"
+          },
+          "items": [],
+          "dropped": []
+        },
+        {
+          "run": 2,
+          "error": null,
+          "recovered": false,
+          "pass": true,
+          "included": "n/a",
+          "exclusionErrors": 0,
+          "failed": [],
+          "checks": 3,
+          "clientMs": 7063,
+          "transcriptMs": 6781,
+          "asr": "elevenlabs/scribe_v2",
+          "voicesHeard": 3,
+          "serverMs": {
+            "asrMs": 6806,
+            "extractMs": 0,
+            "verifyMs": 0,
+            "totalMs": 6806
+          },
+          "usage": {
+            "audioMinutes": 2.833,
+            "asrAttempts": 1,
+            "asrNeurons": 0,
+            "llmCalls": 0,
+            "llmPromptTokens": 0,
+            "llmCompletionTokens": 0,
+            "llmNeurons": 0,
+            "retries": 0
+          },
+          "cost": {
+            "asrUsd": 0.010389,
+            "llmUsd": 0,
+            "totalUsd": 0.010389,
+            "perAudioMinuteUsd": 0.003667,
+            "pricesCheckedOn": "2026-10-05"
+          },
+          "items": [],
+          "dropped": []
+        },
+        {
+          "run": 3,
+          "error": null,
+          "recovered": false,
+          "pass": true,
+          "included": "n/a",
+          "exclusionErrors": 0,
+          "failed": [],
+          "checks": 3,
+          "clientMs": 6139,
+          "transcriptMs": 5886,
+          "asr": "elevenlabs/scribe_v2",
+          "voicesHeard": 4,
+          "serverMs": {
+            "asrMs": 5955,
+            "extractMs": 0,
+            "verifyMs": 0,
+            "totalMs": 5955
+          },
+          "usage": {
+            "audioMinutes": 2.833,
+            "asrAttempts": 1,
+            "asrNeurons": 0,
+            "llmCalls": 0,
+            "llmPromptTokens": 0,
+            "llmCompletionTokens": 0,
+            "llmNeurons": 0,
+            "retries": 0
+          },
+          "cost": {
+            "asrUsd": 0.010389,
+            "llmUsd": 0,
+            "totalUsd": 0.010389,
+            "perAudioMinuteUsd": 0.003667,
+            "pricesCheckedOn": "2026-10-05"
+          },
+          "items": [],
+          "dropped": []
+        },
+        {
+          "run": 4,
+          "error": null,
+          "recovered": false,
+          "pass": true,
+          "included": "n/a",
+          "exclusionErrors": 0,
+          "failed": [],
+          "checks": 3,
+          "clientMs": 6372,
+          "transcriptMs": 6181,
+          "asr": "elevenlabs/scribe_v2",
+          "voicesHeard": 3,
+          "serverMs": {
+            "asrMs": 6193,
+            "extractMs": 0,
+            "verifyMs": 0,
+            "totalMs": 6193
+          },
+          "usage": {
+            "audioMinutes": 2.833,
+            "asrAttempts": 1,
+            "asrNeurons": 0,
+            "llmCalls": 0,
+            "llmPromptTokens": 0,
+            "llmCompletionTokens": 0,
+            "llmNeurons": 0,
+            "retries": 0
+          },
+          "cost": {
+            "asrUsd": 0.010389,
+            "llmUsd": 0,
+            "totalUsd": 0.010389,
+            "perAudioMinuteUsd": 0.003667,
+            "pricesCheckedOn": "2026-10-05"
+          },
+          "items": [],
+          "dropped": []
+        },
+        {
+          "run": 5,
+          "error": null,
+          "recovered": false,
+          "pass": true,
+          "included": "n/a",
+          "exclusionErrors": 0,
+          "failed": [],
+          "checks": 3,
+          "clientMs": 5686,
+          "transcriptMs": 5427,
+          "asr": "elevenlabs/scribe_v2",
+          "voicesHeard": 4,
+          "serverMs": {
+            "asrMs": 5454,
+            "extractMs": 0,
+            "verifyMs": 0,
+            "totalMs": 5454
+          },
+          "usage": {
+            "audioMinutes": 2.833,
+            "asrAttempts": 1,
+            "asrNeurons": 0,
+            "llmCalls": 0,
+            "llmPromptTokens": 0,
+            "llmCompletionTokens": 0,
+            "llmNeurons": 0,
+            "retries": 0
+          },
+          "cost": {
+            "asrUsd": 0.010389,
+            "llmUsd": 0,
+            "totalUsd": 0.010389,
+            "perAudioMinuteUsd": 0.003667,
+            "pricesCheckedOn": "2026-10-05"
+          },
+          "items": [],
+          "dropped": []
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "runs": 10,
+    "errors": 0,
+    "passed": 5,
+    "inclusion": "10/15",
+    "exclusionErrors": 2,
+    "stability": {
+      "T9-real-two-people": "0/5",
+      "T10-real-four-people": "5/5"
+    },
+    "timeToResultMs": {
+      "p50": 7063,
+      "p90": 42370
+    },
+    "timeToTranscriptMs": {
+      "p50": 6420
+    },
+    "retries": 0,
+    "recoveredAfterDroppedConnection": 0,
+    "costPerRunUsd": 0.01171,
+    "costPerAudioMinuteUsd": 0.004073,
+    "asrUsed": [
+      "elevenlabs/scribe_v2"
+    ]
+  }
+}

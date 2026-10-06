@@ -2,67 +2,153 @@
   "case": "T9-real-two-people",
   "purpose": "Real speech from the AMI Meeting Corpus (CC BY 4.0): two colleagues plan software work, talk over each other and never say their names. Expected result written from the corpus transcript before the first run.",
   "outcome": "clarify",
-  "clarify": ["speaker_names"],
-  "speakers": { "b": null, "d": null },
+  "clarify": [
+    "speaker_names"
+  ],
+  "speakers": {
+    "b": null,
+    "d": null
+  },
   "recording_date": null,
   "items": [
     {
       "id": "email",
       "covers": "accepted request",
-      "keys": ["email", "e-mail", "mail"],
+      "keys": [
+        "email",
+        "e-mail",
+        "mail"
+      ],
       "status": "agreed",
-      "owner": { "name": "Speaker 2" },
-      "evidence_lines": ["L1", "L2"]
+      "owner": {
+        "speaker": "d"
+      },
+      "evidence_lines": [
+        "L1",
+        "L2"
+      ]
     },
     {
       "id": "file-access",
       "covers": "commitment with a time of day",
-      "keys": ["file", "readable", "writable"],
+      "keys": [
+        "file",
+        "readable",
+        "writable"
+      ],
       "status": "agreed",
-      "owner": { "name": "Speaker 1" },
-      "deadline": { "raw_contains": ["half past six", "today"], "date": null },
-      "evidence_lines": ["L4", "L6", "L7"]
+      "owner": {
+        "speaker": "b"
+      },
+      "deadline": {
+        "raw_contains": [
+          "half past six",
+          "half past 6",
+          "today"
+        ],
+        "date": null
+      },
+      "evidence_lines": [
+        "L4",
+        "L6",
+        "L7"
+      ]
     },
     {
       "id": "code-snippets",
       "covers": "accepted request with a relative deadline",
-      "keys": ["snippet", "code"],
+      "keys": [
+        "snippet",
+        "code"
+      ],
       "status": "agreed",
-      "owner": { "name": "Speaker 2" },
-      "deadline": { "raw_contains": "tomorrow evening", "date": null },
-      "evidence_lines": ["L10", "L11", "L12", "L13"]
+      "owner": {
+        "speaker": "d"
+      },
+      "deadline": {
+        "raw_contains": "tomorrow evening",
+        "date": null
+      },
+      "evidence_lines": [
+        "L10",
+        "L11",
+        "L12",
+        "L13"
+      ]
     },
     {
       "id": "own-files",
       "covers": "hedged offer",
-      "keys": ["own", "remember", "same"],
+      "keys": [
+        "own",
+        "remember",
+        "same"
+      ],
       "status": "needs_review",
       "optional": true,
-      "evidence_lines": ["L9"]
+      "evidence_lines": [
+        "L9"
+      ]
     },
     {
       "id": "window-communication",
       "covers": "open problem, nobody took it",
-      "keys": ["communication", "window", "double-click", "double click"],
-      "status": ["open_question", "needs_review", "not_accepted"],
+      "keys": [
+        "communication",
+        "window",
+        "double-click",
+        "double click"
+      ],
+      "status": [
+        "open_question",
+        "needs_review",
+        "not_accepted"
+      ],
       "optional": true,
-      "evidence_lines": ["L21", "L22"]
+      "evidence_lines": [
+        "L21",
+        "L22"
+      ]
     },
     {
       "id": "left-click",
       "covers": "suggestion answered with a question",
-      "keys": ["click", "highlight"],
-      "status": ["needs_review", "not_accepted", "open_question"],
+      "keys": [
+        "click",
+        "highlight"
+      ],
+      "status": [
+        "needs_review",
+        "not_accepted",
+        "open_question"
+      ],
       "optional": true,
-      "evidence_lines": ["L30", "L31", "L33"]
+      "evidence_lines": [
+        "L30",
+        "L31",
+        "L33"
+      ]
     },
     {
       "id": "window-to-mimic",
       "covers": "request turned down as difficult",
-      "keys": ["mimic", "behaviour", "behavior", "window"],
-      "status": ["not_accepted", "needs_review", "open_question"],
+      "keys": [
+        "mimic",
+        "behaviour",
+        "behavior",
+        "window"
+      ],
+      "status": [
+        "not_accepted",
+        "needs_review",
+        "open_question"
+      ],
       "optional": true,
-      "evidence_lines": ["L34", "L35", "L38"]
+      "evidence_lines": [
+        "L34",
+        "L35",
+        "L38"
+      ]
     }
   ],
   "traps": [

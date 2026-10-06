@@ -1,5 +1,5 @@
 {
-  "startedAt": "2026-10-06T08:41:22.435Z",
+  "startedAt": "2026-10-06T09:12:16.438Z",
   "base": "https://agreed.rhanaev7-138.workers.dev",
   "runs": 5,
   "reasoning": "low",
@@ -7,2049 +7,89 @@
   "asr": "server default",
   "cases": [
     {
-      "case": "T1-main",
-      "outcome": "result",
-      "runs": [
-        {
-          "run": 1,
-          "error": null,
-          "recovered": false,
-          "pass": true,
-          "included": "6/6",
-          "exclusionErrors": 0,
-          "failed": [],
-          "checks": 32,
-          "clientMs": 18586,
-          "transcriptMs": 4044,
-          "asr": "elevenlabs/scribe_v2",
-          "voicesHeard": 2,
-          "serverMs": {
-            "asrMs": 3974,
-            "extractMs": 14346,
-            "verifyMs": 0,
-            "totalMs": 18320
-          },
-          "usage": {
-            "audioMinutes": 1.183,
-            "asrAttempts": 1,
-            "asrNeurons": 0,
-            "llmCalls": 1,
-            "llmPromptTokens": 2672,
-            "llmCompletionTokens": 1725,
-            "llmNeurons": 202.63,
-            "retries": 0
-          },
-          "cost": {
-            "asrUsd": 0.004338,
-            "llmUsd": 0.002229,
-            "totalUsd": 0.006567,
-            "perAudioMinuteUsd": 0.005551,
-            "pricesCheckedOn": "2026-10-05"
-          },
-          "items": [
-            {
-              "title": "Send API documentation to client",
-              "status": "agreed",
-              "owner": "Mark",
-              "deadline": "by Wednesday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Add dark mode to portal",
-              "status": "not_accepted",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Prepare staging demo",
-              "status": "agreed",
-              "owner": "Mark",
-              "deadline": "Monday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Book meeting room for client workshop",
-              "status": "cancelled",
-              "owner": "Anna",
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Update privacy policy page",
-              "status": "agreed",
-              "owner": null,
-              "deadline": "before launch",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Determine if client needs single sign‑on",
-              "status": "open_question",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            }
-          ],
-          "dropped": []
-        },
-        {
-          "run": 2,
-          "error": null,
-          "recovered": false,
-          "pass": true,
-          "included": "6/6",
-          "exclusionErrors": 0,
-          "failed": [],
-          "checks": 32,
-          "clientMs": 38011,
-          "transcriptMs": 4352,
-          "asr": "elevenlabs/scribe_v2",
-          "voicesHeard": 2,
-          "serverMs": {
-            "asrMs": 4356,
-            "extractMs": 33464,
-            "verifyMs": 0,
-            "totalMs": 37820
-          },
-          "usage": {
-            "audioMinutes": 1.183,
-            "asrAttempts": 1,
-            "asrNeurons": 0,
-            "llmCalls": 1,
-            "llmPromptTokens": 2672,
-            "llmCompletionTokens": 1758,
-            "llmNeurons": 204.88,
-            "retries": 0
-          },
-          "cost": {
-            "asrUsd": 0.004338,
-            "llmUsd": 0.002254,
-            "totalUsd": 0.006592,
-            "perAudioMinuteUsd": 0.005572,
-            "pricesCheckedOn": "2026-10-05"
-          },
-          "items": [
-            {
-              "title": "Send API documentation to client",
-              "status": "agreed",
-              "owner": "Mark",
-              "deadline": "by Wednesday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Add dark mode to the portal",
-              "status": "not_accepted",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Prepare staging demo",
-              "status": "agreed",
-              "owner": "Mark",
-              "deadline": "Monday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Book meeting room for client workshop",
-              "status": "cancelled",
-              "owner": "Anna",
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Update privacy policy page",
-              "status": "agreed",
-              "owner": null,
-              "deadline": "before launch",
-              "date": null,
-              "notes": [
-                "Owner removed: the quotes show no commitment by Mark and no request that Mark accepted."
-              ]
-            },
-            {
-              "title": "Client requirement for single sign‑on",
-              "status": "open_question",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            }
-          ],
-          "dropped": []
-        },
-        {
-          "run": 3,
-          "error": null,
-          "recovered": false,
-          "pass": true,
-          "included": "6/6",
-          "exclusionErrors": 0,
-          "failed": [],
-          "checks": 32,
-          "clientMs": 33168,
-          "transcriptMs": 4200,
-          "asr": "elevenlabs/scribe_v2",
-          "voicesHeard": 2,
-          "serverMs": {
-            "asrMs": 4294,
-            "extractMs": 28708,
-            "verifyMs": 0,
-            "totalMs": 33002
-          },
-          "usage": {
-            "audioMinutes": 1.183,
-            "asrAttempts": 1,
-            "asrNeurons": 0,
-            "llmCalls": 1,
-            "llmPromptTokens": 2671,
-            "llmCompletionTokens": 1668,
-            "llmNeurons": 198.71,
-            "retries": 0
-          },
-          "cost": {
-            "asrUsd": 0.004338,
-            "llmUsd": 0.002186,
-            "totalUsd": 0.006524,
-            "perAudioMinuteUsd": 0.005514,
-            "pricesCheckedOn": "2026-10-05"
-          },
-          "items": [
-            {
-              "title": "Send API documentation",
-              "status": "agreed",
-              "owner": "Mark",
-              "deadline": "by Wednesday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Add dark mode",
-              "status": "not_accepted",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Prepare staging demo",
-              "status": "agreed",
-              "owner": "Mark",
-              "deadline": "Monday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Book meeting room for client workshop",
-              "status": "cancelled",
-              "owner": "Anna",
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Update privacy policy page",
-              "status": "agreed",
-              "owner": null,
-              "deadline": "before launch",
-              "date": null,
-              "notes": [
-                "Owner removed: the quotes show no commitment by Mark and no request that Mark accepted."
-              ]
-            },
-            {
-              "title": "Client single sign‑on requirement",
-              "status": "open_question",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            }
-          ],
-          "dropped": []
-        },
-        {
-          "run": 4,
-          "error": null,
-          "recovered": false,
-          "pass": true,
-          "included": "6/6",
-          "exclusionErrors": 0,
-          "failed": [],
-          "checks": 32,
-          "clientMs": 27344,
-          "transcriptMs": 3878,
-          "asr": "elevenlabs/scribe_v2",
-          "voicesHeard": 2,
-          "serverMs": {
-            "asrMs": 3889,
-            "extractMs": 23245,
-            "verifyMs": 0,
-            "totalMs": 27134
-          },
-          "usage": {
-            "audioMinutes": 1.183,
-            "asrAttempts": 1,
-            "asrNeurons": 0,
-            "llmCalls": 1,
-            "llmPromptTokens": 2671,
-            "llmCompletionTokens": 1723,
-            "llmNeurons": 202.46,
-            "retries": 0
-          },
-          "cost": {
-            "asrUsd": 0.004338,
-            "llmUsd": 0.002227,
-            "totalUsd": 0.006565,
-            "perAudioMinuteUsd": 0.005549,
-            "pricesCheckedOn": "2026-10-05"
-          },
-          "items": [
-            {
-              "title": "Send API documentation",
-              "status": "agreed",
-              "owner": "Mark",
-              "deadline": "by Wednesday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Add dark mode",
-              "status": "not_accepted",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Prepare staging demo",
-              "status": "agreed",
-              "owner": "Mark",
-              "deadline": "Monday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Book meeting room for client workshop",
-              "status": "cancelled",
-              "owner": "Anna",
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Update privacy policy page",
-              "status": "agreed",
-              "owner": null,
-              "deadline": "before launch",
-              "date": null,
-              "notes": [
-                "Owner removed: the quotes show no commitment by Mark and no request that Mark accepted."
-              ]
-            },
-            {
-              "title": "Client single sign‑on requirement",
-              "status": "open_question",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            }
-          ],
-          "dropped": []
-        },
-        {
-          "run": 5,
-          "error": null,
-          "recovered": false,
-          "pass": true,
-          "included": "6/6",
-          "exclusionErrors": 0,
-          "failed": [],
-          "checks": 32,
-          "clientMs": 31442,
-          "transcriptMs": 3245,
-          "asr": "elevenlabs/scribe_v2",
-          "voicesHeard": 2,
-          "serverMs": {
-            "asrMs": 3259,
-            "extractMs": 26794,
-            "verifyMs": 0,
-            "totalMs": 30053
-          },
-          "usage": {
-            "audioMinutes": 1.183,
-            "asrAttempts": 1,
-            "asrNeurons": 0,
-            "llmCalls": 1,
-            "llmPromptTokens": 2672,
-            "llmCompletionTokens": 1685,
-            "llmNeurons": 199.9,
-            "retries": 0
-          },
-          "cost": {
-            "asrUsd": 0.004338,
-            "llmUsd": 0.002199,
-            "totalUsd": 0.006537,
-            "perAudioMinuteUsd": 0.005525,
-            "pricesCheckedOn": "2026-10-05"
-          },
-          "items": [
-            {
-              "title": "Send API documentation to client",
-              "status": "agreed",
-              "owner": "Mark",
-              "deadline": "by Wednesday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Add dark mode",
-              "status": "not_accepted",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Prepare staging demo",
-              "status": "agreed",
-              "owner": "Mark",
-              "deadline": "Monday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Book meeting room for client workshop",
-              "status": "cancelled",
-              "owner": "Anna",
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Update privacy policy page",
-              "status": "agreed",
-              "owner": null,
-              "deadline": "before launch",
-              "date": null,
-              "notes": [
-                "Owner removed: the quotes show no commitment by Mark and no request that Mark accepted."
-              ]
-            },
-            {
-              "title": "Client single sign‑on requirement",
-              "status": "open_question",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            }
-          ],
-          "dropped": []
-        }
-      ]
-    },
-    {
-      "case": "T2-changed",
-      "outcome": "result",
-      "runs": [
-        {
-          "run": 1,
-          "error": null,
-          "recovered": false,
-          "pass": true,
-          "included": "6/6",
-          "exclusionErrors": 0,
-          "failed": [],
-          "checks": 35,
-          "clientMs": 27577,
-          "transcriptMs": 2275,
-          "asr": "elevenlabs/scribe_v2",
-          "voicesHeard": 2,
-          "serverMs": {
-            "asrMs": 2288,
-            "extractMs": 25074,
-            "verifyMs": 0,
-            "totalMs": 27362
-          },
-          "usage": {
-            "audioMinutes": 1.209,
-            "asrAttempts": 1,
-            "asrNeurons": 0,
-            "llmCalls": 1,
-            "llmPromptTokens": 2682,
-            "llmCompletionTokens": 1489,
-            "llmNeurons": 186.86,
-            "retries": 0
-          },
-          "cost": {
-            "asrUsd": 0.004434,
-            "llmUsd": 0.002055,
-            "totalUsd": 0.006489,
-            "perAudioMinuteUsd": 0.005367,
-            "pricesCheckedOn": "2026-10-05"
-          },
-          "items": [
-            {
-              "title": "Send API documentation",
-              "status": "agreed",
-              "owner": "Mark",
-              "deadline": "by Wednesday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Implement dark mode",
-              "status": "agreed",
-              "owner": "Mark",
-              "deadline": "by Friday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Prepare staging demo",
-              "status": "agreed",
-              "owner": "Mark",
-              "deadline": "Monday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Book meeting room for client workshop",
-              "status": "cancelled",
-              "owner": "Anna",
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Update privacy policy page",
-              "status": "agreed",
-              "owner": null,
-              "deadline": "before launch",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Client requirement for single sign‑on",
-              "status": "open_question",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            }
-          ],
-          "dropped": []
-        },
-        {
-          "run": 2,
-          "error": null,
-          "recovered": false,
-          "pass": true,
-          "included": "6/6",
-          "exclusionErrors": 0,
-          "failed": [],
-          "checks": 35,
-          "clientMs": 15203,
-          "transcriptMs": 2801,
-          "asr": "elevenlabs/scribe_v2",
-          "voicesHeard": 2,
-          "serverMs": {
-            "asrMs": 2854,
-            "extractMs": 12102,
-            "verifyMs": 0,
-            "totalMs": 14956
-          },
-          "usage": {
-            "audioMinutes": 1.209,
-            "asrAttempts": 1,
-            "asrNeurons": 0,
-            "llmCalls": 1,
-            "llmPromptTokens": 2683,
-            "llmCompletionTokens": 1390,
-            "llmNeurons": 180.14,
-            "retries": 0
-          },
-          "cost": {
-            "asrUsd": 0.004434,
-            "llmUsd": 0.001982,
-            "totalUsd": 0.006415,
-            "perAudioMinuteUsd": 0.005305,
-            "pricesCheckedOn": "2026-10-05"
-          },
-          "items": [
-            {
-              "title": "Send API documentation",
-              "status": "agreed",
-              "owner": "Mark",
-              "deadline": "by Wednesday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Implement dark mode",
-              "status": "agreed",
-              "owner": "Mark",
-              "deadline": "by Friday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Prepare staging demo",
-              "status": "agreed",
-              "owner": "Mark",
-              "deadline": "Monday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Book meeting room for client workshop",
-              "status": "cancelled",
-              "owner": "Anna",
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Update privacy policy page",
-              "status": "agreed",
-              "owner": null,
-              "deadline": "before launch",
-              "date": null,
-              "notes": [
-                "Owner removed: the quotes show no commitment by Mark and no request that Mark accepted."
-              ]
-            },
-            {
-              "title": "Client single sign‑on requirement",
-              "status": "open_question",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            }
-          ],
-          "dropped": []
-        },
-        {
-          "run": 3,
-          "error": null,
-          "recovered": false,
-          "pass": true,
-          "included": "6/6",
-          "exclusionErrors": 0,
-          "failed": [],
-          "checks": 35,
-          "clientMs": 12799,
-          "transcriptMs": 3137,
-          "asr": "elevenlabs/scribe_v2",
-          "voicesHeard": 2,
-          "serverMs": {
-            "asrMs": 3128,
-            "extractMs": 9475,
-            "verifyMs": 0,
-            "totalMs": 12603
-          },
-          "usage": {
-            "audioMinutes": 1.209,
-            "asrAttempts": 1,
-            "asrNeurons": 0,
-            "llmCalls": 1,
-            "llmPromptTokens": 2682,
-            "llmCompletionTokens": 1459,
-            "llmNeurons": 184.81,
-            "retries": 0
-          },
-          "cost": {
-            "asrUsd": 0.004434,
-            "llmUsd": 0.002033,
-            "totalUsd": 0.006466,
-            "perAudioMinuteUsd": 0.005348,
-            "pricesCheckedOn": "2026-10-05"
-          },
-          "items": [
-            {
-              "title": "Send API documentation to client",
-              "status": "agreed",
-              "owner": "Mark",
-              "deadline": "by Wednesday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Implement dark mode",
-              "status": "agreed",
-              "owner": "Mark",
-              "deadline": "by Friday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Prepare staging demo",
-              "status": "agreed",
-              "owner": "Mark",
-              "deadline": "Monday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Book meeting room for client workshop",
-              "status": "cancelled",
-              "owner": "Anna",
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Update privacy policy page",
-              "status": "agreed",
-              "owner": null,
-              "deadline": "before launch",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Determine if client needs single sign‑on",
-              "status": "open_question",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            }
-          ],
-          "dropped": []
-        },
-        {
-          "run": 4,
-          "error": null,
-          "recovered": false,
-          "pass": true,
-          "included": "6/6",
-          "exclusionErrors": 0,
-          "failed": [],
-          "checks": 35,
-          "clientMs": 26211,
-          "transcriptMs": 2782,
-          "asr": "elevenlabs/scribe_v2",
-          "voicesHeard": 2,
-          "serverMs": {
-            "asrMs": 2797,
-            "extractMs": 23197,
-            "verifyMs": 0,
-            "totalMs": 25994
-          },
-          "usage": {
-            "audioMinutes": 1.209,
-            "asrAttempts": 1,
-            "asrNeurons": 0,
-            "llmCalls": 1,
-            "llmPromptTokens": 2683,
-            "llmCompletionTokens": 1510,
-            "llmNeurons": 188.32,
-            "retries": 0
-          },
-          "cost": {
-            "asrUsd": 0.004434,
-            "llmUsd": 0.002072,
-            "totalUsd": 0.006505,
-            "perAudioMinuteUsd": 0.00538,
-            "pricesCheckedOn": "2026-10-05"
-          },
-          "items": [
-            {
-              "title": "Send API documentation to client",
-              "status": "agreed",
-              "owner": "Mark",
-              "deadline": "by Wednesday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Implement dark mode",
-              "status": "agreed",
-              "owner": "Mark",
-              "deadline": "by Friday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Prepare staging demo",
-              "status": "agreed",
-              "owner": "Mark",
-              "deadline": "Monday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Book meeting room for client workshop",
-              "status": "cancelled",
-              "owner": "Anna",
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Update privacy policy page",
-              "status": "agreed",
-              "owner": null,
-              "deadline": "before launch",
-              "date": null,
-              "notes": [
-                "Owner removed: the quotes show no commitment by Mark and no request that Mark accepted."
-              ]
-            },
-            {
-              "title": "Client requirement for single sign-on",
-              "status": "open_question",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            }
-          ],
-          "dropped": []
-        },
-        {
-          "run": 5,
-          "error": null,
-          "recovered": false,
-          "pass": true,
-          "included": "6/6",
-          "exclusionErrors": 0,
-          "failed": [],
-          "checks": 35,
-          "clientMs": 17631,
-          "transcriptMs": 3301,
-          "asr": "elevenlabs/scribe_v2",
-          "voicesHeard": 2,
-          "serverMs": {
-            "asrMs": 3317,
-            "extractMs": 14119,
-            "verifyMs": 0,
-            "totalMs": 17436
-          },
-          "usage": {
-            "audioMinutes": 1.209,
-            "asrAttempts": 1,
-            "asrNeurons": 0,
-            "llmCalls": 1,
-            "llmPromptTokens": 2683,
-            "llmCompletionTokens": 1540,
-            "llmNeurons": 190.37,
-            "retries": 0
-          },
-          "cost": {
-            "asrUsd": 0.004434,
-            "llmUsd": 0.002094,
-            "totalUsd": 0.006528,
-            "perAudioMinuteUsd": 0.005399,
-            "pricesCheckedOn": "2026-10-05"
-          },
-          "items": [
-            {
-              "title": "Send API documentation to client",
-              "status": "agreed",
-              "owner": "Mark",
-              "deadline": "by Wednesday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Implement dark mode",
-              "status": "agreed",
-              "owner": "Mark",
-              "deadline": "by Friday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Prepare staging demo",
-              "status": "agreed",
-              "owner": "Mark",
-              "deadline": "Monday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Book meeting room for client workshop",
-              "status": "cancelled",
-              "owner": "Anna",
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Update privacy policy page",
-              "status": "agreed",
-              "owner": null,
-              "deadline": "before launch",
-              "date": null,
-              "notes": [
-                "Owner removed: the quotes show no commitment by Mark and no request that Mark accepted."
-              ]
-            },
-            {
-              "title": "Client requirement for single sign‑on",
-              "status": "open_question",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            }
-          ],
-          "dropped": []
-        }
-      ]
-    },
-    {
-      "case": "T3-ambiguous",
+      "case": "T9-real-two-people",
       "outcome": "clarify",
       "runs": [
         {
           "run": 1,
           "error": null,
           "recovered": false,
-          "pass": true,
-          "included": "4/4",
-          "exclusionErrors": 0,
-          "failed": [],
-          "checks": 26,
-          "clientMs": 20637,
-          "transcriptMs": 1977,
-          "asr": "elevenlabs/scribe_v2",
-          "voicesHeard": 2,
-          "serverMs": {
-            "asrMs": 2016,
-            "extractMs": 18346,
-            "verifyMs": 0,
-            "totalMs": 20362
-          },
-          "usage": {
-            "audioMinutes": 0.659,
-            "asrAttempts": 1,
-            "asrNeurons": 0,
-            "llmCalls": 1,
-            "llmPromptTokens": 2440,
-            "llmCompletionTokens": 1189,
-            "llmNeurons": 158.7,
-            "retries": 0
-          },
-          "cost": {
-            "asrUsd": 0.002417,
-            "llmUsd": 0.001746,
-            "totalUsd": 0.004162,
-            "perAudioMinuteUsd": 0.006315,
-            "pricesCheckedOn": "2026-10-05"
-          },
-          "items": [
+          "pass": false,
+          "included": "2/3",
+          "exclusionErrors": 1,
+          "failed": [
             {
-              "title": "Fix export bug",
-              "status": "needs_review",
-              "owner": "Speaker 2",
-              "deadline": "by Friday",
-              "date": null,
-              "notes": []
+              "item": "email",
+              "check": "owner",
+              "ok": false,
+              "detail": "expected Speaker 2, got null"
             },
             {
-              "title": "Talk to finance about invoices issue",
-              "status": "not_accepted",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
+              "item": "file-access",
+              "check": "owner",
+              "ok": false,
+              "detail": "expected Speaker 1, got Speaker 2"
             },
             {
-              "title": "Move the release",
-              "status": "not_accepted",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
+              "item": "file-access",
+              "check": "deadline wording",
+              "ok": false,
+              "detail": "got \"before half past 6:00\""
             },
             {
-              "title": "Rewrite onboarding emails",
-              "status": "not_accepted",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
+              "item": "code-snippets",
+              "check": "found",
+              "ok": false,
+              "detail": "missing"
             },
             {
-              "title": "Status of analytics dashboard",
-              "status": "open_question",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Discuss again after next week",
-              "status": "not_accepted",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
+              "item": "extra: Add three panes UI",
+              "check": "unsupported extra",
+              "ok": false,
+              "detail": "not_accepted"
             }
           ],
-          "dropped": []
-        },
-        {
-          "run": 2,
-          "error": null,
-          "recovered": false,
-          "pass": true,
-          "included": "4/4",
-          "exclusionErrors": 0,
-          "failed": [],
-          "checks": 26,
-          "clientMs": 24110,
-          "transcriptMs": 2016,
+          "checks": 20,
+          "clientMs": 39990,
+          "transcriptMs": 10152,
           "asr": "elevenlabs/scribe_v2",
           "voicesHeard": 2,
           "serverMs": {
-            "asrMs": 2026,
-            "extractMs": 21868,
+            "asrMs": 10162,
+            "extractMs": 29551,
             "verifyMs": 0,
-            "totalMs": 23894
+            "totalMs": 39713
           },
           "usage": {
-            "audioMinutes": 0.659,
+            "audioMinutes": 2.917,
             "asrAttempts": 1,
             "asrNeurons": 0,
             "llmCalls": 1,
-            "llmPromptTokens": 2440,
-            "llmCompletionTokens": 1218,
-            "llmNeurons": 160.68,
+            "llmPromptTokens": 3512,
+            "llmCompletionTokens": 1533,
+            "llmNeurons": 216.27,
             "retries": 0
           },
           "cost": {
-            "asrUsd": 0.002417,
-            "llmUsd": 0.001767,
-            "totalUsd": 0.004184,
-            "perAudioMinuteUsd": 0.006348,
+            "asrUsd": 0.010694,
+            "llmUsd": 0.002379,
+            "totalUsd": 0.013073,
+            "perAudioMinuteUsd": 0.004482,
             "pricesCheckedOn": "2026-10-05"
           },
           "items": [
             {
-              "title": "Fix export bug",
-              "status": "needs_review",
-              "owner": "Speaker 2",
-              "deadline": "by Friday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Talk to finance about invoices issue",
-              "status": "not_accepted",
+              "title": "Write him an email",
+              "status": "agreed",
               "owner": null,
               "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Move the release",
-              "status": "not_accepted",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Rewrite onboarding emails",
-              "status": "not_accepted",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Analytics dashboard status",
-              "status": "open_question",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Follow‑up meeting after next week",
-              "status": "not_accepted",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            }
-          ],
-          "dropped": []
-        },
-        {
-          "run": 3,
-          "error": null,
-          "recovered": false,
-          "pass": true,
-          "included": "4/4",
-          "exclusionErrors": 0,
-          "failed": [],
-          "checks": 26,
-          "clientMs": 15673,
-          "transcriptMs": 2580,
-          "asr": "elevenlabs/scribe_v2",
-          "voicesHeard": 2,
-          "serverMs": {
-            "asrMs": 2593,
-            "extractMs": 12795,
-            "verifyMs": 0,
-            "totalMs": 15388
-          },
-          "usage": {
-            "audioMinutes": 0.659,
-            "asrAttempts": 1,
-            "asrNeurons": 0,
-            "llmCalls": 1,
-            "llmPromptTokens": 2440,
-            "llmCompletionTokens": 1195,
-            "llmNeurons": 159.11,
-            "retries": 0
-          },
-          "cost": {
-            "asrUsd": 0.002417,
-            "llmUsd": 0.00175,
-            "totalUsd": 0.004167,
-            "perAudioMinuteUsd": 0.006322,
-            "pricesCheckedOn": "2026-10-05"
-          },
-          "items": [
-            {
-              "title": "Fix the export bug",
-              "status": "needs_review",
-              "owner": "Speaker 2",
-              "deadline": "by Friday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Talk to finance about the invoices issue",
-              "status": "not_accepted",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Move the release",
-              "status": "not_accepted",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Rewrite onboarding emails",
-              "status": "not_accepted",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Status of analytics dashboard",
-              "status": "open_question",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Discuss again after next week",
-              "status": "not_accepted",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            }
-          ],
-          "dropped": []
-        },
-        {
-          "run": 4,
-          "error": null,
-          "recovered": false,
-          "pass": true,
-          "included": "4/4",
-          "exclusionErrors": 0,
-          "failed": [],
-          "checks": 23,
-          "clientMs": 9315,
-          "transcriptMs": 1458,
-          "asr": "elevenlabs/scribe_v2",
-          "voicesHeard": 2,
-          "serverMs": {
-            "asrMs": 1462,
-            "extractMs": 7669,
-            "verifyMs": 0,
-            "totalMs": 9131
-          },
-          "usage": {
-            "audioMinutes": 0.659,
-            "asrAttempts": 1,
-            "asrNeurons": 0,
-            "llmCalls": 1,
-            "llmPromptTokens": 2440,
-            "llmCompletionTokens": 1031,
-            "llmNeurons": 147.93,
-            "retries": 0
-          },
-          "cost": {
-            "asrUsd": 0.002417,
-            "llmUsd": 0.001627,
-            "totalUsd": 0.004044,
-            "perAudioMinuteUsd": 0.006136,
-            "pricesCheckedOn": "2026-10-05"
-          },
-          "items": [
-            {
-              "title": "Fix export bug",
-              "status": "needs_review",
-              "owner": "Speaker 2",
-              "deadline": "by Friday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Talk to finance about invoices issue",
-              "status": "not_accepted",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Move the release",
-              "status": "not_accepted",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Rewrite onboarding emails",
-              "status": "not_accepted",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Status of analytics dashboard",
-              "status": "open_question",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            }
-          ],
-          "dropped": []
-        },
-        {
-          "run": 5,
-          "error": null,
-          "recovered": false,
-          "pass": true,
-          "included": "4/4",
-          "exclusionErrors": 0,
-          "failed": [],
-          "checks": 23,
-          "clientMs": 11281,
-          "transcriptMs": 2716,
-          "asr": "elevenlabs/scribe_v2",
-          "voicesHeard": 2,
-          "serverMs": {
-            "asrMs": 2640,
-            "extractMs": 8435,
-            "verifyMs": 0,
-            "totalMs": 11075
-          },
-          "usage": {
-            "audioMinutes": 0.659,
-            "asrAttempts": 1,
-            "asrNeurons": 0,
-            "llmCalls": 1,
-            "llmPromptTokens": 2440,
-            "llmCompletionTokens": 1016,
-            "llmNeurons": 146.91,
-            "retries": 0
-          },
-          "cost": {
-            "asrUsd": 0.002417,
-            "llmUsd": 0.001616,
-            "totalUsd": 0.004033,
-            "perAudioMinuteUsd": 0.006119,
-            "pricesCheckedOn": "2026-10-05"
-          },
-          "items": [
-            {
-              "title": "Export bug fix",
-              "status": "needs_review",
-              "owner": "Speaker 2",
-              "deadline": "by Friday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Talk to finance about invoices issue",
-              "status": "not_accepted",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Move the release",
-              "status": "not_accepted",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Rewrite onboarding emails",
-              "status": "not_accepted",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Status of analytics dashboard",
-              "status": "open_question",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            }
-          ],
-          "dropped": []
-        }
-      ]
-    },
-    {
-      "case": "T4-dated",
-      "outcome": "result",
-      "runs": [
-        {
-          "run": 1,
-          "error": null,
-          "recovered": false,
-          "pass": true,
-          "included": "4/4",
-          "exclusionErrors": 0,
-          "failed": [],
-          "checks": 28,
-          "clientMs": 8189,
-          "transcriptMs": 1893,
-          "asr": "elevenlabs/scribe_v2",
-          "voicesHeard": 2,
-          "serverMs": {
-            "asrMs": 1898,
-            "extractMs": 6079,
-            "verifyMs": 0,
-            "totalMs": 7977
-          },
-          "usage": {
-            "audioMinutes": 0.617,
-            "asrAttempts": 1,
-            "asrNeurons": 0,
-            "llmCalls": 1,
-            "llmPromptTokens": 2444,
-            "llmCompletionTokens": 950,
-            "llmNeurons": 142.54,
-            "retries": 0
-          },
-          "cost": {
-            "asrUsd": 0.002264,
-            "llmUsd": 0.001568,
-            "totalUsd": 0.003832,
-            "perAudioMinuteUsd": 0.006206,
-            "pricesCheckedOn": "2026-10-05"
-          },
-          "items": [
-            {
-              "title": "Deploy the fix",
-              "status": "agreed",
-              "owner": "Mark",
-              "deadline": "tomorrow morning",
-              "date": "2026-10-06",
-              "notes": []
-            },
-            {
-              "title": "Run the QA pass",
-              "status": "agreed",
-              "owner": "Anna",
-              "deadline": "by Friday",
-              "date": "2026-10-09",
-              "notes": []
-            },
-            {
-              "title": "Email support team",
-              "status": "agreed",
-              "owner": "Anna",
-              "deadline": "today",
-              "date": "2026-10-05",
-              "notes": []
-            },
-            {
-              "title": "Short review of the incident",
-              "status": "agreed",
-              "owner": null,
-              "deadline": "Wednesday next week",
-              "date": "2026-10-14",
-              "notes": []
-            }
-          ],
-          "dropped": []
-        },
-        {
-          "run": 2,
-          "error": null,
-          "recovered": false,
-          "pass": true,
-          "included": "4/4",
-          "exclusionErrors": 0,
-          "failed": [],
-          "checks": 28,
-          "clientMs": 17852,
-          "transcriptMs": 1408,
-          "asr": "elevenlabs/scribe_v2",
-          "voicesHeard": 2,
-          "serverMs": {
-            "asrMs": 1414,
-            "extractMs": 16251,
-            "verifyMs": 0,
-            "totalMs": 17665
-          },
-          "usage": {
-            "audioMinutes": 0.617,
-            "asrAttempts": 1,
-            "asrNeurons": 0,
-            "llmCalls": 1,
-            "llmPromptTokens": 2445,
-            "llmCompletionTokens": 977,
-            "llmNeurons": 144.41,
-            "retries": 0
-          },
-          "cost": {
-            "asrUsd": 0.002264,
-            "llmUsd": 0.001588,
-            "totalUsd": 0.003852,
-            "perAudioMinuteUsd": 0.006239,
-            "pricesCheckedOn": "2026-10-05"
-          },
-          "items": [
-            {
-              "title": "Deploy the fix",
-              "status": "agreed",
-              "owner": "Mark",
-              "deadline": "tomorrow morning",
-              "date": "2026-10-06",
-              "notes": []
-            },
-            {
-              "title": "Run QA pass",
-              "status": "agreed",
-              "owner": "Anna",
-              "deadline": "by Friday",
-              "date": "2026-10-09",
-              "notes": []
-            },
-            {
-              "title": "Email support team",
-              "status": "agreed",
-              "owner": "Anna",
-              "deadline": "today",
-              "date": "2026-10-05",
-              "notes": []
-            },
-            {
-              "title": "Short review of the incident",
-              "status": "agreed",
-              "owner": null,
-              "deadline": "Wednesday next week",
-              "date": "2026-10-14",
-              "notes": []
-            }
-          ],
-          "dropped": []
-        },
-        {
-          "run": 3,
-          "error": null,
-          "recovered": false,
-          "pass": true,
-          "included": "4/4",
-          "exclusionErrors": 0,
-          "failed": [],
-          "checks": 28,
-          "clientMs": 10030,
-          "transcriptMs": 1913,
-          "asr": "elevenlabs/scribe_v2",
-          "voicesHeard": 2,
-          "serverMs": {
-            "asrMs": 1921,
-            "extractMs": 7908,
-            "verifyMs": 0,
-            "totalMs": 9829
-          },
-          "usage": {
-            "audioMinutes": 0.617,
-            "asrAttempts": 1,
-            "asrNeurons": 0,
-            "llmCalls": 1,
-            "llmPromptTokens": 2445,
-            "llmCompletionTokens": 920,
-            "llmNeurons": 140.52,
-            "retries": 0
-          },
-          "cost": {
-            "asrUsd": 0.002264,
-            "llmUsd": 0.001546,
-            "totalUsd": 0.00381,
-            "perAudioMinuteUsd": 0.00617,
-            "pricesCheckedOn": "2026-10-05"
-          },
-          "items": [
-            {
-              "title": "Deploy the fix",
-              "status": "agreed",
-              "owner": "Mark",
-              "deadline": "tomorrow morning",
-              "date": "2026-10-06",
-              "notes": []
-            },
-            {
-              "title": "Run QA pass",
-              "status": "agreed",
-              "owner": "Anna",
-              "deadline": "by Friday",
-              "date": "2026-10-09",
-              "notes": []
-            },
-            {
-              "title": "Email support team",
-              "status": "agreed",
-              "owner": "Anna",
-              "deadline": "today",
-              "date": "2026-10-05",
-              "notes": []
-            },
-            {
-              "title": "Short review of the incident",
-              "status": "agreed",
-              "owner": null,
-              "deadline": "Wednesday next week",
-              "date": "2026-10-14",
-              "notes": []
-            }
-          ],
-          "dropped": []
-        },
-        {
-          "run": 4,
-          "error": null,
-          "recovered": false,
-          "pass": true,
-          "included": "4/4",
-          "exclusionErrors": 0,
-          "failed": [],
-          "checks": 28,
-          "clientMs": 12971,
-          "transcriptMs": 1991,
-          "asr": "elevenlabs/scribe_v2",
-          "voicesHeard": 2,
-          "serverMs": {
-            "asrMs": 1997,
-            "extractMs": 10786,
-            "verifyMs": 0,
-            "totalMs": 12783
-          },
-          "usage": {
-            "audioMinutes": 0.617,
-            "asrAttempts": 1,
-            "asrNeurons": 0,
-            "llmCalls": 1,
-            "llmPromptTokens": 2445,
-            "llmCompletionTokens": 910,
-            "llmNeurons": 139.84,
-            "retries": 0
-          },
-          "cost": {
-            "asrUsd": 0.002264,
-            "llmUsd": 0.001538,
-            "totalUsd": 0.003802,
-            "perAudioMinuteUsd": 0.006158,
-            "pricesCheckedOn": "2026-10-05"
-          },
-          "items": [
-            {
-              "title": "Deploy the fix",
-              "status": "agreed",
-              "owner": "Mark",
-              "deadline": "tomorrow morning",
-              "date": "2026-10-06",
-              "notes": []
-            },
-            {
-              "title": "Run the QA pass",
-              "status": "agreed",
-              "owner": "Anna",
-              "deadline": "by Friday",
-              "date": "2026-10-09",
-              "notes": []
-            },
-            {
-              "title": "Email support team",
-              "status": "agreed",
-              "owner": "Anna",
-              "deadline": "today",
-              "date": "2026-10-05",
-              "notes": []
-            },
-            {
-              "title": "Short review of the incident",
-              "status": "agreed",
-              "owner": null,
-              "deadline": "Wednesday next week",
-              "date": "2026-10-14",
-              "notes": []
-            }
-          ],
-          "dropped": []
-        },
-        {
-          "run": 5,
-          "error": null,
-          "recovered": false,
-          "pass": true,
-          "included": "4/4",
-          "exclusionErrors": 0,
-          "failed": [],
-          "checks": 28,
-          "clientMs": 19061,
-          "transcriptMs": 2180,
-          "asr": "elevenlabs/scribe_v2",
-          "voicesHeard": 2,
-          "serverMs": {
-            "asrMs": 2185,
-            "extractMs": 16381,
-            "verifyMs": 0,
-            "totalMs": 18566
-          },
-          "usage": {
-            "audioMinutes": 0.617,
-            "asrAttempts": 1,
-            "asrNeurons": 0,
-            "llmCalls": 1,
-            "llmPromptTokens": 2444,
-            "llmCompletionTokens": 967,
-            "llmNeurons": 143.69,
-            "retries": 0
-          },
-          "cost": {
-            "asrUsd": 0.002264,
-            "llmUsd": 0.001581,
-            "totalUsd": 0.003845,
-            "perAudioMinuteUsd": 0.006227,
-            "pricesCheckedOn": "2026-10-05"
-          },
-          "items": [
-            {
-              "title": "Deploy the fix",
-              "status": "agreed",
-              "owner": "Mark",
-              "deadline": "tomorrow morning",
-              "date": "2026-10-06",
-              "notes": []
-            },
-            {
-              "title": "Run the QA pass",
-              "status": "agreed",
-              "owner": "Anna",
-              "deadline": "by Friday",
-              "date": "2026-10-09",
-              "notes": []
-            },
-            {
-              "title": "Email support team",
-              "status": "agreed",
-              "owner": "Anna",
-              "deadline": "today",
-              "date": "2026-10-05",
-              "notes": []
-            },
-            {
-              "title": "Short review of the incident",
-              "status": "agreed",
-              "owner": null,
-              "deadline": "Wednesday next week",
-              "date": "2026-10-14",
-              "notes": []
-            }
-          ],
-          "dropped": []
-        }
-      ]
-    },
-    {
-      "case": "T5-three-voices",
-      "outcome": "decline",
-      "runs": [
-        {
-          "run": 1,
-          "error": null,
-          "recovered": false,
-          "pass": true,
-          "included": "n/a",
-          "exclusionErrors": 0,
-          "failed": [],
-          "checks": 3,
-          "clientMs": 1372,
-          "transcriptMs": 1158,
-          "asr": "elevenlabs/scribe_v2",
-          "voicesHeard": 3,
-          "serverMs": {
-            "asrMs": 1162,
-            "extractMs": 0,
-            "verifyMs": 0,
-            "totalMs": 1162
-          },
-          "usage": {
-            "audioMinutes": 0.266,
-            "asrAttempts": 1,
-            "asrNeurons": 0,
-            "llmCalls": 0,
-            "llmPromptTokens": 0,
-            "llmCompletionTokens": 0,
-            "llmNeurons": 0,
-            "retries": 0
-          },
-          "cost": {
-            "asrUsd": 0.000974,
-            "llmUsd": 0,
-            "totalUsd": 0.000974,
-            "perAudioMinuteUsd": 0.003667,
-            "pricesCheckedOn": "2026-10-05"
-          },
-          "items": [],
-          "dropped": []
-        },
-        {
-          "run": 2,
-          "error": null,
-          "recovered": false,
-          "pass": true,
-          "included": "n/a",
-          "exclusionErrors": 0,
-          "failed": [],
-          "checks": 3,
-          "clientMs": 1274,
-          "transcriptMs": 1090,
-          "asr": "elevenlabs/scribe_v2",
-          "voicesHeard": 3,
-          "serverMs": {
-            "asrMs": 1097,
-            "extractMs": 0,
-            "verifyMs": 0,
-            "totalMs": 1097
-          },
-          "usage": {
-            "audioMinutes": 0.266,
-            "asrAttempts": 1,
-            "asrNeurons": 0,
-            "llmCalls": 0,
-            "llmPromptTokens": 0,
-            "llmCompletionTokens": 0,
-            "llmNeurons": 0,
-            "retries": 0
-          },
-          "cost": {
-            "asrUsd": 0.000974,
-            "llmUsd": 0,
-            "totalUsd": 0.000974,
-            "perAudioMinuteUsd": 0.003667,
-            "pricesCheckedOn": "2026-10-05"
-          },
-          "items": [],
-          "dropped": []
-        },
-        {
-          "run": 3,
-          "error": null,
-          "recovered": false,
-          "pass": true,
-          "included": "n/a",
-          "exclusionErrors": 0,
-          "failed": [],
-          "checks": 3,
-          "clientMs": 1321,
-          "transcriptMs": 1029,
-          "asr": "elevenlabs/scribe_v2",
-          "voicesHeard": 3,
-          "serverMs": {
-            "asrMs": 1023,
-            "extractMs": 0,
-            "verifyMs": 0,
-            "totalMs": 1023
-          },
-          "usage": {
-            "audioMinutes": 0.266,
-            "asrAttempts": 1,
-            "asrNeurons": 0,
-            "llmCalls": 0,
-            "llmPromptTokens": 0,
-            "llmCompletionTokens": 0,
-            "llmNeurons": 0,
-            "retries": 0
-          },
-          "cost": {
-            "asrUsd": 0.000974,
-            "llmUsd": 0,
-            "totalUsd": 0.000974,
-            "perAudioMinuteUsd": 0.003667,
-            "pricesCheckedOn": "2026-10-05"
-          },
-          "items": [],
-          "dropped": []
-        },
-        {
-          "run": 4,
-          "error": null,
-          "recovered": false,
-          "pass": true,
-          "included": "n/a",
-          "exclusionErrors": 0,
-          "failed": [],
-          "checks": 3,
-          "clientMs": 1420,
-          "transcriptMs": 1160,
-          "asr": "elevenlabs/scribe_v2",
-          "voicesHeard": 3,
-          "serverMs": {
-            "asrMs": 1227,
-            "extractMs": 0,
-            "verifyMs": 0,
-            "totalMs": 1227
-          },
-          "usage": {
-            "audioMinutes": 0.266,
-            "asrAttempts": 1,
-            "asrNeurons": 0,
-            "llmCalls": 0,
-            "llmPromptTokens": 0,
-            "llmCompletionTokens": 0,
-            "llmNeurons": 0,
-            "retries": 0
-          },
-          "cost": {
-            "asrUsd": 0.000974,
-            "llmUsd": 0,
-            "totalUsd": 0.000974,
-            "perAudioMinuteUsd": 0.003667,
-            "pricesCheckedOn": "2026-10-05"
-          },
-          "items": [],
-          "dropped": []
-        },
-        {
-          "run": 5,
-          "error": null,
-          "recovered": false,
-          "pass": true,
-          "included": "n/a",
-          "exclusionErrors": 0,
-          "failed": [],
-          "checks": 3,
-          "clientMs": 1391,
-          "transcriptMs": 1190,
-          "asr": "elevenlabs/scribe_v2",
-          "voicesHeard": 3,
-          "serverMs": {
-            "asrMs": 1193,
-            "extractMs": 0,
-            "verifyMs": 0,
-            "totalMs": 1193
-          },
-          "usage": {
-            "audioMinutes": 0.266,
-            "asrAttempts": 1,
-            "asrNeurons": 0,
-            "llmCalls": 0,
-            "llmPromptTokens": 0,
-            "llmCompletionTokens": 0,
-            "llmNeurons": 0,
-            "retries": 0
-          },
-          "cost": {
-            "asrUsd": 0.000974,
-            "llmUsd": 0,
-            "totalUsd": 0.000974,
-            "perAudioMinuteUsd": 0.003667,
-            "pricesCheckedOn": "2026-10-05"
-          },
-          "items": [],
-          "dropped": []
-        }
-      ]
-    },
-    {
-      "case": "T6-noisy",
-      "outcome": "result",
-      "runs": [
-        {
-          "run": 1,
-          "error": null,
-          "recovered": false,
-          "pass": true,
-          "included": "6/6",
-          "exclusionErrors": 0,
-          "failed": [],
-          "checks": 32,
-          "clientMs": 24068,
-          "transcriptMs": 2962,
-          "asr": "elevenlabs/scribe_v2",
-          "voicesHeard": 2,
-          "serverMs": {
-            "asrMs": 2966,
-            "extractMs": 20870,
-            "verifyMs": 0,
-            "totalMs": 23836
-          },
-          "usage": {
-            "audioMinutes": 1.183,
-            "asrAttempts": 1,
-            "asrNeurons": 0,
-            "llmCalls": 1,
-            "llmPromptTokens": 2671,
-            "llmCompletionTokens": 1445,
-            "llmNeurons": 183.51,
-            "retries": 0
-          },
-          "cost": {
-            "asrUsd": 0.004338,
-            "llmUsd": 0.002019,
-            "totalUsd": 0.006356,
-            "perAudioMinuteUsd": 0.005373,
-            "pricesCheckedOn": "2026-10-05"
-          },
-          "items": [
-            {
-              "title": "Send API documentation",
-              "status": "agreed",
-              "owner": "Mark",
-              "deadline": "by Wednesday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Add dark mode",
-              "status": "not_accepted",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Prepare staging demo",
-              "status": "agreed",
-              "owner": "Mark",
-              "deadline": "Monday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Book meeting room for client workshop",
-              "status": "cancelled",
-              "owner": "Anna",
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Update privacy policy page",
-              "status": "agreed",
-              "owner": null,
-              "deadline": "before launch",
               "date": null,
               "notes": [
-                "Owner removed: the quotes show no commitment by Mark and no request that Mark accepted."
+                "Owner removed: the quotes show no commitment by Speaker 1 and no request that Speaker 1 accepted."
               ]
             },
             {
-              "title": "Client single sign‑on requirement",
-              "status": "open_question",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            }
-          ],
-          "dropped": []
-        },
-        {
-          "run": 2,
-          "error": null,
-          "recovered": false,
-          "pass": true,
-          "included": "6/6",
-          "exclusionErrors": 0,
-          "failed": [],
-          "checks": 32,
-          "clientMs": 24876,
-          "transcriptMs": 4098,
-          "asr": "elevenlabs/scribe_v2",
-          "voicesHeard": 2,
-          "serverMs": {
-            "asrMs": 4064,
-            "extractMs": 20560,
-            "verifyMs": 0,
-            "totalMs": 24624
-          },
-          "usage": {
-            "audioMinutes": 1.183,
-            "asrAttempts": 1,
-            "asrNeurons": 0,
-            "llmCalls": 1,
-            "llmPromptTokens": 2671,
-            "llmCompletionTokens": 1775,
-            "llmNeurons": 206.01,
-            "retries": 0
-          },
-          "cost": {
-            "asrUsd": 0.004338,
-            "llmUsd": 0.002266,
-            "totalUsd": 0.006604,
-            "perAudioMinuteUsd": 0.005582,
-            "pricesCheckedOn": "2026-10-05"
-          },
-          "items": [
-            {
-              "title": "Send API documentation",
-              "status": "agreed",
-              "owner": "Mark",
-              "deadline": "by Wednesday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Add dark mode",
+              "title": "Add three panes UI",
               "status": "not_accepted",
               "owner": null,
               "deadline": null,
@@ -2057,905 +97,346 @@
               "notes": []
             },
             {
-              "title": "Staging demo ready",
+              "title": "Make the file readable and writable",
               "status": "agreed",
-              "owner": "Mark",
-              "deadline": "Monday",
+              "owner": "Speaker 2",
+              "deadline": "before half past 6:00",
               "date": null,
               "notes": []
             },
             {
-              "title": "Book meeting room for client workshop",
-              "status": "cancelled",
-              "owner": "Anna",
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Update privacy policy page",
-              "status": "agreed",
-              "owner": null,
-              "deadline": "before launch",
-              "date": null,
-              "notes": [
-                "Owner removed: the quotes show no commitment by Mark and no request that Mark accepted."
-              ]
-            },
-            {
-              "title": "Client single sign‑on requirement",
-              "status": "open_question",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            }
-          ],
-          "dropped": []
-        },
-        {
-          "run": 3,
-          "error": null,
-          "recovered": false,
-          "pass": true,
-          "included": "6/6",
-          "exclusionErrors": 0,
-          "failed": [],
-          "checks": 32,
-          "clientMs": 37120,
-          "transcriptMs": 3513,
-          "asr": "elevenlabs/scribe_v2",
-          "voicesHeard": 2,
-          "serverMs": {
-            "asrMs": 3516,
-            "extractMs": 33424,
-            "verifyMs": 0,
-            "totalMs": 36940
-          },
-          "usage": {
-            "audioMinutes": 1.183,
-            "asrAttempts": 1,
-            "asrNeurons": 0,
-            "llmCalls": 1,
-            "llmPromptTokens": 2671,
-            "llmCompletionTokens": 1763,
-            "llmNeurons": 205.19,
-            "retries": 0
-          },
-          "cost": {
-            "asrUsd": 0.004338,
-            "llmUsd": 0.002257,
-            "totalUsd": 0.006595,
-            "perAudioMinuteUsd": 0.005575,
-            "pricesCheckedOn": "2026-10-05"
-          },
-          "items": [
-            {
-              "title": "Send API documentation",
-              "status": "agreed",
-              "owner": "Mark",
-              "deadline": "by Wednesday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Add dark mode",
+              "title": "Implement left‑click highlight feature",
               "status": "not_accepted",
               "owner": null,
               "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Staging demo ready",
-              "status": "agreed",
-              "owner": "Mark",
-              "deadline": "Monday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Book meeting room for client workshop",
-              "status": "cancelled",
-              "owner": "Anna",
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Update privacy policy page",
-              "status": "agreed",
-              "owner": null,
-              "deadline": "before launch",
-              "date": null,
-              "notes": [
-                "Owner removed: the quotes show no commitment by Mark and no request that Mark accepted."
-              ]
-            },
-            {
-              "title": "Client single sign‑on requirement",
-              "status": "open_question",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            }
-          ],
-          "dropped": []
-        },
-        {
-          "run": 4,
-          "error": null,
-          "recovered": false,
-          "pass": true,
-          "included": "6/6",
-          "exclusionErrors": 0,
-          "failed": [],
-          "checks": 32,
-          "clientMs": 41128,
-          "transcriptMs": 2589,
-          "asr": "elevenlabs/scribe_v2",
-          "voicesHeard": 2,
-          "serverMs": {
-            "asrMs": 2545,
-            "extractMs": 38411,
-            "verifyMs": 0,
-            "totalMs": 40956
-          },
-          "usage": {
-            "audioMinutes": 1.183,
-            "asrAttempts": 1,
-            "asrNeurons": 0,
-            "llmCalls": 1,
-            "llmPromptTokens": 2671,
-            "llmCompletionTokens": 1421,
-            "llmNeurons": 181.87,
-            "retries": 0
-          },
-          "cost": {
-            "asrUsd": 0.004338,
-            "llmUsd": 0.002001,
-            "totalUsd": 0.006338,
-            "perAudioMinuteUsd": 0.005358,
-            "pricesCheckedOn": "2026-10-05"
-          },
-          "items": [
-            {
-              "title": "Send API documentation",
-              "status": "agreed",
-              "owner": "Mark",
-              "deadline": "by Wednesday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Add dark mode",
-              "status": "not_accepted",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Prepare staging demo",
-              "status": "agreed",
-              "owner": "Mark",
-              "deadline": "Monday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Book meeting room for client workshop",
-              "status": "cancelled",
-              "owner": "Anna",
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Update privacy policy page",
-              "status": "agreed",
-              "owner": null,
-              "deadline": "before launch",
-              "date": null,
-              "notes": [
-                "Owner removed: the quotes show no commitment by Mark and no request that Mark accepted."
-              ]
-            },
-            {
-              "title": "Client single sign‑on requirement",
-              "status": "open_question",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            }
-          ],
-          "dropped": []
-        },
-        {
-          "run": 5,
-          "error": null,
-          "recovered": false,
-          "pass": true,
-          "included": "6/6",
-          "exclusionErrors": 0,
-          "failed": [],
-          "checks": 32,
-          "clientMs": 28112,
-          "transcriptMs": 2169,
-          "asr": "elevenlabs/scribe_v2",
-          "voicesHeard": 2,
-          "serverMs": {
-            "asrMs": 2172,
-            "extractMs": 25661,
-            "verifyMs": 0,
-            "totalMs": 27833
-          },
-          "usage": {
-            "audioMinutes": 1.183,
-            "asrAttempts": 1,
-            "asrNeurons": 0,
-            "llmCalls": 1,
-            "llmPromptTokens": 2671,
-            "llmCompletionTokens": 1385,
-            "llmNeurons": 179.42,
-            "retries": 0
-          },
-          "cost": {
-            "asrUsd": 0.004338,
-            "llmUsd": 0.001974,
-            "totalUsd": 0.006311,
-            "perAudioMinuteUsd": 0.005335,
-            "pricesCheckedOn": "2026-10-05"
-          },
-          "items": [
-            {
-              "title": "Send API documentation",
-              "status": "agreed",
-              "owner": "Mark",
-              "deadline": "by Wednesday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Add dark mode",
-              "status": "not_accepted",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Prepare staging demo",
-              "status": "agreed",
-              "owner": "Mark",
-              "deadline": "Monday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Book meeting room for client workshop",
-              "status": "cancelled",
-              "owner": "Anna",
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Update privacy policy page",
-              "status": "agreed",
-              "owner": null,
-              "deadline": "before launch",
-              "date": null,
-              "notes": [
-                "Owner removed: the quotes show no commitment by Mark and no request that Mark accepted."
-              ]
-            },
-            {
-              "title": "Client single sign‑on requirement",
-              "status": "open_question",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            }
-          ],
-          "dropped": []
-        }
-      ]
-    },
-    {
-      "case": "T7-seven-voices",
-      "outcome": "decline",
-      "runs": [
-        {
-          "run": 1,
-          "error": null,
-          "recovered": false,
-          "pass": true,
-          "included": "n/a",
-          "exclusionErrors": 0,
-          "failed": [],
-          "checks": 3,
-          "clientMs": 2656,
-          "transcriptMs": 2479,
-          "asr": "elevenlabs/scribe_v2",
-          "voicesHeard": 7,
-          "serverMs": {
-            "asrMs": 2542,
-            "extractMs": 0,
-            "verifyMs": 0,
-            "totalMs": 2542
-          },
-          "usage": {
-            "audioMinutes": 0.701,
-            "asrAttempts": 1,
-            "asrNeurons": 0,
-            "llmCalls": 0,
-            "llmPromptTokens": 0,
-            "llmCompletionTokens": 0,
-            "llmNeurons": 0,
-            "retries": 0
-          },
-          "cost": {
-            "asrUsd": 0.002572,
-            "llmUsd": 0,
-            "totalUsd": 0.002572,
-            "perAudioMinuteUsd": 0.003667,
-            "pricesCheckedOn": "2026-10-05"
-          },
-          "items": [],
-          "dropped": []
-        },
-        {
-          "run": 2,
-          "error": null,
-          "recovered": false,
-          "pass": true,
-          "included": "n/a",
-          "exclusionErrors": 0,
-          "failed": [],
-          "checks": 3,
-          "clientMs": 1775,
-          "transcriptMs": 1589,
-          "asr": "elevenlabs/scribe_v2",
-          "voicesHeard": 7,
-          "serverMs": {
-            "asrMs": 1737,
-            "extractMs": 0,
-            "verifyMs": 0,
-            "totalMs": 1737
-          },
-          "usage": {
-            "audioMinutes": 0.701,
-            "asrAttempts": 1,
-            "asrNeurons": 0,
-            "llmCalls": 0,
-            "llmPromptTokens": 0,
-            "llmCompletionTokens": 0,
-            "llmNeurons": 0,
-            "retries": 0
-          },
-          "cost": {
-            "asrUsd": 0.002572,
-            "llmUsd": 0,
-            "totalUsd": 0.002572,
-            "perAudioMinuteUsd": 0.003667,
-            "pricesCheckedOn": "2026-10-05"
-          },
-          "items": [],
-          "dropped": []
-        },
-        {
-          "run": 3,
-          "error": null,
-          "recovered": false,
-          "pass": true,
-          "included": "n/a",
-          "exclusionErrors": 0,
-          "failed": [],
-          "checks": 3,
-          "clientMs": 2056,
-          "transcriptMs": 1840,
-          "asr": "elevenlabs/scribe_v2",
-          "voicesHeard": 7,
-          "serverMs": {
-            "asrMs": 1843,
-            "extractMs": 0,
-            "verifyMs": 0,
-            "totalMs": 1843
-          },
-          "usage": {
-            "audioMinutes": 0.701,
-            "asrAttempts": 1,
-            "asrNeurons": 0,
-            "llmCalls": 0,
-            "llmPromptTokens": 0,
-            "llmCompletionTokens": 0,
-            "llmNeurons": 0,
-            "retries": 0
-          },
-          "cost": {
-            "asrUsd": 0.002572,
-            "llmUsd": 0,
-            "totalUsd": 0.002572,
-            "perAudioMinuteUsd": 0.003667,
-            "pricesCheckedOn": "2026-10-05"
-          },
-          "items": [],
-          "dropped": []
-        },
-        {
-          "run": 4,
-          "error": null,
-          "recovered": false,
-          "pass": true,
-          "included": "n/a",
-          "exclusionErrors": 0,
-          "failed": [],
-          "checks": 3,
-          "clientMs": 2310,
-          "transcriptMs": 2139,
-          "asr": "elevenlabs/scribe_v2",
-          "voicesHeard": 7,
-          "serverMs": {
-            "asrMs": 2145,
-            "extractMs": 0,
-            "verifyMs": 0,
-            "totalMs": 2145
-          },
-          "usage": {
-            "audioMinutes": 0.701,
-            "asrAttempts": 1,
-            "asrNeurons": 0,
-            "llmCalls": 0,
-            "llmPromptTokens": 0,
-            "llmCompletionTokens": 0,
-            "llmNeurons": 0,
-            "retries": 0
-          },
-          "cost": {
-            "asrUsd": 0.002572,
-            "llmUsd": 0,
-            "totalUsd": 0.002572,
-            "perAudioMinuteUsd": 0.003667,
-            "pricesCheckedOn": "2026-10-05"
-          },
-          "items": [],
-          "dropped": []
-        },
-        {
-          "run": 5,
-          "error": null,
-          "recovered": false,
-          "pass": true,
-          "included": "n/a",
-          "exclusionErrors": 0,
-          "failed": [],
-          "checks": 3,
-          "clientMs": 2443,
-          "transcriptMs": 2255,
-          "asr": "elevenlabs/scribe_v2",
-          "voicesHeard": 7,
-          "serverMs": {
-            "asrMs": 2345,
-            "extractMs": 0,
-            "verifyMs": 0,
-            "totalMs": 2345
-          },
-          "usage": {
-            "audioMinutes": 0.701,
-            "asrAttempts": 1,
-            "asrNeurons": 0,
-            "llmCalls": 0,
-            "llmPromptTokens": 0,
-            "llmCompletionTokens": 0,
-            "llmNeurons": 0,
-            "retries": 0
-          },
-          "cost": {
-            "asrUsd": 0.002572,
-            "llmUsd": 0,
-            "totalUsd": 0.002572,
-            "perAudioMinuteUsd": 0.003667,
-            "pricesCheckedOn": "2026-10-05"
-          },
-          "items": [],
-          "dropped": []
-        }
-      ]
-    },
-    {
-      "case": "T8-natural-call",
-      "outcome": "result",
-      "runs": [
-        {
-          "run": 1,
-          "error": null,
-          "recovered": false,
-          "pass": true,
-          "included": "7/7",
-          "exclusionErrors": 0,
-          "failed": [],
-          "checks": 35,
-          "clientMs": 35908,
-          "transcriptMs": 4738,
-          "asr": "elevenlabs/scribe_v2",
-          "voicesHeard": 2,
-          "serverMs": {
-            "asrMs": 4752,
-            "extractMs": 30985,
-            "verifyMs": 0,
-            "totalMs": 35737
-          },
-          "usage": {
-            "audioMinutes": 2.577,
-            "asrAttempts": 1,
-            "asrNeurons": 0,
-            "llmCalls": 1,
-            "llmPromptTokens": 3118,
-            "llmCompletionTokens": 1737,
-            "llmNeurons": 217.64,
-            "retries": 0
-          },
-          "cost": {
-            "asrUsd": 0.009448,
-            "llmUsd": 0.002394,
-            "totalUsd": 0.011842,
-            "perAudioMinuteUsd": 0.004596,
-            "pricesCheckedOn": "2026-10-05"
-          },
-          "items": [
-            {
-              "title": "Send API docs to partner team",
-              "status": "agreed",
-              "owner": "Tom",
-              "deadline": "by Wednesday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Add dark mode to partner portal",
-              "status": "not_accepted",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Staging demo availability",
-              "status": "agreed",
-              "owner": "Tom",
-              "deadline": "Monday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Book big room for client workshop",
-              "status": "cancelled",
-              "owner": "Sophia",
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Update privacy policy page",
-              "status": "agreed",
-              "owner": null,
-              "deadline": "before launch",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Determine if client needs SSO",
-              "status": "open_question",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Investigate flaky payment module tests",
-              "status": "needs_review",
-              "owner": "Tom",
-              "deadline": "this week",
-              "date": null,
-              "notes": []
-            }
-          ],
-          "dropped": []
-        },
-        {
-          "run": 2,
-          "error": null,
-          "recovered": false,
-          "pass": true,
-          "included": "7/7",
-          "exclusionErrors": 0,
-          "failed": [],
-          "checks": 35,
-          "clientMs": 34292,
-          "transcriptMs": 5113,
-          "asr": "elevenlabs/scribe_v2",
-          "voicesHeard": 2,
-          "serverMs": {
-            "asrMs": 5189,
-            "extractMs": 28986,
-            "verifyMs": 0,
-            "totalMs": 34175
-          },
-          "usage": {
-            "audioMinutes": 2.577,
-            "asrAttempts": 1,
-            "asrNeurons": 0,
-            "llmCalls": 1,
-            "llmPromptTokens": 3144,
-            "llmCompletionTokens": 1714,
-            "llmNeurons": 216.9,
-            "retries": 0
-          },
-          "cost": {
-            "asrUsd": 0.009448,
-            "llmUsd": 0.002386,
-            "totalUsd": 0.011834,
-            "perAudioMinuteUsd": 0.004593,
-            "pricesCheckedOn": "2026-10-05"
-          },
-          "items": [
-            {
-              "title": "Send API docs to partner team",
-              "status": "agreed",
-              "owner": "Tom",
-              "deadline": "by Wednesday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Add dark mode to partner portal",
-              "status": "not_accepted",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Deploy staging demo",
-              "status": "agreed",
-              "owner": "Tom",
-              "deadline": "Monday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Book big room for client workshop",
-              "status": "cancelled",
-              "owner": "Sophia",
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Update privacy policy page",
-              "status": "agreed",
-              "owner": null,
-              "deadline": "before launch",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Determine if client needs single sign‑on (SSO)",
-              "status": "open_question",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Investigate flaky tests in payment module",
-              "status": "needs_review",
-              "owner": "Tom",
-              "deadline": "this week",
-              "date": null,
-              "notes": []
-            }
-          ],
-          "dropped": []
-        },
-        {
-          "run": 3,
-          "error": null,
-          "recovered": false,
-          "pass": true,
-          "included": "7/7",
-          "exclusionErrors": 0,
-          "failed": [],
-          "checks": 35,
-          "clientMs": 43093,
-          "transcriptMs": 6533,
-          "asr": "elevenlabs/scribe_v2",
-          "voicesHeard": 2,
-          "serverMs": {
-            "asrMs": 6546,
-            "extractMs": 36351,
-            "verifyMs": 0,
-            "totalMs": 42897
-          },
-          "usage": {
-            "audioMinutes": 2.577,
-            "asrAttempts": 1,
-            "asrNeurons": 0,
-            "llmCalls": 1,
-            "llmPromptTokens": 3144,
-            "llmCompletionTokens": 2138,
-            "llmNeurons": 245.81,
-            "retries": 0
-          },
-          "cost": {
-            "asrUsd": 0.009448,
-            "llmUsd": 0.002704,
-            "totalUsd": 0.012152,
-            "perAudioMinuteUsd": 0.004716,
-            "pricesCheckedOn": "2026-10-05"
-          },
-          "items": [
-            {
-              "title": "Send API docs to partner team",
-              "status": "agreed",
-              "owner": "Tom",
-              "deadline": "by Wednesday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Add dark mode",
-              "status": "not_accepted",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Staging demo up",
-              "status": "agreed",
-              "owner": "Tom",
-              "deadline": "Monday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Book big room for client workshop",
-              "status": "cancelled",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Update privacy policy page",
-              "status": "agreed",
-              "owner": null,
-              "deadline": "before launch",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Determine if single sign‑on is needed",
-              "status": "open_question",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Fix flaky tests in payment module",
-              "status": "needs_review",
-              "owner": "Tom",
-              "deadline": "this week",
-              "date": null,
-              "notes": []
-            }
-          ],
-          "dropped": []
-        },
-        {
-          "run": 4,
-          "error": null,
-          "recovered": false,
-          "pass": true,
-          "included": "7/7",
-          "exclusionErrors": 0,
-          "failed": [],
-          "checks": 35,
-          "clientMs": 50439,
-          "transcriptMs": 6551,
-          "asr": "elevenlabs/scribe_v2",
-          "voicesHeard": 2,
-          "serverMs": {
-            "asrMs": 6504,
-            "extractMs": 43789,
-            "verifyMs": 0,
-            "totalMs": 50293
-          },
-          "usage": {
-            "audioMinutes": 2.577,
-            "asrAttempts": 1,
-            "asrNeurons": 0,
-            "llmCalls": 1,
-            "llmPromptTokens": 3142,
-            "llmCompletionTokens": 2197,
-            "llmNeurons": 249.77,
-            "retries": 0
-          },
-          "cost": {
-            "asrUsd": 0.009448,
-            "llmUsd": 0.002747,
-            "totalUsd": 0.012196,
-            "perAudioMinuteUsd": 0.004733,
-            "pricesCheckedOn": "2026-10-05"
-          },
-          "items": [
-            {
-              "title": "Send API docs (including auth) to partner team",
-              "status": "agreed",
-              "owner": "Tom",
-              "deadline": "by Wednesday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Add dark mode to partner portal",
-              "status": "not_accepted",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Staging demo ready",
-              "status": "agreed",
-              "owner": "Tom",
-              "deadline": "Monday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Book big room for client workshop (fourth)",
-              "status": "cancelled",
-              "owner": "Sophia",
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Update privacy policy page",
-              "status": "agreed",
-              "owner": null,
-              "deadline": "before launch",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Whether client needs single sign‑on (SSO)",
-              "status": "open_question",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Investigate flaky tests in payment module",
-              "status": "needs_review",
-              "owner": "Tom",
-              "deadline": "this week",
               "date": null,
               "notes": []
             }
           ],
           "dropped": [
             {
-              "title": "Add dark mode to partner portal",
-              "reason": "Listed twice by the model; kept once."
+              "title": "Provide code snippets",
+              "reason": "None of its quotes were found in the transcript."
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "error": null,
+          "recovered": false,
+          "pass": false,
+          "included": "2/3",
+          "exclusionErrors": 1,
+          "failed": [
+            {
+              "item": "email",
+              "check": "owner",
+              "ok": false,
+              "detail": "expected Speaker 2, got null"
+            },
+            {
+              "item": "file-access",
+              "check": "owner",
+              "ok": false,
+              "detail": "expected Speaker 1, got Speaker 2"
+            },
+            {
+              "item": "file-access",
+              "check": "deadline wording",
+              "ok": false,
+              "detail": "got \"before half past 6\""
+            },
+            {
+              "item": "code-snippets",
+              "check": "status",
+              "ok": false,
+              "detail": "expected agreed, got not_accepted"
+            },
+            {
+              "item": "code-snippets",
+              "check": "owner",
+              "ok": false,
+              "detail": "expected Speaker 2, got null"
+            },
+            {
+              "item": "code-snippets",
+              "check": "deadline wording",
+              "ok": false,
+              "detail": "got \"\""
+            },
+            {
+              "item": "extra: How is the search window organized?",
+              "check": "unsupported extra",
+              "ok": false,
+              "detail": "open_question"
+            }
+          ],
+          "checks": 22,
+          "clientMs": 44181,
+          "transcriptMs": 8782,
+          "asr": "elevenlabs/scribe_v2",
+          "voicesHeard": 2,
+          "serverMs": {
+            "asrMs": 8735,
+            "extractMs": 35205,
+            "verifyMs": 0,
+            "totalMs": 43940
+          },
+          "usage": {
+            "audioMinutes": 2.917,
+            "asrAttempts": 1,
+            "asrNeurons": 0,
+            "llmCalls": 1,
+            "llmPromptTokens": 3503,
+            "llmCompletionTokens": 1385,
+            "llmNeurons": 205.89,
+            "retries": 0
+          },
+          "cost": {
+            "asrUsd": 0.010694,
+            "llmUsd": 0.002265,
+            "totalUsd": 0.012959,
+            "perAudioMinuteUsd": 0.004443,
+            "pricesCheckedOn": "2026-10-05"
+          },
+          "items": [
+            {
+              "title": "Write email to him",
+              "status": "agreed",
+              "owner": null,
+              "deadline": null,
+              "date": null,
+              "notes": [
+                "Owner removed: the quotes show no commitment by Speaker 1 and no request that Speaker 1 accepted."
+              ]
+            },
+            {
+              "title": "Make the file readable and writable",
+              "status": "agreed",
+              "owner": "Speaker 2",
+              "deadline": "before half past 6",
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Provide code snippets",
+              "status": "not_accepted",
+              "owner": null,
+              "deadline": null,
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "How is the search window organized?",
+              "status": "open_question",
+              "owner": null,
+              "deadline": null,
+              "date": null,
+              "notes": []
+            }
+          ],
+          "dropped": []
+        },
+        {
+          "run": 3,
+          "error": null,
+          "recovered": false,
+          "pass": false,
+          "included": "2/3",
+          "exclusionErrors": 0,
+          "failed": [
+            {
+              "item": "email",
+              "check": "owner",
+              "ok": false,
+              "detail": "expected Speaker 2, got null"
+            },
+            {
+              "item": "file-access",
+              "check": "owner",
+              "ok": false,
+              "detail": "expected Speaker 1, got Speaker 2"
+            },
+            {
+              "item": "file-access",
+              "check": "deadline wording",
+              "ok": false,
+              "detail": "got \"before half past 6:00\""
+            },
+            {
+              "item": "code-snippets",
+              "check": "status",
+              "ok": false,
+              "detail": "expected agreed, got needs_review"
+            },
+            {
+              "item": "code-snippets",
+              "check": "owner",
+              "ok": false,
+              "detail": "expected Speaker 2, got null"
+            }
+          ],
+          "checks": 21,
+          "clientMs": 40216,
+          "transcriptMs": 10719,
+          "asr": "elevenlabs/scribe_v2",
+          "voicesHeard": 2,
+          "serverMs": {
+            "asrMs": 10743,
+            "extractMs": 29260,
+            "verifyMs": 0,
+            "totalMs": 40003
+          },
+          "usage": {
+            "audioMinutes": 2.917,
+            "asrAttempts": 1,
+            "asrNeurons": 0,
+            "llmCalls": 1,
+            "llmPromptTokens": 3510,
+            "llmCompletionTokens": 1176,
+            "llmNeurons": 191.86,
+            "retries": 0
+          },
+          "cost": {
+            "asrUsd": 0.010694,
+            "llmUsd": 0.00211,
+            "totalUsd": 0.012805,
+            "perAudioMinuteUsd": 0.00439,
+            "pricesCheckedOn": "2026-10-05"
+          },
+          "items": [
+            {
+              "title": "Write him an email",
+              "status": "agreed",
+              "owner": null,
+              "deadline": null,
+              "date": null,
+              "notes": [
+                "Owner removed: the quotes show no commitment by Speaker 1 and no request that Speaker 1 accepted."
+              ]
+            },
+            {
+              "title": "Make the file readable and writable",
+              "status": "agreed",
+              "owner": "Speaker 2",
+              "deadline": "before half past 6:00",
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Provide code snippets",
+              "status": "needs_review",
+              "owner": null,
+              "deadline": "by tomorrow evening",
+              "date": null,
+              "notes": [
+                "No question was found in the quotes."
+              ]
+            }
+          ],
+          "dropped": []
+        },
+        {
+          "run": 4,
+          "error": null,
+          "recovered": false,
+          "pass": false,
+          "included": "2/3",
+          "exclusionErrors": 0,
+          "failed": [
+            {
+              "item": "email",
+              "check": "owner",
+              "ok": false,
+              "detail": "expected Speaker 2, got null"
+            },
+            {
+              "item": "file-access",
+              "check": "owner",
+              "ok": false,
+              "detail": "expected Speaker 1, got Speaker 2"
+            },
+            {
+              "item": "file-access",
+              "check": "deadline wording",
+              "ok": false,
+              "detail": "got \"before half past 6:00\""
+            },
+            {
+              "item": "code-snippets",
+              "check": "found",
+              "ok": false,
+              "detail": "missing"
+            }
+          ],
+          "checks": 22,
+          "clientMs": 42370,
+          "transcriptMs": 7741,
+          "asr": "elevenlabs/scribe_v2",
+          "voicesHeard": 2,
+          "serverMs": {
+            "asrMs": 7743,
+            "extractMs": 34441,
+            "verifyMs": 0,
+            "totalMs": 42184
+          },
+          "usage": {
+            "audioMinutes": 2.917,
+            "asrAttempts": 1,
+            "asrNeurons": 0,
+            "llmCalls": 1,
+            "llmPromptTokens": 3513,
+            "llmCompletionTokens": 1752,
+            "llmNeurons": 231.23,
+            "retries": 0
+          },
+          "cost": {
+            "asrUsd": 0.010694,
+            "llmUsd": 0.002544,
+            "totalUsd": 0.013238,
+            "perAudioMinuteUsd": 0.004539,
+            "pricesCheckedOn": "2026-10-05"
+          },
+          "items": [
+            {
+              "title": "Write him an email",
+              "status": "agreed",
+              "owner": null,
+              "deadline": null,
+              "date": null,
+              "notes": [
+                "Owner removed: the quotes show no commitment by Speaker 1 and no request that Speaker 1 accepted."
+              ]
+            },
+            {
+              "title": "Make the file readable and writable",
+              "status": "agreed",
+              "owner": "Speaker 2",
+              "deadline": "before half past 6:00",
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Remember to do that tonight",
+              "status": "needs_review",
+              "owner": "Speaker 1",
+              "deadline": "tonight",
+              "date": null,
+              "notes": []
+            },
+            {
+              "title": "Implement left‑handed single‑click highlight",
+              "status": "not_accepted",
+              "owner": null,
+              "deadline": null,
+              "date": null,
+              "notes": []
+            }
+          ],
+          "dropped": [
+            {
+              "title": "Provide code snippets",
+              "reason": "None of its quotes were found in the transcript."
             }
           ]
         },
@@ -2963,92 +444,111 @@
           "run": 5,
           "error": null,
           "recovered": false,
-          "pass": true,
-          "included": "7/7",
+          "pass": false,
+          "included": "2/3",
           "exclusionErrors": 0,
-          "failed": [],
-          "checks": 35,
-          "clientMs": 46562,
-          "transcriptMs": 5204,
+          "failed": [
+            {
+              "item": "email",
+              "check": "owner",
+              "ok": false,
+              "detail": "expected Speaker 2, got null"
+            },
+            {
+              "item": "file-access",
+              "check": "owner",
+              "ok": false,
+              "detail": "expected Speaker 1, got Speaker 2"
+            },
+            {
+              "item": "file-access",
+              "check": "deadline wording",
+              "ok": false,
+              "detail": "got \"before half past 6:00\""
+            },
+            {
+              "item": "code-snippets",
+              "check": "status",
+              "ok": false,
+              "detail": "expected agreed, got needs_review"
+            },
+            {
+              "item": "code-snippets",
+              "check": "owner",
+              "ok": false,
+              "detail": "expected Speaker 2, got null"
+            },
+            {
+              "item": "code-snippets",
+              "check": "deadline wording",
+              "ok": false,
+              "detail": "got \"\""
+            }
+          ],
+          "checks": 24,
+          "clientMs": 34032,
+          "transcriptMs": 6420,
           "asr": "elevenlabs/scribe_v2",
           "voicesHeard": 2,
           "serverMs": {
-            "asrMs": 5214,
-            "extractMs": 41130,
+            "asrMs": 6457,
+            "extractMs": 27365,
             "verifyMs": 0,
-            "totalMs": 46344
+            "totalMs": 33822
           },
           "usage": {
-            "audioMinutes": 2.577,
+            "audioMinutes": 2.917,
             "asrAttempts": 1,
             "asrNeurons": 0,
             "llmCalls": 1,
-            "llmPromptTokens": 3142,
-            "llmCompletionTokens": 1796,
-            "llmNeurons": 222.43,
+            "llmPromptTokens": 3499,
+            "llmCompletionTokens": 1545,
+            "llmNeurons": 216.67,
             "retries": 0
           },
           "cost": {
-            "asrUsd": 0.009448,
-            "llmUsd": 0.002447,
-            "totalUsd": 0.011895,
-            "perAudioMinuteUsd": 0.004616,
+            "asrUsd": 0.010694,
+            "llmUsd": 0.002383,
+            "totalUsd": 0.013078,
+            "perAudioMinuteUsd": 0.004484,
             "pricesCheckedOn": "2026-10-05"
           },
           "items": [
             {
-              "title": "Send API docs to partner team",
+              "title": "Write him an email",
               "status": "agreed",
-              "owner": "Tom",
-              "deadline": "by Wednesday",
+              "owner": null,
+              "deadline": null,
+              "date": null,
+              "notes": [
+                "Owner removed: the quotes show no commitment by Speaker 1 and no request that Speaker 1 accepted."
+              ]
+            },
+            {
+              "title": "Make the file readable and writable",
+              "status": "agreed",
+              "owner": "Speaker 2",
+              "deadline": "before half past 6:00",
               "date": null,
               "notes": []
             },
             {
-              "title": "Add dark mode",
+              "title": "Provide code snippets",
+              "status": "needs_review",
+              "owner": null,
+              "deadline": null,
+              "date": null,
+              "notes": [
+                "1 quote(s) not found in the transcript were removed.",
+                "No proposal was found in the quotes.",
+                "Deadline “by tomorrow evening” removed: that wording is not in the quoted turns."
+              ]
+            },
+            {
+              "title": "Left‑click highlight UI change",
               "status": "not_accepted",
               "owner": null,
               "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Staging demo availability",
-              "status": "agreed",
-              "owner": "Tom",
-              "deadline": "Monday",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Book big room for client workshop",
-              "status": "cancelled",
-              "owner": "Sophia",
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Update privacy policy page",
-              "status": "agreed",
-              "owner": null,
-              "deadline": "before launch",
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Determine if client needs single sign‑on (SSO)",
-              "status": "open_question",
-              "owner": null,
-              "deadline": null,
-              "date": null,
-              "notes": []
-            },
-            {
-              "title": "Investigate flaky tests in payment module",
-              "status": "needs_review",
-              "owner": "Tom",
-              "deadline": "this week",
               "date": null,
               "notes": []
             }
@@ -3056,35 +556,230 @@
           "dropped": []
         }
       ]
+    },
+    {
+      "case": "T10-real-four-people",
+      "outcome": "decline",
+      "runs": [
+        {
+          "run": 1,
+          "error": null,
+          "recovered": false,
+          "pass": true,
+          "included": "n/a",
+          "exclusionErrors": 0,
+          "failed": [],
+          "checks": 3,
+          "clientMs": 6199,
+          "transcriptMs": 5986,
+          "asr": "elevenlabs/scribe_v2",
+          "voicesHeard": 4,
+          "serverMs": {
+            "asrMs": 6011,
+            "extractMs": 0,
+            "verifyMs": 0,
+            "totalMs": 6011
+          },
+          "usage": {
+            "audioMinutes": 2.833,
+            "asrAttempts": 1,
+            "asrNeurons": 0,
+            "llmCalls": 0,
+            "llmPromptTokens": 0,
+            "llmCompletionTokens": 0,
+            "llmNeurons": 0,
+            "retries": 0
+          },
+          "cost": {
+            "asrUsd": 0.010389,
+            "llmUsd": 0,
+            "totalUsd": 0.010389,
+            "perAudioMinuteUsd": 0.003667,
+            "pricesCheckedOn": "2026-10-05"
+          },
+          "items": [],
+          "dropped": []
+        },
+        {
+          "run": 2,
+          "error": null,
+          "recovered": false,
+          "pass": true,
+          "included": "n/a",
+          "exclusionErrors": 0,
+          "failed": [],
+          "checks": 3,
+          "clientMs": 7063,
+          "transcriptMs": 6781,
+          "asr": "elevenlabs/scribe_v2",
+          "voicesHeard": 3,
+          "serverMs": {
+            "asrMs": 6806,
+            "extractMs": 0,
+            "verifyMs": 0,
+            "totalMs": 6806
+          },
+          "usage": {
+            "audioMinutes": 2.833,
+            "asrAttempts": 1,
+            "asrNeurons": 0,
+            "llmCalls": 0,
+            "llmPromptTokens": 0,
+            "llmCompletionTokens": 0,
+            "llmNeurons": 0,
+            "retries": 0
+          },
+          "cost": {
+            "asrUsd": 0.010389,
+            "llmUsd": 0,
+            "totalUsd": 0.010389,
+            "perAudioMinuteUsd": 0.003667,
+            "pricesCheckedOn": "2026-10-05"
+          },
+          "items": [],
+          "dropped": []
+        },
+        {
+          "run": 3,
+          "error": null,
+          "recovered": false,
+          "pass": true,
+          "included": "n/a",
+          "exclusionErrors": 0,
+          "failed": [],
+          "checks": 3,
+          "clientMs": 6139,
+          "transcriptMs": 5886,
+          "asr": "elevenlabs/scribe_v2",
+          "voicesHeard": 4,
+          "serverMs": {
+            "asrMs": 5955,
+            "extractMs": 0,
+            "verifyMs": 0,
+            "totalMs": 5955
+          },
+          "usage": {
+            "audioMinutes": 2.833,
+            "asrAttempts": 1,
+            "asrNeurons": 0,
+            "llmCalls": 0,
+            "llmPromptTokens": 0,
+            "llmCompletionTokens": 0,
+            "llmNeurons": 0,
+            "retries": 0
+          },
+          "cost": {
+            "asrUsd": 0.010389,
+            "llmUsd": 0,
+            "totalUsd": 0.010389,
+            "perAudioMinuteUsd": 0.003667,
+            "pricesCheckedOn": "2026-10-05"
+          },
+          "items": [],
+          "dropped": []
+        },
+        {
+          "run": 4,
+          "error": null,
+          "recovered": false,
+          "pass": true,
+          "included": "n/a",
+          "exclusionErrors": 0,
+          "failed": [],
+          "checks": 3,
+          "clientMs": 6372,
+          "transcriptMs": 6181,
+          "asr": "elevenlabs/scribe_v2",
+          "voicesHeard": 3,
+          "serverMs": {
+            "asrMs": 6193,
+            "extractMs": 0,
+            "verifyMs": 0,
+            "totalMs": 6193
+          },
+          "usage": {
+            "audioMinutes": 2.833,
+            "asrAttempts": 1,
+            "asrNeurons": 0,
+            "llmCalls": 0,
+            "llmPromptTokens": 0,
+            "llmCompletionTokens": 0,
+            "llmNeurons": 0,
+            "retries": 0
+          },
+          "cost": {
+            "asrUsd": 0.010389,
+            "llmUsd": 0,
+            "totalUsd": 0.010389,
+            "perAudioMinuteUsd": 0.003667,
+            "pricesCheckedOn": "2026-10-05"
+          },
+          "items": [],
+          "dropped": []
+        },
+        {
+          "run": 5,
+          "error": null,
+          "recovered": false,
+          "pass": true,
+          "included": "n/a",
+          "exclusionErrors": 0,
+          "failed": [],
+          "checks": 3,
+          "clientMs": 5686,
+          "transcriptMs": 5427,
+          "asr": "elevenlabs/scribe_v2",
+          "voicesHeard": 4,
+          "serverMs": {
+            "asrMs": 5454,
+            "extractMs": 0,
+            "verifyMs": 0,
+            "totalMs": 5454
+          },
+          "usage": {
+            "audioMinutes": 2.833,
+            "asrAttempts": 1,
+            "asrNeurons": 0,
+            "llmCalls": 0,
+            "llmPromptTokens": 0,
+            "llmCompletionTokens": 0,
+            "llmNeurons": 0,
+            "retries": 0
+          },
+          "cost": {
+            "asrUsd": 0.010389,
+            "llmUsd": 0,
+            "totalUsd": 0.010389,
+            "perAudioMinuteUsd": 0.003667,
+            "pricesCheckedOn": "2026-10-05"
+          },
+          "items": [],
+          "dropped": []
+        }
+      ]
     }
   ],
   "summary": {
-    "runs": 40,
+    "runs": 10,
     "errors": 0,
-    "passed": 40,
-    "inclusion": "165/165",
-    "exclusionErrors": 0,
+    "passed": 5,
+    "inclusion": "10/15",
+    "exclusionErrors": 2,
     "stability": {
-      "T1-main": "5/5",
-      "T2-changed": "5/5",
-      "T3-ambiguous": "5/5",
-      "T4-dated": "5/5",
-      "T5-three-voices": "5/5",
-      "T6-noisy": "5/5",
-      "T7-seven-voices": "5/5",
-      "T8-natural-call": "5/5"
+      "T9-real-two-people": "0/5",
+      "T10-real-four-people": "5/5"
     },
     "timeToResultMs": {
-      "p50": 17852,
-      "p90": 38011
+      "p50": 7063,
+      "p90": 42370
     },
     "timeToTranscriptMs": {
-      "p50": 2479
+      "p50": 6420
     },
     "retries": 0,
     "recoveredAfterDroppedConnection": 0,
-    "costPerRunUsd": 0.005369,
-    "costPerAudioMinuteUsd": 0.005117,
+    "costPerRunUsd": 0.01171,
+    "costPerAudioMinuteUsd": 0.004073,
     "asrUsed": [
       "elevenlabs/scribe_v2"
     ]
