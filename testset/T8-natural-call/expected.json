@@ -2,7 +2,7 @@
   "case": "T8-natural-call",
   "purpose": "Normal input spoken like a real call: the five required cases and an open question, as in T1, plus a hedged offer, small talk, fillers, laughter and two interruptions. Written before its first run.",
   "outcome": "result",
-  "speakers": { "sofia": "Sofia", "tom": "Tom" },
+  "speakers": { "sofia": ["Sofia", "Sophia"], "tom": "Tom" },
   "recording_date": null,
   "items": [
     {

@@ -133,9 +133,11 @@ function score(expected, timeline, result) {
   for (const kind of expected.clarify ?? []) {
     add('(outcome)', `asks: ${kind}`, result.clarifications.some((c) => c.kind === kind), '');
   }
+  // A name can be a list of spellings that sound the same (Sofia, Sophia): recognition cannot know which one.
   for (const [key, name] of Object.entries(expected.speakers ?? {})) {
     const names = result.speakers.map((s) => s.name?.toLowerCase() ?? null);
-    if (name) add('(speakers)', `name ${name}`, names.includes(name.toLowerCase()), names.join(', '));
+    const spellings = [name].flat().filter(Boolean).map((n) => n.toLowerCase());
+    if (spellings.length) add('(speakers)', `name ${spellings.join(' or ')}`, spellings.some((n) => names.includes(n)), names.join(', '));
     else add('(speakers)', `${key} unnamed`, names.every((n) => n === null), names.join(', '));
   }
   const gotDate = result.recordingDate?.date ?? null;
