@@ -1,5 +1,5 @@
 import type { Check, Deadline, Evidence, EvidenceRole, Item, Owner, Speaker, Status, Turn } from '../types';
-import { ADDRESSED, AFFIRMATIVE, COMMITMENT, FIRST_PERSON, HEDGE, containsPhrase, normalize, tokens } from '../lib/text';
+import { ADDRESSED, AFFIRMATIVE, COMMITMENT, DIRECT_ANSWER, FILLER, FIRST_PERSON, HEDGE, UNKNOWN, containsPhrase, normalize, tokens } from '../lib/text';
 import type { LlmItem, LlmOutput } from './extract';
 import { checkAnchor, resolveDeadline } from './dates';
 
@@ -258,6 +258,28 @@ function isRepeat(a: Item, b: Item) {
   return sharedWords / (new Set([...wordsA, ...wordsB]).size || 1) >= 0.5;
 }
 
+/** Whether a reply leaves a question open ("No idea", "It depends", "Maybe") or answers it ("Yeah", "Nah, it's fine", an explanation). */
+function leavesOpen(reply: string) {
+  const words = normalize(reply);
+  if (UNKNOWN.test(words)) return true;
+  if (DIRECT_ANSWER.test(words)) return false;
+  return HEDGE.test(words);
+}
+
+/**
+ * An open question is one nobody answered. The model sometimes lists a question that was answered on the spot
+ * ("Is the migration okay?" "Nah, it's fine."), and its labels can point at the reply to another question,
+ * so the words of the first real reply decide.
+ */
+function answeredInCall(item: Item, turns: Turn[]) {
+  const question = item.evidence.find((e) => e.role === 'question');
+  if (!question) return false;
+  const reply = turns.find(
+    (t) => t.speaker !== question.speaker && t.start >= question.end - 0.2 && t.start <= question.end + 15 && !FILLER.test(normalize(t.text)),
+  );
+  return !!reply && !leavesOpen(reply.text);
+}
+
 /** Every quote lies inside the sentence that says when the call happened ("It's Monday, October 5th"). */
 const onlyRestatesDate = (item: Item, date: Evidence | null) =>
   !!date && item.evidence.every((e) => e.turn === date.turn && e.start >= date.start - 0.05 && e.end <= date.end + 0.05);
@@ -270,6 +292,7 @@ export function verifyItems(llm: LlmOutput, turns: Turn[], speakers: Speaker[], 
     const verdict = verifyItem(raw, i + 1, ctx);
     if (!('item' in verdict)) dropped.push(verdict.dropped);
     else if (onlyRestatesDate(verdict.item, dateEvidence)) dropped.push({ title: verdict.item.title, reason: 'It only says when the call happened.' });
+    else if (verdict.item.status === 'open_question' && answeredInCall(verdict.item, turns)) dropped.push({ title: verdict.item.title, reason: 'It was answered in the call.' });
     else if (items.some((kept) => isRepeat(kept, verdict.item))) dropped.push({ title: verdict.item.title, reason: 'Listed twice by the model; kept once.' });
     else items.push(verdict.item);
   });
