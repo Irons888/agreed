@@ -1,0 +1,2895 @@
+{
+  "version": 1,
+  "id": "2896c5a6-fdb9-448d-acd2-695ab7fef228",
+  "createdAt": "2026-10-06T10:33:25.554Z",
+  "fileName": "T8-natural-call.wav",
+  "durationSec": 154.61,
+  "outcome": "result",
+  "decline": null,
+  "speakers": [
+    {
+      "id": "S1",
+      "name": "Sophia",
+      "label": "Sophia",
+      "words": 208,
+      "intro": {
+        "turn": "u5",
+        "speaker": "S1",
+        "role": "commitment",
+        "quote": "I’m Sophia. I’m the product lead on the partner portal.",
+        "start": 17.92,
+        "end": 20.72,
+        "match": "exact"
+      }
+    },
+    {
+      "id": "S2",
+      "name": "Tom",
+      "label": "Tom",
+      "words": 203,
+      "intro": {
+        "turn": "u6",
+        "speaker": "S2",
+        "role": "commitment",
+        "quote": "And I’m Tom. I’m doing the back end. Well, mostly the back end.",
+        "start": 21.1,
+        "end": 25.08,
+        "match": "exact"
+      }
+    }
+  ],
+  "recordingDate": null,
+  "turns": [
+    {
+      "id": "u1",
+      "speaker": "S1",
+      "start": 0.44,
+      "end": 2.06,
+      "text": "Hey, Tom. Can you hear me okay?",
+      "words": [
+        {
+          "text": "Hey,",
+          "start": 0.44,
+          "end": 0.56
+        },
+        {
+          "text": "Tom.",
+          "start": 0.62,
+          "end": 0.96
+        },
+        {
+          "text": "Can",
+          "start": 1.28,
+          "end": 1.38
+        },
+        {
+          "text": "you",
+          "start": 1.42,
+          "end": 1.46
+        },
+        {
+          "text": "hear",
+          "start": 1.5,
+          "end": 1.6
+        },
+        {
+          "text": "me",
+          "start": 1.66,
+          "end": 1.72
+        },
+        {
+          "text": "okay?",
+          "start": 1.78,
+          "end": 2.06
+        }
+      ]
+    },
+    {
+      "id": "u2",
+      "speaker": "S2",
+      "start": 2.52,
+      "end": 5.88,
+      "text": "Yep, loud and clear. Hey, Sophia. How was the weekend?",
+      "words": [
+        {
+          "text": "Yep,",
+          "start": 2.52,
+          "end": 2.6
+        },
+        {
+          "text": "loud",
+          "start": 3.02,
+          "end": 3.24
+        },
+        {
+          "text": "and",
+          "start": 3.26,
+          "end": 3.34
+        },
+        {
+          "text": "clear.",
+          "start": 3.42,
+          "end": 3.7
+        },
+        {
+          "text": "Hey,",
+          "start": 4.24,
+          "end": 4.32
+        },
+        {
+          "text": "Sophia.",
+          "start": 4.4,
+          "end": 4.8
+        },
+        {
+          "text": "How",
+          "start": 5.18,
+          "end": 5.28
+        },
+        {
+          "text": "was",
+          "start": 5.3,
+          "end": 5.4
+        },
+        {
+          "text": "the",
+          "start": 5.44,
+          "end": 5.48
+        },
+        {
+          "text": "weekend?",
+          "start": 5.52,
+          "end": 5.88
+        }
+      ]
+    },
+    {
+      "id": "u3",
+      "speaker": "S1",
+      "start": 6.58,
+      "end": 9.22,
+      "text": "Short. Way too short. You?",
+      "words": [
+        {
+          "text": "Short.",
+          "start": 6.58,
+          "end": 6.96
+        },
+        {
+          "text": "Way",
+          "start": 7.62,
+          "end": 7.9
+        },
+        {
+          "text": "too",
+          "start": 8.02,
+          "end": 8.14
+        },
+        {
+          "text": "short.",
+          "start": 8.24,
+          "end": 8.6
+        },
+        {
+          "text": "You?",
+          "start": 9.08,
+          "end": 9.22
+        }
+      ]
+    },
+    {
+      "id": "u4",
+      "speaker": "S2",
+      "start": 10.36,
+      "end": 12.22,
+      "text": "Moving apartments. Don’t ask.",
+      "words": [
+        {
+          "text": "Moving",
+          "start": 10.36,
+          "end": 10.58
+        },
+        {
+          "text": "apartments.",
+          "start": 10.64,
+          "end": 11.2
+        },
+        {
+          "text": "Don’t",
+          "start": 11.7,
+          "end": 11.86
+        },
+        {
+          "text": "ask.",
+          "start": 11.94,
+          "end": 12.22
+        }
+      ]
+    },
+    {
+      "id": "u5",
+      "speaker": "S1",
+      "start": 12.62,
+      "end": 20.72,
+      "text": "Oof. Okay, I won’t. So, um, quick intro for the recording. I’m Sophia. I’m the product lead on the partner portal.",
+      "words": [
+        {
+          "text": "Oof.",
+          "start": 12.62,
+          "end": 12.78
+        },
+        {
+          "text": "Okay,",
+          "start": 13.42,
+          "end": 13.72
+        },
+        {
+          "text": "I",
+          "start": 14.08,
+          "end": 14.14
+        },
+        {
+          "text": "won’t.",
+          "start": 14.18,
+          "end": 14.5
+        },
+        {
+          "text": "So,",
+          "start": 15.42,
+          "end": 15.58
+        },
+        {
+          "text": "um,",
+          "start": 15.78,
+          "end": 15.98
+        },
+        {
+          "text": "quick",
+          "start": 16.18,
+          "end": 16.4
+        },
+        {
+          "text": "intro",
+          "start": 16.44,
+          "end": 16.68
+        },
+        {
+          "text": "for",
+          "start": 16.76,
+          "end": 16.84
+        },
+        {
+          "text": "the",
+          "start": 16.86,
+          "end": 16.92
+        },
+        {
+          "text": "recording.",
+          "start": 16.96,
+          "end": 17.46
+        },
+        {
+          "text": "I’m",
+          "start": 17.92,
+          "end": 18.04
+        },
+        {
+          "text": "Sophia.",
+          "start": 18.08,
+          "end": 18.6
+        },
+        {
+          "text": "I’m",
+          "start": 18.86,
+          "end": 19.02
+        },
+        {
+          "text": "the",
+          "start": 19.06,
+          "end": 19.16
+        },
+        {
+          "text": "product",
+          "start": 19.2,
+          "end": 19.54
+        },
+        {
+          "text": "lead",
+          "start": 19.6,
+          "end": 19.82
+        },
+        {
+          "text": "on",
+          "start": 19.86,
+          "end": 19.94
+        },
+        {
+          "text": "the",
+          "start": 19.96,
+          "end": 20.04
+        },
+        {
+          "text": "partner",
+          "start": 20.08,
+          "end": 20.32
+        },
+        {
+          "text": "portal.",
+          "start": 20.42,
+          "end": 20.72
+        }
+      ]
+    },
+    {
+      "id": "u6",
+      "speaker": "S2",
+      "start": 21.1,
+      "end": 25.08,
+      "text": "And I’m Tom. I’m doing the back end. Well, mostly the back end.",
+      "words": [
+        {
+          "text": "And",
+          "start": 21.1,
+          "end": 21.18
+        },
+        {
+          "text": "I’m",
+          "start": 21.22,
+          "end": 21.32
+        },
+        {
+          "text": "Tom.",
+          "start": 21.38,
+          "end": 21.7
+        },
+        {
+          "text": "I’m",
+          "start": 22,
+          "end": 22.1
+        },
+        {
+          "text": "doing",
+          "start": 22.12,
+          "end": 22.28
+        },
+        {
+          "text": "the",
+          "start": 22.3,
+          "end": 22.36
+        },
+        {
+          "text": "back",
+          "start": 22.4,
+          "end": 22.58
+        },
+        {
+          "text": "end.",
+          "start": 22.62,
+          "end": 22.82
+        },
+        {
+          "text": "Well,",
+          "start": 23.3,
+          "end": 23.52
+        },
+        {
+          "text": "mostly",
+          "start": 24.1,
+          "end": 24.5
+        },
+        {
+          "text": "the",
+          "start": 24.56,
+          "end": 24.62
+        },
+        {
+          "text": "back",
+          "start": 24.66,
+          "end": 24.84
+        },
+        {
+          "text": "end.",
+          "start": 24.9,
+          "end": 25.08
+        }
+      ]
+    },
+    {
+      "id": "u7",
+      "speaker": "S1",
+      "start": 25.72,
+      "end": 33.86,
+      "text": "Mostly. Okay, so I just wanna go through what’s left before the launch, ’cause it’s getting close. Like, really close.",
+      "words": [
+        {
+          "text": "Mostly.",
+          "start": 25.72,
+          "end": 26.16
+        },
+        {
+          "text": "Okay,",
+          "start": 26.94,
+          "end": 27.18
+        },
+        {
+          "text": "so",
+          "start": 27.38,
+          "end": 27.56
+        },
+        {
+          "text": "I",
+          "start": 27.8,
+          "end": 27.88
+        },
+        {
+          "text": "just",
+          "start": 27.98,
+          "end": 28.1
+        },
+        {
+          "text": "wanna",
+          "start": 28.14,
+          "end": 28.3
+        },
+        {
+          "text": "go",
+          "start": 28.34,
+          "end": 28.48
+        },
+        {
+          "text": "through",
+          "start": 28.52,
+          "end": 28.7
+        },
+        {
+          "text": "what’s",
+          "start": 28.72,
+          "end": 28.94
+        },
+        {
+          "text": "left",
+          "start": 29,
+          "end": 29.24
+        },
+        {
+          "text": "before",
+          "start": 29.28,
+          "end": 29.54
+        },
+        {
+          "text": "the",
+          "start": 29.58,
+          "end": 29.66
+        },
+        {
+          "text": "launch,",
+          "start": 29.7,
+          "end": 30.06
+        },
+        {
+          "text": "’cause",
+          "start": 30.16,
+          "end": 30.34
+        },
+        {
+          "text": "it’s",
+          "start": 30.4,
+          "end": 30.6
+        },
+        {
+          "text": "getting",
+          "start": 30.64,
+          "end": 30.98
+        },
+        {
+          "text": "close.",
+          "start": 31.44,
+          "end": 31.98
+        },
+        {
+          "text": "Like,",
+          "start": 32.299,
+          "end": 32.5
+        },
+        {
+          "text": "really",
+          "start": 32.98,
+          "end": 33.36
+        },
+        {
+          "text": "close.",
+          "start": 33.4,
+          "end": 33.86
+        }
+      ]
+    },
+    {
+      "id": "u8",
+      "speaker": "S2",
+      "start": 34.24,
+      "end": 41.12,
+      "text": "Yeah. So first thing, the partner team is still waiting on the API docs. They pinged me again this morning, actually.",
+      "words": [
+        {
+          "text": "Yeah.",
+          "start": 34.24,
+          "end": 34.5
+        },
+        {
+          "text": "So",
+          "start": 34.96,
+          "end": 35.18
+        },
+        {
+          "text": "first",
+          "start": 35.58,
+          "end": 35.78
+        },
+        {
+          "text": "thing,",
+          "start": 35.82,
+          "end": 36.02
+        },
+        {
+          "text": "the",
+          "start": 36.44,
+          "end": 36.54
+        },
+        {
+          "text": "partner",
+          "start": 36.58,
+          "end": 36.88
+        },
+        {
+          "text": "team",
+          "start": 36.92,
+          "end": 37.06
+        },
+        {
+          "text": "is",
+          "start": 37.08,
+          "end": 37.2
+        },
+        {
+          "text": "still",
+          "start": 37.32,
+          "end": 37.5
+        },
+        {
+          "text": "waiting",
+          "start": 37.58,
+          "end": 37.84
+        },
+        {
+          "text": "on",
+          "start": 37.86,
+          "end": 37.94
+        },
+        {
+          "text": "the",
+          "start": 37.98,
+          "end": 38.1
+        },
+        {
+          "text": "API",
+          "start": 38.16,
+          "end": 38.56
+        },
+        {
+          "text": "docs.",
+          "start": 38.64,
+          "end": 39.02
+        },
+        {
+          "text": "They",
+          "start": 39.46,
+          "end": 39.6
+        },
+        {
+          "text": "pinged",
+          "start": 39.66,
+          "end": 39.84
+        },
+        {
+          "text": "me",
+          "start": 39.88,
+          "end": 39.94
+        },
+        {
+          "text": "again",
+          "start": 40,
+          "end": 40.18
+        },
+        {
+          "text": "this",
+          "start": 40.2,
+          "end": 40.36
+        },
+        {
+          "text": "morning,",
+          "start": 40.42,
+          "end": 40.64
+        },
+        {
+          "text": "actually.",
+          "start": 40.76,
+          "end": 41.12
+        }
+      ]
+    },
+    {
+      "id": "u9",
+      "speaker": "S1",
+      "start": 41.48,
+      "end": 45.48,
+      "text": "Ugh, right. Can you get those over to them, like, by Wednesday?",
+      "words": [
+        {
+          "text": "Ugh,",
+          "start": 41.48,
+          "end": 41.86
+        },
+        {
+          "text": "right.",
+          "start": 42.02,
+          "end": 42.34
+        },
+        {
+          "text": "Can",
+          "start": 42.84,
+          "end": 42.94
+        },
+        {
+          "text": "you",
+          "start": 42.98,
+          "end": 43.06
+        },
+        {
+          "text": "get",
+          "start": 43.1,
+          "end": 43.22
+        },
+        {
+          "text": "those",
+          "start": 43.26,
+          "end": 43.42
+        },
+        {
+          "text": "over",
+          "start": 43.48,
+          "end": 43.66
+        },
+        {
+          "text": "to",
+          "start": 43.7,
+          "end": 43.78
+        },
+        {
+          "text": "them,",
+          "start": 43.84,
+          "end": 44.04
+        },
+        {
+          "text": "like,",
+          "start": 44.28,
+          "end": 44.5
+        },
+        {
+          "text": "by",
+          "start": 44.78,
+          "end": 44.94
+        },
+        {
+          "text": "Wednesday?",
+          "start": 44.96,
+          "end": 45.48
+        }
+      ]
+    },
+    {
+      "id": "u10",
+      "speaker": "S2",
+      "start": 45.9,
+      "end": 48.9,
+      "text": "Yeah, yeah. I’ll send them the docs by Wednesday. That’s fine.",
+      "words": [
+        {
+          "text": "Yeah,",
+          "start": 45.9,
+          "end": 46.12
+        },
+        {
+          "text": "yeah.",
+          "start": 46.24,
+          "end": 46.42
+        },
+        {
+          "text": "I’ll",
+          "start": 46.7,
+          "end": 46.82
+        },
+        {
+          "text": "send",
+          "start": 46.86,
+          "end": 47
+        },
+        {
+          "text": "them",
+          "start": 47.02,
+          "end": 47.14
+        },
+        {
+          "text": "the",
+          "start": 47.18,
+          "end": 47.28
+        },
+        {
+          "text": "docs",
+          "start": 47.3,
+          "end": 47.58
+        },
+        {
+          "text": "by",
+          "start": 47.6,
+          "end": 47.72
+        },
+        {
+          "text": "Wednesday.",
+          "start": 47.76,
+          "end": 48.18
+        },
+        {
+          "text": "That’s",
+          "start": 48.46,
+          "end": 48.62
+        },
+        {
+          "text": "fine.",
+          "start": 48.66,
+          "end": 48.9
+        }
+      ]
+    },
+    {
+      "id": "u11",
+      "speaker": "S1",
+      "start": 49.18,
+      "end": 52.56,
+      "text": "Does that include the auth part? They kept asking about tokens.",
+      "words": [
+        {
+          "text": "Does",
+          "start": 49.18,
+          "end": 49.3
+        },
+        {
+          "text": "that",
+          "start": 49.34,
+          "end": 49.46
+        },
+        {
+          "text": "include",
+          "start": 49.48,
+          "end": 49.76
+        },
+        {
+          "text": "the",
+          "start": 49.8,
+          "end": 49.9
+        },
+        {
+          "text": "auth",
+          "start": 50,
+          "end": 50.16
+        },
+        {
+          "text": "part?",
+          "start": 50.24,
+          "end": 50.5
+        },
+        {
+          "text": "They",
+          "start": 50.88,
+          "end": 50.98
+        },
+        {
+          "text": "kept",
+          "start": 51.02,
+          "end": 51.22
+        },
+        {
+          "text": "asking",
+          "start": 51.3,
+          "end": 51.6
+        },
+        {
+          "text": "about",
+          "start": 51.66,
+          "end": 51.88
+        },
+        {
+          "text": "tokens.",
+          "start": 51.96,
+          "end": 52.56
+        }
+      ]
+    },
+    {
+      "id": "u12",
+      "speaker": "S2",
+      "start": 52.9,
+      "end": 56.24,
+      "text": "Yeah, the whole thing, auth, webhooks, all of it.",
+      "words": [
+        {
+          "text": "Yeah,",
+          "start": 52.9,
+          "end": 53.1
+        },
+        {
+          "text": "the",
+          "start": 53.36,
+          "end": 53.44
+        },
+        {
+          "text": "whole",
+          "start": 53.48,
+          "end": 53.62
+        },
+        {
+          "text": "thing,",
+          "start": 53.72,
+          "end": 53.96
+        },
+        {
+          "text": "auth,",
+          "start": 54.5,
+          "end": 54.84
+        },
+        {
+          "text": "webhooks,",
+          "start": 55,
+          "end": 55.46
+        },
+        {
+          "text": "all",
+          "start": 55.86,
+          "end": 55.96
+        },
+        {
+          "text": "of",
+          "start": 56,
+          "end": 56.08
+        },
+        {
+          "text": "it.",
+          "start": 56.12,
+          "end": 56.24
+        }
+      ]
+    },
+    {
+      "id": "u13",
+      "speaker": "S1",
+      "start": 56.5,
+      "end": 56.96,
+      "text": "Perfect.",
+      "words": [
+        {
+          "text": "Perfect.",
+          "start": 56.5,
+          "end": 56.96
+        }
+      ]
+    },
+    {
+      "id": "u14",
+      "speaker": "S2",
+      "start": 57.36,
+      "end": 64.28,
+      "text": "Oh, and while I’m in there, we could also add a dark mode. People keep asking for it, and it’s honestly not that much work. I could just-",
+      "words": [
+        {
+          "text": "Oh,",
+          "start": 57.36,
+          "end": 57.5
+        },
+        {
+          "text": "and",
+          "start": 57.82,
+          "end": 57.92
+        },
+        {
+          "text": "while",
+          "start": 57.96,
+          "end": 58.1
+        },
+        {
+          "text": "I’m",
+          "start": 58.16,
+          "end": 58.22
+        },
+        {
+          "text": "in",
+          "start": 58.26,
+          "end": 58.34
+        },
+        {
+          "text": "there,",
+          "start": 58.38,
+          "end": 58.52
+        },
+        {
+          "text": "we",
+          "start": 58.86,
+          "end": 58.94
+        },
+        {
+          "text": "could",
+          "start": 58.96,
+          "end": 59.14
+        },
+        {
+          "text": "also",
+          "start": 59.22,
+          "end": 59.48
+        },
+        {
+          "text": "add",
+          "start": 59.54,
+          "end": 59.62
+        },
+        {
+          "text": "a",
+          "start": 59.66,
+          "end": 59.76
+        },
+        {
+          "text": "dark",
+          "start": 59.8,
+          "end": 60.06
+        },
+        {
+          "text": "mode.",
+          "start": 60.1,
+          "end": 60.36
+        },
+        {
+          "text": "People",
+          "start": 60.84,
+          "end": 61
+        },
+        {
+          "text": "keep",
+          "start": 61.08,
+          "end": 61.26
+        },
+        {
+          "text": "asking",
+          "start": 61.32,
+          "end": 61.64
+        },
+        {
+          "text": "for",
+          "start": 61.68,
+          "end": 61.8
+        },
+        {
+          "text": "it,",
+          "start": 61.84,
+          "end": 61.9
+        },
+        {
+          "text": "and",
+          "start": 62.2,
+          "end": 62.26
+        },
+        {
+          "text": "it’s",
+          "start": 62.3,
+          "end": 62.46
+        },
+        {
+          "text": "honestly",
+          "start": 62.54,
+          "end": 62.88
+        },
+        {
+          "text": "not",
+          "start": 63.04,
+          "end": 63.22
+        },
+        {
+          "text": "that",
+          "start": 63.26,
+          "end": 63.38
+        },
+        {
+          "text": "much",
+          "start": 63.4,
+          "end": 63.6
+        },
+        {
+          "text": "work.",
+          "start": 63.64,
+          "end": 63.88
+        },
+        {
+          "text": "I",
+          "start": 63.96,
+          "end": 64.019
+        },
+        {
+          "text": "could",
+          "start": 64.04,
+          "end": 64.18
+        },
+        {
+          "text": "just-",
+          "start": 64.22,
+          "end": 64.28
+        }
+      ]
+    },
+    {
+      "id": "u15",
+      "speaker": "S1",
+      "start": 64.519,
+      "end": 68.52,
+      "text": "I know, I know. I’d rather not. Not this release. Let’s keep it tight.",
+      "words": [
+        {
+          "text": "I",
+          "start": 64.519,
+          "end": 64.519
+        },
+        {
+          "text": "know,",
+          "start": 64.62,
+          "end": 64.84
+        },
+        {
+          "text": "I",
+          "start": 65.04,
+          "end": 65.06
+        },
+        {
+          "text": "know.",
+          "start": 65.14,
+          "end": 65.319
+        },
+        {
+          "text": "I’d",
+          "start": 65.78,
+          "end": 65.86
+        },
+        {
+          "text": "rather",
+          "start": 65.9,
+          "end": 66.12
+        },
+        {
+          "text": "not.",
+          "start": 66.2,
+          "end": 66.44
+        },
+        {
+          "text": "Not",
+          "start": 66.78,
+          "end": 66.94
+        },
+        {
+          "text": "this",
+          "start": 66.98,
+          "end": 67.14
+        },
+        {
+          "text": "release.",
+          "start": 67.18,
+          "end": 67.58
+        },
+        {
+          "text": "Let’s",
+          "start": 67.78,
+          "end": 67.96
+        },
+        {
+          "text": "keep",
+          "start": 68,
+          "end": 68.14
+        },
+        {
+          "text": "it",
+          "start": 68.18,
+          "end": 68.26
+        },
+        {
+          "text": "tight.",
+          "start": 68.3,
+          "end": 68.52
+        }
+      ]
+    },
+    {
+      "id": "u16",
+      "speaker": "S2",
+      "start": 68.88,
+      "end": 69.92,
+      "text": "Fair. Fair enough.",
+      "words": [
+        {
+          "text": "Fair.",
+          "start": 68.88,
+          "end": 69.08
+        },
+        {
+          "text": "Fair",
+          "start": 69.48,
+          "end": 69.6
+        },
+        {
+          "text": "enough.",
+          "start": 69.64,
+          "end": 69.92
+        }
+      ]
+    },
+    {
+      "id": "u17",
+      "speaker": "S1",
+      "start": 70.28,
+      "end": 74.28,
+      "text": "Okay, next one, the staging demo. Can you have it up by Thursday?",
+      "words": [
+        {
+          "text": "Okay,",
+          "start": 70.28,
+          "end": 70.5
+        },
+        {
+          "text": "next",
+          "start": 70.86,
+          "end": 71.1
+        },
+        {
+          "text": "one,",
+          "start": 71.16,
+          "end": 71.34
+        },
+        {
+          "text": "the",
+          "start": 71.74,
+          "end": 71.84
+        },
+        {
+          "text": "staging",
+          "start": 71.9,
+          "end": 72.22
+        },
+        {
+          "text": "demo.",
+          "start": 72.3,
+          "end": 72.6
+        },
+        {
+          "text": "Can",
+          "start": 73,
+          "end": 73.1
+        },
+        {
+          "text": "you",
+          "start": 73.14,
+          "end": 73.2
+        },
+        {
+          "text": "have",
+          "start": 73.24,
+          "end": 73.34
+        },
+        {
+          "text": "it",
+          "start": 73.38,
+          "end": 73.44
+        },
+        {
+          "text": "up",
+          "start": 73.48,
+          "end": 73.58
+        },
+        {
+          "text": "by",
+          "start": 73.6,
+          "end": 73.74
+        },
+        {
+          "text": "Thursday?",
+          "start": 73.78,
+          "end": 74.28
+        }
+      ]
+    },
+    {
+      "id": "u18",
+      "speaker": "S2",
+      "start": 74.68,
+      "end": 77.2,
+      "text": "Thursday. Yeah, Thursday works.",
+      "words": [
+        {
+          "text": "Thursday.",
+          "start": 74.68,
+          "end": 75.42
+        },
+        {
+          "text": "Yeah,",
+          "start": 75.98,
+          "end": 76.18
+        },
+        {
+          "text": "Thursday",
+          "start": 76.56,
+          "end": 76.84
+        },
+        {
+          "text": "works.",
+          "start": 76.92,
+          "end": 77.2
+        }
+      ]
+    },
+    {
+      "id": "u19",
+      "speaker": "S1",
+      "start": 77.48,
+      "end": 81.34,
+      "text": "Great, and I’ll book the big room for the client workshop, the one on the fourth.",
+      "words": [
+        {
+          "text": "Great,",
+          "start": 77.48,
+          "end": 77.72
+        },
+        {
+          "text": "and",
+          "start": 78.2,
+          "end": 78.38
+        },
+        {
+          "text": "I’ll",
+          "start": 78.52,
+          "end": 78.64
+        },
+        {
+          "text": "book",
+          "start": 78.66,
+          "end": 78.8
+        },
+        {
+          "text": "the",
+          "start": 78.84,
+          "end": 78.98
+        },
+        {
+          "text": "big",
+          "start": 79.02,
+          "end": 79.16
+        },
+        {
+          "text": "room",
+          "start": 79.24,
+          "end": 79.44
+        },
+        {
+          "text": "for",
+          "start": 79.48,
+          "end": 79.56
+        },
+        {
+          "text": "the",
+          "start": 79.6,
+          "end": 79.66
+        },
+        {
+          "text": "client",
+          "start": 79.72,
+          "end": 80.02
+        },
+        {
+          "text": "workshop,",
+          "start": 80.04,
+          "end": 80.54
+        },
+        {
+          "text": "the",
+          "start": 80.78,
+          "end": 80.86
+        },
+        {
+          "text": "one",
+          "start": 80.9,
+          "end": 80.98
+        },
+        {
+          "text": "on",
+          "start": 81.02,
+          "end": 81.08
+        },
+        {
+          "text": "the",
+          "start": 81.12,
+          "end": 81.16
+        },
+        {
+          "text": "fourth.",
+          "start": 81.28,
+          "end": 81.34
+        }
+      ]
+    },
+    {
+      "id": "u20",
+      "speaker": "S2",
+      "start": 81.36,
+      "end": 83.18,
+      "text": "The one with the projector that never works?",
+      "words": [
+        {
+          "text": "The",
+          "start": 81.36,
+          "end": 81.44
+        },
+        {
+          "text": "one",
+          "start": 81.48,
+          "end": 81.56
+        },
+        {
+          "text": "with",
+          "start": 81.6,
+          "end": 81.68
+        },
+        {
+          "text": "the",
+          "start": 81.72,
+          "end": 81.8
+        },
+        {
+          "text": "projector",
+          "start": 81.82,
+          "end": 82.3
+        },
+        {
+          "text": "that",
+          "start": 82.34,
+          "end": 82.46
+        },
+        {
+          "text": "never",
+          "start": 82.56,
+          "end": 82.76
+        },
+        {
+          "text": "works?",
+          "start": 82.84,
+          "end": 83.18
+        }
+      ]
+    },
+    {
+      "id": "u21",
+      "speaker": "S1",
+      "start": 83.9,
+      "end": 86.22,
+      "text": "Yes, that one. I’ll book it anyway.",
+      "words": [
+        {
+          "text": "Yes,",
+          "start": 83.9,
+          "end": 84.22
+        },
+        {
+          "text": "that",
+          "start": 84.5,
+          "end": 84.66
+        },
+        {
+          "text": "one.",
+          "start": 84.74,
+          "end": 84.9
+        },
+        {
+          "text": "I’ll",
+          "start": 85.42,
+          "end": 85.54
+        },
+        {
+          "text": "book",
+          "start": 85.58,
+          "end": 85.7
+        },
+        {
+          "text": "it",
+          "start": 85.74,
+          "end": 85.82
+        },
+        {
+          "text": "anyway.",
+          "start": 85.86,
+          "end": 86.22
+        }
+      ]
+    },
+    {
+      "id": "u22",
+      "speaker": "S2",
+      "start": 87.08,
+      "end": 87.4,
+      "text": "Okay.",
+      "words": [
+        {
+          "text": "Okay.",
+          "start": 87.08,
+          "end": 87.4
+        }
+      ]
+    },
+    {
+      "id": "u23",
+      "speaker": "S1",
+      "start": 87.86,
+      "end": 94.6,
+      "text": "Um, one more thing. The privacy policy page has to be updated before launch. Like, it really has to.",
+      "words": [
+        {
+          "text": "Um,",
+          "start": 87.86,
+          "end": 88.06
+        },
+        {
+          "text": "one",
+          "start": 88.32,
+          "end": 88.42
+        },
+        {
+          "text": "more",
+          "start": 88.48,
+          "end": 88.66
+        },
+        {
+          "text": "thing.",
+          "start": 88.68,
+          "end": 88.96
+        },
+        {
+          "text": "The",
+          "start": 89.48,
+          "end": 89.58
+        },
+        {
+          "text": "privacy",
+          "start": 89.62,
+          "end": 90.02
+        },
+        {
+          "text": "policy",
+          "start": 90.1,
+          "end": 90.48
+        },
+        {
+          "text": "page",
+          "start": 90.58,
+          "end": 90.82
+        },
+        {
+          "text": "has",
+          "start": 91,
+          "end": 91.24
+        },
+        {
+          "text": "to",
+          "start": 91.28,
+          "end": 91.36
+        },
+        {
+          "text": "be",
+          "start": 91.38,
+          "end": 91.48
+        },
+        {
+          "text": "updated",
+          "start": 91.54,
+          "end": 91.94
+        },
+        {
+          "text": "before",
+          "start": 91.96,
+          "end": 92.26
+        },
+        {
+          "text": "launch.",
+          "start": 92.3,
+          "end": 92.68
+        },
+        {
+          "text": "Like,",
+          "start": 92.9,
+          "end": 93.04
+        },
+        {
+          "text": "it",
+          "start": 93.28,
+          "end": 93.42
+        },
+        {
+          "text": "really",
+          "start": 93.64,
+          "end": 94.02
+        },
+        {
+          "text": "has",
+          "start": 94.06,
+          "end": 94.36
+        },
+        {
+          "text": "to.",
+          "start": 94.4,
+          "end": 94.6
+        }
+      ]
+    },
+    {
+      "id": "u24",
+      "speaker": "S2",
+      "start": 94.98,
+      "end": 101.68,
+      "text": "Yeah. No, that definitely needs to happen. Oh, and do we even know if they need single sign-on, SSO?",
+      "words": [
+        {
+          "text": "Yeah.",
+          "start": 94.98,
+          "end": 95.2
+        },
+        {
+          "text": "No,",
+          "start": 95.5,
+          "end": 95.7
+        },
+        {
+          "text": "that",
+          "start": 96,
+          "end": 96.26
+        },
+        {
+          "text": "definitely",
+          "start": 96.32,
+          "end": 96.8
+        },
+        {
+          "text": "needs",
+          "start": 96.82,
+          "end": 97.02
+        },
+        {
+          "text": "to",
+          "start": 97.06,
+          "end": 97.12
+        },
+        {
+          "text": "happen.",
+          "start": 97.18,
+          "end": 97.5
+        },
+        {
+          "text": "Oh,",
+          "start": 98.16,
+          "end": 98.28
+        },
+        {
+          "text": "and",
+          "start": 98.62,
+          "end": 98.72
+        },
+        {
+          "text": "do",
+          "start": 98.78,
+          "end": 98.84
+        },
+        {
+          "text": "we",
+          "start": 98.88,
+          "end": 98.94
+        },
+        {
+          "text": "even",
+          "start": 98.96,
+          "end": 99.16
+        },
+        {
+          "text": "know",
+          "start": 99.2,
+          "end": 99.32
+        },
+        {
+          "text": "if",
+          "start": 99.36,
+          "end": 99.44
+        },
+        {
+          "text": "they",
+          "start": 99.48,
+          "end": 99.58
+        },
+        {
+          "text": "need",
+          "start": 99.62,
+          "end": 99.86
+        },
+        {
+          "text": "single",
+          "start": 99.94,
+          "end": 100.18
+        },
+        {
+          "text": "sign-on,",
+          "start": 100.32,
+          "end": 100.78
+        },
+        {
+          "text": "SSO?",
+          "start": 101.26,
+          "end": 101.68
+        }
+      ]
+    },
+    {
+      "id": "u25",
+      "speaker": "S1",
+      "start": 102.06,
+      "end": 105.3,
+      "text": "Honestly, no idea. Nobody’s asked them yet.",
+      "words": [
+        {
+          "text": "Honestly,",
+          "start": 102.06,
+          "end": 102.62
+        },
+        {
+          "text": "no",
+          "start": 103.08,
+          "end": 103.22
+        },
+        {
+          "text": "idea.",
+          "start": 103.28,
+          "end": 103.78
+        },
+        {
+          "text": "Nobody’s",
+          "start": 104.24,
+          "end": 104.58
+        },
+        {
+          "text": "asked",
+          "start": 104.64,
+          "end": 104.84
+        },
+        {
+          "text": "them",
+          "start": 104.86,
+          "end": 104.98
+        },
+        {
+          "text": "yet.",
+          "start": 105.04,
+          "end": 105.3
+        }
+      ]
+    },
+    {
+      "id": "u26",
+      "speaker": "S2",
+      "start": 105.58,
+      "end": 113.5,
+      "text": "Hmm. Okay. Also, uh, the flaky tests in the payment module, I’ll try to look at them this week, but, you know, no promises.",
+      "words": [
+        {
+          "text": "Hmm.",
+          "start": 105.58,
+          "end": 105.78
+        },
+        {
+          "text": "Okay.",
+          "start": 106.26,
+          "end": 106.54
+        },
+        {
+          "text": "Also,",
+          "start": 107.14,
+          "end": 107.48
+        },
+        {
+          "text": "uh,",
+          "start": 107.86,
+          "end": 108.02
+        },
+        {
+          "text": "the",
+          "start": 108.2,
+          "end": 108.32
+        },
+        {
+          "text": "flaky",
+          "start": 108.4,
+          "end": 108.76
+        },
+        {
+          "text": "tests",
+          "start": 108.82,
+          "end": 109.14
+        },
+        {
+          "text": "in",
+          "start": 109.18,
+          "end": 109.24
+        },
+        {
+          "text": "the",
+          "start": 109.28,
+          "end": 109.38
+        },
+        {
+          "text": "payment",
+          "start": 109.46,
+          "end": 109.7
+        },
+        {
+          "text": "module,",
+          "start": 109.78,
+          "end": 110.16
+        },
+        {
+          "text": "I’ll",
+          "start": 110.74,
+          "end": 110.84
+        },
+        {
+          "text": "try",
+          "start": 110.86,
+          "end": 110.98
+        },
+        {
+          "text": "to",
+          "start": 111.02,
+          "end": 111.08
+        },
+        {
+          "text": "look",
+          "start": 111.1,
+          "end": 111.2
+        },
+        {
+          "text": "at",
+          "start": 111.24,
+          "end": 111.3
+        },
+        {
+          "text": "them",
+          "start": 111.34,
+          "end": 111.44
+        },
+        {
+          "text": "this",
+          "start": 111.48,
+          "end": 111.62
+        },
+        {
+          "text": "week,",
+          "start": 111.68,
+          "end": 111.86
+        },
+        {
+          "text": "but,",
+          "start": 111.94,
+          "end": 112.06
+        },
+        {
+          "text": "you",
+          "start": 112.32,
+          "end": 112.36
+        },
+        {
+          "text": "know,",
+          "start": 112.4,
+          "end": 112.52
+        },
+        {
+          "text": "no",
+          "start": 112.8,
+          "end": 112.88
+        },
+        {
+          "text": "promises.",
+          "start": 112.96,
+          "end": 113.5
+        }
+      ]
+    },
+    {
+      "id": "u27",
+      "speaker": "S1",
+      "start": 113.82,
+      "end": 115.28,
+      "text": "That’s fine. Whenever you can.",
+      "words": [
+        {
+          "text": "That’s",
+          "start": 113.82,
+          "end": 113.98
+        },
+        {
+          "text": "fine.",
+          "start": 114.02,
+          "end": 114.28
+        },
+        {
+          "text": "Whenever",
+          "start": 114.58,
+          "end": 114.86
+        },
+        {
+          "text": "you",
+          "start": 114.9,
+          "end": 114.98
+        },
+        {
+          "text": "can.",
+          "start": 115.02,
+          "end": 115.28
+        }
+      ]
+    },
+    {
+      "id": "u28",
+      "speaker": "S2",
+      "start": 115.92,
+      "end": 125.04,
+      "text": "Actually, wait, sorry. Going back to the staging demo, Thursday’s too tight. The database migration is gonna eat, like, the whole week. Can we say Monday instead?",
+      "words": [
+        {
+          "text": "Actually,",
+          "start": 115.92,
+          "end": 116.22
+        },
+        {
+          "text": "wait,",
+          "start": 116.42,
+          "end": 116.56
+        },
+        {
+          "text": "sorry.",
+          "start": 116.8,
+          "end": 117.06
+        },
+        {
+          "text": "Going",
+          "start": 117.48,
+          "end": 117.64
+        },
+        {
+          "text": "back",
+          "start": 117.68,
+          "end": 117.8
+        },
+        {
+          "text": "to",
+          "start": 117.82,
+          "end": 117.88
+        },
+        {
+          "text": "the",
+          "start": 117.92,
+          "end": 118
+        },
+        {
+          "text": "staging",
+          "start": 118.06,
+          "end": 118.36
+        },
+        {
+          "text": "demo,",
+          "start": 118.44,
+          "end": 118.68
+        },
+        {
+          "text": "Thursday’s",
+          "start": 119.16,
+          "end": 119.62
+        },
+        {
+          "text": "too",
+          "start": 119.68,
+          "end": 119.84
+        },
+        {
+          "text": "tight.",
+          "start": 119.9,
+          "end": 120.22
+        },
+        {
+          "text": "The",
+          "start": 120.68,
+          "end": 120.8
+        },
+        {
+          "text": "database",
+          "start": 120.84,
+          "end": 121.24
+        },
+        {
+          "text": "migration",
+          "start": 121.28,
+          "end": 121.7
+        },
+        {
+          "text": "is",
+          "start": 121.74,
+          "end": 121.84
+        },
+        {
+          "text": "gonna",
+          "start": 121.86,
+          "end": 122.02
+        },
+        {
+          "text": "eat,",
+          "start": 122.06,
+          "end": 122.18
+        },
+        {
+          "text": "like,",
+          "start": 122.24,
+          "end": 122.38
+        },
+        {
+          "text": "the",
+          "start": 122.48,
+          "end": 122.54
+        },
+        {
+          "text": "whole",
+          "start": 122.76,
+          "end": 122.98
+        },
+        {
+          "text": "week.",
+          "start": 123.08,
+          "end": 123.38
+        },
+        {
+          "text": "Can",
+          "start": 123.86,
+          "end": 123.96
+        },
+        {
+          "text": "we",
+          "start": 123.98,
+          "end": 124.06
+        },
+        {
+          "text": "say",
+          "start": 124.1,
+          "end": 124.24
+        },
+        {
+          "text": "Monday",
+          "start": 124.3,
+          "end": 124.6
+        },
+        {
+          "text": "instead?",
+          "start": 124.64,
+          "end": 125.04
+        }
+      ]
+    },
+    {
+      "id": "u29",
+      "speaker": "S1",
+      "start": 125.46,
+      "end": 128.12,
+      "text": "Is the migration okay, though? Should I be worried?",
+      "words": [
+        {
+          "text": "Is",
+          "start": 125.46,
+          "end": 125.64
+        },
+        {
+          "text": "the",
+          "start": 125.68,
+          "end": 125.74
+        },
+        {
+          "text": "migration",
+          "start": 125.78,
+          "end": 126.26
+        },
+        {
+          "text": "okay,",
+          "start": 126.32,
+          "end": 126.54
+        },
+        {
+          "text": "though?",
+          "start": 126.62,
+          "end": 126.84
+        },
+        {
+          "text": "Should",
+          "start": 127.36,
+          "end": 127.46
+        },
+        {
+          "text": "I",
+          "start": 127.52,
+          "end": 127.56
+        },
+        {
+          "text": "be",
+          "start": 127.6,
+          "end": 127.7
+        },
+        {
+          "text": "worried?",
+          "start": 127.74,
+          "end": 128.12
+        }
+      ]
+    },
+    {
+      "id": "u30",
+      "speaker": "S2",
+      "start": 128.5,
+      "end": 131.68,
+      "text": "Nah, it’s fine. It’s just slow. Lots of data.",
+      "words": [
+        {
+          "text": "Nah,",
+          "start": 128.5,
+          "end": 128.74
+        },
+        {
+          "text": "it’s",
+          "start": 129,
+          "end": 129.16
+        },
+        {
+          "text": "fine.",
+          "start": 129.199,
+          "end": 129.46
+        },
+        {
+          "text": "It’s",
+          "start": 129.82,
+          "end": 129.96
+        },
+        {
+          "text": "just",
+          "start": 130.02,
+          "end": 130.16
+        },
+        {
+          "text": "slow.",
+          "start": 130.24,
+          "end": 130.6
+        },
+        {
+          "text": "Lots",
+          "start": 131,
+          "end": 131.2
+        },
+        {
+          "text": "of",
+          "start": 131.24,
+          "end": 131.3
+        },
+        {
+          "text": "data.",
+          "start": 131.38,
+          "end": 131.68
+        }
+      ]
+    },
+    {
+      "id": "u31",
+      "speaker": "S1",
+      "start": 132.06,
+      "end": 136.18,
+      "text": "Okay. Monday. Yeah, okay. Let’s make it Monday.",
+      "words": [
+        {
+          "text": "Okay.",
+          "start": 132.06,
+          "end": 132.44
+        },
+        {
+          "text": "Monday.",
+          "start": 133.02,
+          "end": 133.7
+        },
+        {
+          "text": "Yeah,",
+          "start": 134.36,
+          "end": 134.5
+        },
+        {
+          "text": "okay.",
+          "start": 134.82,
+          "end": 135.06
+        },
+        {
+          "text": "Let’s",
+          "start": 135.44,
+          "end": 135.58
+        },
+        {
+          "text": "make",
+          "start": 135.62,
+          "end": 135.72
+        },
+        {
+          "text": "it",
+          "start": 135.76,
+          "end": 135.82
+        },
+        {
+          "text": "Monday.",
+          "start": 135.86,
+          "end": 136.18
+        }
+      ]
+    },
+    {
+      "id": "u32",
+      "speaker": "S2",
+      "start": 136.48,
+      "end": 137.38,
+      "text": "Cool. Thank you.",
+      "words": [
+        {
+          "text": "Cool.",
+          "start": 136.48,
+          "end": 136.72
+        },
+        {
+          "text": "Thank",
+          "start": 137,
+          "end": 137.22
+        },
+        {
+          "text": "you.",
+          "start": 137.28,
+          "end": 137.38
+        }
+      ]
+    },
+    {
+      "id": "u33",
+      "speaker": "S1",
+      "start": 137.76,
+      "end": 144.94,
+      "text": "Oh, and I just got a message from the client. They wanna do the workshop online now, so I won’t book the room after all.",
+      "words": [
+        {
+          "text": "Oh,",
+          "start": 137.76,
+          "end": 137.88
+        },
+        {
+          "text": "and",
+          "start": 138.2,
+          "end": 138.46
+        },
+        {
+          "text": "I",
+          "start": 138.66,
+          "end": 138.82
+        },
+        {
+          "text": "just",
+          "start": 138.9,
+          "end": 139.08
+        },
+        {
+          "text": "got",
+          "start": 139.12,
+          "end": 139.22
+        },
+        {
+          "text": "a",
+          "start": 139.26,
+          "end": 139.3
+        },
+        {
+          "text": "message",
+          "start": 139.34,
+          "end": 139.62
+        },
+        {
+          "text": "from",
+          "start": 139.64,
+          "end": 139.78
+        },
+        {
+          "text": "the",
+          "start": 139.82,
+          "end": 139.9
+        },
+        {
+          "text": "client.",
+          "start": 139.96,
+          "end": 140.44
+        },
+        {
+          "text": "They",
+          "start": 140.84,
+          "end": 140.94
+        },
+        {
+          "text": "wanna",
+          "start": 140.96,
+          "end": 141.16
+        },
+        {
+          "text": "do",
+          "start": 141.18,
+          "end": 141.26
+        },
+        {
+          "text": "the",
+          "start": 141.3,
+          "end": 141.38
+        },
+        {
+          "text": "workshop",
+          "start": 141.4,
+          "end": 141.8
+        },
+        {
+          "text": "online",
+          "start": 141.88,
+          "end": 142.36
+        },
+        {
+          "text": "now,",
+          "start": 142.44,
+          "end": 142.7
+        },
+        {
+          "text": "so",
+          "start": 142.92,
+          "end": 143.28
+        },
+        {
+          "text": "I",
+          "start": 143.8,
+          "end": 143.84
+        },
+        {
+          "text": "won’t",
+          "start": 143.88,
+          "end": 144.02
+        },
+        {
+          "text": "book",
+          "start": 144.04,
+          "end": 144.16
+        },
+        {
+          "text": "the",
+          "start": 144.18,
+          "end": 144.26
+        },
+        {
+          "text": "room",
+          "start": 144.3,
+          "end": 144.44
+        },
+        {
+          "text": "after",
+          "start": 144.52,
+          "end": 144.74
+        },
+        {
+          "text": "all.",
+          "start": 144.8,
+          "end": 144.94
+        }
+      ]
+    },
+    {
+      "id": "u34",
+      "speaker": "S2",
+      "start": 145.98,
+      "end": 147.68,
+      "text": "The projector lives another day.",
+      "words": [
+        {
+          "text": "The",
+          "start": 145.98,
+          "end": 146.08
+        },
+        {
+          "text": "projector",
+          "start": 146.1,
+          "end": 146.58
+        },
+        {
+          "text": "lives",
+          "start": 146.7,
+          "end": 146.92
+        },
+        {
+          "text": "another",
+          "start": 146.96,
+          "end": 147.34
+        },
+        {
+          "text": "day.",
+          "start": 147.42,
+          "end": 147.68
+        }
+      ]
+    },
+    {
+      "id": "u35",
+      "speaker": "S1",
+      "start": 148.32,
+      "end": 152.06,
+      "text": "Exactly. Okay, I think that’s everything. Thanks, Tom.",
+      "words": [
+        {
+          "text": "Exactly.",
+          "start": 148.32,
+          "end": 149.08
+        },
+        {
+          "text": "Okay,",
+          "start": 149.74,
+          "end": 149.96
+        },
+        {
+          "text": "I",
+          "start": 150.26,
+          "end": 150.36
+        },
+        {
+          "text": "think",
+          "start": 150.4,
+          "end": 150.52
+        },
+        {
+          "text": "that’s",
+          "start": 150.56,
+          "end": 150.7
+        },
+        {
+          "text": "everything.",
+          "start": 150.74,
+          "end": 151.16
+        },
+        {
+          "text": "Thanks,",
+          "start": 151.54,
+          "end": 151.76
+        },
+        {
+          "text": "Tom.",
+          "start": 151.8,
+          "end": 152.06
+        }
+      ]
+    },
+    {
+      "id": "u36",
+      "speaker": "S2",
+      "start": 152.34,
+      "end": 153.76,
+      "text": "Thanks, Sophia. Talk soon.",
+      "words": [
+        {
+          "text": "Thanks,",
+          "start": 152.34,
+          "end": 152.52
+        },
+        {
+          "text": "Sophia.",
+          "start": 152.56,
+          "end": 152.92
+        },
+        {
+          "text": "Talk",
+          "start": 153.3,
+          "end": 153.46
+        },
+        {
+          "text": "soon.",
+          "start": 153.54,
+          "end": 153.76
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "send-api-docs-to-partner-team-1",
+      "title": "Send API docs to partner team",
+      "status": "agreed",
+      "owner": {
+        "kind": "speaker",
+        "speaker": "S2",
+        "name": "Tom",
+        "how": "commitment"
+      },
+      "deadline": {
+        "kind": "relative",
+        "date": null,
+        "ambiguous": false,
+        "raw": "by Wednesday",
+        "previous": []
+      },
+      "evidence": [
+        {
+          "turn": "u9",
+          "speaker": "S1",
+          "role": "request",
+          "quote": "Can you get those over to them, like, by Wednesday?",
+          "start": 42.84,
+          "end": 45.48,
+          "match": "exact"
+        },
+        {
+          "turn": "u10",
+          "speaker": "S2",
+          "role": "commitment",
+          "quote": "Yeah, yeah. I’ll send them the docs by Wednesday. That’s fine.",
+          "start": 45.9,
+          "end": 48.9,
+          "match": "exact"
+        },
+        {
+          "turn": "u12",
+          "speaker": "S2",
+          "role": "acceptance",
+          "quote": "Yeah, the whole thing, auth, webhooks, all of it.",
+          "start": 52.9,
+          "end": 56.24,
+          "match": "exact"
+        }
+      ],
+      "why": "Tom committed to sending the docs by Wednesday (u10) after Sophia requested it (u9).",
+      "checks": [
+        {
+          "name": "quotes",
+          "ok": true
+        },
+        {
+          "name": "status",
+          "ok": true
+        },
+        {
+          "name": "owner",
+          "ok": true
+        },
+        {
+          "name": "deadline",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "add-dark-mode-2",
+      "title": "Add dark mode",
+      "status": "not_accepted",
+      "owner": {
+        "kind": "none"
+      },
+      "deadline": {
+        "kind": "none",
+        "raw": null,
+        "date": null,
+        "ambiguous": false,
+        "previous": []
+      },
+      "evidence": [
+        {
+          "turn": "u14",
+          "speaker": "S2",
+          "role": "proposal",
+          "quote": "we could also add a dark mode. People keep asking for it, and it’s honestly not that much work. I could just-",
+          "start": 58.86,
+          "end": 64.28,
+          "match": "exact"
+        },
+        {
+          "turn": "u15",
+          "speaker": "S1",
+          "role": "rejection",
+          "quote": "I know, I know. I’d rather not. Not this release. Let’s keep it tight.",
+          "start": 64.519,
+          "end": 68.52,
+          "match": "exact"
+        }
+      ],
+      "why": "Tom proposed adding dark mode (u14) and Sophia explicitly declined (u15).",
+      "checks": [
+        {
+          "name": "quotes",
+          "ok": true
+        },
+        {
+          "name": "status",
+          "ok": true
+        },
+        {
+          "name": "owner",
+          "ok": true
+        },
+        {
+          "name": "deadline",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "staging-demo-availability-3",
+      "title": "Staging demo availability",
+      "status": "agreed",
+      "owner": {
+        "kind": "speaker",
+        "speaker": "S2",
+        "name": "Tom",
+        "how": "accepted_request"
+      },
+      "deadline": {
+        "kind": "relative",
+        "date": null,
+        "ambiguous": false,
+        "raw": "Monday",
+        "previous": [
+          "by Thursday"
+        ]
+      },
+      "evidence": [
+        {
+          "turn": "u17",
+          "speaker": "S1",
+          "role": "request",
+          "quote": "Can you have it up by Thursday?",
+          "start": 73,
+          "end": 74.28,
+          "match": "exact"
+        },
+        {
+          "turn": "u18",
+          "speaker": "S2",
+          "role": "acceptance",
+          "quote": "Thursday. Yeah, Thursday works.",
+          "start": 74.68,
+          "end": 77.2,
+          "match": "exact"
+        },
+        {
+          "turn": "u28",
+          "speaker": "S2",
+          "role": "deadline_change",
+          "quote": "Actually, wait, sorry. Going back to the staging demo, Thursday’s too tight. The database migration is gonna eat, like, the whole week. Can we say Monday instead?",
+          "start": 115.92,
+          "end": 125.04,
+          "match": "exact"
+        },
+        {
+          "turn": "u31",
+          "speaker": "S1",
+          "role": "acceptance",
+          "quote": "Okay. Monday. Yeah, okay. Let’s make it Monday.",
+          "start": 132.06,
+          "end": 136.18,
+          "match": "exact"
+        }
+      ],
+      "why": "Initial deadline Thursday (u17‑u18) was changed to Monday (u28‑u31) and both agreed.",
+      "checks": [
+        {
+          "name": "quotes",
+          "ok": true
+        },
+        {
+          "name": "status",
+          "ok": true
+        },
+        {
+          "name": "owner",
+          "ok": true
+        },
+        {
+          "name": "deadline",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "book-big-room-for-client-workshop-4",
+      "title": "Book big room for client workshop",
+      "status": "cancelled",
+      "owner": {
+        "kind": "none"
+      },
+      "deadline": {
+        "kind": "none",
+        "raw": null,
+        "date": null,
+        "ambiguous": false,
+        "previous": []
+      },
+      "evidence": [
+        {
+          "turn": "u19",
+          "speaker": "S1",
+          "role": "commitment",
+          "quote": "I’ll book the big room for the client workshop, the one on the fourth.",
+          "start": 78.52,
+          "end": 81.34,
+          "match": "exact"
+        },
+        {
+          "turn": "u20",
+          "speaker": "S2",
+          "role": "question",
+          "quote": "The one with the projector that never works?",
+          "start": 81.36,
+          "end": 83.18,
+          "match": "exact"
+        },
+        {
+          "turn": "u21",
+          "speaker": "S1",
+          "role": "acceptance",
+          "quote": "Yes, that one. I’ll book it anyway.",
+          "start": 83.9,
+          "end": 86.22,
+          "match": "exact"
+        },
+        {
+          "turn": "u33",
+          "speaker": "S1",
+          "role": "cancellation",
+          "quote": "Oh, and I just got a message from the client. They wanna do the workshop online now, so I won’t book the room after all.",
+          "start": 137.76,
+          "end": 144.94,
+          "match": "exact"
+        }
+      ],
+      "why": "Sophia committed to book the room (u19‑u21) but later cancelled the booking (u33).",
+      "checks": [
+        {
+          "name": "quotes",
+          "ok": true
+        },
+        {
+          "name": "status",
+          "ok": true
+        },
+        {
+          "name": "owner",
+          "ok": true
+        },
+        {
+          "name": "deadline",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "update-privacy-policy-page-5",
+      "title": "Update privacy policy page",
+      "status": "agreed",
+      "owner": {
+        "kind": "none"
+      },
+      "deadline": {
+        "kind": "vague",
+        "date": null,
+        "ambiguous": false,
+        "raw": "before launch",
+        "previous": []
+      },
+      "evidence": [
+        {
+          "turn": "u23",
+          "speaker": "S1",
+          "role": "proposal",
+          "quote": "The privacy policy page has to be updated before launch. Like, it really has to.",
+          "start": 89.48,
+          "end": 94.6,
+          "match": "exact"
+        },
+        {
+          "turn": "u24",
+          "speaker": "S2",
+          "role": "acceptance",
+          "quote": "Yeah. No, that definitely needs to happen.",
+          "start": 94.98,
+          "end": 97.5,
+          "match": "exact"
+        }
+      ],
+      "why": "Both agreed the page must be updated before launch (u23‑u24).",
+      "checks": [
+        {
+          "name": "quotes",
+          "ok": true
+        },
+        {
+          "name": "status",
+          "ok": true
+        },
+        {
+          "name": "owner",
+          "ok": true
+        },
+        {
+          "name": "deadline",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "determine-need-for-single-sign-on-sso-6",
+      "title": "Determine need for single sign-on (SSO)",
+      "status": "open_question",
+      "owner": {
+        "kind": "none"
+      },
+      "deadline": {
+        "kind": "none",
+        "raw": null,
+        "date": null,
+        "ambiguous": false,
+        "previous": []
+      },
+      "evidence": [
+        {
+          "turn": "u24",
+          "speaker": "S2",
+          "role": "question",
+          "quote": "do we even know if they need single sign-on, SSO?",
+          "start": 98.78,
+          "end": 101.68,
+          "match": "exact"
+        },
+        {
+          "turn": "u25",
+          "speaker": "S1",
+          "role": "no_answer",
+          "quote": "Honestly, no idea. Nobody’s asked them yet.",
+          "start": 102.06,
+          "end": 105.3,
+          "match": "exact"
+        }
+      ],
+      "why": "Sophia asked about SSO (u24) and no answer was given (u25).",
+      "checks": [
+        {
+          "name": "quotes",
+          "ok": true
+        },
+        {
+          "name": "status",
+          "ok": true
+        },
+        {
+          "name": "owner",
+          "ok": true
+        },
+        {
+          "name": "deadline",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "investigate-flaky-tests-in-payment-module-7",
+      "title": "Investigate flaky tests in payment module",
+      "status": "needs_review",
+      "owner": {
+        "kind": "speaker",
+        "speaker": "S2",
+        "name": "Tom",
+        "how": "tentative"
+      },
+      "deadline": {
+        "kind": "relative",
+        "date": null,
+        "ambiguous": false,
+        "raw": "this week",
+        "previous": []
+      },
+      "evidence": [
+        {
+          "turn": "u26",
+          "speaker": "S2",
+          "role": "hedge",
+          "quote": "the flaky tests in the payment module, I’ll try to look at them this week, but, you know, no promises.",
+          "start": 108.2,
+          "end": 113.5,
+          "match": "exact"
+        }
+      ],
+      "why": "Tom only said he might look at them this week (u26), which is a hedged commitment.",
+      "checks": [
+        {
+          "name": "quotes",
+          "ok": true
+        },
+        {
+          "name": "status",
+          "ok": true
+        },
+        {
+          "name": "owner",
+          "ok": true
+        },
+        {
+          "name": "deadline",
+          "ok": true
+        }
+      ]
+    }
+  ],
+  "dropped": [],
+  "clarifications": [
+    {
+      "kind": "recording_date",
+      "blocking": false
+    },
+    {
+      "kind": "review_items",
+      "blocking": false,
+      "items": [
+        "investigate-flaky-tests-in-payment-module-7"
+      ]
+    }
+  ],
+  "metrics": {
+    "models": {
+      "asr": "elevenlabs/scribe_v2",
+      "asrFallback": false,
+      "llm": "@cf/openai/gpt-oss-120b",
+      "reasoning": "low"
+    },
+    "timings": {
+      "asrMs": 5536,
+      "extractMs": 17268,
+      "verifyMs": 0,
+      "totalMs": 22804
+    },
+    "usage": {
+      "audioMinutes": 2.577,
+      "asrAttempts": 1,
+      "asrNeurons": 0,
+      "llmCalls": 1,
+      "llmPromptTokens": 3285,
+      "llmCompletionTokens": 1991,
+      "llmNeurons": 240.27,
+      "retries": 0
+    },
+    "cost": {
+      "asrUsd": 0.009448,
+      "llmUsd": 0.002643,
+      "totalUsd": 0.012091,
+      "perAudioMinuteUsd": 0.004692,
+      "pricesCheckedOn": "2026-10-05"
+    }
+  }
+}

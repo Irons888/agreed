@@ -74,30 +74,41 @@ function toEvidence(turn: IndexedTurn, span: { from: number; to: number }, role:
 }
 
 /**
- * A turn and its continuation: the same person goes on after a short interjection by someone else
- * ("…readable, writable—" "Oh, yeah" "…everything."). Recognition splits such a sentence in two; a quote may span both.
+ * The cited turn joined with the same person's turns just before and after it, across pauses and short
+ * interjections by someone else ("…readable, writable—" "Oh, yeah" "…everything."). Recognition splits such
+ * speech into several turns; a quote may span them.
  */
-function continuation(index: Index, id: string): IndexedTurn | null {
+function stretch(index: Index, id: string): IndexedTurn | null {
   const turns = [...index.values()];
   const at = turns.findIndex((t) => t.id === id);
-  const first = turns[at];
-  if (!first) return null;
-  for (let k = at + 1; k < turns.length && k <= at + 3; k++) {
-    const next = turns[k];
-    if (next.speaker === first.speaker) {
-      if (next.start - first.end > 3) return null;
-      return {
-        ...first,
-        end: next.end,
-        text: `${first.text} ${next.text}`,
-        words: [...first.words, ...next.words],
-        tokens: [...first.tokens, ...next.tokens],
-        tokenWord: [...first.tokenWord, ...next.tokenWord.map((w) => w + first.words.length)],
-      };
+  const cited = turns[at];
+  if (!cited) return null;
+  const joinable = (from: number, step: 1 | -1) => {
+    const picked: IndexedTurn[] = [];
+    let last = cited;
+    for (let k = from + step; k >= 0 && k < turns.length && picked.length < 3; k += step) {
+      const t = turns[k];
+      if (t.speaker !== cited.speaker) {
+        if (t.words.length > 3) break;
+        continue;
+      }
+      if (Math.abs(step === 1 ? t.start - last.end : last.start - t.end) > 3) break;
+      picked.push(t);
+      last = t;
     }
-    if (next.words.length > 3) return null;
+    return picked;
+  };
+  const parts = [...joinable(at, -1).reverse(), cited, ...joinable(at, 1)];
+  if (parts.length === 1) return null;
+  const joined: IndexedTurn = { ...parts[0], end: parts[parts.length - 1].end, text: '', words: [], tokens: [], tokenWord: [] };
+  for (const part of parts) {
+    const offset = joined.words.length;
+    joined.words.push(...part.words);
+    joined.tokens.push(...part.tokens);
+    joined.tokenWord.push(...part.tokenWord.map((w) => w + offset));
   }
-  return null;
+  joined.text = parts.map((p) => p.text).join(' ');
+  return joined;
 }
 
 function align(index: Index, turnId: string | null, quote: string, role: EvidenceRole): Evidence | null {
@@ -106,7 +117,7 @@ function align(index: Index, turnId: string | null, quote: string, role: Evidenc
   if (cited) {
     const span = locate(cited, q, true);
     if (span) return toEvidence(cited, span, role, span.exact ? 'exact' : 'repaired');
-    const joined = continuation(index, cited.id);
+    const joined = stretch(index, cited.id);
     const across = joined && locate(joined, q, true);
     if (joined && across) return toEvidence(joined, across, role, across.exact ? 'exact' : 'repaired');
   }
@@ -171,7 +182,10 @@ function verifyItem(raw: LlmItem, n: number, ctx: ItemContext): { item: Item } |
     else if (!evidence.some((x) => x.turn === found.turn && x.start === found.start && x.end === found.end)) evidence.push(found);
   }
   evidence.sort((a, b) => a.start - b.start);
-  if (!evidence.length) return { dropped: { title: raw.title, reason: 'None of its quotes were found in the transcript.' } };
+  if (!evidence.length) {
+    const quoted = raw.evidence.map((e) => `“${e.quote}”`).join(', ');
+    return { dropped: { title: raw.title, reason: `None of its quotes were found in the transcript: ${quoted}.` } };
+  }
   // A role is the model's claim; the words decide. "Yes, that definitely needs to happen" is not a hedge.
   for (const e of evidence) {
     const words = normalize(e.quote);
